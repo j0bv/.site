@@ -1,0 +1,42 @@
+version: "3.8"
+
+services:
+  neo4j:
+    image: neo4j:5
+    ports:
+      - "7474:7474"
+      - "7687:7687"
+    environment:
+      NEO4J_AUTH: neo4j/${NEO4J_PASSWORD:-changeme}
+    volumes:
+      - neo4j_data:/data
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:7474"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # BitNet HTTP server (llama-server /completion API). Set BITNET_URL=http://bitnet:8080 when running in Docker.
+  # Use prebuilt: image: nicomanzonelli/bitnet-server (if available), or build: ./bitnet-server
+  bitnet:
+    image: nicomanzonelli/bitnet-server
+    ports:
+      - "8080:8080"
+    command: ["--host", "0.0.0.0", "--port", "8080"]
+    # Optional: mount model or set BITNET_MODEL_PATH if not baked into image
+
+volumes:
+  neo4j_data:
+  redis_data:

@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <meta name="author" content="Josiah Olivier Belfon-Valentine" />
+  <title>Mathematical Framework for Defining News - Thesis</title>
+  <link rel="stylesheet" href="/src/reset.css" />
+  <link rel="stylesheet" href="/src/index.css" />
+  <style>
+    /* Thesis page is always black; ignores browser light/dark mode */
+    html, body { background: #000 !important; color: #e5e5e5; }
+    body a { color: #9ec8e8; }
+    body a:hover { color: #b8d4ed; }
+    .password-gate { margin: calc(var(--line-height) * 4) 0; }
+    .password-gate-label { display: inline; }
+    .password-gate-input {
+      border: none;
+      border-bottom: var(--border-thickness) solid #e5e5e5;
+      background: transparent;
+      font: inherit;
+      color: #e5e5e5;
+      padding: 0 0.25ch;
+      width: 20ch;
+      outline: none;
+    }
+    .password-gate-input::placeholder { color: #888; }
+    .password-gate-input::selection { background: #333; }
+    .password-gate-error { margin-top: var(--line-height); color: #c0c0c0; }
+    #thesis-content { display: none; }
+    #thesis-content.unlocked { display: block; }
+  </style>
+</head>
+<body>
+<div id="password-gate" class="password-gate">
+  <p style="margin: 0 0 var(--line-height);">Access to this thesis is by password only.</p>
+  <form id="password-form" autocomplete="off">
+    <label class="password-gate-label" for="thesis-password">Password: </label>
+    <input type="password" id="thesis-password" class="password-gate-input" placeholder="" autofocus aria-label="Password" />
+  </form>
+  <p id="password-gate-error" class="password-gate-error" role="alert" hidden></p>
+</div>
+<div id="thesis-content">
+<table class="header">
+  <tr>
+    <td colspan="2" rowspan="2" class="width-auto">
+      <h1 class="title">MATHEMATICAL FRAMEWORK FOR DEFINING NEWS</h1>
+      <span class="subtitle">A Multivariable Calculus Approach to Journalism</span>
+    </td>
+    <th>Category</th>
+    <td class="width-min">Research</td>
+  </tr>
+  <tr>
+    <th>Portfolio</th>
+    <td class="width-min"><a href="../writing.html">Writing</a></td>
+  </tr>
+</table>
+<h2 id="abstract">Abstract</h2>
+<p>This paper presents a mathematical framework for defining news using multivariable calculus. We model news as a function of four dimensions: entities (subjects/actors), parameterized environments (contextual factors), temporal sequences (time), and emotional responses (quantified through nervous system responses and sentiment analysis). The framework enables quantitative analysis of news characteristics, distinguishes news from factual reporting through the emotional dimension, and provides tools for sensitivity analysis, integration, and prediction. Through case studies, we validate the model against real journalistic events and demonstrate its practical utility. This research establishes a rigorous foundation for understanding "what is news" and opens new possibilities for quantitative journalism research.</p>
+<h2 id="table-of-contents">Table of Contents</h2>
+<table>
+  <thead>
+    <tr>
+      <th class="width-auto">Section</th>
+      <th class="width-min">Title</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td><a href="#section-1">Introduction</a></td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td><a href="#section-2">Mathematical Framework</a></td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td><a href="#section-3">Entity Dimension</a></td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td><a href="#section-4">Parameterized Environment</a></td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td><a href="#section-5">Temporal Dimension</a></td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td><a href="#section-6">Emotional Dimension</a></td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td><a href="#section-7">Partial Derivatives</a></td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td><a href="#section-8">Integration</a></td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td><a href="#section-9">Applications</a></td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td><a href="#section-10">Journalists as Analysts</a></td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td><a href="#section-11">AI Models</a></td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td><a href="#section-12">Architecture</a></td>
+    </tr>
+    <tr>
+      <td>13</td>
+      <td><a href="#section-13">Model Evaluation</a></td>
+    </tr>
+    <tr>
+      <td>14</td>
+      <td><a href="#section-14">Conclusion</a></td>
+    </tr>
+  </tbody>
+</table>
+<h2 id="core-framework">Core Framework</h2>
+<p>The thesis defines news as a multivariable function:</p>
+<table>
+  <tr>
+    <td class="width-auto">
+      <p style="margin: 0;"><strong>News Function</strong></p>
+      <p style="margin: 0;">X = N(E, P, t, Ψ)</p>
+      <p style="margin: 0; font-size: 0.9em; margin-top: 0.5em;">where:</p>
+      <ul class="incremental" style="margin: 0.5em 0;">
+        <li><strong>N</strong> = News Function (the mapping function that transforms inputs into news)</li>
+        <li><strong>E</strong> = Entity or subject of the news</li>
+        <li><strong>P</strong> = Parameterized environment vector [p₁, p₂, ..., pₙ]</li>
+        <li><strong>t</strong> = Temporal dimension</li>
+        <li><strong>Ψ</strong> = Emotional dimension (nervous system responses, sentiment)</li>
+        <li><strong>X</strong> = Result labeled as "news"</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+<h2 id="sections">Sections</h2>
+<section id="section-1" class="newspaper-article">
+  <table class="header">
+    <tr>
+      <td colspan="2" rowspan="2" class="width-auto">
+        <h3 style="margin: 0; text-transform: uppercase;">1. Introduction</h3>
+      </td>
+      <th>Section</th>
+      <td class="width-min">1</td>
+    </tr>
+  </table>
+  <div class="article-content">
+    <p>The question "What is news?" has occupied journalists, media theorists, and communication scholars for over a century. Traditional definitions have relied on qualitative descriptors: news is timely, relevant, significant, or interesting. However, these subjective criteria fail to provide a rigorous framework for understanding how news differs from mere factual reporting, how it evolves over time, and how it interacts with the complex systems of entities, environments, and emotional responses that characterize modern journalism.</p>
+    <p>This paper proposes a mathematical framework using multivariable calculus to formalize the definition of news. We model news as a function of four fundamental dimensions: entities, parameterized environments, temporal sequences, and emotional responses. This approach allows us to apply the analytical tools of calculus—partial derivatives, gradients, and integration—to understand the dynamics of news production and consumption.</p>
+    <p><strong>Problem Statement:</strong> The central problem addressed in this research is the lack of a quantitative, mathematically rigorous definition of news. Current journalistic practice relies on editorial judgment and heuristics that, while often effective, resist systematic analysis.</p>
+  </div>
+</section>
+<section id="section-2" class="newspaper-article">
+  <table class="header">
+    <tr>
+      <td colspan="2" rowspan="2" class="width-auto">
+        <h3 style="margin: 0; text-transform: uppercase;">2. Mathematical Framework</h3>
+      </td>
+      <th>Section</th>
+      <td class="width-min">2</td>
+    </tr>
+  </table>
+  <div class="article-content">
+    <p><strong>Formal Definition:</strong> The news function N(E, P, t, Ψ) maps from a four-dimensional space to a result space, where:</p>
+    <ul class="incremental">
+      <li>E is the entity space (discrete or continuous)</li>
+      <li>P ⊆ ℝⁿ is the parameterized environment space</li>
+      <li>T ⊆ ℝ is the temporal domain</li>
+      <li>Em ⊆ ℝᵐ is the emotional dimension space</li>
+      <li>X is the result space of labeled news</li>
+    </ul>
+    <p>The framework includes knowledge graph representation for entities, boundary conditions, and constraints that ensure mathematical rigor while capturing the complexity of journalistic information.</p>
+  </div>
+</section>
+<section id="section-3" class="newspaper-article">
+  <table class="header">
+    <tr>
+      <td colspan="2" rowspan="2" class="width-auto">
+        <h3 style="margin: 0; text-transform: uppercase;">3. Entity Dimension</h3>
+      </td>
+      <th>Section</th>
+      <td class="width-min">3</td>
+    </tr>
+  </table>
+  <div class="article-content">
+    <p><em>Detailed analysis of the entity dimension E, including discrete and continuous representations, knowledge graph structures, and entity relationships in journalistic contexts.</em></p>
+  </div>
+</section>
+<section id="section-4" class="newspaper-article">
+  <table class="header">
+    <tr>
+      <td colspan="2" rowspan="2" class="width-auto">
+        <h3 style="margin: 0; text-transform: uppercase;">4. Parameterized Environment</h3>
+      </td>
+      <th>Section</th>
+      <td class="width-min">4</td>
+    </tr>
+  </table>
+  <div class="article-content">
+    <p><em>Analysis of the parameterized environment vector P, capturing contextual factors including social, political, economic, and cultural parameters that influence news value.</em></p>
+  </div>
+</section>
+<section id="section-5" class="newspaper-article">
+  <table class="header">
+    <tr>
+      <td colspan="2" rowspan="2" class="width-auto">
+        <h3 style="margin: 0; text-transform: uppercase;">5. Temporal Dimension</h3>
+      </td>
+      <th>Section</th>
+      <td class="width-min">5</td>
+    </tr>
+  </table>
+  <div class="article-content">
+    <p><em>Examination of the temporal dimension t, analyzing how news value changes over time, temporal sequences, and time-dependent dynamics in journalism.</em></p>
+  </div>
+</section>
+<section id="section-6" class="newspaper-article">
+  <table class="header">
+    <tr>
+      <td colspan="2" rowspan="2" class="width-auto">
+        <h3 style="margin: 0; text-transform: uppercase;">6. Emotional Dimension</h3>
+      </td>
+      <th>Section</th>
+      <td class="width-min">6</td>
+    </tr>
+  </table>
+  <div class="article-content">
+    <p><em>Critical analysis of the emotional dimension Ψ, which distinguishes news from factual reporting. Includes quantification through nervous system responses, sentiment analysis, and physiological measures.</em></p>
+  </div>
+</section>
+<section id="section-7" class="newspaper-article">
+  <table class="header">
+    <tr>
+      <td colspan="2" rowspan="2" class="width-auto">
+        <h3 style="margin: 0; text-transform: uppercase;">7. Partial Derivatives</h3>
+      </td>
+      <th>Section</th>
+      <td class="width-min">7</td>
+    </tr>
+  </table>
+  <div class="article-content">
+    <p><em>Sensitivity analysis using partial derivatives to understand how news value changes with respect to each dimension, enabling identification of critical factors.</em></p>
+  </div>
+</section>
+<section id="section-8" class="newspaper-article">
+  <table class="header">
+    <tr>
+      <td colspan="2" rowspan="2" class="width-auto">
+        <h3 style="margin: 0; text-transform: uppercase;">8. Integration</h3>
+      </td>
+      <th>Section</th>
+      <td class="width-min">8</td>
+    </tr>
+  </table>
+  <div class="article-content">
+    <p><em>Integration and aggregation methods for understanding aggregate news behavior across domains, time periods, and entity spaces.</em></p>
+  </div>
+</section>
+<section id="section-9" class="newspaper-article">
+  <table class="header">
+    <tr>
+      <td colspan="2" rowspan="2" class="width-auto">
+        <h3 style="margin: 0; text-transform: uppercase;">9. Applications</h3>
+      </td>
+      <th>Section</th>
+      <td class="width-min">9</td>
+    </tr>
+  </table>
+  <div class="article-content">
+    <p><em>Case studies and validation of the model against real journalistic events, demonstrating practical utility and real-world applications.</em></p>
+  </div>
+</section>
+<section id="section-10" class="newspaper-article">
+  <table class="header">
+    <tr>
+      <td colspan="2" rowspan="2" class="width-auto">
+        <h3 style="margin: 0; text-transform: uppercase;">10. Journalists as Analysts</h3>
+      </td>
+      <th>Section</th>
+      <td class="width-min">10</td>
+    </tr>
+  </table>
+  <div class="article-content">
+    <p><em>Discussion of the transformation of journalism requiring journalists to become highly advanced data analysts who apply mathematical frameworks and computational tools.</em></p>
+  </div>
+</section>
+<section id="section-11" class="newspaper-article">
+  <table class="header">
+    <tr>
+      <td colspan="2" rowspan="2" class="width-auto">
+        <h3 style="margin: 0; text-transform: uppercase;">11. AI Models</h3>
+      </td>
+      <th>Section</th>
+      <td class="width-min">11</td>
+    </tr>
+  </table>
+  <div class="article-content">
+    <p><em>Analysis of AI models, particularly small, open models, as optimal tools for quantitative journalism transformation.</em></p>
+  </div>
+</section>
+<section id="section-12" class="newspaper-article">
+  <table class="header">
+    <tr>
+      <td colspan="2" rowspan="2" class="width-auto">
+        <h3 style="margin: 0; text-transform: uppercase;">12. Architecture</h3>
+      </td>
+      <th>Section</th>
+      <td class="width-min">12</td>
+    </tr>
+  </table>
+  <div class="article-content">
+    <p><em>Proposed modular architecture of specialized AI models enabling comprehensive quantitative journalism.</em></p>
+  </div>
+</section>
+<section id="section-13" class="newspaper-article">
+  <table class="header">
+    <tr>
+      <td colspan="2" rowspan="2" class="width-auto">
+        <h3 style="margin: 0; text-transform: uppercase;">13. Model Evaluation</h3>
+      </td>
+      <th>Section</th>
+      <td class="width-min">13</td>
+    </tr>
+  </table>
+  <div class="article-content">
+    <p><em>Evaluation methods and metrics for assessing the performance and validity of the mathematical framework and AI model architecture.</em></p>
+  </div>
+</section>
+<section id="section-14" class="newspaper-article">
+  <table class="header">
+    <tr>
+      <td colspan="2" rowspan="2" class="width-auto">
+        <h3 style="margin: 0; text-transform: uppercase;">14. Conclusion</h3>
+      </td>
+      <th>Section</th>
+      <td class="width-min">14</td>
+    </tr>
+  </table>
+  <div class="article-content">
+    <p><strong>Summary of Contributions:</strong> This paper has established a mathematical framework for defining news using multivariable calculus and proposed an architecture of AI models to enable quantitative journalism. Key findings include:</p>
+    <ul class="incremental">
+      <li>News can be rigorously modeled as a function: X = N(E, P, t, Ψ)</li>
+      <li>The emotional dimension Ψ distinguishes news from factual reporting</li>
+      <li>Journalists must evolve into highly advanced data analysts</li>
+      <li>AI models, particularly small, open models, are optimal tools for this transformation</li>
+      <li>A modular architecture of specialized models can enable comprehensive quantitative journalism</li>
+    </ul>
+    <p><strong>Key Findings:</strong> The framework enables quantitative analysis of news characteristics, systematic comparison of news stories, predictive modeling of news value, sensitivity analysis of contributing factors, and integration and aggregation across domains.</p>
+    <p>The intentional appeal to emotion (Ψ ≠ 0) is a defining characteristic of news, quantifiable through physiological measures and computational sentiment analysis. The transformation of journalism requires journalists to become data analysts who apply mathematical frameworks, compute partial derivatives and integrals, use computational tools, and maintain transparency and reproducibility.</p>
+  </div>
+</section>
+<h2 id="bibliography">Bibliography</h2>
+<p>The thesis includes an extensive bibliography with 940+ references covering:</p>
+<ul class="incremental">
+  <li>Journalism theory and news definition</li>
+  <li>Multivariable calculus and mathematical modeling</li>
+  <li>Emotional quantification (physiological and sentiment analysis)</li>
+  <li>Time series analysis</li>
+  <li>Media studies and communication theory</li>
+  <li>Data science and computational methods</li>
+  <li>Neuroscience and brain information prioritization</li>
+  <li>Cognitive biases and news consumption</li>
+</ul>
+<p><em>Full bibliography available in the LaTeX source files.</em></p>
+<nav>
+<p><a href="/writing">← Back to Writing Portfolio</a> | <a href="/"><svg class="home-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M11.293 3.293a1 1 0 0 1 1.414 0l6 6 2 2a1 1 0 0 1-1.414 1.414L19 12.414V19a2 2 0 0 1-2 2h-3a1 1 0 0 1-1-1v-3h-2v3a1 1 0 0 1-1 1H7a2 2 0 0 1-2-2v-6.586l-.293.293a1 1 0 0 1-1.414-1.414l2-2 6-6Z" clip-rule="evenodd"/></svg> Home</a></p>
+</nav>
+</div>
+  <script src="/src/index.js"></script>
+  <script>
+(function () {
+  var STORAGE_KEY = 'thesis-unlocked';
+  var CORRECT_PASSWORD = '42';
+  var gate = document.getElementById('password-gate');
+  var content = document.getElementById('thesis-content');
+  var form = document.getElementById('password-form');
+  var input = document.getElementById('thesis-password');
+  var errorEl = document.getElementById('password-gate-error');
+
+  function showContent() {
+    gate.style.display = 'none';
+    content.classList.add('unlocked');
+  }
+
+  if (sessionStorage.getItem(STORAGE_KEY) === '1') {
+    showContent();
+    return;
+  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    errorEl.hidden = true;
+    if (input.value === CORRECT_PASSWORD && CORRECT_PASSWORD.length > 0) {
+      sessionStorage.setItem(STORAGE_KEY, '1');
+      showContent();
+    } else {
+      errorEl.textContent = 'Incorrect password.';
+      errorEl.hidden = false;
+    }
+  });
+})();
+  </script>
+</body>
+</html>

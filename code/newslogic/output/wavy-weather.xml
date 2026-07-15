@@ -1,0 +1,683 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	xmlns:dcterms="http://purl.org/dc/terms/"
+>
+
+<channel>
+	<title>Weather | WAVY.com</title>
+	<atom:link href="https://www.wavy.com/weather/feed/" rel="self" type="application/rss+xml" />
+	<link>https://www.wavy.com</link>
+	<description>Hampton Roads Virginia and Northeastern North Carolina News, Weather, Traffic and Sports.</description>
+	<lastBuildDate>Thu, 01 Jan 2026 22:52:15 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.8.3</generator>
+
+<image>
+	<url>https://www.wavy.com/wp-content/uploads/sites/3/2020/06/cropped-wavy-icon-2.jpg?w=32</url>
+	<title>Weather | WAVY.com</title>
+	<link>https://www.wavy.com</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+	<item>
+		<title>Brian&#039;s Boating and Boarding Forecast: Jan 2-4</title>
+		<link>https://www.wavy.com/blogs/weather-blog/brians-boating-and-boarding-forecast-jan-2-4/</link>
+		
+		<dc:creator><![CDATA[Brian Michigan]]></dc:creator>
+		<pubDate>Thu, 01 Jan 2026 22:41:29 +0000</pubDate>
+		<category><![CDATA[Weather Blog]]></category>		<category><![CDATA[Blogs]]></category>
+		<category><![CDATA[Weather]]></category>
+		
+		<category><![CDATA[active weather]]></category>
+		<category><![CDATA[beach forecast]]></category>
+		<category><![CDATA[boating]]></category>
+		<category><![CDATA[boating forecast]]></category>
+		<category><![CDATA[surf forecast]]></category>
+		<category><![CDATA[surfing]]></category>
+		<category><![CDATA[weather]]></category>
+		<category><![CDATA[weather explainers]]></category>
+		<category><![CDATA[weather forecast]]></category>
+		<category><![CDATA[weather pattern]]></category>
+		<category><![CDATA[weekend forecast]]></category>
+		<guid isPermaLink="false">https://www.wavy.com/?p=2987382</guid>
+
+					<description><![CDATA[Check the forecast before heading out on the water this weekend.]]></description>
+		
+		
+		
+		<enclosure url="https://www.wavy.com/wp-content/uploads/sites/3/2026/01/Wave-Heights-Up-Close3.png?w=900" type="image/png" length="3077817" />
+<dcterms:modified>2026-01-01T22:52:15+00:00</dcterms:modified>
+	</item>
+		<item>
+		<title>Blog: Dry weather in the forecast for the new year</title>
+		<link>https://www.wavy.com/blogs/weather-blog/blog-dry-weather-in-the-forecast-for-the-new-year/</link>
+		
+		<dc:creator><![CDATA[Brian Michigan]]></dc:creator>
+		<pubDate>Wed, 31 Dec 2025 14:18:43 +0000</pubDate>
+		<category><![CDATA[Weather Blog]]></category>		<category><![CDATA[Blogs]]></category>
+		<category><![CDATA[Weather]]></category>
+		
+		<category><![CDATA[2026]]></category>
+		<category><![CDATA[active weather]]></category>
+		<category><![CDATA[cool]]></category>
+		<category><![CDATA[dry weather]]></category>
+		<category><![CDATA[holiday forecast]]></category>
+		<category><![CDATA[new years]]></category>
+		<category><![CDATA[new years forecast]]></category>
+		<category><![CDATA[weather]]></category>
+		<category><![CDATA[weather explainers]]></category>
+		<category><![CDATA[weather forecast]]></category>
+		<category><![CDATA[weather pattern]]></category>
+		<category><![CDATA[wind]]></category>
+		<category><![CDATA[windy]]></category>
+		<guid isPermaLink="false">https://www.wavy.com/?p=2986252</guid>
+
+					<description><![CDATA[Dry and windy weather is in play for the new year!]]></description>
+		
+		
+		
+		<enclosure url="https://www.wavy.com/wp-content/uploads/sites/3/2025/12/Wind-Gust-FutureTrak2-1.png?w=900" type="image/png" length="3968670" />
+<dcterms:modified>2025-12-31T14:18:45+00:00</dcterms:modified>
+	</item>
+		<item>
+		<title>Blog: Back to that winter chill</title>
+		<link>https://www.wavy.com/blogs/weather-blog/blog-back-to-that-winter-chill/</link>
+		
+		<dc:creator><![CDATA[Kristy Steward]]></dc:creator>
+		<pubDate>Tue, 30 Dec 2025 11:06:32 +0000</pubDate>
+		<category><![CDATA[Weather Blog]]></category>		<category><![CDATA[Blogs]]></category>
+		<category><![CDATA[Weather]]></category>
+		
+		<category><![CDATA[Forecast]]></category>
+		<category><![CDATA[weather]]></category>
+		<category><![CDATA[weather forecast]]></category>
+		<guid isPermaLink="false">https://www.wavy.com/?p=2985337</guid>
+
+					<description><![CDATA[Back to winter with below-normal temperatures.]]></description>
+		
+		
+		
+		<enclosure url="https://www.wavy.com/wp-content/uploads/sites/3/2025/12/Wind-Chill-FutureTrak-3.png?w=900" type="image/png" length="3441360" />
+<dcterms:modified>2025-12-30T11:32:21+00:00</dcterms:modified>
+	</item>
+		<item>
+		<title>Blog: Big changes from a cold front today</title>
+		<link>https://www.wavy.com/blogs/weather-blog/blog-big-changes-from-a-cold-front-today/</link>
+		
+		<dc:creator><![CDATA[Kristy Steward]]></dc:creator>
+		<pubDate>Mon, 29 Dec 2025 14:45:59 +0000</pubDate>
+		<category><![CDATA[Weather Blog]]></category>		<category><![CDATA[Blogs]]></category>
+		<category><![CDATA[Weather]]></category>
+		
+		<category><![CDATA[Forecast]]></category>
+		<category><![CDATA[weather]]></category>
+		<category><![CDATA[weather forecast]]></category>
+		<guid isPermaLink="false">https://www.wavy.com/?p=2984565</guid>
+
+					<description><![CDATA[A cold front brings winds, rain, and much colder air to close out 2025.]]></description>
+		
+		
+		
+		<enclosure url="https://www.wavy.com/wp-content/uploads/sites/3/2025/12/Wind-Gust-FutureTrak-1.png?w=900" type="image/png" length="4045950" />
+<dcterms:modified>2025-12-29T14:46:02+00:00</dcterms:modified>
+	</item>
+		<item>
+		<title>Blog: Brief rise in temperatures</title>
+		<link>https://www.wavy.com/blogs/weather-blog/blog-brief-rise-in-temperatures/</link>
+		
+		<dc:creator><![CDATA[Kristy Steward]]></dc:creator>
+		<pubDate>Sun, 28 Dec 2025 15:04:13 +0000</pubDate>
+		<category><![CDATA[Weather Blog]]></category>		<category><![CDATA[Blogs]]></category>
+		<category><![CDATA[Weather]]></category>
+		
+		<category><![CDATA[Forecast]]></category>
+		<category><![CDATA[weather]]></category>
+		<category><![CDATA[weather forecast]]></category>
+		<guid isPermaLink="false">https://www.wavy.com/?p=2984024</guid>
+
+					<description><![CDATA[Briefly warmer Monday before a big cool down as we enter 2026.]]></description>
+		
+		
+		
+		<enclosure url="https://www.wavy.com/wp-content/uploads/sites/3/2025/12/AM-Express-Planner_KS-1.png?w=900" type="image/png" length="807870" />
+<dcterms:modified>2025-12-28T15:04:15+00:00</dcterms:modified>
+	</item>
+		<item>
+		<title>Blog: A dry, cool final weekend of 2025</title>
+		<link>https://www.wavy.com/blogs/weather-blog/blog-a-dry-cool-final-weekend-of-2025/</link>
+		
+		<dc:creator><![CDATA[Kristy Steward]]></dc:creator>
+		<pubDate>Sat, 27 Dec 2025 13:48:23 +0000</pubDate>
+		<category><![CDATA[Weather Blog]]></category>		<category><![CDATA[Blogs]]></category>
+		<category><![CDATA[Weather]]></category>
+		
+		<category><![CDATA[Forecast]]></category>
+		<category><![CDATA[travel forecast]]></category>
+		<category><![CDATA[weather]]></category>
+		<category><![CDATA[weather forecast]]></category>
+		<guid isPermaLink="false">https://www.wavy.com/?p=2983614</guid>
+
+					<description><![CDATA[Pleasant end to the year, but chilly temps most of that time.]]></description>
+		
+		
+		
+		<enclosure url="https://www.wavy.com/wp-content/uploads/sites/3/2025/12/AM-Express-Planner_KS.png?w=900" type="image/png" length="856637" />
+<dcterms:modified>2025-12-27T15:23:30+00:00</dcterms:modified>
+	</item>
+		<item>
+		<title>Recalling 2 big Dec. 26 snowfalls in region</title>
+		<link>https://www.wavy.com/weather/severe-weather/winter-weather/recalling-2-big-dec-26-snowfalls-in-region/</link>
+		
+		<dc:creator><![CDATA[Jimmy LaRoue]]></dc:creator>
+		<pubDate>Sat, 27 Dec 2025 03:22:01 +0000</pubDate>
+		<category><![CDATA[Winter Weather]]></category>		<category><![CDATA[Local News]]></category>
+		<category><![CDATA[Video]]></category>
+		<category><![CDATA[Weather]]></category>
+		
+		<guid isPermaLink="false">https://www.wavy.com/?p=2983494</guid>
+
+					<description><![CDATA[HAMPTON ROADS, Va. (WAVY) — Take a trip back in time, to a time when the Hampton Roads region had more than a foot of snow fall on the day after Christmas in two different years this century — 2004 and then again in 2010. This is a story in which we ask you if [...]]]></description>
+		
+		
+		
+		<enclosure url="https://www.wavy.com/wp-content/uploads/sites/3/2025/12/snapshot-2025-12-26T201342.407.jpg?w=900" type="image/jpeg" length="210193" />
+<dcterms:modified>2025-12-27T03:27:03+00:00</dcterms:modified>
+	</item>
+		<item>
+		<title>Blog: Below-normal temperatures return</title>
+		<link>https://www.wavy.com/blogs/weather-blog/blog-below-normal-temperatures-return/</link>
+		
+		<dc:creator><![CDATA[Kristy Steward]]></dc:creator>
+		<pubDate>Fri, 26 Dec 2025 14:14:18 +0000</pubDate>
+		<category><![CDATA[Weather Blog]]></category>		<category><![CDATA[Blogs]]></category>
+		<category><![CDATA[Weather]]></category>
+		
+		<category><![CDATA[Forecast]]></category>
+		<category><![CDATA[weather]]></category>
+		<category><![CDATA[weather forecast]]></category>
+		<guid isPermaLink="false">https://www.wavy.com/?p=2983015</guid>
+
+					<description><![CDATA[Back to below-normal temperatures for quite a while.]]></description>
+		
+		
+		
+		<enclosure url="https://www.wavy.com/wp-content/uploads/sites/3/2025/12/NORFOLK-TODAY-CLOUDY.png?w=900" type="image/png" length="2382893" />
+<dcterms:modified>2025-12-26T14:14:19+00:00</dcterms:modified>
+	</item>
+		<item>
+		<title>Blog: Temperature swings as Winter begins</title>
+		<link>https://www.wavy.com/blogs/weather-blog/blog-temperature-swings-as-winter-begins/</link>
+		
+		<dc:creator><![CDATA[Kristy Steward]]></dc:creator>
+		<pubDate>Sun, 21 Dec 2025 14:58:49 +0000</pubDate>
+		<category><![CDATA[Weather Blog]]></category>		<category><![CDATA[Blogs]]></category>
+		<category><![CDATA[Weather]]></category>
+		
+		<category><![CDATA[Forecast]]></category>
+		<category><![CDATA[weather]]></category>
+		<category><![CDATA[weather forecast]]></category>
+		<guid isPermaLink="false">https://www.wavy.com/?p=2978822</guid>
+
+					<description><![CDATA[Warmer today, cool Monday, then a warming trend.]]></description>
+		
+		
+		
+		<enclosure url="https://www.wavy.com/wp-content/uploads/sites/3/2025/12/WINTER-SOLSTICE.png?w=900" type="image/png" length="2841557" />
+<dcterms:modified>2025-12-21T14:58:51+00:00</dcterms:modified>
+	</item>
+		<item>
+		<title>Blog: Not a bad weekend, some temp swings</title>
+		<link>https://www.wavy.com/blogs/weather-blog/blog-not-a-bad-weekend-some-temp-swings/</link>
+		
+		<dc:creator><![CDATA[Kristy Steward]]></dc:creator>
+		<pubDate>Sat, 20 Dec 2025 14:36:43 +0000</pubDate>
+		<category><![CDATA[Weather Blog]]></category>		<category><![CDATA[Blogs]]></category>
+		<category><![CDATA[Weather]]></category>
+		
+		<category><![CDATA[Forecast]]></category>
+		<category><![CDATA[weather]]></category>
+		<category><![CDATA[weather forecast]]></category>
+		<guid isPermaLink="false">https://www.wavy.com/?p=2978283</guid>
+
+					<description><![CDATA[Up and down temperatures start with a chilly Saturday.]]></description>
+		
+		
+		
+		<enclosure url="https://www.wavy.com/wp-content/uploads/sites/3/2025/12/NATL.-TRAVEL-FUTURETRAK-NO-WORDS.png?w=900" type="image/png" length="3309368" />
+<dcterms:modified>2025-12-20T14:36:45+00:00</dcterms:modified>
+	</item>
+		<item>
+		<title>Blog: Cooldown on the way as cold front moves through</title>
+		<link>https://www.wavy.com/blogs/weather-blog/blog-cooldown-on-the-way-as-cold-front-moves-through/</link>
+		
+		<dc:creator><![CDATA[Brian Michigan]]></dc:creator>
+		<pubDate>Fri, 19 Dec 2025 14:32:05 +0000</pubDate>
+		<category><![CDATA[Weather Blog]]></category>		<category><![CDATA[Blogs]]></category>
+		<category><![CDATA[Local News]]></category>
+		<category><![CDATA[Video]]></category>
+		<category><![CDATA[Weather]]></category>
+		
+		<category><![CDATA[active weather]]></category>
+		<category><![CDATA[cold]]></category>
+		<category><![CDATA[warm]]></category>
+		<category><![CDATA[weather]]></category>
+		<category><![CDATA[weather explainers]]></category>
+		<category><![CDATA[weather forecast]]></category>
+		<category><![CDATA[weather pattern]]></category>
+		<category><![CDATA[weekend forcast]]></category>
+		<category><![CDATA[weekend weather]]></category>
+		<category><![CDATA[windy]]></category>
+		<guid isPermaLink="false">https://www.wavy.com/?p=2977166</guid>
+
+					<description><![CDATA[A cold front has been moving through Hampton Roads this morning allowing for heavy rain and wind at times. This dynamic system is expected to move out this afternoon and give way to abundant sunshine. Despite the sunshine this afternoon, temperatures behind the front are going to start cooling through the 50s. It will likely [...]]]></description>
+		
+		
+		
+		<enclosure url="https://www.wavy.com/wp-content/uploads/sites/3/2025/12/TEMPERATURE-TREND-11.png?w=900" type="image/png" length="932851" />
+<dcterms:modified>2025-12-19T15:46:59+00:00</dcterms:modified>
+	</item>
+		<item>
+		<title>Blog: Heavy rain to impact Hampton Roads tonight</title>
+		<link>https://www.wavy.com/blogs/weather-blog/blog-heavy-rain-to-impact-hampton-roads-tonight/</link>
+		
+		<dc:creator><![CDATA[Brian Michigan]]></dc:creator>
+		<pubDate>Thu, 18 Dec 2025 14:29:16 +0000</pubDate>
+		<category><![CDATA[Weather Blog]]></category>		<category><![CDATA[Blogs]]></category>
+		<category><![CDATA[Weather]]></category>
+		
+		<category><![CDATA[active weather]]></category>
+		<category><![CDATA[cool weather]]></category>
+		<category><![CDATA[heavy rain]]></category>
+		<category><![CDATA[rain]]></category>
+		<category><![CDATA[warm weather]]></category>
+		<category><![CDATA[weather]]></category>
+		<category><![CDATA[weather explainers]]></category>
+		<category><![CDATA[weather forecast]]></category>
+		<category><![CDATA[weather pattern]]></category>
+		<category><![CDATA[wind]]></category>
+		<category><![CDATA[windy]]></category>
+		<guid isPermaLink="false">https://www.wavy.com/?p=2975541</guid>
+
+					<description><![CDATA[We have another mild day ahead of us across Hampton Roads as southerly winds will keep temperatures above normal for this time of year. This warmth is all ahead of a cold front which will move through overnight tonight and into Friday morning. In this radar and satellite image, you can see the cold front [...]]]></description>
+		
+		
+		
+		<enclosure url="https://www.wavy.com/wp-content/uploads/sites/3/2025/12/CLOUDS_PRECIP_CHOOSE-GRAF-NAM-HRRR_WIDE2.png?w=900" type="image/png" length="3793715" />
+<dcterms:modified>2025-12-18T14:29:17+00:00</dcterms:modified>
+	</item>
+		<item>
+		<title>Hampton Roads organizations aid the homeless amid frigid temperatures</title>
+		<link>https://www.wavy.com/news/local-news/portsmouth/organizations-helping-homeless-keep-busy-as-temperatures-plummet/</link>
+		
+		<dc:creator><![CDATA[Angela Bohon]]></dc:creator>
+		<pubDate>Sun, 14 Dec 2025 19:43:43 +0000</pubDate>
+		<category><![CDATA[Portsmouth]]></category>		<category><![CDATA[Local News]]></category>
+		
+		<category><![CDATA[Video]]></category>
+		<category><![CDATA[Weather]]></category>
+		<category><![CDATA[Winter Weather]]></category>
+		<guid isPermaLink="false">https://www.wavy.com/?p=2970628</guid>
+
+					<description><![CDATA[With wind chills expected to drop into the single digits Sunday,
+non-profit organizations and churches across Hampton Roads are working diligently to provide safe, warm shelter for the homeless population.]]></description>
+		
+		
+		
+		<enclosure url="https://www.wavy.com/wp-content/uploads/sites/3/2025/12/Angela-story-photo.jpg?w=900" type="image/jpeg" length="365037" />
+<dcterms:modified>2025-12-15T13:49:32+00:00</dcterms:modified>
+	</item>
+		<item>
+		<title>Blog: Dangerous cold today</title>
+		<link>https://www.wavy.com/blogs/weather-blog/blog-dangerous-cold-today/</link>
+		
+		<dc:creator><![CDATA[Kristy Steward]]></dc:creator>
+		<pubDate>Sun, 14 Dec 2025 13:56:36 +0000</pubDate>
+		<category><![CDATA[Weather Blog]]></category>		<category><![CDATA[Blogs]]></category>
+		<category><![CDATA[Breaking Weather Email Alerts]]></category>
+		<category><![CDATA[Local News]]></category>
+		<category><![CDATA[News]]></category>
+		<category><![CDATA[Video]]></category>
+		<category><![CDATA[Weather]]></category>
+		
+		<category><![CDATA[Arctic blast]]></category>
+		<category><![CDATA[cold advisory]]></category>
+		<category><![CDATA[Forecast]]></category>
+		<category><![CDATA[weather]]></category>
+		<category><![CDATA[weather forecast]]></category>
+		<guid isPermaLink="false">https://www.wavy.com/?p=2970486</guid>
+
+					<description><![CDATA[An arctic front brings us dangerously cold temperatures Sunday.]]></description>
+		
+		
+		
+		<enclosure url="https://www.wavy.com/wp-content/uploads/sites/3/2025/12/Wind-Chill-FutureTrak.png?w=900" type="image/png" length="3824607" />
+<dcterms:modified>2025-12-15T13:38:11+00:00</dcterms:modified>
+	</item>
+		<item>
+		<title>Blog: Warmer Saturday, Arctic Blast Sunday</title>
+		<link>https://www.wavy.com/blogs/weather-blog/blog-warmer-saturday-arctic-blast-sunday/</link>
+		
+		<dc:creator><![CDATA[Kristy Steward]]></dc:creator>
+		<pubDate>Sat, 13 Dec 2025 14:21:19 +0000</pubDate>
+		<category><![CDATA[Weather Blog]]></category>		<category><![CDATA[Blogs]]></category>
+		<category><![CDATA[Weather]]></category>
+		
+		<category><![CDATA[Arctic blast]]></category>
+		<category><![CDATA[Forecast]]></category>
+		<category><![CDATA[weather]]></category>
+		<category><![CDATA[weather forecast]]></category>
+		<guid isPermaLink="false">https://www.wavy.com/?p=2969698</guid>
+
+					<description><![CDATA[Nice warmer Saturday before a frigid Sunday.]]></description>
+		
+		
+		
+		<enclosure url="https://www.wavy.com/wp-content/uploads/sites/3/2025/12/FutureTrak_Main_KS_e0ce31.png?w=900" type="image/png" length="2624575" />
+<dcterms:modified>2025-12-13T14:21:21+00:00</dcterms:modified>
+	</item>
+		<item>
+		<title>Brian&#039;s Boating and Boarding Forecast: Dec 12-14</title>
+		<link>https://www.wavy.com/blogs/weather-blog/brians-boating-and-boarding-forecast-dec-12-14/</link>
+		
+		<dc:creator><![CDATA[Brian Michigan]]></dc:creator>
+		<pubDate>Thu, 11 Dec 2025 23:23:01 +0000</pubDate>
+		<category><![CDATA[Weather Blog]]></category>		<category><![CDATA[Blogs]]></category>
+		<category><![CDATA[Weather]]></category>
+		
+		<category><![CDATA[active weather]]></category>
+		<category><![CDATA[beach weather]]></category>
+		<category><![CDATA[boating]]></category>
+		<category><![CDATA[boating forecast]]></category>
+		<category><![CDATA[cool weather]]></category>
+		<category><![CDATA[surf]]></category>
+		<category><![CDATA[surf forecast]]></category>
+		<category><![CDATA[surfing]]></category>
+		<category><![CDATA[weather]]></category>
+		<category><![CDATA[weather explainers]]></category>
+		<category><![CDATA[weather forecast]]></category>
+		<category><![CDATA[weather pattern]]></category>
+		<category><![CDATA[weekend forecast]]></category>
+		<guid isPermaLink="false">https://www.wavy.com/?p=2968144</guid>
+
+					<description><![CDATA[HAMPTON ROADS, Va. (WAVY) — We are in for another cold weekend across Hampton Roads as a large dip in the jet stream has continued to provide us with below normal temperatures. With that said, if you plan on heading out on the boats or boards, dress accordingly. High temperatures Friday will likely be in [...]]]></description>
+		
+		
+		
+		<enclosure url="https://www.wavy.com/wp-content/uploads/sites/3/2025/12/Wave-Heights-Up-Close2-2.png?w=900" type="image/png" length="3244964" />
+<dcterms:modified>2025-12-12T00:59:23+00:00</dcterms:modified>
+	</item>
+		<item>
+		<title>Portsmouth Catholic students cheer early release for snow</title>
+		<link>https://www.wavy.com/news/local-news/portsmouth/portsmouth-catholic-students-cheer-early-release-for-snow/</link>
+		
+		<dc:creator><![CDATA[]]></dc:creator>
+		<pubDate>Tue, 09 Dec 2025 03:48:36 +0000</pubDate>
+		<category><![CDATA[Portsmouth]]></category>		<category><![CDATA[Education]]></category>
+		<category><![CDATA[Local News]]></category>
+		
+		<category><![CDATA[Video]]></category>
+		<category><![CDATA[Weather]]></category>
+		<guid isPermaLink="false">https://www.wavy.com/?p=2964020</guid>
+
+					<description><![CDATA[PORTSMOUTH, Va. (WAVY) — With not a drop in the sky, Portsmouth Catholic Regional School principal Donna Henry made a public address announcement Monday morning that prompted student cheers while working parents and guardians headed back to the 200-student school. "Good morning, Portsmouth Catholic, I hope you had a great day," Henry said. "I hope [...]]]></description>
+		
+		
+		
+		<enclosure url="https://www.wavy.com/wp-content/uploads/sites/3/2025/12/snapshot-2025-12-08T224415.314.jpg?w=900" type="image/jpeg" length="405523" />
+<dcterms:modified>2025-12-09T03:53:27+00:00</dcterms:modified>
+	</item>
+		<item>
+		<title>Residents prepare to handle snow</title>
+		<link>https://www.wavy.com/news/local-news/virginia-beach/residents-prepare-to-handle-snow/</link>
+		
+		<dc:creator><![CDATA[Walter Hildebrand]]></dc:creator>
+		<pubDate>Tue, 09 Dec 2025 02:21:06 +0000</pubDate>
+		<category><![CDATA[Virginia Beach]]></category>		<category><![CDATA[Local News]]></category>
+		<category><![CDATA[Video]]></category>
+		
+		<category><![CDATA[Weather]]></category>
+		<category><![CDATA[Winter Weather]]></category>
+		<guid isPermaLink="false">https://www.wavy.com/?p=2964494</guid>
+
+					<description><![CDATA[VIRGINIA BEACH, Va. (WAVY) — While the weather outside isn't exactly frightful just yet, the phones at Taylor's Do It Center in Virginia Beach "have been ringing off the hook." "We have people coming in, getting tons of snowmelt right now" said Grace Taylor of Taylor's Do It Center. "Everyone's definitely rushing out since I've [...]]]></description>
+		
+		
+		
+		<enclosure url="https://www.wavy.com/wp-content/uploads/sites/3/2025/12/snapshot-2025-12-08T211908.828.jpg?w=900" type="image/jpeg" length="518611" />
+<dcterms:modified>2025-12-09T02:26:01+00:00</dcterms:modified>
+	</item>
+		<item>
+		<title>GALLERY: Snowfall across the Hampton Roads region &#124; Dec. 8</title>
+		<link>https://www.wavy.com/weather/weather-photos/gallery-snowfall-across-the-hampton-roads-region-dec-8/</link>
+		
+		<dc:creator><![CDATA[Jane Alvarez-Wertz]]></dc:creator>
+		<pubDate>Mon, 08 Dec 2025 19:52:32 +0000</pubDate>
+		<category><![CDATA[Weather Photos]]></category>		<category><![CDATA[Breaking Weather Email Alerts]]></category>
+		<category><![CDATA[Instagram]]></category>
+		<category><![CDATA[Isle of Wight]]></category>
+		<category><![CDATA[Local News]]></category>
+		<category><![CDATA[News]]></category>
+		<category><![CDATA[Photo Galleries]]></category>
+		<category><![CDATA[Severe Weather]]></category>
+		<category><![CDATA[Weather]]></category>
+		
+		<category><![CDATA[Winter Weather]]></category>
+		<guid isPermaLink="false">https://www.wavy.com/?p=2964003</guid>
+
+					<description><![CDATA[Snow began falling - and sticking - across the Hampton Roads region Monday afternoon. WAVY viewers grabbed their cameras and started capturing the beauty of the snowfall.]]></description>
+		
+		
+		
+		<enclosure url="https://www.wavy.com/wp-content/uploads/sites/3/2025/12/giphy.gif?w=750" type="image/gif" length="54740647" />
+<dcterms:modified>2025-12-10T07:47:21+00:00</dcterms:modified>
+	</item>
+		<item>
+		<title>Winter storm prompts VDOT&#039;s 24-hour road treatment efforts</title>
+		<link>https://www.wavy.com/traffic/winter-storm-prompts-vdots-24-hour-road-treatment-efforts/</link>
+		
+		<dc:creator><![CDATA[Jane Alvarez-Wertz]]></dc:creator>
+		<pubDate>Mon, 08 Dec 2025 17:44:50 +0000</pubDate>
+		<category><![CDATA[Traffic]]></category>		<category><![CDATA[Local News]]></category>
+		<category><![CDATA[Severe Weather]]></category>
+		
+		<category><![CDATA[Weather]]></category>
+		<category><![CDATA[Winter Weather]]></category>
+		<guid isPermaLink="false">https://www.wavy.com/?p=2963806</guid>
+
+					<description><![CDATA[VDOT says it’s all hands on deck as another winter storm moves into Hampton Roads.]]></description>
+		
+		
+		
+		      <dc:creator><![CDATA[Cheyenne Pagan]]></dc:creator>
+      <dc:creator><![CDATA[Markeshia Jackson ]]></dc:creator>
+<enclosure url="https://www.wavy.com/wp-content/uploads/sites/3/2022/01/Snow-Plow2-1.jpg?w=640" type="image/jpeg" length="91036" />
+<dcterms:modified>2025-12-09T05:46:57+00:00</dcterms:modified>
+	</item>
+		<item>
+		<title>Schools, offices announce closings, delays for Tuesday</title>
+		<link>https://www.wavy.com/weather/severe-weather/winter-weather/some-schools-and-city-offices-closed-others-releasing-early-due-to-weather/</link>
+		
+		<dc:creator><![CDATA[David Lance]]></dc:creator>
+		<pubDate>Mon, 08 Dec 2025 17:15:05 +0000</pubDate>
+		<category><![CDATA[Winter Weather]]></category>		<category><![CDATA[Breaking Weather Email Alerts]]></category>
+		<category><![CDATA[Instagram]]></category>
+		<category><![CDATA[Local News]]></category>
+		<category><![CDATA[News]]></category>
+		<category><![CDATA[Severe Weather]]></category>
+		<category><![CDATA[Video]]></category>
+		<category><![CDATA[Weather]]></category>
+		
+		<guid isPermaLink="false">https://www.wavy.com/?p=2963750</guid>
+
+					<description><![CDATA[With some parts of Hampton Roads expected to see as much as five inches of snowfall, several schools and offices either announced they would be closed or dismissing early Monday.]]></description>
+		
+		
+		
+		      <dc:creator><![CDATA[Jimmy LaRoue]]></dc:creator>
+      <dc:creator><![CDATA[Cheyenne Pagan]]></dc:creator>
+<enclosure url="https://www.wavy.com/wp-content/uploads/sites/3/2025/11/GettyImages-182492432-e1763834689989.jpg?w=800" type="image/jpeg" length="105765" />
+<dcterms:modified>2025-12-09T12:36:15+00:00</dcterms:modified>
+	</item>
+		<item>
+		<title>Blog: Below average temperatures last through the weekend and beyond</title>
+		<link>https://www.wavy.com/blogs/weather-blog/blog-below-average-temperatures-last-through-the-weekend-and-beyond/</link>
+		
+		<dc:creator><![CDATA[Brian Michigan]]></dc:creator>
+		<pubDate>Sat, 06 Dec 2025 13:54:25 +0000</pubDate>
+		<category><![CDATA[Weather Blog]]></category>		<category><![CDATA[Blogs]]></category>
+		<category><![CDATA[Weather]]></category>
+		
+		<category><![CDATA[active weather]]></category>
+		<category><![CDATA[cold]]></category>
+		<category><![CDATA[cool]]></category>
+		<category><![CDATA[cool temperatures]]></category>
+		<category><![CDATA[rain]]></category>
+		<category><![CDATA[snow]]></category>
+		<category><![CDATA[weather]]></category>
+		<category><![CDATA[weather explainers]]></category>
+		<category><![CDATA[weather forecast]]></category>
+		<category><![CDATA[weekend]]></category>
+		<category><![CDATA[weekend forecast]]></category>
+		<category><![CDATA[Wintry mix]]></category>
+		<guid isPermaLink="false">https://www.wavy.com/?p=2961838</guid>
+
+					<description><![CDATA[(WAVY) — Yesterday morning featured a couple inches of snow across Hampton Roads especially along I-64 towards Williamsburg and Richmond. However, with mild air through the afternoon hours the snow was able to melt as quickly as it came. We are now left with some wet roads due in the wake of yesterdays system and [...]]]></description>
+		
+		
+		
+		<enclosure url="https://www.wavy.com/wp-content/uploads/sites/3/2025/12/EURO-LONG-RANGE1-1.png?w=900" type="image/png" length="1393019" />
+<dcterms:modified>2025-12-07T01:53:14+00:00</dcterms:modified>
+	</item>
+		<item>
+		<title>Newport News residents enjoy snow filled Friday morning</title>
+		<link>https://www.wavy.com/news/local-news/newport-news-residents-enjoy-snow-filled-friday-morning/</link>
+		
+		<dc:creator><![CDATA[Michael Rinker]]></dc:creator>
+		<pubDate>Fri, 05 Dec 2025 17:26:17 +0000</pubDate>
+		<category><![CDATA[Local News]]></category>		
+		<category><![CDATA[News]]></category>
+		<category><![CDATA[Weather]]></category>
+		<category><![CDATA[Winter Weather]]></category>
+		<category><![CDATA[Hampton]]></category>
+		<category><![CDATA[newport news]]></category>
+		<category><![CDATA[snow]]></category>
+		<category><![CDATA[Snow Days]]></category>
+		<category><![CDATA[Wavy Weather]]></category>
+		<guid isPermaLink="false">https://www.wavy.com/?p=2960764</guid>
+
+					<description><![CDATA[Many areas of Hampton Roads saw snow Friday morning, including on the Peninsula.]]></description>
+		
+		
+		
+		<enclosure url="https://www.wavy.com/wp-content/uploads/sites/3/2025/12/Snowday-1205.png?w=900" type="image/png" length="3669585" />
+<dcterms:modified>2025-12-05T17:45:55+00:00</dcterms:modified>
+	</item>
+		<item>
+		<title>PHOTO GALLERY: Snow across Hampton Roads and Northeast North Carolina</title>
+		<link>https://www.wavy.com/weather/weather-photos/photo-gallery-snow-across-hampton-roads-and-northeast-north-carolina/</link>
+		
+		<dc:creator><![CDATA[Chrysnel Banzouzi]]></dc:creator>
+		<pubDate>Fri, 05 Dec 2025 12:29:12 +0000</pubDate>
+		<category><![CDATA[Weather Photos]]></category>		<category><![CDATA[Instagram]]></category>
+		<category><![CDATA[Local News]]></category>
+		<category><![CDATA[Photo Galleries]]></category>
+		<category><![CDATA[Weather]]></category>
+		
+		<category><![CDATA[Winter Weather]]></category>
+		<guid isPermaLink="false">https://www.wavy.com/?p=2960523</guid>
+
+					<description><![CDATA[HAMPTON ROADS, Va. (WAVY) -- WAVY viewers shared photos and videos of Friday's wintry weather across Hampton Roads and Northeast North Carolina, featuring snowy landscapes. Here are some of our favorites. Check out the gallery below: To submit your snow photos, click here.]]></description>
+		
+		
+		
+		<enclosure url="https://www.wavy.com/wp-content/uploads/sites/3/2025/12/cfb926f7-fca1-4410-8636-4becd7321336.jpg?w=900" type="image/jpeg" length="2611003" />
+<dcterms:modified>2025-12-05T13:41:07+00:00</dcterms:modified>
+	</item>
+		<item>
+		<title>VDOT Crews preparing for early morning winter weather, Peninsula a priority</title>
+		<link>https://www.wavy.com/weather/severe-weather/winter-weather/vdot-crews-preparing-for-early-morning-winter-weather-peninsula-a-priority/</link>
+		
+		<dc:creator><![CDATA[Markeshia Jackson ]]></dc:creator>
+		<pubDate>Fri, 05 Dec 2025 03:42:20 +0000</pubDate>
+		<category><![CDATA[Winter Weather]]></category>		<category><![CDATA[Local News]]></category>
+		<category><![CDATA[Weather]]></category>
+		<category><![CDATA[Williamsburg]]></category>
+		
+		<guid isPermaLink="false">https://www.wavy.com/?p=2960293</guid>
+
+					<description><![CDATA[VDOT crews are paying extra close attention to the Peninsula and beyond, as residents race to prepare for this round of winter weather.]]></description>
+		
+		
+		
+		<enclosure url="https://www.wavy.com/wp-content/uploads/sites/3/2025/12/Screenshot-2025-12-04-220553.png?w=557" type="image/png" length="259096" />
+<dcterms:modified>2025-12-05T04:20:31+00:00</dcterms:modified>
+	</item>
+		<item>
+		<title>Brian&#039;s Boating and Boarding Forecast: Dec 5-7</title>
+		<link>https://www.wavy.com/blogs/weather-blog/brians-boating-and-boarding-forecast-dec-5-7/</link>
+		
+		<dc:creator><![CDATA[Brian Michigan]]></dc:creator>
+		<pubDate>Thu, 04 Dec 2025 22:58:06 +0000</pubDate>
+		<category><![CDATA[Weather Blog]]></category>		<category><![CDATA[Blogs]]></category>
+		<category><![CDATA[Weather]]></category>
+		
+		<category><![CDATA[boating]]></category>
+		<category><![CDATA[boating forecast]]></category>
+		<category><![CDATA[rain]]></category>
+		<category><![CDATA[snow]]></category>
+		<category><![CDATA[surf]]></category>
+		<category><![CDATA[surf forecast]]></category>
+		<category><![CDATA[surfing]]></category>
+		<category><![CDATA[surfing forecast]]></category>
+		<category><![CDATA[weather]]></category>
+		<category><![CDATA[weather forecast]]></category>
+		<category><![CDATA[weather pattern]]></category>
+		<category><![CDATA[weekend forecast]]></category>
+		<guid isPermaLink="false">https://www.wavy.com/?p=2960031</guid>
+
+					<description><![CDATA[A storm system is set to move through on Friday bringing rain, snow, and wind to parts of Hampton Roads. This system will make boating conditions a bit rough at times but for the surfers we are watching for a few opportunities to score some waves. The snowfall moves into the northern portions of the [...]]]></description>
+		
+		
+		
+		<enclosure url="https://www.wavy.com/wp-content/uploads/sites/3/2025/12/Wave-Heights-Up-Close.png?w=900" type="image/png" length="3033106" />
+<dcterms:modified>2025-12-04T22:58:08+00:00</dcterms:modified>
+	</item>
+		<item>
+		<title>School closures and delays Friday, with wintry weather on the way</title>
+		<link>https://www.wavy.com/weather/severe-weather/winter-weather/school-closures-and-delays-friday-with-wintry-weather-on-the-way/</link>
+		
+		<dc:creator><![CDATA[Jane Alvarez-Wertz]]></dc:creator>
+		<pubDate>Thu, 04 Dec 2025 21:33:38 +0000</pubDate>
+		<category><![CDATA[Winter Weather]]></category>		<category><![CDATA[10 On Your Side]]></category>
+		<category><![CDATA[Breaking Weather Email Alerts]]></category>
+		<category><![CDATA[Education]]></category>
+		<category><![CDATA[Instagram]]></category>
+		<category><![CDATA[Local News]]></category>
+		<category><![CDATA[News]]></category>
+		<category><![CDATA[Severe Weather]]></category>
+		<category><![CDATA[Weather]]></category>
+		
+		<guid isPermaLink="false">https://www.wavy.com/?p=2959902</guid>
+
+					<description><![CDATA[Local school districts, businesses, and agencies are closely monitoring the forecast. Thursday afternoon, several began announcing delays and closures for Friday, Dec. 5. Some school systems are moving to a virtual learning day.]]></description>
+		
+		
+		
+		      <dc:creator><![CDATA[David Lance]]></dc:creator>
+<enclosure url="https://www.wavy.com/wp-content/uploads/sites/3/2025/12/snapshot-12.jpg?w=900" type="image/jpeg" length="525035" />
+<dcterms:modified>2025-12-05T10:27:24+00:00</dcterms:modified>
+	</item>
+	</channel>
+</rss>

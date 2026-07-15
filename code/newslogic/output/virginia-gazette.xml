@@ -1,0 +1,1476 @@
+			<!DOCTYPE html>
+			<html lang="en-US">
+			<head>
+				<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"><meta charset="UTF-8"><meta name="application-name" id="app-name" content="dailypress"><meta name="viewport" content="width=device-width, initial-scale=1">			<meta name="msvalidate.01" content="4B535F7EB2971D1FCBA5D1D3E3E292C3" />
+					<meta name="robots" content="noarchive" />
+					<meta name="tdm-reservation" content="1" />
+		<title>Virginia Gazette</title>
+<link rel='preload' as='image' fetchpriority='high' href='https://www.dailypress.com/wp-content/uploads/2023/05/Virginia-Gazette-logo2-1.jpg' type='image/jpeg' />
+<link rel='preload' as='image' fetchpriority='high' href='https://www.dailypress.com/wp-content/uploads/2023/04/Daily_Press_logo-vdp-full-black.png' type='image/png' />
+<meta name='robots' content='max-image-preview:large' />
+<script type='text/javascript'>
+/* <![CDATA[ */
+var scriptHelpers = {"staticPath":"https:\/\/www.dailypress.com\/wp-content\/themes\/assets\/static\/"};
+/* ]]> */
+</script>
+		<style>body{--primary:#3f51b5;--secondary:#eeff41;--tertiary:#303f9f;--primary-light:#5869ca;--primary-dark:#32408f;--primary-darker:#171e44;--font-primary:"Noto Serif",Helvetica,serif;--font-secondary:"Noto Sans",Helvetica,sans-serif}:root{--primary:#006fb7;--secondary:#d70000;--tertiary:#ffc518;--primary-lighter:#47b6ff;--primary-light:#0093f5;--primary-dark:#00568f;--primary-darker:#003d66;--site-branding-primary:#00102e;--site-branding-secondary:#233452;--site-branding-tertiary:#3d5268;--site-branding-gray-100:#38322a;--site-branding-gray-200:#5d5b5a;--site-branding-gray-300:#9d9a98;--site-branding-gray-400:#aaa7a4;--site-branding-gray-500:#d7d6d2;--site-branding-gray-600:#f1efeb;--primary-obit:#8d092d;--primary-obit-light:#c00c3d;--secondary-obit:#946c82;--tertiary-obit:#227db4;--quaternary-obit:#b3bc9c}:root{--site-branding-font-family-headers:"Noto Serif",serif;--site-branding-font-family-copy:"Noto Sans",sans-serif;--site-branding-font-style:normal;--site-branding-font-size-copy:0.875rem;--site-branding-font-size-headline:1.812rem;--site-branding-font-size-subheadline:1.125rem}.icon-arrow-down,.icon-hamburger,.icon-home3,.icon-plus,.icon-search,.pushnav .menu-item-has-children:not(.nav-alt-links)>a:before{-webkit-box-align:center;-ms-flex-align:center;align-items:center;display:-webkit-box;display:-ms-flexbox;display:flex;font-family:icomoon;font-style:normal;font-variant:normal;font-weight:400;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;line-height:1;speak:none;text-transform:none;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.icon-arrow-down:before,.icon-hamburger:before,.icon-home3:before,.icon-plus:before,.icon-search:before,.pushnav .menu-item-has-children:not(.nav-alt-links)>a:before{color:inherit;font-size:inherit}:root{--icon-access-time:"";--icon-amazon:"";--icon-android:"";--icon-appleinc:"";--icon-arrow-down:"";--icon-arrow-left:"";--icon-arrow-right:"";--icon-arrow-up:"";--icon-attachment:"";--icon-backward2:"";--icon-bell-cross:"";--icon-bell2:"";--icon-bell3:"";--icon-bin:"";--icon-bookmark2:"";--icon-bookmark3:"";--icon-bookmarks:"";--icon-bubble2:"";--icon-bubbles3:"";--icon-calendar-empty:"";--icon-camera:"";--icon-cart-add2:"";--icon-cart-add:"";--icon-cart-remove:"";--icon-cart4:"";--icon-cart5:"";--icon-checkmark3:"";--icon-circle-small:"";--icon-city:"";--icon-close:"";--icon-cog:"";--icon-coin-dollar:"";--icon-comment:"";--icon-content_copy:"";--icon-credit-card2:"󮤢";--icon-dollar:"";--icon-download4:"";--icon-email:"";--icon-enlarge2:"";--icon-enlarge:"";--icon-equalizer2:"";--icon-eye-blocked:"";--icon-eye:"";--icon-facebook:"";--icon-feed:"";--icon-film4:"";--icon-first:"";--icon-floppy-disk:"";--icon-flower2:"";--icon-flower:"";--icon-gift2-share-01:"";--icon-gift2:"";--icon-google-plus:"";--icon-google:"";--icon-graduation:"";--icon-grid2:"";--icon-hamburger:"";--icon-headset:"";--icon-heart3:"";--icon-heart4:"";--icon-home3:"";--icon-info2:"";--icon-info:"";--icon-instagram:"";--icon-ios_share:"";--icon-key:"";--icon-last:"";--icon-library2:"";--icon-library:"";--icon-link:"";--icon-linkedin:"";--icon-location:"";--icon-magazine:"";--icon-map4:"";--icon-meter-medium:"";--icon-minus:"";--icon-mng-podcast1:"";--icon-mng-podcast:"";--icon-mobile:"";--icon-more2:"";--icon-music5:"";--icon-mute:"";--icon-new-tab:"";--icon-newspaper:"";--icon-next2:"";--icon-next:"";--icon-notification2:"";--icon-notification:"";--icon-office:"";--icon-paperplane:"";--icon-pause2:"";--icon-paypal:"";--icon-pen6:"";--icon-phone2:"";--icon-phone:"";--icon-piggy-bank:"";--icon-pinterest-p:"";--icon-play-arrow:"";--icon-plus:"";--icon-previous2:"";--icon-print:"";--icon-question3:"";--icon-question4:"";--icon-reddit:"";--icon-search:"";--icon-share-alt:"";--icon-share-more:"";--icon-share2:"";--icon-shrink2:"";--icon-shrink7:"";--icon-slideshow:"";--icon-sms:"";--icon-soundcloud:"";--icon-spam:"";--icon-sphere:"";--icon-spotify:"";--icon-stackoverflow:"";--icon-star-empty2:"";--icon-star-empty:"";--icon-star-full:"";--icon-stitcher:"";--icon-stop2:"";--icon-store:"";--icon-stumbleupon:"";--icon-thumbs-down2:"";--icon-thumbs-up2:"";--icon-tree2:"";--icon-tree:"";--icon-tumblr:"";--icon-twitter:"";--icon-unlink:"";--icon-unlocked:"";--icon-upload4:"";--icon-user-minus:"";--icon-user-plus:"";--icon-user4:"";--icon-user:"";--icon-users:"";--icon-vimeo:"";--icon-volume-decrease:"";--icon-volume-high:"";--icon-volume-increase:"";--icon-volume-low:"";--icon-volume-medium:"";--icon-volume-mute:"";--icon-warning2:"";--icon-warning:"";--icon-windows8:"";--icon-x:"";--icon-yelp:"";--icon-youtube:"";--icon-zoom-in2:"";--icon-zoom-out2:"";--icon-book:"";--icon-book3:"e993";--icon-quill3:"";--icon-quill4:"";--icon-google-color:"";--icon-padlock:"";--icon-bluesky:"";--icon-arrow-outline-up:"";--icon-arrow-outline-right:"";--icon-arrow-outline-left:"";--icon-arrow-outline-down:"";--icon-users4:"";--icon-heart-broken2:"";--icon-arrow-up11:"";--icon-arrow-right11:"";--icon-arrow-down11:"";--icon-arrow-left11:"";--icon-threads:"";--icon-swap:"";--icon-checkmark-circle:"";--icon-radio-unchecked:""}.icon-arrow-down:before{content:var(--icon-arrow-down)}.icon-hamburger:before{content:var(--icon-hamburger)}.icon-home3:before{content:var(--icon-home3)}.icon-plus:before{content:var(--icon-plus)}.icon-search:before{content:var(--icon-search)}a,article,aside,body,div,figure,form,h1,h2,h3,header,html,i,iframe,img,label,li,nav,p,section,span,ul{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}article,aside,figure,header,nav,section{display:block}body{line-height:1}ul{list-style:none}button{border:none;background-color:rgba(0,0,0,0);font-size:inherit;appearance:none;-webkit-appearance:none;-moz-appearance:none}#content,.trending-bar .trending-bar-wrapper{max-width:81.25em;margin:0 auto;padding:0 .625rem}html{-webkit-box-sizing:border-box;box-sizing:border-box;font-size:100%}html *,html :after,html :before{-webkit-box-sizing:inherit;box-sizing:inherit}html a{text-decoration:none}body{font-family:Helvetica,sans-serif;font-size:100%;margin:0;text-shadow:1px 1px 1px rgba(0,0,0,.004);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}h1{font:normal 600 2.25em/1.1666666667 "Noto Serif",Helvetica,serif}h2{font:normal 600 1.875em/1.0666666667 "Noto Serif",Helvetica,serif}h3{font:normal 600 1.5em/1.1666666667 "Noto Serif",Helvetica,serif}a{color:inherit}img{display:block;height:auto;max-width:100%}body,html{-webkit-overflow-scrolling:touch}#page{position:relative;overflow-x:initial;overflow-y:visible}#content{margin-bottom:1em;margin-top:1em}@media (max-width:64.9375em){#content{margin-top:1em}}#content:after,.archive-view:after,.site-header:after,.trending-bar .trending-bar-wrapper:after,form:after{clear:both;content:"";display:table}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}.newsletter-simple a{font:normal 400 .9375em/1.0666666667 Noto Sans,Helvetica,sans-serif;border:1px solid rgba(0,0,0,.15);padding:.75em 1.0625em}h1.section-title{font:normal 400 1.875em/1 "Noto Serif",Helvetica,serif;display:inline-block;margin-bottom:1.0666666667em;text-align:center;text-transform:uppercase;width:100%;overflow:hidden}input[type=text]{border:1px solid #9d9a98;border-radius:0;color:#1f1e1c;height:30px;padding:.5em .625em}.search-form [class^=icon-]{color:var(--primary);font-size:1em;position:absolute;right:.3125em;top:.4375em}a img{border:none}figure{font-size:1rem}.image-wrapper{height:0;padding-bottom:56.25%;overflow:hidden;position:relative;width:100%}.image-wrapper img{left:0;position:absolute;top:0;width:100%}.archive-view>*{margin-bottom:.5em}.archive-view>:last-child{margin-bottom:0}.archive-view h3{margin-top:0}.archive-view header{margin-bottom:.25em}.archive-view figure{display:block;position:relative}.archive-view .excerpt{font:normal 400 1em/1.375 Noto Sans,Helvetica,sans-serif}.feature-large figure{margin-bottom:.5em;width:100%}.feature-small figure{width:8.75em;height:-webkit-fit-content;height:-moz-fit-content;height:fit-content}.footer-menus a{color:#000}.site-footer .menu-item-has-children .expander{position:absolute;display:none;top:0;right:0;width:2.9375em;height:2.9375em;text-align:center;z-index:5}.site-footer .menu-item-has-children .expander a{position:relative;display:inline-block;line-height:3;vertical-align:middle}@media (max-width:39.9375em){.site-footer .menu-item-has-children .expander{display:block}}.dfm-site-info .colophon ul{-webkit-box-align:center;-ms-flex-align:center;align-items:center;display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex;margin-top:1.25em}@media (max-width:49.9375em){.dfm-site-info .colophon ul{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap}}.dfm-site-info .colophon .footer-flex-menu-wrap ul{display:contents;margin:0 auto 0 0;padding:0;width:auto}.site-header{background-color:#fff;position:relative}.site-header .input-wrapper{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;height:100%;width:95%;margin:0 auto}.site-header #search-bar{background:#fbfbfb;position:absolute;right:0;-webkit-box-shadow:0 3px 3px rgba(0,0,0,.25);box-shadow:0 3px 3px rgba(0,0,0,.25);border-top:2px solid rgba(0,0,0,.5);display:none;height:4rem;margin:4rem auto;z-index:100;width:100%}.site-header #search-bar input[type=text]{width:92%;padding:1.3em .3em;outline:none;font-size:.9375em}@media (max-width:49.9375em){.site-header #search-bar input[type=text]{font-size:1rem}}.site-header .search-button-container{width:5%;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end}.site-header .search-button-container .search-button{width:75px;font-size:.9375rem;font-weight:600;color:#fff;background:var(--primary);border-radius:5px;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;margin:0 auto}.site-header .icon-search,.site-header .search-button-container .search-button{height:2rem;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center}.site-header .icon-search{color:#1f1e1c;font-size:1.2rem;-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start;position:relative;top:0}@media (min-width:65em){.site-header{height:auto}}.nav-wrapper-primary{border-bottom:1px solid #9d9a98}.nav-wrapper-primary .nav-primary-bottom,.nav-wrapper-primary .nav-primary-middle,.nav-wrapper-primary .nav-primary-top{max-width:95%;margin:0 auto}@media (max-width:79.9375em){.nav-wrapper-primary .nav-wrapper-secondary{max-width:79.9375em}}.nav-wrapper-primary .accuweather-wrap{-webkit-box-ordinal-group:2;-ms-flex-order:1;order:1;width:33%;-ms-flex-item-align:center;align-self:center;padding:.9375rem}.nav-wrapper-primary .accuweather-wrap,.nav-wrapper-primary .accuweather-wrap .weather-date{display:-webkit-box;display:-ms-flexbox;display:flex}.nav-wrapper-primary .accuweather-wrap .weather-date .dfm_accuweather_current_conditions{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-item-align:center;align-self:center}.nav-wrapper-primary .accuweather-wrap .weather-date .dfm_accuweather_current_conditions a{display:-webkit-box;display:-ms-flexbox;display:flex}.nav-wrapper-primary .accuweather-wrap .weather-date span{font-size:1em;font-weight:700;position:relative;color:#1f1e1c}.nav-wrapper-primary .accuweather-wrap .weather-date i{font-size:1.65rem}.nav-wrapper-primary .accuweather-wrap .weather-date .date{margin-left:.8em;font:normal 600 .9375em/1.0666666667 Noto Sans,Helvetica,sans-serif;color:#1f1e1c}.nav-wrapper-primary .accuweather-wrap .weather-date .date .e-edition{font-size:.8em;font-weight:500;margin-top:5.5%;color:#1f1e1c}.nav-wrapper-primary .nav-primary-top{display:-webkit-box;display:-ms-flexbox;display:flex;height:4em;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row}.nav-wrapper-primary .nav-primary-top .pushnav-flex-wrapper{-webkit-box-ordinal-group:2;-ms-flex-order:1;order:1;width:33%}@media (max-width:49.9375em){.nav-wrapper-primary .nav-primary-top .pushnav-flex-wrapper{width:23%}}.nav-wrapper-primary .nav-primary-top .accuweather-wrap{padding:0 15px 5px;width:100%;display:none}@media (max-width:64.9375em){.nav-wrapper-primary .nav-primary-top .accuweather-wrap{display:block}}.nav-wrapper-primary .nav-primary-top #dfm-digisubs-menu{display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex}.nav-wrapper-primary .nav-primary-top .digisubs-pushmenu{display:none}.nav-wrapper-primary .nav-primary-top .digisubs-wrapper{-webkit-box-ordinal-group:4;-ms-flex-order:3;order:3;width:30%;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end}.nav-wrapper-primary .nav-primary-top .digisubs-wrapper .icon-arrow-down{font-size:.7em;padding-left:5px}@media (max-width:49.9375em){.nav-wrapper-primary .nav-primary-top .digisubs-wrapper{width:20%}}@media (max-width:64.9375em){.nav-wrapper-primary .nav-primary-top .digisubs-wrapper .digisubs-pushmenu{display:block}.nav-wrapper-primary .nav-primary-top .digisubs-wrapper .digisubs-pushmenu #mng-icon-image{display:-webkit-box;display:-ms-flexbox;display:flex}.nav-wrapper-primary .nav-primary-top .digisubs-wrapper .digisubs-pushmenu .wrapper-nav-subs{height:calc(100vh - 64px);width:300px}.nav-wrapper-primary .nav-primary-top .digisubs-wrapper .digisubs-pushmenu .wrapper-nav-subs .border-container{min-height:65vh}.nav-wrapper-primary .nav-primary-top .digisubs-wrapper .digisubs-pushmenu .wrapper-nav-subs .border-container #push-account-content{margin:.75rem auto;width:230px;display:none}.nav-wrapper-primary .nav-primary-top .digisubs-wrapper .digisubs-pushmenu .wrapper-nav-subs .border-container #push-account-content .show-digisubs-push{display:grid;-webkit-box-align:center;-ms-flex-align:center;align-items:center}.nav-wrapper-primary .nav-primary-top .digisubs-wrapper .digisubs-pushmenu .wrapper-nav-subs .border-container .menu-item{height:3.5em}.nav-wrapper-primary .nav-primary-top .digisubs-wrapper .digisubs-pushmenu .subscribe-special.custom-button>a{width:230px;font:normal 600 .9375em/1.7333333333 Noto Sans,Helvetica,sans-serif;color:#fff;background:var(--primary);border-radius:5px;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;padding:.875rem .625rem;margin:.75rem auto}}.nav-wrapper-primary .nav-primary-top .digisubs-wrapper .digisubs-wrapper-large{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center}.nav-wrapper-primary .nav-primary-top .digisubs-wrapper .digisubs-wrapper-large #dfm-digisubs-menu{display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;gap:15px}.nav-wrapper-primary .nav-primary-top .digisubs-wrapper .digisubs-wrapper-large #dfm-digisubs-menu .subscribe-special.custom-button>a{background-color:var(--primary-dark);color:#fff;text-align:center;font:normal 600 .9375em/1.7333333333 Noto Sans,Helvetica,sans-serif;border-radius:4px;display:-webkit-box;display:-ms-flexbox;display:flex;width:120px;height:45px;padding:10px 7px;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;gap:24px}.nav-wrapper-primary .nav-primary-top .search-icon-wrapper{-webkit-box-ordinal-group:5;-ms-flex-order:4;order:4;width:4%;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;padding:.9375rem}.nav-wrapper-primary .nav-primary-middle{display:-webkit-box;display:-ms-flexbox;display:flex;min-height:5em;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row}@media (max-width:64.9375em){.nav-wrapper-primary .nav-primary-middle{display:none}}.nav-wrapper-primary .nav-primary-middle .sponsorship-ad-wrapper{width:33%;-webkit-box-ordinal-group:4;-ms-flex-order:3;order:3;-ms-flex-item-align:center;align-self:center;-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end;display:-webkit-box;display:-ms-flexbox;display:flex}.nav-wrapper-primary .nav-primary-bottom{display:-webkit-box;display:-ms-flexbox;display:flex;height:3em;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;width:100%;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}@media (max-width:64.9375em){.nav-wrapper-primary .nav-primary-bottom{display:none}}.nav-primary .menu{-webkit-box-align:center;-ms-flex-align:center;align-items:center;display:-webkit-box;display:-ms-flexbox;display:flex;height:100%}@media (max-width:64.9375em){.nav-primary .menu{-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}}.nav-primary .menu>li{margin-right:1.5625em;font-size:1rem}@media (max-width:64.9375em){.nav-primary .menu>li{border-right:1px solid #fff}.nav-primary .menu>li:last-child{border:none}}.nav-primary .menu>li>a{font:normal 700 1em/1 Noto Sans,Helvetica,sans-serif;display:block}@media (max-width:64.9375em){.nav-primary .menu>li>a{border:none;display:inline-block;font-weight:700;padding-right:.625em}}.nav-primary li{display:inline-block}.nav-primary a{color:#1f1e1c;text-decoration:none}.pushnav::-webkit-scrollbar{display:none}.pushnav{overflow:hidden;height:4em}@media (max-width:64.9375em){.pushnav{width:50px}}.pushnav.digisubs-toggle{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;height:4rem;padding:.9375rem 0 .9375rem .9375rem;-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end}.pushnav .log-out-button{visibility:hidden}.pushnav .menu-toggle{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;height:4rem;padding:.9375rem;width:-webkit-fit-content;width:-moz-fit-content;width:fit-content}.pushnav .menu-toggle .icon-hamburger{padding-right:.25rem}.pushnav .menu-toggle .menu-label{font:normal 600 .9375em/1.0666666667 Noto Sans,Helvetica,sans-serif;padding-left:.25rem;color:#1f1e1c}@media (max-width:64.9375em){.pushnav .menu-toggle .menu-label{display:none}}.pushnav .menu{font:normal 600 .9375em/1.0666666667 Noto Sans,Helvetica,sans-serif;background-color:#fbfbfb}.pushnav .wrapper-nav{height:calc(100% - 64px);height:-moz-calc(100% - 64px);width:300px}.pushnav .border-container{border-bottom:1px solid #1f1e1c;padding:.75rem 0 3rem}.pushnav .top-pushnav-container .subscribe-button{font:normal 600 .9375em/1.0666666667 Noto Sans,Helvetica,sans-serif;color:#fff;background:var(--primary);border-radius:4px;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;padding:.875rem .625rem;margin:.75rem auto}.pushnav .top-pushnav-container .home-link,.pushnav .top-pushnav-container .subscribe-button{width:230px;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center}.pushnav .top-pushnav-container .home-link{padding:.75rem .625rem;height:2.25rem;-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start}.pushnav .top-pushnav-container .home-link span{font:normal 600 .9375em/1.0666666667 Noto Sans,Helvetica,sans-serif;padding-left:.75rem}.pushnav li>a{display:block;width:100%;padding:.9375em;color:#1f1e1c;height:3.25rem}.pushnav .menu-item-has-children:not(.nav-alt-links){overflow:hidden;position:relative}.pushnav .menu-item-has-children:not(.nav-alt-links)>a{display:inline-block;position:relative;width:100%;z-index:5}.pushnav .menu-item-has-children:not(.nav-alt-links)>a:before{-webkit-box-align:center;-ms-flex-align:center;align-items:center;color:#1f1e1c;content:"";display:-webkit-box;display:-ms-flexbox;display:flex;font-size:.5625em;height:100%;width:100%;-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end;padding-right:.9375em;position:absolute;top:0;right:0}.pushnav .menu-item-has-children:not(.nav-alt-links)>ul{position:relative;background-color:#fff;-webkit-transform:scaleY(1);-ms-transform:scaleY(1);transform:scaleY(1);z-index:4;margin-top:-6px}.pushnav .newsletter-item{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;margin:1em 0;font:normal 600 .9375em/1.7333333333 Noto Sans,Helvetica,sans-serif}.pushnav .newsletter-item .prompt{text-align:center}.pushnav .newsletter-item .sign-up-button{letter-spacing:normal;text-transform:capitalize;height:2rem;width:230px;font:normal 600 .9375em/1.0666666667 Noto Sans,Helvetica,sans-serif;color:#fff;background:var(--primary);border-radius:4px;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;padding:1.2rem 1rem}.trending-bar{float:left;position:relative;font-family:Noto Sans,Helvetica,sans-serif;width:100%}@media (max-width:64.9375em){.trending-bar{position:absolute;display:none;top:7.3125em;left:0;margin:0;z-index:7}}.trending-bar nav{width:100%;padding-left:5.625em;display:inline-block;float:left}@media (max-width:64.9375em){.trending-bar nav{padding-left:0}}.trending-bar ul{list-style:none;float:left;width:100%;overflow:hidden}@media (min-width:65em){.trending-bar ul{-webkit-box-align:center;-ms-flex-align:center;align-items:center;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-pack:distribute;justify-content:space-around}}@media (max-width:64.9375em){.trending-bar ul{width:100%;height:auto;overflow:visible}}@media (max-width:64.9375em){.trending-bar li{display:block;float:none;line-height:1.25;margin:0}.trending-bar li:last-child a{border:none}}.trending-bar a{text-decoration:none}@media (max-width:64.9375em){.trending-bar a{border-bottom:1px solid #c8c4c0;color:#1f1e1c;display:block;font-size:.9375em;padding:1em}}.trending-bar .trending-bar-wrapper>p{position:absolute;top:.1875em;font-weight:800;line-height:1.875em}@media (max-width:64.9375em){.trending-bar .trending-bar-wrapper{padding:0}}@media (max-width:64.9375em){.trending-bar .label{display:none}}.logo{display:inline-block;font-size:1rem;position:relative}.logo a{overflow:hidden;text-indent:-9999px}.logo.custom-logo img{margin:0 auto;max-height:3em;width:100%;-o-object-fit:contain;object-fit:contain}.logo.custom-logo a{background-image:none}.newsletter-simple{position:relative}.dfp-ad{height:auto;width:100%;overflow:auto}.dfp-ad.dfp-interstitial{height:1px;width:1px}.dfp-ad.dfp-top_leaderboard{margin-left:0!important;padding:0!important;clear:both;top:inherit!important}@media screen and (min-width:300px){.dfp-ad.dfp-top_leaderboard{min-height:50px}}@media screen and (min-width:750px){.dfp-ad.dfp-top_leaderboard{min-height:90px}}@media screen and (min-width:1000px){.dfp-ad.dfp-top_leaderboard{background-color:#fbfbfb;min-height:250px;width:100%;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;margin-bottom:1em}}@media (max-width:750px){.header-banners{-webkit-box-sizing:content-box;box-sizing:content-box;left:-10px;padding:0 10px;position:relative}}.search-form{display:inline-block;position:relative;width:100%}@media (max-width:64.9375em){.search-form{padding:.625em}}.search-form.header-search{clear:both;margin:0 auto}.search-form.header-search input[type=text]{font:normal 400 1.125em/1.2222222222 Noto Sans,Helvetica,sans-serif;height:3.0555555556em;width:100%}.search-form.header-search{height:3.75em}.search-form.header-search input[type=text]{height:100%}.search-form.header-search{display:none;height:2.5em;margin-top:.625em;position:absolute;right:.625em;width:10.9375em;z-index:1}@media (min-width:65em){.search-form.header-search{display:block}}.category aside>*{margin-bottom:2em}.category aside>:last-child{margin-bottom:0}@media (min-width:80em){.category aside{width:calc(25% - 15px);width:calc(25% - .94rem)}}@media (min-width:65em)and (max-width:79.9375em){.category aside{width:calc(30.76923% - 14px);width:calc(30.76923% - .87rem)}}@media (min-width:50em)and (max-width:64.9375em){.category aside{width:100%}}@media (min-width:40em)and (max-width:49.9375em){.category aside{width:100%}}@media (min-width:20em)and (max-width:39.9375em){.category aside{width:100%}}.homepage>*,.section>*{margin-bottom:2em}body{background-color:#fbfbfb}.feature-section .section-title{font:normal 700 1.0625em/1.1176470588 Noto Sans,Helvetica,sans-serif;color:var(--primary);display:-webkit-box;display:-ms-flexbox;display:flex;letter-spacing:.035em;margin-bottom:1em;padding-bottom:.5em;text-transform:uppercase}.newsletter-simple a{font:normal 600 .8125em/1.1538461538 Noto Sans,Helvetica,sans-serif;background-color:var(--primary);border:1px solid var(--primary-dark);border-radius:4px;color:#fff;padding:.8125em 1.0625em;text-shadow:0 0 1px var(--primary-darker);text-transform:uppercase}.archive-view{display:-webkit-box;display:-ms-flexbox;display:flex;font-size:1rem;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;position:relative}.archive-view header{width:100%}.archive-view .article-info{display:inline-block;margin-bottom:0}.archive-view .excerpt{font:400 .9375rem/1.4 Noto Sans,Helvetica,sans-serif;margin-bottom:.5em;color:#484642}.feature-section .feature-large{border-bottom:1px solid #c8c4c0;padding-bottom:1em;text-align:left;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-ms-flex-wrap:wrap;flex-wrap:wrap}@media (min-width:40em)and (max-width:49.9375em){.feature-section .feature-large{-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row}}@media (min-width:80em){.feature-section .feature-large{-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row}}.feature-section .feature-large>figure{display:none;-webkit-box-ordinal-group:2;-ms-flex-order:1;order:1}@media (min-width:40em)and (max-width:49.9375em){.feature-section .feature-large>figure{width:calc(50% - 10px);width:calc(50% - .63rem)}}@media (min-width:80em){.feature-section .feature-large>figure{width:calc(56.25% - 9px);width:calc(56.25% - .55rem)}}@media (min-width:40em)and (max-width:49.9375em){.feature-section .feature-large>figure{display:block}}@media (min-width:80em){.feature-section .feature-large>figure{display:block}}.feature-section .feature-large header .entry-title{font:normal 700 1.5625em/1.16 "Noto Serif",Helvetica,serif;letter-spacing:-.03em;margin-bottom:.3636363636em}@media (min-width:40em){.feature-section .feature-large header .entry-title{font-size:1.8125em;line-height:1.13}}@media (min-width:40em)and (max-width:49.9375em){.feature-section .feature-large>.article-info{width:calc(50% - 10px);width:calc(50% - .63rem)}}@media (min-width:80em){.feature-section .feature-large>.article-info{width:calc(43.75% - 12px);width:calc(43.75% - .71rem)}}@media (min-width:40em)and (max-width:49.9375em){.feature-section .feature-large>.article-info figure{display:none}}@media (min-width:80em){.feature-section .feature-large>.article-info figure{display:none}}.feature-section .feature-large .excerpt{font:normal 400 .9375em/1.2666666667 Noto Sans,Helvetica,sans-serif;margin-bottom:1em}@media (max-width:64.9375em){.logo.custom-logo a img{-webkit-filter:unset!important;filter:unset!important}}.feature-small.section-feature-small h3,.feature-small h3.entry-title{font:normal 600 1.125em/1.2222222222 "Noto Serif",Helvetica,serif}.feature-section{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}@media (max-width:49.9375em){.feature-section{-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}}.feature-section .section-title{font:normal 700 1.875em/1.0666666667 Noto Sans,Helvetica,sans-serif;border-bottom:4px solid var(--primary);padding-bottom:.3125em;text-align:left}@media (min-width:65em){.feature-section .section-title{display:none}}.feature-section .feature-wrapper{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;margin:0 1.25em 2em 0}@media (min-width:80em){.feature-section .feature-wrapper{width:calc(75% - 5px);width:calc(75% - .32rem)}}@media (min-width:65em)and (max-width:79.9375em){.feature-section .feature-wrapper{width:calc(61.53846% - 8px);width:calc(61.53846% - .49rem)}}@media (min-width:50em)and (max-width:64.9375em){.feature-section .feature-wrapper{width:calc(60% - 8px);width:calc(60% - .5rem)}}@media (min-width:40em)and (max-width:49.9375em){.feature-section .feature-wrapper{width:100%}}@media (min-width:20em)and (max-width:39.9375em){.feature-section .feature-wrapper{width:100%}}.feature-section .archive-view{-ms-flex-wrap:wrap;flex-wrap:wrap}.feature-section .archive-view>:last-child{margin-bottom:0}.feature-section .feature-top{border-bottom:1px solid #c8c4c0;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;margin-bottom:1.5em;width:100%}@media (max-width:64.9375em){.feature-section .feature-top{-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}}.feature-section .feature-top .feature-large{border-bottom:0}@media (min-width:80em){.feature-section .feature-top .feature-large{width:calc(68.75% - 7px);width:calc(68.75% - .4rem)}}@media (min-width:65em)and (max-width:79.9375em){.feature-section .feature-top .feature-large{width:calc(61.53846% - 8px);width:calc(61.53846% - .49rem)}}@media (min-width:50em)and (max-width:64.9375em){.feature-section .feature-top .feature-large{width:100%}}@media (min-width:40em)and (max-width:49.9375em){.feature-section .feature-top .feature-large{width:100%}}@media (min-width:20em)and (max-width:39.9375em){.feature-section .feature-top .feature-large{width:100%}}.feature-section .feature-right{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start;min-height:0}@media (min-width:80em){.feature-section .feature-right{width:calc(31.25% - 14px);width:calc(31.25% - .86rem)}}@media (min-width:65em)and (max-width:79.9375em){.feature-section .feature-right{width:calc(38.46154% - 13px);width:calc(38.46154% - .77rem)}}@media (min-width:50em)and (max-width:64.9375em){.feature-section .feature-right{width:100%}}@media (min-width:40em)and (max-width:49.9375em){.feature-section .feature-right{width:100%}}@media (min-width:20em)and (max-width:39.9375em){.feature-section .feature-right{width:100%}}@media (max-width:39.9375em){.feature-section .feature-right{-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}}@media (min-width:65em){.feature-section .feature-right{-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;padding:0 1em}}@media (min-width:40em)and (max-width:64.9375em){.feature-section .feature-right{-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}}.feature-section .feature-right .feature-small{-ms-flex-wrap:wrap;flex-wrap:wrap;margin-bottom:1em;width:100%}@media (min-width:40em)and (max-width:64.9375em){.feature-section .feature-right .feature-small{width:calc(50% - .625em)}}.feature-section .feature-right .feature-small figure{width:100%}.feature-section .dfp-ad{-webkit-box-flex:0;-ms-flex:0 0 18.75em;flex:0 0 18.75em;margin-left:auto;margin-right:auto;margin-top:3.75em}#content .obit-article-search-result .obit-card-essential-info-container{height:-webkit-fit-content;height:-moz-fit-content;height:fit-content;grid-area:essential-info}#content .obit-article-search-result .article-info{height:-webkit-fit-content;height:-moz-fit-content;height:fit-content;grid-area:additional-info}.colophon ul{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start;margin:0 auto;padding:1.25em .625em;width:100%}.site-footer .footer-menus>.menu-item .expander,.site-footer .menu-item-has-children .expander{position:static;width:50%}.site-footer .footer-menus>.menu-item .expander a,.site-footer .menu-item-has-children .expander a{-webkit-box-align:center;-ms-flex-align:center;align-items:center;display:-webkit-box;display:-ms-flexbox;display:flex;height:100%;-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end;padding-right:5%}.site-footer .footer-menus>.menu-item .expander a:before,.site-footer .menu-item-has-children .expander a:before{display:none}.site-footer .footer-menus>.menu-item .expander a:after,.site-footer .menu-item-has-children .expander a:after{content:"";border-color:#c8c4c0 rgba(0,0,0,0) rgba(0,0,0,0);border-style:solid;border-width:7px 5px;margin:.3em 0 0 .25em}.header-placeholder{display:none}@media (max-width:64.9375em){.header-placeholder{height:4rem}}@media (min-width:65em){.header-placeholder{height:14rem}}.site-header{background-color:rgba(0,0,0,0)}.hidden-logo{-webkit-box-ordinal-group:3;-ms-flex-order:2;order:2;width:33%;-ms-flex-item-align:center;align-self:center}@media (max-width:49.9375em){.hidden-logo{width:53%}}.logo{-webkit-box-align:center;-ms-flex-align:center;align-items:center;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}@media (max-width:64.9375em){.logo{width:100%}}@media (max-width:64.9375em){.logo a{display:grid;place-items:center}}.section-header{font:normal 700 2.5em/.5 "Noto Serif",Helvetica,serif;color:var(--primary);text-align:center;overflow-wrap:break-word;line-height:1em;-ms-hyphens:auto;hyphens:auto}@media (max-width:64.9375em){.nav-primary{overflow:visible}}.nav-primary .menu{padding:0}@media (max-width:64.9375em){.nav-primary .menu{-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end}}.nav-primary .menu>li{margin:0}@media (max-width:64.9375em){.nav-primary .menu>li{border:0}}.nav-primary .menu>li>a{font:normal 600 .9375em/1.7333333333 Noto Sans,Helvetica,sans-serif;-webkit-box-align:center;-ms-flex-align:center;align-items:center;display:-webkit-box;display:-ms-flexbox;display:flex}@media (max-width:64.9375em){.nav-primary .menu>li>a{padding-left:.625em}}@media (max-width:79.9375em){.nav-primary .menu>li>a{font-size:.9375em}}@media (min-width:65em)and (max-width:79.9375em){.nav-primary .menu>li>a{padding:0 1.28vw}}@media (min-width:80em){.nav-primary .menu>li>a{padding:0 .8823529412em}}.nav-primary .menu>li:last-child>a{border-right:0}@media (min-width:65em)and (max-width:79.9375em){.nav-primary .menu>li:first-child>a{padding-left:.7142857143em}}@media (min-width:80em){.nav-primary .menu>li:first-child>a{padding-left:.5555555556em}}.pushnav li>a{font:normal 600 .9375em/1.0666666667 Noto Sans,Helvetica,sans-serif;background:#fbfbfb}.pushnav .menu-item{height:2.5em;background:#fbfbfb}.pushnav .menu-item>a{height:2.8888888889em}.pushnav .menu-item>ul a{font:normal 600 .9375em/1.0666666667 Noto Sans,Helvetica,sans-serif;margin-left:1rem}.trending-bar{width:100vw}@media (min-width:65em)and (max-width:79.9375em){.trending-bar{width:calc(100vw - 1.25em);left:.625em}}.trending-bar nav{float:none;padding:.5em 0}@media (min-width:65em){.trending-bar ul{-webkit-box-align:center;-ms-flex-align:center;align-items:center;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;height:1.125em;-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start;overflow:hidden}}.trending-bar li{line-height:1.15;padding-right:1.5625em;position:relative}.trending-bar a{color:#484642;font-family:Noto Sans,Helvetica,sans-serif}.trending-bar .trending-bar-wrapper p,.trending-bar a{font-size:.9375em}.trending-bar .trending-bar-wrapper{-webkit-box-align:center;-ms-flex-align:center;align-items:center;display:-webkit-box;display:-ms-flexbox;display:flex;padding:0 .3125em}@media (min-width:80em){.trending-bar .trending-bar-wrapper{max-width:80em}}.trending-bar .trending-bar-wrapper>p{color:var(--primary-dark);display:block;font-size:.875em;padding-right:1.5625em;position:static;text-transform:uppercase;min-width:130px;white-space:nowrap}.newsletter-simple a{display:inline-block}.newsletter-simple .newsletter-item{border-bottom:1px solid #fff;padding-bottom:1em}@media (max-width:64.9375em){.newsletter-simple .newsletter-item{padding:1em 0}}.prompt{font:normal 700 .9375em/1.0666666667 "Noto Serif",Helvetica,serif;color:#1f1e1c;margin-bottom:.75rem;position:relative;width:100%}.search-form.header-search{margin-top:0}.search-form.header-search input[type=text]{border:none;background-color:#fbfbfb;font-size:.9375em;padding:.75em}@media (min-width:65em){h1.section-title{display:none}}</style>
+	<link rel='dns-prefetch' href='//cmp.osano.com' />
+<link rel='dns-prefetch' href='//htlbid.com' />
+<link rel='dns-prefetch' href='//cdn.parsely.com' />
+<link rel='dns-prefetch' href='//ajax.googleapis.com' />
+<link rel='dns-prefetch' href='//a433.dailypress.com' />
+<link rel='dns-prefetch' href='//embed.sendtonews.com' />
+<link rel='dns-prefetch' href='//cdn.sophi.io' />
+<link rel='dns-prefetch' href='//stats.wp.com' />
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//cdn.jsdelivr.net' />
+<link rel='dns-prefetch' href='//v0.wordpress.com' />
+<link rel="alternate" type="application/rss+xml" title="Daily Press &raquo; Feed" href="https://www.dailypress.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Daily Press &raquo; Comments Feed" href="https://www.dailypress.com/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Daily Press &raquo; Virginia Gazette Category Feed" href="https://www.dailypress.com/virginia-gazette/feed/" />
+<link rel='canonical' href='https://www.dailypress.com/virginia-gazette/'><meta name='description' content='Read The Virginia Gazette for breaking news covering Williamsburg, James City County and York, Virginia.' /><!-- WP SEO -->
+<link rel='stylesheet' id='all-css-166a' href='https://www.dailypress.com/_static/??-eJyNjEEKg0AQBD8UHQTR5BA8+IC8YaNDMrAzu9izBH+vHnJITt66Gqrok6spmbM55VheYiCIc/UDc5C45oUBmgVO0z7ga+RaxeqdLnSq44s8i/GZiL9ZGcejAcn+lAeCpbHAk37tQe9N37Xdrb02/QbBoVBx' type='text/css' media='all' />
+<link rel='stylesheet' id='__htl_style-css' href='https://htlbid.com/v3/dailypress.com/htlbid.css?ver=6.9' media='' />
+<link rel='stylesheet' id='all-css-8043' href='https://www.dailypress.com/wp-content/client-mu-plugins/src/Sitemap/includes/style.css?m=1764694815g' type='text/css' media='all' />
+<style id='wp-emoji-styles-inline-css'>
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+/*# sourceURL=wp-emoji-styles-inline-css */
+</style>
+<link rel='stylesheet' id='digisubs_plugin_css-css' href='https://www.dailypress.com/wp-content/plugins/mng-digisubs/static/mng-digisubs.styles.css?ver=1766440840' media='all' />
+<link rel='stylesheet' id='all-css-a548' href='https://www.dailypress.com/wp-content/client-mu-plugins/src/Ads/assets/css/mobile-adhesion-style.css?m=1764694815g' type='text/css' media='all' />
+<link rel='stylesheet' id='mason-fonts-css' href='https://fonts.googleapis.com/css?family=Noto+Sans%3A400%2C700%2C800%7CNoto+Serif%3A400%2C400i%2C700%2C700i%2C800&#038;display=swap&#038;ver=6.9' media='all' />
+<link rel='stylesheet' id='all-css-208c' href='https://www.dailypress.com/wp-content/themes/assets/static/css/measuredvibrant.css?m=1766440840g' type='text/css' media='all' />
+<link rel='stylesheet' id='dfm-accuweather-bootstrap-icons-css' href='//cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.min.css?ver=5.2.0' media='screen' />
+<link rel='stylesheet' id='all-css-5854' href='https://www.dailypress.com/wp-content/plugins/dfm-ad-mods/dist/css/style.min.css?m=1764694816g' type='text/css' media='all' />
+<script id="static-sophi-script-handle-js-after">
+				 window.sophi = window.sophi || {};
+    sophi.demeter = { actions: [] };
+    window.demeter = window.demeter || async function() {
+        var resolve, reject;
+        const s = new Promise((res, rej) => {
+            resolve = res, reject = rej
+        });
+  sophi.demeter.actions.push([arguments, resolve, reject]);
+        return s;
+    }
+//# sourceURL=static-sophi-script-handle-js-after
+</script>
+<script id="auth0-session-storage-js-before">
+window.auth0WPAdminMeta = '{"auth0WPAdminMeta":{"auth0UserMeta":null,"auth0AppMeta":null}}';
+//# sourceURL=auth0-session-storage-js-before
+</script>
+<script src="https://www.dailypress.com/wp-content/client-mu-plugins/src/Auth0/assets/dist/auth0-session-storage.min.js?ver=1.0.4" id="auth0-session-storage-js"></script>
+<script src="https://cmp.osano.com/16A1AnRt2Fn8i1unj/f15ebf08-7008-40fe-9af3-db96dc3e8266/osano.js" id="osano-js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js?ver=3.5.1" id="jquery-js"></script>
+<script async src="https://htlbid.com/v3/dailypress.com/htlbid.js?ver=6.9" id="__htl_script-js"></script>
+<script id="__htl_script-js-after">
+	window.htlbid = window.htlbid || {};
+	htlbid.cmd = htlbid.cmd || [];
+	htlbid.cmd.push(function() {
+		htlbid.layout('universal');
+		htlbid.setTargeting("is_testing","no");
+		htlbid.setTargeting("kv", ["virginia-gazette"]);
+		htlbid.setTargeting("page", "section");
+		htlbid.setTargeting("content", []);
+		htlbid.setTargeting("RPN", "392097121619");
+		htlbid.setTargeting("rurl", "");
+		htlbid.setTargeting("articleid", "");
+		window.htlbid.pubads().setPublisherProvidedId("6f4dfcd84bdf7af80e4731624d3587204f002e786c77c8caacce45a1cd4c7134");
+	});
+//# sourceURL=__htl_script-js-after
+</script>
+<script id="sso-tools-js-extra">
+var MNG_SSO_CONNEXT_EVENT_TIMING_ANALYTICS = ["enabled"];
+//# sourceURL=sso-tools-js-extra
+</script>
+<script type="text/javascript" src="https://www.dailypress.com/wp-content/client-mu-plugins/src/SSO/assets/js/sso-tools.min.js?m=1764694815g" ></script><script id="mg2_loader_loader-js-extra">
+var MG2 = {"settings":{"environment":"prod","version":"dfm","useDocumentReady":false,"xCode":"","randomURLChoosing":false,"plugins":[{"name":"FP","required":true,"initOptions":{"version":"dfm","environment":"prod"}},{"name":"DL","required":true,"initOptions":{"version":"dfm","environment":"prod","tagManager":"GTM","containerId":"GTM-NFD2QGD","collectors":["connext"]}},{"name":"NXT","required":true,"initOptions":{"environment":"prod","siteCode":"Tribune","configCode":"SophiDPress","clientCode":"dfm","debug":false,"silentmode":true,"attr":"7DPress","settingsKey":"7DPress","userAuthenticationTime":360,"authSettings":{"domain":"login.npuserlogin.com","client_id":"zOJ94jeMprPKKgNz4vVARuDQySLpGAJJ","redirect_uri":"https://www.dailypress.com/login"}}}],"FP_CNAME":"fp.dailypress.com","DL_CNAME":"g2i.dailypress.com","NXT_CNAME":"engage.dailypress.com","CONFIG_URL":"https://loader-config.dailypress.com/prod/dfm/loader-config.json","appInsightsKey":"8241cbc2-50a5-47c4-b91f-462506490fad"}};
+//# sourceURL=mg2_loader_loader-js-extra
+</script>
+<script src="https://www.dailypress.com/wp-content/plugins/loader-wp/static/loader.min.js?ver=1.6.4" id="mg2_loader_loader-js"></script>
+<script id="mg2_loader_loader-js-after">
+(function( MG2, MG2Loader ) {
+	if ( 'undefined' !== typeof MG2 && 'undefined' !== typeof MG2Loader) {
+	    console.log("mg2loader: not waiting");
+		MG2Loader.init( MG2.settings );
+	}
+})( MG2, MG2Loader );
+//# sourceURL=mg2_loader_loader-js-after
+</script>
+<script id="digisubs_settings-js-extra">
+var authentication_config = {"debug":"","entitlementsEnabled":"1","oneTapEnabled":"1","useTribMainGoogle":"1","googleClientId":"965743605721-0lgm7vgj0e7474g83tg1l899sfu1pgql.apps.googleusercontent.com","gotPositionEnabled":"","gotModalPosition":"","dropdownEnabled":"1","auth0Domain":"login.npuserlogin.com","auth0ClientId":"zOJ94jeMprPKKgNz4vVARuDQySLpGAJJ","auth0RegwallUserEmail":"","sessionManagement":"1","sessionServer":"https://session.dailypress.com","newsletterId":"286","newslettersEnabled":"","myAccountLink":"https://myaccount.dailypress.com/","entitlementsEndpoint":"https://user.mng-digisubs-prod.com/","entitlementsAPIKey":"DHL8Vs1UNo9u0WO52dVBzSuLi4kw2so25cXK1fy7","linaCheckOnArticles":"","serverEntitlements":"1","bcLowaSegements":"","blueconicEnabled":"1","enableReaderDashboardLink":"1","enableDashboardCancel":"","enableDashboardBenefitHub":"","prosperstackClientid":"","enableDatadog":"","sophiOnDevice":"1","sophiSDKEnabled":"","regwallPrefId":"","cookieSize":"900","whiteList":"","paywallId":"paywall-sspw-mg2pw01-ny26","articleSavingEnabled":"","articleSharingEnabled":"1","isEngageArticleSharing":"","isAdfreeArticle":""};
+//# sourceURL=digisubs_settings-js-extra
+</script>
+<script id="connext_utils-js-extra">
+var authentication_config = {"debug":"","entitlementsEnabled":"1","oneTapEnabled":"1","useTribMainGoogle":"1","googleClientId":"965743605721-0lgm7vgj0e7474g83tg1l899sfu1pgql.apps.googleusercontent.com","gotPositionEnabled":"","gotModalPosition":"","dropdownEnabled":"1","auth0Domain":"login.npuserlogin.com","auth0ClientId":"zOJ94jeMprPKKgNz4vVARuDQySLpGAJJ","auth0RegwallUserEmail":"","sessionManagement":"1","sessionServer":"https://session.dailypress.com","newsletterId":"286","newslettersEnabled":"","myAccountLink":"https://myaccount.dailypress.com/","entitlementsEndpoint":"https://user.mng-digisubs-prod.com/","entitlementsAPIKey":"DHL8Vs1UNo9u0WO52dVBzSuLi4kw2so25cXK1fy7","linaCheckOnArticles":"","serverEntitlements":"1","bcLowaSegements":"","blueconicEnabled":"1","enableReaderDashboardLink":"1","enableDashboardCancel":"","enableDashboardBenefitHub":"","prosperstackClientid":"","enableDatadog":"","sophiOnDevice":"1","sophiSDKEnabled":"","regwallPrefId":"","cookieSize":"900","whiteList":"","paywallId":"paywall-sspw-mg2pw01-ny26","articleSavingEnabled":"","articleSharingEnabled":"1","isEngageArticleSharing":"","isAdfreeArticle":""};
+//# sourceURL=connext_utils-js-extra
+</script>
+<script type="text/javascript" src="https://www.dailypress.com/_static/??-eJydzDEOwjAMQNELkbhIUWFBXICVAySNZblK3Ch21XJ7WJA6MLF+6X3YmpsWMRSDVlZiUShLzNjd1kAtGk+AQpHwwanH/vKVxc96gh+yCrnMxLom/eJj84pmLKQ+rZIL/v35AMHdnsbl8LrX2/kyjiEM1zDMb930Ues=" ></script><script src="https://cdn.auth0.com/js/auth0-spa-js/1.13/auth0-spa-js.production.js?ver=6.9" id="auth0_sdk-js"></script>
+<script src="https://accounts.google.com/gsi/client?ver=6.9" id="google_one_tap-js"></script>
+<script type="text/javascript" src="https://www.dailypress.com/_static/??-eJylzMEOQDAQBNAfokvS4CKufqOqaVbaJXYbPl+dxJXTJJOZB8dW2pXEkcAWkkdiiOTLGT1ymhhYjKB9dSoaJDUlmoNTCxfwxcgHcqf8ZfIYJbiYk/9aCUdzA/sDDbGv26bRuup0tVy/cnEY" ></script><script src="https://a433.dailypress.com/script.js" id="a433-js"></script>
+<script id="mng_sophi-js-extra">
+var sophi_config = {"sophiGetDesicionTimer":"","sophiPluginEnabled":"1","sophiHostname":"","enableSophiSSPW":"","useEventListener":"1"};
+//# sourceURL=mng_sophi-js-extra
+</script>
+<script type="text/javascript" src="https://www.dailypress.com/_static/??-eJyNzEEOAiEMheELCR2TyejGuPAkDCAUaSG2ZK7v6M7EhbuXl3w/bN34xhpZodeRkAXCnYwLhlrYN4pCEchZ6i1H/7CEbIsc4AckTiZgQhmrgBOJKm8rrWcEcprj828u6hT912c/IbsODjXukStdjqdlmefpPE/lBf9xSlE=" ></script><script src="https://cdn.sophi.io/assets/demeter/1/stable/2516223323.js?ver=6.9" id="sophi_demeter-js" async data-wp-strategy="async"></script>
+<script id="mng_apple-js-extra">
+var apple_config = {"applePayEnabled":"","sourceId":""};
+//# sourceURL=mng_apple-js-extra
+</script>
+<script id="article_sharing-js-extra">
+var article_config = {"article_sharing_faq":""};
+//# sourceURL=article_sharing-js-extra
+</script>
+<script type="text/javascript" src="https://www.dailypress.com/_static/??-eJzTLy/QTc7PK0nNK9EvyClNz8wr1s/NS9dNyUzPLC5NKtYvLkksyUxGEdNLLCjISdVLKs1LAVJZxTr6ZBlSBBTKSQ3OSCxCMss+19bQ3MzMxMTAwsQgCwCrvDpf" ></script><link rel="https://api.w.org/" href="https://www.dailypress.com/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="https://www.dailypress.com/wp-json/wp/v2/categories/3653" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.dailypress.com/xmlrpc.php?rsd" />
+<meta name="generator" content="WordPress 6.9" />
+<script id="cnx-init-script">!function(n){if(!window.cnx){window.cnx={},window.cnx.cmd=[];var t=n.createElement('iframe');t.display='none',t.onload=function(){var n=t.contentWindow.document,c=n.createElement('script');c.src='//cd.connatix.com/connatix.player.js',c.setAttribute('async','1'),c.setAttribute('type','text/javascript'),n.body.appendChild(c)},n.head.appendChild(t)}}(document);</script>        <style>
+        .getty.aligncenter {
+            text-align: center;
+        }
+        .getty.alignleft {
+            float: none;
+            margin-right: 0;
+        }
+        .getty.alignleft > div {
+            float: left;
+            margin-right: 5px;
+        }
+        .getty.alignright {
+            float: none;
+            margin-left: 0;
+        }
+        .getty.alignright > div {
+            float: right;
+            margin-left: 5px;
+        }
+        </style>
+        	<style id='htl-mobile-adhesion-override'>
+		@media screen and (max-width:1000px) {
+			#mobile-adhesion {
+				display: block !important;
+			}
+		}
+	</style>	<style>img#wpstats{display:none}</style>
+		<script type="application/ld+json">{"@context":"https:\/\/schema.org","@type":"WebPage","headline":"Virginia Gazette","url":"https:\/\/www.dailypress.com\/virginia-gazette\/"}</script><script>
+    var PushlySDK = window.PushlySDK || [];
+    function pushly() { PushlySDK.push(arguments) }
+    pushly('load', {
+        domainKey: decodeURIComponent("6K6nAzNbS7CUQt3kiToyzIwsI288XP56GU9u"),
+        sw: "https://www.dailypress.com/wp-content/plugins/pushly/assets/js/pushly-sdk-worker.js.php",
+        swScope: "https://www.dailypress.com/wp-content/plugins/pushly/"    });
+</script>
+
+<style id="customizer-styles">			div#page {
+			--subsite-custom: #000000;
+			}
+						div#page {
+			--subsite-text: #f9f9f9;
+			}
+			</style><script>window.addEventListener('message',
+		function s2nEventCallback(a){if('s2nEvent'===a.data.type)
+			{let t={event:'SendToNews load',sendtonews_player_key:
+				a.data.playerKey};window.dataLayer.push(t),
+				window.removeEventListener('message',s2nEventCallback)}});</script><!-- Google Tag Manager Data Layer -->
+<script type='text/javascript'>
+   analyticsEvent    = function() {};
+   analyticsSocial   = function() {};
+   analyticsVPV      = function() {};
+   analyticsClearVPV = function() {};
+   analyticsForm     = function() {};
+   window.dataLayer  = window.dataLayer || [];
+   dataLayer.push({
+      'quantcast' : '',
+      'quantcast label' : '',
+      'comscore' : '6035443',
+      'Publisher Domain' : 'dailypress.com',
+      'Publisher Product' : 'dailypress.com',
+      'kv' : 'Virginia Gazette',
+      'Platform' : 'Web CMS',
+      'Release Version' : '6.9',
+      'Digital Publisher' : '',
+      'Section' : 'Virginia Gazette',
+      'Taxonomy1' : '',
+      'Taxonomy2' : '',
+      'Taxonomy3' : '',
+      'Taxonomy4' : '',
+      'Taxonomy5' : '',
+      'Publisher State' : '',
+      'Page Type' : 'section',
+      'User ID' : '',
+      'SiteName' : 'Daily Press',
+      'Cluster' : 'Trib VA',
+      'Mobile Presentation' : 'no',
+      'Canonical URL' : 'https://www.dailypress.com/virginia-gazette/',
+      'Content Title' : 'Virginia Gazette',
+      'URL' : 'https://www.dailypress.com/virginia-gazette/',
+      'Page Title' : 'Virginia Gazette'
+   });
+</script>
+<!-- End Google Tag Manager Data Layer -->
+<!-- Google Tag Manager -->
+<script>
+(function(w,d,s,l,i) {
+   w[l]=w[l]||[];
+   w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+   var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
+   j.async=true;
+   j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})
+(window,document,'script','dataLayer','GTM-TLFP4R');
+</script><!-- End Google Tag Manager -->
+
+<!-- Jetpack Open Graph Tags -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Virginia Gazette" />
+<meta property="og:site_name" content="Daily Press" />
+<meta property="og:image" content="https://www.dailypress.com/wp-content/uploads/2023/05/dpress-2.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="" />
+<meta property="og:locale" content="en_US" />
+<meta name="twitter:image" content="https://www.dailypress.com/wp-content/uploads/2023/05/dpress-2.jpg" />
+<meta property="og:url" content="https://www.dailypress.com/virginia-gazette/" />
+
+<!-- End Jetpack Open Graph Tags -->
+<link rel="icon" href="https://www.dailypress.com/wp-content/uploads/2023/05/dpfavicon.png?w=16" sizes="32x32" />
+<link rel="icon" href="https://www.dailypress.com/wp-content/uploads/2023/05/dpfavicon.png?w=16" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://www.dailypress.com/wp-content/uploads/2023/05/dpfavicon.png?w=16" />
+<meta name="msapplication-TileImage" content="https://www.dailypress.com/wp-content/uploads/2023/05/dpfavicon.png?w=16" />
+			</head>
+
+			<body class="archive category category-virginia-gazette category-3653 wp-custom-logo wp-theme-wp-mason wp-child-theme-scng">
+
+			<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src='https://www.googletagmanager.com/ns.html?id=GTM-TLFP4R' height='0' width='0' style='display:none;visibility:hidden'></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+			<a href="#content" class="sr-only">Skip to content</a>
+			
+			<div id="page" class="hfeed site">
+
+			<div class="header-placeholder"></div><header class="site-header default headroom--top subsite-header">
+			<div class="nav-wrapper-primary">
+
+				<div class="nav-wrapper-secondary">
+
+					<div class="screen-wrapper">
+
+						<div class="nav-primary-top">
+
+										<div class="pushnav-flex-wrapper">
+				<nav class="pushnav" role="navigation" aria-label="Main Menu" id="pushnav-container"><div id="menu-toggle" class="menu-toggle" role="button" aria-expanded="false" tabindex="0" aria-label="Open menu of all sections"><span class="icon-hamburger"></span><span class="menu-label">All Sections</span></div>
+					<div class="wrapper-nav pushnav">
+						<div class="border-container">
+							<div class="top-pushnav-container">
+															<a href="https://mktops.dailypress.com/subscriptions/land-new-year-26/?market=dp&#038;source=index&#038;g2i_or_o=Internet&#038;g2i_or_p=nav&#038;g2i_source=SB&#038;g2i_medium=sub-nav&#038;g2i_campaign=NY26" id="mega-subscribe-button" class="subscribe-button" >
+									<span>Subscribe Now</span>								</a>
+												<div class="accuweather-wrap">
+					<div class="weather-date">
+								<div class='dfm_accuweather_current_conditions'>
+				<a target="_blank" href="http://www.accuweather.com/en/us/newport-news-va/23607/current-weather/9784_pc?lang=en-us&amp;partner=tribune_2" title="Current Weather Conditions" aria-label="Current temperature is 37&deg;F, view full weather conditions in a new window">
+					<span>37&deg;F</span>
+					<i class="bi-sun" role="img" aria-label="weather icon sun"></i>
+				</a>
+			</div>						<div class="date">
+							Friday, January 2nd 2026						</div>
+					</div>
+				</div>
+											<a href="https://www.dailypress.com" class="home-link icon-home3" title="Link to Home Page">
+									<span>Home Page</span>
+								</a>
+							</div>
+							<ul id="pushnav" class="menu"><li id="menu-item-5461303" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-5461303 menu-large"><a href="https://placeanad.pilotonline.com/ad-options/?pub=daily-press&#038;type=productpublication" aria-expanded="false" aria-haspopup="true">Advertise with Us</a>
+<ul class="sub-menu">
+	<li id="menu-item-5467545" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5467545 menu-large"><a href="https://placeanad.pilotonline.com/ad-options/?pub=daily-press&#038;type=productpublication">Place an Ad</a></li>
+	<li id="menu-item-5461304" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5461304 menu-large"><a href="https://www.dailypress.com/about-us/">About the Daily Press</a></li>
+</ul>
+</li>
+<li id="menu-item-127" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-127 menu-large"><a href="/util-clean-cookies/?callbackURL=https://enewspaper.dailypress.com/shortcode/DAI635">Daily E-Edition</a></li>
+<li id="menu-item-129" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-129 menu-large"><a href="https://www.dailypress.com/news/" aria-expanded="false" aria-haspopup="true">News</a>
+<ul class="sub-menu">
+	<li id="menu-item-130" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-130 menu-large"><a href="https://www.dailypress.com/news/">News</a></li>
+	<li id="menu-item-131" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-131 menu-large"><a href="https://www.dailypress.com/latest-headlines/">Latest Headlines</a></li>
+	<li id="menu-item-132" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-132 menu-large"><a href="https://www.dailypress.com/news/crime-public-safety/">Courts and Crime</a></li>
+	<li id="menu-item-133" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-133 menu-large"><a href="https://www.dailypress.com/news/education/">Education</a></li>
+	<li id="menu-item-134" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-134 menu-large"><a href="https://www.dailypress.com/news/health/">Health</a></li>
+	<li id="menu-item-135" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-135 menu-large"><a href="https://www.dailypress.com/news/environment/">Environment</a></li>
+	<li id="menu-item-136" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-136 menu-large"><a href="https://www.dailypress.com/news/politics/">Politics</a></li>
+	<li id="menu-item-5461305" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5461305 menu-large"><a href="https://www.dailypress.com/tag/military/">Military</a></li>
+</ul>
+</li>
+<li id="menu-item-137" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-137 menu-large"><a href="https://www.dailypress.com/local-news/" aria-expanded="false" aria-haspopup="true">Local News</a>
+<ul class="sub-menu">
+	<li id="menu-item-138" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-138 menu-large"><a href="https://www.dailypress.com/local-news/">Local News</a></li>
+	<li id="menu-item-139" class="menu-item menu-item-type-taxonomy menu-item-object-location menu-item-139 menu-large"><a href="https://www.dailypress.com/location/virginia/gloucester-county/">Gloucester County</a></li>
+	<li id="menu-item-140" class="menu-item menu-item-type-taxonomy menu-item-object-location menu-item-140 menu-large"><a href="https://www.dailypress.com/location/virginia/hampton/">Hampton</a></li>
+	<li id="menu-item-141" class="menu-item menu-item-type-taxonomy menu-item-object-location menu-item-141 menu-large"><a href="https://www.dailypress.com/location/virginia/newport-news/">Newport News</a></li>
+	<li id="menu-item-142" class="menu-item menu-item-type-taxonomy menu-item-object-location menu-item-142 menu-large"><a href="https://www.dailypress.com/location/virginia/williamsburg/">Williamsburg</a></li>
+	<li id="menu-item-143" class="menu-item menu-item-type-taxonomy menu-item-object-location menu-item-143 menu-large"><a href="https://www.dailypress.com/location/virginia/york-county/">York County</a></li>
+</ul>
+</li>
+<li id="menu-item-144" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-144 menu-large"><a href="https://www.dailypress.com/sports/" aria-expanded="false" aria-haspopup="true">Sports</a>
+<ul class="sub-menu">
+	<li id="menu-item-145" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-145 menu-large"><a href="https://www.dailypress.com/sports/">Sports</a></li>
+	<li id="menu-item-7153625" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-7153625 menu-large"><a href="https://www.dailypress.com/sports/olympics/">Olympics</a></li>
+	<li id="menu-item-147" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-147 menu-large"><a href="https://www.dailypress.com/sports/college-sports/">College Sports</a></li>
+	<li id="menu-item-5501464" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5501464 menu-large"><a href="https://www.dailypress.com/things-to-do/outdoors/">Outdoors</a></li>
+</ul>
+</li>
+<li id="menu-item-5436438" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5436438 menu-large"><a href="https://www.dailypress.com/757teamz/">757Teamz</a></li>
+<li id="menu-item-149" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-149 menu-large"><a href="https://www.dailypress.com/business/" aria-expanded="false" aria-haspopup="true">Business</a>
+<ul class="sub-menu">
+	<li id="menu-item-150" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-150 menu-large"><a href="https://www.dailypress.com/business/">Business</a></li>
+	<li id="menu-item-151" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-151 menu-large"><a href="https://www.dailypress.com/business/economy/">Economy</a></li>
+	<li id="menu-item-152" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-152 menu-large"><a href="https://www.dailypress.com/business/retail/">Retail</a></li>
+	<li id="menu-item-153" class="menu-item menu-item-type-taxonomy menu-item-object-post_tag menu-item-153 menu-large"><a href="https://www.dailypress.com/tag/ports-and-shipyards/">Ports and shipyards</a></li>
+	<li id="menu-item-5459043" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5459043 menu-large"><a href="https://www.dailypress.com/best-reviews/">Consumer Reviews</a></li>
+</ul>
+</li>
+<li id="menu-item-154" class="menu-item menu-item-type-taxonomy menu-item-object-category current-category-ancestor current-menu-ancestor current-menu-parent current-category-parent menu-item-has-children menu-item-154 menu-large"><a href="https://www.dailypress.com/opinion/" aria-expanded="false" aria-haspopup="true">Opinion</a>
+<ul class="sub-menu">
+	<li id="menu-item-155" class="menu-item menu-item-type-taxonomy menu-item-object-category current-category-ancestor current-category-parent menu-item-155 menu-large"><a href="https://www.dailypress.com/opinion/">Opinion</a></li>
+	<li id="menu-item-156" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-156 menu-large"><a href="https://www.dailypress.com/opinion/editorials/">Editorials</a></li>
+	<li id="menu-item-157" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-157 menu-large"><a href="https://www.dailypress.com/sports/sports-columnists/">Sports Columnists</a></li>
+	<li id="menu-item-158" class="menu-item menu-item-type-taxonomy menu-item-object-category current-menu-item menu-item-158 menu-large"><a href="https://www.dailypress.com/opinion/letters-to-the-editor/">Letters to the Editor</a></li>
+</ul>
+</li>
+<li id="menu-item-159" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-159 menu-large"><a href="https://www.dailypress.com/things-to-do/" aria-expanded="false" aria-haspopup="true">Things to do</a>
+<ul class="sub-menu">
+	<li id="menu-item-160" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-160 menu-large"><a href="https://www.dailypress.com/things-to-do/">Things to do</a></li>
+	<li id="menu-item-161" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-161 menu-large"><a href="https://www.dailypress.com/things-to-do/arts/">Arts</a></li>
+	<li id="menu-item-162" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-162 menu-large"><a href="https://www.dailypress.com/things-to-do/theater/">Theater</a></li>
+	<li id="menu-item-5461919" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5461919 menu-large"><a href="https://www.dailypress.com/things-to-do/home-garden/">Home and Garden</a></li>
+	<li id="menu-item-163" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-163 menu-large"><a href="https://www.dailypress.com/things-to-do/books/">Books</a></li>
+	<li id="menu-item-164" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-164 menu-large"><a href="https://www.dailypress.com/things-to-do/horoscopes/">Horoscopes</a></li>
+	<li id="menu-item-5461306" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5461306 menu-large"><a href="https://www.dailypress.com/things-to-do/restaurants-food-drink/">Restaurants, Food and Drink</a></li>
+</ul>
+</li>
+<li id="menu-item-5473493" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5473493 menu-large"><a href="https://www.dailypress.com/tag/photos-and-videos/">Photo galleries</a></li>
+<li id="menu-item-5461308" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5461308 menu-large"><a href="https://fun.dailypress.com/">Games &amp; Puzzles</a></li>
+<li id="menu-item-6329549" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-6329549 menu-large"><a href="https://www.dailypress.com/obituaries/" aria-expanded="false" aria-haspopup="true">Obituaries</a>
+<ul class="sub-menu">
+	<li id="menu-item-6329550" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6329550 menu-large"><a href="https://www.dailypress.com/obituaries/">Obituaries</a></li>
+	<li id="menu-item-6329548" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6329548 menu-large"><a href="https://www.dailypress.com/news/news-obituaries/">News Obituaries</a></li>
+	<li id="menu-item-6329556" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6329556 menu-large"><a href="https://placeanad.pilotonline.com/obituaries-daily-press/#nt=secondarynavbar">Place an Obituary</a></li>
+</ul>
+</li>
+<li id="menu-item-5436439" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-5436439 menu-large"><a href="https://www.dailypress.com/tidewater-review/" aria-expanded="false" aria-haspopup="true">Tidewater Review</a>
+<ul class="sub-menu">
+	<li id="menu-item-5470631" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5470631 menu-large"><a href="https://www.dailypress.com/tidewater-review/">Tidewater Review</a></li>
+	<li id="menu-item-5467549" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5467549 menu-large"><a href="https://tr-enewspaper.dailypress.com/">E-Newspaper</a></li>
+</ul>
+</li>
+<li id="menu-item-5436440" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-5436440 menu-large"><a href="https://www.dailypress.com/virginia-gazette/" aria-expanded="false" aria-haspopup="true">Virginia Gazette</a>
+<ul class="sub-menu">
+	<li id="menu-item-5470630" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5470630 menu-large"><a href="https://www.dailypress.com/virginia-gazette/">Virginia Gazette</a></li>
+	<li id="menu-item-5467476" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5467476 menu-large"><a href="https://enewspaper.vagazette.com/">E-Newspaper</a></li>
+</ul>
+</li>
+<li id="menu-item-170" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-170 menu-large"><a href="https://classifieds.dailypress.com/" aria-expanded="false" aria-haspopup="true">Classified</a>
+<ul class="sub-menu">
+	<li id="menu-item-5451450" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5451450 menu-large"><a href="https://classifieds.dailypress.com/">Classifieds</a></li>
+	<li id="menu-item-5451451" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5451451 menu-large"><a href="https://jobs.dailypress.com/">Employment / Jobs</a></li>
+	<li id="menu-item-5451452" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5451452 menu-large"><a href="https://classifieds.dailypress.com/va/garage-sales/search">Garage Sales</a></li>
+	<li id="menu-item-5451453" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5451453 menu-large"><a href="https://classifieds.dailypress.com/va/automotive/search">Automotive</a></li>
+	<li id="menu-item-5451454" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5451454 menu-large"><a href="https://classifieds.dailypress.com/va/merchandise/search">Merchandise</a></li>
+	<li id="menu-item-171" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-171 menu-large"><a href="https://classifieds.dailypress.com/va/notices/search">Local Public Notices</a></li>
+	<li id="menu-item-172" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-172 menu-large"><a href="https://www.publicnoticevirginia.com/">Virginia Public Notices</a></li>
+</ul>
+</li>
+<li id="menu-item-5461315" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-5461315 menu-large"><a href="https://www.newspapers.com/paper/daily-press/1773/" aria-expanded="false" aria-haspopup="true">More</a>
+<ul class="sub-menu">
+	<li id="menu-item-5461316" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5461316 menu-large"><a href="https://www.newspapers.com/paper/daily-press/1773/">Daily Press Archives</a></li>
+	<li id="menu-item-5461322" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5461322 menu-large"><a href="https://www.dailypress.com/photo-requests/">Photo reprints and licensing</a></li>
+	<li id="menu-item-5461318" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5461318 menu-large"><a href="https://store.dailypress.com/">Daily Press Store</a></li>
+	<li id="menu-item-5461319" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5461319 menu-large"><a href="https://store.dailypress.com/dept/photo-request?cp=102131_102494_102983">Buy Photos</a></li>
+</ul>
+</li>
+<li id="menu-item-5540620" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-5540620 menu-large"><a href="https://www.virginiamedia.com/" aria-expanded="false" aria-haspopup="true">Special Sections</a>
+<ul class="sub-menu">
+	<li id="menu-item-7817523" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7817523 menu-large"><a href="https://edition.pagesuite-professional.co.uk/html5/desktop/production/default.aspx?edid=c45fc4b7-c952-40f7-a4aa-5618be380a9d">Dec. 2025 Prime Time</a></li>
+	<li id="menu-item-7699888" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7699888 menu-large"><a href="https://edition.pagesuite-professional.co.uk/html5/desktop/production/default.aspx?edid=2d9b4d07-19ad-4229-95f4-121f5ee0bc5b">Best of Winners 2025</a></li>
+	<li id="menu-item-7720785" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7720785 menu-large"><a href="https://edition.pagesuite-professional.co.uk/html5/desktop/production/default.aspx?edid=8d5efa7d-083e-44c7-a334-9d9dbf3fab18">Sep. 2025 Prime Time</a></li>
+	<li id="menu-item-7633917" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7633917 menu-large"><a href="https://edition.pagesuite-professional.co.uk/html5/desktop/production/default.aspx?edid=d64ef970-f34c-4628-b9ac-431531856bec">May 2025 Prime Time</a></li>
+	<li id="menu-item-7130042" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7130042 menu-large"><a href="https://edition.pagesuite-professional.co.uk/html5/desktop/production/default.aspx?edid=18399023-fcf0-459e-bc9f-96cafcf4961c">Feb. 2025 Prime Time</a></li>
+	<li id="menu-item-7464602" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7464602 menu-large"><a href="https://edition.pagesuite-professional.co.uk/html5/reader/stage/default.aspx?localhost=true&#038;pubname=&#038;edid=914db9e1-e60a-494d-9871-86c4bb707f7d">Sep. 2024 Prime Time</a></li>
+	<li id="menu-item-7664059" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7664059 menu-large"><a href="https://edition.pagesuite-professional.co.uk/html5/desktop/production/default.aspx?edid=52738e44-5403-459d-8215-1cc42e8fc83c">Best of Winners 2024</a></li>
+	<li id="menu-item-7130043" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7130043 menu-large"><a href="https://edition.pagesuite-professional.co.uk/html5/desktop/production/default.aspx?edid=4f171034-95b4-46ad-a7b7-8dee20b51524">Pink Out the Press</a></li>
+</ul>
+</li>
+<li id="menu-item-6392152" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-6392152 menu-large"><a href="https://www.dailypress.com/branded-content/" aria-expanded="false" aria-haspopup="true">Branded Content</a>
+<ul class="sub-menu">
+	<li id="menu-item-6432362" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6432362 menu-large"><a href="https://www.dailypress.com/sponsor-content-hub/?ntv_adpz=1713">Paid Partner Content</a></li>
+	<li id="menu-item-6432378" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6432378 menu-large"><a href="https://www.dailypress.com/branded-content/">Advertising by Ascend</a></li>
+	<li id="menu-item-6432380" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6432380 menu-large"><a href="https://www.dailypress.com/sponsor-content-hub/?ntv_adpz=3322">Paid Content by Brandpoint</a></li>
+</ul>
+</li>
+</ul>						</div>
+						<div class="newsletter-nav">
+								<div class="newsletter-simple">
+		<div class="newsletter-item">
+			<p class="prompt">Sign up for email newsletters</p>
+			<a class="sign-up-button" href="https://www.dailypress.com/newsletters"
+			   aria-label="Click here to go to the newsletter sign up page">
+				Sign Up</a>
+		</div>
+	</div>
+						</div>
+					</div>
+				</nav>
+			</div>
+						<div class="hidden-logo">
+				<div class="logo custom-logo"><a href="https://www.dailypress.com" aria-label="Daily Press"><img src="https://www.dailypress.com/wp-content/uploads/2023/04/Daily_Press_logo-vdp-full-black.png" alt="Daily Press"></a></div>			</div>
+							<div class="digisubs-wrapper">
+									<nav class="digisubs-pushmenu hidden" role="navigation" aria-label="Account Menu" id="digisubs-push-container">
+						<div id="digisubs-toggle" class="digisubs-toggle pushnav" role="button" aria-expanded="false" tabindex="0" aria-label="Open menu">
+							<div id="mng-icon-image">
+								<img id="pushnav-icon" alt="">
+								<div id="blank-icon-user">
+									<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="20" viewBox="0 0 32 32">
+										<path fill="#000000" d="M18 22.082v-1.649c2.203-1.241 4-4.337 4-7.432 0-4.971 0-9-6-9s-6 4.029-6 9c0 3.096 1.797 6.191 4 7.432v1.649c-6.784 0.555-12 3.888-12 7.918h28c0-4.030-5.216-7.364-12-7.918z"></path>
+									</svg>
+								</div>
+								<span class="icon-arrow-down"></span>
+							</div>
+						</div>
+						<div class="wrapper-nav-subs pushnav">
+							<div class="border-container">
+								<ul id="dfm-digisubs-push-menu" class="menu"><li id="menu-item-5509278" class="subscribe-visibility subscribe-special custom-button menu-item menu-item-type-custom menu-item-object-custom menu-item-5509278"><a href="https://mktops.dailypress.com/subscriptions/land-new-year-26/?market=dp&#038;source=index&#038;g2i_or_o=Internet&#038;g2i_or_p=nav&#038;g2i_source=SB&#038;g2i_medium=nav2&#038;g2i_campaign=NY26">Subscribe</a></li>
+<li id="menu-item-5509279" class="log-in-button subscribe-special custom-button menu-item menu-item-type-custom menu-item-object-custom menu-item-5509279"><a href="/login">Login</a></li>
+</ul>								<div id="push-account-content">
+									<div class="show-digisubs-push" id="email-source-wrapper">
+										<a class="account-link" id="push-email-link"></a>
+										<p class="logged-in-source" id="push-auth-source"></p>
+									</div>
+									<a class="show-digisubs-push account-link" id="push-account-link" data-mng-click="account-settings" data-mng-category="account-link" data-mng-action="account-settings">Account Settings</a>
+									<a class="show-digisubs-push" id="push-contact-us" href="/contact-us" data-mng-click="contact-us" data-mng-category="account-link" data-mng-action="contact-us">Contact Us</a>
+									<a class="show-digisubs-push" id="push-log-out" href="/logout" data-mng-click="log-out" data-mng-category="account-link" data-mng-action="log-out">Log Out</a>
+									<div class="show-digisubs-push marketing-slot" id="push-marketing-slot"></div>
+									<label class="user-spoof">Spoof a user</label>
+									<input id="push-user-spoof-control" class="user-spoof" type="checkbox">
+									<ul id="newsLetterItem-push" class="newsLetterContent"></ul>
+								</div>
+							</div>
+							<div class="newsletter-nav">
+									<div class="newsletter-simple">
+		<div class="newsletter-item">
+			<p class="prompt">Sign up for email newsletters</p>
+			<a class="sign-up-button" href="https://www.dailypress.com/newsletters"
+			   aria-label="Click here to go to the newsletter sign up page">
+				Sign Up</a>
+		</div>
+	</div>
+							</div>
+						</div>
+					</nav>
+					<div class="digisubs-wrapper-large" id="digisubs-wrapper-large">
+						<ul id="dfm-digisubs-menu" class="menu"><li id="menu-item-5274" class="subscribe-visibility subscribe-special custom-button menu-item menu-item-type-custom menu-item-object-custom menu-item-5274"><a href="https://mktops.dailypress.com/subscriptions/land-new-year-26/?market=dp&#038;source=index&#038;g2i_or_o=Internet&#038;g2i_or_p=nav&#038;g2i_source=SB&#038;g2i_medium=nav2&#038;g2i_campaign=NY26">Subscribe</a></li>
+<li id="menu-item-5275" class="log-in-button subscribe-special custom-button menu-item menu-item-type-custom menu-item-object-custom menu-item-5275"><a href="/login">Login</a></li>
+</ul>					</div>
+									</div>
+			<div class="search-icon-wrapper"><span class="icon-search" aria-label="Click here or hit enter to open a Search box" id="dfm-search-icon" role="button" tabindex=0 aria-expanded="false"></span></div><form class="search-form header-search" method="GET" id="search-bar" action="https://www.dailypress.com/">
+
+		<div class="input-wrapper">
+			<span class="icon-search" aria-hidden="true"></span>
+		<input id="mng-search-focus" type="text" placeholder="Type your search" name="s"  aria-label="Type your search">
+		<input name="orderby" type="hidden" value="date"/>
+		<input name="order" type="hidden" value="desc"/>
+				<div class="search-button-container">
+			<button class="search-button" type="submit">
+				<span>Search</span>
+			</button>
+		</div>
+	</div>
+	
+</form>
+
+
+						</div>
+
+					</div>
+
+					<div class="nav-primary-middle">
+
+										<div class="accuweather-wrap">
+					<div class="weather-date">
+								<div class='dfm_accuweather_current_conditions'>
+				<a target="_blank" href="http://www.accuweather.com/en/us/newport-news-va/23607/current-weather/9784_pc?lang=en-us&amp;partner=tribune_2" title="Current Weather Conditions" aria-label="Current temperature is 37&deg;F, view full weather conditions in a new window">
+					<span>37&deg;F</span>
+					<i class="bi-sun" role="img" aria-label="weather icon sun"></i>
+				</a>
+			</div>						<div class="date">
+							Friday, January 2nd 2026						</div>
+					</div>
+				</div>
+			<div class="hidden-logo"><div class="subsite-container"><a href=""><img class="subsite-image" src="https://www.dailypress.com/wp-content/uploads/2023/05/Virginia-Gazette-logo2-1.jpg" alt=""></a></div></div>			<div class="sponsorship-ad-wrapper">
+								<div class="dfp-ad dfp-sponsorship_1" id="div-gpt-ad-sponsorship_1" style="visibility:hidden">
+					<div class="htlad-sponsorship_1" data-unit='dailypress.com/virginia-gazette/sponsorship_1' data-targeting=''></div>
+				</div>			</div>
+			
+					</div>
+
+					<div class="nav-primary-bottom">
+
+									<div class="nav-primary">
+			<ul id="subnav-virginia-gazette-menu" class="menu"><li id="menu-item-5436442" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5436442"><a href="https://www.dailypress.com/virginia-gazette/virginia-gazette-community/">Community</a></li>
+<li id="menu-item-5436443" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5436443"><a href="https://www.dailypress.com/virginia-gazette/virginia-gazette-news/">News</a></li>
+<li id="menu-item-5436444" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5436444"><a href="https://www.dailypress.com/virginia-gazette/virginia-gazette-opinion/">Opinion</a></li>
+<li id="menu-item-5436445" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5436445"><a href="https://www.dailypress.com/virginia-gazette/virginia-gazette-sports/">Sports</a></li>
+<li id="menu-item-5436446" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5436446"><a href="https://www.publicnoticevirginia.com/(S(zs120z3veniza33iqy2ces3w))/Search.aspx">Virginia Gazette Public Notices</a></li>
+<li id="menu-item-5449658" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5449658"><a href="https://enewspaper.dailypress.com/shortcode/DAI635">Gazette E-paper</a></li>
+<li id="menu-item-7806426" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7806426"><a href="https://mktops.dailypress.com/subscriptions/virginia/gazette/subscriptions/land-subscribe-evergreen/?market=vg&#038;source=index">Subscribe</a></li>
+</ul>			</div>
+			
+					</div>
+
+				</div>
+
+				
+<div class="widget widget-trending-stories"><div class="trending-bar trending">
+	<div class="trending-bar-wrapper">
+		<p class="label">
+			Top Picks:		</p>
+		<nav>
+			<ul>
+					<li class="entry-title ">
+
+			<a class="article-title" href="https://www.dailypress.com/2023/07/04/contact-the-newsroom-submit-a-news-tip/" title="Contact the newsroom: Submit a news tip">
+	
+				<span class="dfm-title free">
+			Send us a tip		</span>
+
+
+
+			</a>
+	
+	
+	</li>
+	<li class="entry-title ">
+
+			<a class="article-title" href="https://www.dailypress.com/2025/10/21/contact-the-newsroom/" title="Contact the newsroom">
+	
+				<span class="dfm-title metered">
+			Contact the newsroom		</span>
+
+
+
+			</a>
+	
+	
+	</li>
+	<li class="entry-title ">
+
+			<a class="article-title" href="https://www.dailypress.com/2025/09/16/free-games-in-app/" title="New! Daily Press launches interactive games in mobile app">
+	
+				<span class="dfm-title free">
+			New games in app		</span>
+
+
+
+			</a>
+	
+	
+	</li>
+	<li class="entry-title ">
+
+			<a class="article-title" href="https://www.dailypress.com/2025/06/04/lets-eat-restaurant-guide/" title="Let’s Eat: Virginian-Pilot and Daily Press restaurant guide">
+	
+				<span class="dfm-title free">
+			Restaurant guide		</span>
+
+
+
+			</a>
+	
+	
+	</li>
+	<li class="entry-title ">
+
+			<a class="article-title" href="https://www.dailypress.com/2023/07/06/submit-a-letter-to-the-editor-3/" title="Submit a letter to the editor">
+	
+				<span class="dfm-title free">
+			Submit a letter to the editor		</span>
+
+
+
+			</a>
+	
+	
+	</li>
+	<li class="entry-title ">
+
+			<a class="article-title" href="https://www.dailypress.com/2023/08/09/how-to-submit-an-op-ed-to-the-daily-press/" title="How to submit an op-ed to the Daily Press">
+	
+				<span class="dfm-title free">
+			How to submit an op-ed to the Daily Press		</span>
+
+
+
+			</a>
+	
+	
+	</li>
+			</ul>
+		</nav>
+	</div>
+</div>
+
+</div>
+			</div>
+			</header><div id="content" class="site-content">
+						<div class="header-banners">
+								<div class="dfp-ad dfp-interstitial" id="div-gpt-ad-interstitial" style="visibility:hidden">
+					<div class="htlad-interstitial" data-unit='dailypress.com/virginia-gazette/interstitial' data-targeting=''></div>
+				</div>				<div class="dfp-ad dfp-top_leaderboard" id="div-gpt-ad-top_leaderboard" style="visibility:hidden">
+					<div class="htlad-top_leaderboard" data-unit='dailypress.com/virginia-gazette/top_leaderboard' data-targeting=''></div>
+				</div>			</div>
+			
+
+			
+<div id="primary" class="content-area">
+    <main id="main" class="site-main" role="main">
+
+		<div class="custom-subsite-featured">
+	<h1 class="tag-name tag-name-simple-featured">Virginia Gazette</h1>
+
+	<section class="feature-primary takeover simple-featured">
+    
+
+<h2 class="sr-only">Featured</h2>
+	<article
+		class=" feature-large archive-view has-image post-7833228 post type-post status-publish format-standard has-post-thumbnail hentry category-latest-headlines category-local-news category-virginia-gazette category-virginia-gazette-news"		data-id="7833228"
+		data-timestamp="1767171635"
+	>
+
+		<div class="dfm-featured-top-flex-container"></div>
+<div class="article-info">
+		<header>
+
+		
+		
+			<h3 class="entry-title ">
+
+			<a class="article-title" href="https://www.dailypress.com/2025/12/31/2025-year-in-review/" title="Some of the biggest stories of 2025 in the Historic Triangle">
+	
+				<span class="dfm-title metered">
+			Some of the biggest stories of 2025 in the Historic Triangle		</span>
+
+
+
+			</a>
+	
+	
+	</h3>
+<!--		-->
+		
+		
+<figure>
+			<a href="https://www.dailypress.com/2025/12/31/2025-year-in-review/" title="Some of the biggest stories of 2025 in the Historic Triangle" class=""></a>
+	
+	<a href="https://www.dailypress.com/2025/12/31/2025-year-in-review/" title="Some of the biggest stories of 2025 in the Historic Triangle">
+		<div class="image-wrapper"><img alt="Jessica Anderson emotionally thanks her supporters at Strangeways Brewing in Williamsburg after winning the House District 71 seat on Nov. 4. (Ben Swenson/For The Virginia Gazette)" title="1000001492" src="https://www.dailypress.com/wp-content/uploads/2025/11/1000001492.jpg" class=" size-hp_takeover" sizes="(max-width: 40em) 620px,(min-width: 40em) and (max-width: 50em) 780px,(min-width: 50em) and (max-width: 65em) 1020px,(min-width: 65em) and (max-width: 80em) 865px,(min-width: 80em) 955px,1020px" srcset="https://www.dailypress.com/wp-content/uploads/2025/11/1000001492.jpg?w=467 620w,https://www.dailypress.com/wp-content/uploads/2025/11/1000001492.jpg?w=587 780w,https://www.dailypress.com/wp-content/uploads/2025/11/1000001492.jpg?w=767 1020w,https://www.dailypress.com/wp-content/uploads/2025/11/1000001492.jpg?w=648 865w,https://www.dailypress.com/wp-content/uploads/2025/11/1000001492.jpg?w=716 955w" ></div>	</a>
+</figure>
+
+		
+		
+		
+	</header>
+
+				<div class="excerpt">
+			Ten stories that made headlines in 2025.		</div>
+
+	
+		</div><!-- .article-info -->
+
+<figure>
+	<div class="image-wrapper"><a href="https://www.dailypress.com/2025/12/31/2025-year-in-review/" ><img alt="Jessica Anderson emotionally thanks her supporters at Strangeways Brewing in Williamsburg after winning the House District 71 seat on Nov. 4. (Ben Swenson/For The Virginia Gazette)" title="1000001492" src="https://www.dailypress.com/wp-content/uploads/2025/11/1000001492.jpg" class=" size-article_feature" sizes="(max-width: 40em) 620px,(min-width: 40em) and (max-width: 50em) 780px,(min-width: 50em) and (max-width: 65em) 1020px,(min-width: 65em) and (max-width: 80em) 1280px,(min-width: 80em) 1860px,1860px" srcset="https://www.dailypress.com/wp-content/uploads/2025/11/1000001492.jpg?w=467 620w,https://www.dailypress.com/wp-content/uploads/2025/11/1000001492.jpg?w=587 780w,https://www.dailypress.com/wp-content/uploads/2025/11/1000001492.jpg?w=767 1020w,https://www.dailypress.com/wp-content/uploads/2025/11/1000001492.jpg?w=960 1280w,https://www.dailypress.com/wp-content/uploads/2025/11/1000001492.jpg?w=1395 1860w" ></a></div>	</figure>
+
+		
+
+		
+	</article>
+
+
+		<aside class="sidebar-ad-container">
+							<div class="dfp-ad dfp-cube1_rrail_atf" id="div-gpt-ad-cube1_rrail_atf" style="visibility:hidden">
+					<div class="htlad-cube1_rrail_atf" data-unit='dailypress.com/virginia-gazette/cube1_rrail_atf' data-targeting=''></div>
+				</div>		</aside>
+		<div class="feature-bottom">
+			
+
+
+	<article
+		class=" feature-small archive-view has-image post-7836022 post type-post status-publish format-standard has-post-thumbnail hentry category-books category-entertainment category-local-news category-things-to-do category-virginia-gazette location-virginia location-williamsburg"		data-id="7836022"
+		data-timestamp="1767168181"
+	>
+
+		
+<figure>
+			<a href="https://www.dailypress.com/2025/12/31/john-hinckley-jr-s-memoir/" title="Ronald Reagan’s would-be assassin details life before and after he made history in new memoir" class=""></a>
+	
+	<a href="https://www.dailypress.com/2025/12/31/john-hinckley-jr-s-memoir/" title="Ronald Reagan’s would-be assassin details life before and after he made history in new memoir">
+		<div class="image-wrapper"><img alt="John Hinckley Jr. stands for a portrait in Williamsburg in May of 2023. (The Virginian Pilot)
+" title="TVP-HINCKLEY" src="https://www.dailypress.com/wp-content/uploads/2025/12/TVP-HINCKLEY.jpg" class=" size-hp_small" sizes="(max-width: 40em) 300px,(min-width: 40em) and (max-width: 50em) 380px,(min-width: 50em) and (max-width: 65em) 395px,(min-width: 65em) and (max-width: 80em) 470px,(min-width: 80em) 305px,470px" srcset="https://www.dailypress.com/wp-content/uploads/2025/12/TVP-HINCKLEY.jpg?w=281 300w,https://www.dailypress.com/wp-content/uploads/2025/12/TVP-HINCKLEY.jpg?w=323 380w,https://www.dailypress.com/wp-content/uploads/2025/12/TVP-HINCKLEY.jpg?w=333 395w,https://www.dailypress.com/wp-content/uploads/2025/12/TVP-HINCKLEY.jpg?w=398 470w,https://www.dailypress.com/wp-content/uploads/2025/12/TVP-HINCKLEY.jpg?w=258 305w" ></div>	</a>
+</figure>
+
+<div class="article-info">
+		<header>
+
+		
+		
+			<h3 class="entry-title ">
+
+			<a class="article-title" href="https://www.dailypress.com/2025/12/31/john-hinckley-jr-s-memoir/" title="Ronald Reagan’s would-be assassin details life before and after he made history in new memoir">
+	
+				<span class="dfm-title metered">
+			Ronald Reagan’s would-be assassin details life before and after he made history in new memoir		</span>
+
+
+
+			</a>
+	
+	
+	</h3>
+<!--		-->
+		
+		
+		
+		
+		
+	</header>
+
+	
+		</div><!-- .article-info -->
+
+		
+
+		
+	</article>
+
+
+
+
+
+	<article
+		class=" feature-small archive-view has-image post-7833283 post type-post status-publish format-standard has-post-thumbnail hentry category-latest-headlines category-local-news category-virginia-gazette category-virginia-gazette-news"		data-id="7833283"
+		data-timestamp="1767085243"
+	>
+
+		
+<figure>
+			<a href="https://www.dailypress.com/2025/12/30/did-you-know-that-walking-is-built-into-life-in-williamsburg/" title="Walking is built into life in Williamsburg, a place to slow down" class=""></a>
+	
+	<a href="https://www.dailypress.com/2025/12/30/did-you-know-that-walking-is-built-into-life-in-williamsburg/" title="Walking is built into life in Williamsburg, a place to slow down">
+		<div class="image-wrapper"><img alt="A woman stays bundled up while walking the trails at Waller Mill Park in Williamsburg. (Daily Press file)" title="GPYIWMYUL5CILCKOE23RHVA6S4" src="https://www.dailypress.com/wp-content/uploads/migration/2017/06/03/GPYIWMYUL5CILCKOE23RHVA6S4.jpg" class=" size-hp_small" sizes="(max-width: 40em) 300px,(min-width: 40em) and (max-width: 50em) 380px,(min-width: 50em) and (max-width: 65em) 395px,(min-width: 65em) and (max-width: 80em) 470px,(min-width: 80em) 305px,470px" srcset="https://www.dailypress.com/wp-content/uploads/migration/2017/06/03/GPYIWMYUL5CILCKOE23RHVA6S4.jpg?w=286 300w,https://www.dailypress.com/wp-content/uploads/migration/2017/06/03/GPYIWMYUL5CILCKOE23RHVA6S4.jpg?w=329 380w,https://www.dailypress.com/wp-content/uploads/migration/2017/06/03/GPYIWMYUL5CILCKOE23RHVA6S4.jpg?w=339 395w,https://www.dailypress.com/wp-content/uploads/migration/2017/06/03/GPYIWMYUL5CILCKOE23RHVA6S4.jpg?w=405 470w,https://www.dailypress.com/wp-content/uploads/migration/2017/06/03/GPYIWMYUL5CILCKOE23RHVA6S4.jpg?w=263 305w" ></div>	</a>
+</figure>
+
+<div class="article-info">
+		<header>
+
+		
+		
+			<h3 class="entry-title ">
+
+			<a class="article-title" href="https://www.dailypress.com/2025/12/30/did-you-know-that-walking-is-built-into-life-in-williamsburg/" title="Walking is built into life in Williamsburg, a place to slow down">
+	
+				<span class="dfm-title metered">
+			Walking is built into life in Williamsburg, a place to slow down		</span>
+
+
+
+			</a>
+	
+	
+	</h3>
+<!--		-->
+		
+		
+		
+		
+		
+	</header>
+
+	
+		</div><!-- .article-info -->
+
+		
+
+		
+	</article>
+
+
+<div class="s2nPlayer k-p6qo8hxk" data-type="float" style="width:100%;margin-bottom: 1.5em" data-s2n-api="dfm_stn_player_script_id_p6qo8hxk"></div><script>	function dfm_stn_player_script_id_p6qo8hxk( getS2NApiForPlayer ) {
+		if( typeof window.MNGAuthentication !== 'undefined' ){
+			const s2nApi = getS2NApiForPlayer( document.querySelector('.k-p6qo8hxk') );
+			s2nApi.float =  ! window.MNGAuthentication.isUserSubscriber();
+		}
+	}</script>
+		</div>
+
+			</section>
+	<div class="content-wrapper">
+		<div class="tag-content load-more-wrapper">
+			
+
+
+	<article
+		class=" tag-search-view archive-view has-image post-7833294 post type-post status-publish format-standard has-post-thumbnail hentry category-latest-headlines category-local-news category-virginia-gazette category-virginia-gazette-news"		data-id="7833294"
+		data-timestamp="1767342657"
+	>
+
+		
+<figure>
+			<a href="https://www.dailypress.com/2026/01/02/savvy-senior-how-to-find-a-quality-nursing-home-for-your-loved-one/" title="Savvy Senior: How to find a quality nursing home for your loved one" class=""></a>
+	
+	<a href="https://www.dailypress.com/2026/01/02/savvy-senior-how-to-find-a-quality-nursing-home-for-your-loved-one/" title="Savvy Senior: How to find a quality nursing home for your loved one">
+		<div class="image-wrapper"><img alt="Here are some steps you can take that can help you find a good nursing home and avoid a bad one. (Courtesy/Canva)" title="ECPMOKRFIBFPXGCVDXZAHFZL3A" src="data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoBAAEAAwA0JaQAA3AA/v3AgAA=" class="lazyload  size-feature_small" data-sizes="auto" data-src="https://www.dailypress.com/wp-content/uploads/2024/09/ECPMOKRFIBFPXGCVDXZAHFZL3A.jpg?w=140" data-srcset="https://www.dailypress.com/wp-content/uploads/2024/09/ECPMOKRFIBFPXGCVDXZAHFZL3A.jpg?w=140 140w" ></div>	</a>
+</figure>
+
+<div class="article-info">
+		<header>
+
+		
+		
+			<h2 class="entry-title ">
+
+			<a class="article-title" href="https://www.dailypress.com/2026/01/02/savvy-senior-how-to-find-a-quality-nursing-home-for-your-loved-one/" title="Savvy Senior: How to find a quality nursing home for your loved one">
+	
+				<span class="dfm-title metered">
+			Savvy Senior: How to find a quality nursing home for your loved one		</span>
+
+
+
+			</a>
+	
+	
+	</h2>
+<!--		-->
+		
+		
+		
+			<div class="entry-meta">
+									<div class="byline">By <a href="https://www.dailypress.com/author/jim-miller/" aria-label="Author: Jim Miller" >Jim Miller</a></div>
+								
+				
+					
+                    
+					  
+							<time datetime="2026-01-02 08:30:57">January 2, 2026  at 8:30 a.m.</time>
+
+					
+				
+			</div><!-- .entry-meta -->
+
+		
+		
+		
+	</header>
+
+				<div class="excerpt">
+			Here are some steps you can take that can help you find a good nursing...		</div>
+
+	
+		</div><!-- .article-info -->
+
+		
+
+		
+	</article>
+
+
+
+
+
+	<article
+		class=" tag-search-view archive-view has-image post-7835349 post type-post status-publish format-standard has-post-thumbnail hentry category-arts category-entertainment category-latest-headlines category-news category-obituaries category-things-to-do category-travel category-virginia-gazette category-virginia-gazette-sports category-virginia-news location-virginia"		data-id="7835349"
+		data-timestamp="1767098910"
+	>
+
+		
+<figure>
+			<a href="https://www.dailypress.com/2025/12/30/director-richmond-musuem-fatally-struck/" title="Director of Richmond’s Valentine Museum hit, killed by car" class=""></a>
+	
+	<a href="https://www.dailypress.com/2025/12/30/director-richmond-musuem-fatally-struck/" title="Director of Richmond’s Valentine Museum hit, killed by car">
+		<div class="image-wrapper"><img alt="The Valentine&#039;s director, Bill Martin, in 2019. (Steve Helber/File AP)" title="TVP-Z-DB-VALENTINE-BILL-MARTIN-AP-HELBER-02" src="data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoBAAEAAwA0JaQAA3AA/v3AgAA=" class="lazyload  size-feature_small" data-sizes="auto" data-src="https://www.dailypress.com/wp-content/uploads/2025/12/TVP-Z-DB-VALENTINE-BILL-MARTIN-AP-HELBER-02.jpg?w=122" data-srcset="https://www.dailypress.com/wp-content/uploads/2025/12/TVP-Z-DB-VALENTINE-BILL-MARTIN-AP-HELBER-02.jpg?w=122 140w" ></div>	</a>
+</figure>
+
+<div class="article-info">
+		<header>
+
+		
+		
+			<h2 class="entry-title ">
+
+			<a class="article-title" href="https://www.dailypress.com/2025/12/30/director-richmond-musuem-fatally-struck/" title="Director of Richmond’s Valentine Museum hit, killed by car">
+	
+				<span class="dfm-title free">
+			Director of Richmond’s Valentine Museum hit, killed by car		</span>
+
+
+
+			</a>
+	
+	
+	</h2>
+<!--		-->
+		
+		
+		
+			<div class="entry-meta">
+									<div class="byline">By <a href="https://www.dailypress.com/author/colleen-curran/" aria-label="Author: Colleen Curran" >Colleen Curran</a></div>
+								
+				
+					
+                    
+					  
+							<time datetime="2025-12-30 12:48:30">December 30, 2025  at 12:48 p.m.</time>
+
+					
+				
+			</div><!-- .entry-meta -->
+
+		
+		
+		
+	</header>
+
+				<div class="excerpt">
+			Longtime head William Martin is credited with turning the museum around and facing tough historical...		</div>
+
+	
+		</div><!-- .article-info -->
+
+		
+
+		
+	</article>
+
+
+
+
+
+	<article
+		class=" tag-search-view archive-view has-image post-7834250 post type-post status-publish format-standard has-post-thumbnail hentry category-latest-headlines category-local-news category-things-to-do category-virginia-gazette category-virginia-gazette-news location-city location-virginia location-williamsburg"		data-id="7834250"
+		data-timestamp="1767089660"
+	>
+
+		
+<figure>
+			<a href="https://www.dailypress.com/2025/12/30/williamsburg-teen-driver-safety-event/" title="Williamsburg families invited to teen driver safety event" class=""></a>
+	
+	<a href="https://www.dailypress.com/2025/12/30/williamsburg-teen-driver-safety-event/" title="Williamsburg families invited to teen driver safety event">
+		<div class="image-wrapper"><img alt="Lifesafer ISA will collaborate with the Gweedo Memorial Foundation for a teen driving safety showcase on Wednesday, Dec. 31 from 11 a.m. to 3 p.m. (Courtesy/LifeSafer ISA)" title="LifeSafer_Teen_Driver" src="data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoBAAEAAwA0JaQAA3AA/v3AgAA=" class="lazyload  size-feature_small" data-sizes="auto" data-src="https://www.dailypress.com/wp-content/uploads/2025/12/LifeSafer_Teen_Driver.png?w=132" data-srcset="https://www.dailypress.com/wp-content/uploads/2025/12/LifeSafer_Teen_Driver.png?w=132 140w" ></div>	</a>
+</figure>
+
+<div class="article-info">
+		<header>
+
+		
+		
+			<h2 class="entry-title ">
+
+			<a class="article-title" href="https://www.dailypress.com/2025/12/30/williamsburg-teen-driver-safety-event/" title="Williamsburg families invited to teen driver safety event">
+	
+				<span class="dfm-title metered">
+			Williamsburg families invited to teen driver safety event		</span>
+
+
+
+			</a>
+	
+	
+	</h2>
+<!--		-->
+		
+		
+		
+			<div class="entry-meta">
+									<div class="byline">By <a href="https://www.dailypress.com/author/james-robinson/" aria-label="Author: James W. Robinson" >James W. Robinson</a></div>
+								
+				
+					
+                    
+					  
+							<time datetime="2025-12-30 10:15:51">December 30, 2025  at 10:15 a.m.</time>
+
+					
+				
+			</div><!-- .entry-meta -->
+
+		
+		
+		
+	</header>
+
+				<div class="excerpt">
+			The event will showcase how intelligent speed assistance technology can keep new drivers safe.		</div>
+
+	
+		</div><!-- .article-info -->
+
+		
+
+		
+	</article>
+
+
+
+
+
+	<article
+		class=" tag-search-view archive-view has-image post-7834690 post type-post status-publish format-standard has-post-thumbnail hentry category-crime-public-safety category-latest-headlines category-local-news category-news category-virginia-gazette category-virginia-gazette-news location-county location-james-city-county location-virginia"		data-id="7834690"
+		data-timestamp="1767078293"
+	>
+
+		
+<figure>
+			<a href="https://www.dailypress.com/2025/12/30/tobacco-and-vape-store-robbery-jcc-vehicle/" title="Police searching for suspects in James City County Tobacco and Vape Store burglary" class=""></a>
+	
+	<a href="https://www.dailypress.com/2025/12/30/tobacco-and-vape-store-robbery-jcc-vehicle/" title="Police searching for suspects in James City County Tobacco and Vape Store burglary">
+		<div class="image-wrapper"><img alt="James City County police car" title="James City County police car" src="data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoBAAEAAwA0JaQAA3AA/v3AgAA=" class="lazyload  size-feature_small" data-sizes="auto" data-src="https://www.dailypress.com/wp-content/uploads/2023/07/va-vg-fords-colony-crash-0424-001.jpg?w=134" data-srcset="https://www.dailypress.com/wp-content/uploads/2023/07/va-vg-fords-colony-crash-0424-001.jpg?w=134 140w" ></div>	</a>
+</figure>
+
+<div class="article-info">
+		<header>
+
+		
+		
+			<h2 class="entry-title ">
+
+			<a class="article-title" href="https://www.dailypress.com/2025/12/30/tobacco-and-vape-store-robbery-jcc-vehicle/" title="Police searching for suspects in James City County Tobacco and Vape Store burglary">
+	
+				<span class="dfm-title free">
+			Police searching for suspects in James City County Tobacco and Vape Store burglary		</span>
+
+
+
+			</a>
+	
+	
+	</h2>
+<!--		-->
+		
+		
+		
+			<div class="entry-meta">
+									<div class="byline">By <a href="https://www.dailypress.com/author/james-robinson/" aria-label="Author: James W. Robinson" >James W. Robinson</a></div>
+								
+				
+					
+                    
+					  
+							<time datetime="2025-12-30 12:08:08">December 30, 2025  at 12:08 p.m.</time>
+
+					
+				
+			</div><!-- .entry-meta -->
+
+		
+		
+		
+	</header>
+
+				<div class="excerpt">
+			Suspects are believed to be connected to additional crimes in both Hamptons Roads and Metro...		</div>
+
+	
+		</div><!-- .article-info -->
+
+		
+
+		
+	</article>
+
+
+
+
+
+	<article
+		class=" tag-search-view archive-view has-image post-7834295 post type-post status-publish format-standard has-post-thumbnail hentry category-latest-headlines category-local-news category-restaurants-food-drink category-things-to-do category-virginia-gazette category-virginia-gazette-news"		data-id="7834295"
+		data-timestamp="1767005807"
+	>
+
+		
+<figure>
+			<a href="https://www.dailypress.com/2025/12/29/wine-time-wines-that-go-beyond-bubbles/" title="Wine Time: Wines that go beyond bubbles" class=""></a>
+	
+	<a href="https://www.dailypress.com/2025/12/29/wine-time-wines-that-go-beyond-bubbles/" title="Wine Time: Wines that go beyond bubbles">
+		<div class="image-wrapper"><img alt="Mothervine Premium Scuppernong White Table Wine. (Mothervine)" title="6270 Mothervine Scuppernong Front Wine Label1up v2" src="data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoBAAEAAwA0JaQAA3AA/v3AgAA=" class="lazyload  size-feature_small" data-sizes="auto" data-src="https://www.dailypress.com/wp-content/uploads/2025/12/6270-Mothervine-Scuppernong-Front-Wine-Label1up-v2.jpg?w=67" data-srcset="https://www.dailypress.com/wp-content/uploads/2025/12/6270-Mothervine-Scuppernong-Front-Wine-Label1up-v2.jpg?w=67 140w" ></div>	</a>
+</figure>
+
+<div class="article-info">
+		<header>
+
+		
+		
+			<h2 class="entry-title ">
+
+			<a class="article-title" href="https://www.dailypress.com/2025/12/29/wine-time-wines-that-go-beyond-bubbles/" title="Wine Time: Wines that go beyond bubbles">
+	
+				<span class="dfm-title metered">
+			Wine Time: Wines that go beyond bubbles		</span>
+
+
+
+			</a>
+	
+	
+	</h2>
+<!--		-->
+		
+		
+		
+			<div class="entry-meta">
+									<div class="byline">By <a href="https://www.dailypress.com/author/miles-lambert/" aria-label="Author: Miles Lambert" >Miles Lambert</a></div>
+								
+				
+					
+                    
+					  
+							<time datetime="2025-12-29 13:42:53">December 29, 2025  at 1:42 p.m.</time>
+
+					
+				
+			</div><!-- .entry-meta -->
+
+		
+		
+		
+	</header>
+
+				<div class="excerpt">
+			Wines for an extra special New Year's and beyond.		</div>
+
+	
+		</div><!-- .article-info -->
+
+		
+
+		
+	</article>
+
+
+
+
+
+	<article
+		class=" tag-search-view archive-view has-image post-7832830 post type-post status-publish format-standard has-post-thumbnail hentry category-latest-headlines category-local-news category-virginia-gazette category-virginia-gazette-news location-james-city-county location-virginia"		data-id="7832830"
+		data-timestamp="1766998801"
+	>
+
+		
+<figure>
+			<a href="https://www.dailypress.com/2025/12/29/playground/" title="Natural playground at JCC Library on track to open this spring" class=""></a>
+	
+	<a href="https://www.dailypress.com/2025/12/29/playground/" title="Natural playground at JCC Library on track to open this spring">
+		<div class="image-wrapper"><img alt="The new natural playground, which features hills for climbing and sliding, will offer kids of all ages “a safe place to go where they can unplug and experience childhood, said Williamsburg Regional Library Director Sandy Towers. (Courtesy/Williamsburg Regional Library)" title="JCC natural playground" src="data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoBAAEAAwA0JaQAA3AA/v3AgAA=" class="lazyload  size-feature_small" data-sizes="auto" data-src="https://www.dailypress.com/wp-content/uploads/2025/12/IMG_6810.jpeg?w=110" data-srcset="https://www.dailypress.com/wp-content/uploads/2025/12/IMG_6810.jpeg?w=110 140w" ></div>	</a>
+</figure>
+
+<div class="article-info">
+		<header>
+
+		
+		
+			<h2 class="entry-title ">
+
+			<a class="article-title" href="https://www.dailypress.com/2025/12/29/playground/" title="Natural playground at JCC Library on track to open this spring">
+	
+				<span class="dfm-title metered">
+			Natural playground at JCC Library on track to open this spring		</span>
+
+
+
+			</a>
+	
+	
+	</h2>
+<!--		-->
+		
+		
+		
+			<div class="entry-meta">
+									<div class="byline">By <a href="https://www.dailypress.com/author/brandy-centolanza/" aria-label="Author: Brandy Centolanza" >Brandy Centolanza</a></div>
+								
+				
+					
+                    
+					  
+							<time datetime="2025-12-29 09:00:01">December 29, 2025  at 9:00 a.m.</time>
+
+					
+				
+			</div><!-- .entry-meta -->
+
+		
+		
+		
+	</header>
+
+				<div class="excerpt">
+			The new natural playground is scheduled to open in April.		</div>
+
+	
+		</div><!-- .article-info -->
+
+		
+
+		
+	</article>
+
+
+
+
+
+	<article
+		class=" tag-search-view archive-view has-image post-7831595 post type-post status-publish format-standard has-post-thumbnail hentry category-latest-headlines category-local-news category-virginia-gazette category-virginia-gazette-news"		data-id="7831595"
+		data-timestamp="1766830210"
+	>
+
+		
+<figure>
+			<a href="https://www.dailypress.com/2025/12/27/50-years-ago-a-disaster-that-changed-everything-on-the-james-river/" title="50 years ago, a disaster that changed everything on the James River" class=""></a>
+	
+	<a href="https://www.dailypress.com/2025/12/27/50-years-ago-a-disaster-that-changed-everything-on-the-james-river/" title="50 years ago, a disaster that changed everything on the James River">
+		<div class="image-wrapper"><img alt="Fifty years after Kepone was dumped into the James River, people fishing in the James River have less to be worried about when they consume their catch. (Rob Ostermaier/Daily Press file)" title="James River Fish" src="data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoBAAEAAwA0JaQAA3AA/v3AgAA=" class="lazyload  size-feature_small" data-sizes="auto" data-src="https://www.dailypress.com/wp-content/uploads/2025/12/TVG-L-KEPONE3.jpg?w=140" data-srcset="https://www.dailypress.com/wp-content/uploads/2025/12/TVG-L-KEPONE3.jpg?w=140 140w" ></div>	</a>
+</figure>
+
+<div class="article-info">
+		<header>
+
+		
+		
+			<h2 class="entry-title ">
+
+			<a class="article-title" href="https://www.dailypress.com/2025/12/27/50-years-ago-a-disaster-that-changed-everything-on-the-james-river/" title="50 years ago, a disaster that changed everything on the James River">
+	
+				<span class="dfm-title metered">
+			50 years ago, a disaster that changed everything on the James River		</span>
+
+
+
+			</a>
+	
+	
+	</h2>
+<!--		-->
+		
+		
+		
+			<div class="entry-meta">
+									<div class="byline">By <a href="https://www.dailypress.com/author/ben-swenson/" aria-label="Author: Ben Swenson" >Ben Swenson</a></div>
+								
+				
+					
+                    
+					  
+							<time datetime="2025-12-27 10:10:10">December 27, 2025  at 10:10 a.m.</time>
+
+					
+				
+			</div><!-- .entry-meta -->
+
+		
+		
+		
+	</header>
+
+				<div class="excerpt">
+			Fifty years after the James river’s closure, Virginia’s worst environmental disaster — one that sickened...		</div>
+
+	
+		</div><!-- .article-info -->
+
+		
+
+		
+	</article>
+
+
+<a href="https://www.dailypress.com/virginia-gazette/page/2/" class="load-more">Load More</a>		</div>
+		<aside>
+							<div class="dfp-ad dfp-cube2_rrail_mid" id="div-gpt-ad-cube2_rrail_mid" style="visibility:hidden">
+					<div class="htlad-cube2_rrail_mid" data-unit='dailypress.com/virginia-gazette/cube2_rrail_mid' data-targeting=''></div>
+				</div>		</aside>
+
+		<div class="dfm-page-bottom-flex-container"></div>				<div class="dfp-ad dfp-bottom_leaderboard" id="div-gpt-ad-bottom_leaderboard" style="visibility:hidden">
+					<div class="htlad-bottom_leaderboard" data-unit='dailypress.com/virginia-gazette/bottom_leaderboard' data-targeting=''></div>
+				</div>	</div>
+</div>
+
+    </main><!-- #main -->
+
+</div><!-- #primary -->
+
+
+
+			
+			</div><!-- #content -->
+
+						<footer class="site-footer">
+
+							<div class="main-footer-wrapper">
+
+				<div class="footer-logo">
+
+					<div class="logo custom-logo"><a href="https://www.dailypress.com" aria-label="Daily Press"><img src="https://www.dailypress.com/wp-content/uploads/2023/04/Daily_Press_logo-vdp-full-black.png" alt="Daily Press"></a></div>
+				</div>
+
+				<ul id="footer-menu" class="footer-menus"><li id="menu-item-173" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-173"><a href="https://www.tribpub.com/">Tribune Publishing</a><span class="expander"><a href="#" class="icon-plus" aria-label="Click here to expand the menu"></a></span>
+
+<ul class="footer-menu">
+	<li id="menu-item-174" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-174"><a href="https://www.chicagotribune.com/">Chicago Tribune</a></li>
+	<li id="menu-item-176" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-176"><a href="https://www.mcall.com/">The Morning Call</a></li>
+	<li id="menu-item-177" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-177"><a href="https://www.pilotonline.com">The Virginian-Pilot</a></li>
+	<li id="menu-item-178" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-178"><a href="https://www.nydailynews.com/">New York Daily News</a></li>
+	<li id="menu-item-179" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-179"><a href="https://www.orlandosentinel.com/">Orlando Sentinel</a></li>
+	<li id="menu-item-180" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-180"><a href="https://www.sun-sentinel.com/">Sun Sentinel</a></li>
+	<li id="menu-item-181" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-181"><a href="https://www.courant.com/">Hartford Courant</a></li>
+	<li id="menu-item-182" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-182"><a href="https://www.studio1847.io/">Studio 1847</a></li>
+</ul>
+</li>
+<li id="menu-item-183" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-183"><a href="https://www.tribpub.com/#who-we-are">Company Info</a><span class="expander"><a href="#" class="icon-plus" aria-label="Click here to expand the menu"></a></span>
+
+<ul class="footer-menu">
+	<li id="menu-item-184" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-184"><a href="https://www.dailypress.com/about-us/">About the Daily Press</a></li>
+	<li id="menu-item-2767497" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2767497"><a href="https://www.dailypress.com/help-center/">Help Center</a></li>
+	<li id="menu-item-185" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-185"><a href="https://www.dailypress.com/contact-us/">Contact Us</a></li>
+	<li id="menu-item-188" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-188"><a href="https://careers.tribpub.com/">Careers</a></li>
+	<li id="menu-item-4601038" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4601038"><a href="https://www.dailypress.com/photo-requests/">Photo requests</a></li>
+	<li id="menu-item-191" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-191"><a href="https://mylocal.dailypress.com/">Local Print Ads</a></li>
+	<li id="menu-item-5449909" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5449909"><a href="https://www.dailypress.com/sitemap/">Sitemap</a></li>
+</ul>
+</li>
+<li id="menu-item-192" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-192"><a href="https://myaccount.dailypress.com/">Manage Account</a><span class="expander"><a href="#" class="icon-plus" aria-label="Click here to expand the menu"></a></span>
+
+<ul class="footer-menu">
+	<li id="menu-item-5450091" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5450091"><a href="https://www.dailypress.com/manage-web-notifications/">Manage Web Notifications</a></li>
+	<li id="menu-item-194" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-194"><a href="https://enewspaper.dailypress.com/html5/desktop/production/default.aspx?&#038;edid=95a32e55-8179-4adb-bd71-76516f7cb584">E-Edition</a></li>
+	<li id="menu-item-195" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-195"><a href="http://pilotonline.newsbank.com/">Archives</a></li>
+</ul>
+</li>
+<li id="menu-item-196" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-196"><a href="https://placeanad.pilotonline.com/ad-options/?pub=daily-press&#038;type=productpublication#nt=primarynavbar">Advertising</a><span class="expander"><a href="#" class="icon-plus" aria-label="Click here to expand the menu"></a></span>
+
+<ul class="footer-menu">
+	<li id="menu-item-197" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-197"><a href="https://placeanad.pilotonline.com/ad-options/?pub=daily-press&#038;type=productpublication">Place an Ad</a></li>
+	<li id="menu-item-198" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-198"><a href="https://classifieds.dailypress.com/">Classified</a></li>
+	<li id="menu-item-199" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-199"><a href="http://store.dailypress.com/">Daily Press Store</a></li>
+	<li id="menu-item-5488144" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5488144"><a href="https://mylocal.dailypress.com/">Local Print Ads</a></li>
+</ul>
+</li>
+<li class="mng-follow"><div class="footer-follow"></div>
+							<a href="https://mktops.dailypress.com/subscriptions/land-new-year-26/?market=dp&#038;source=index&#038;g2i_or_o=Internet&#038;g2i_or_p=nav&#038;g2i_source=SB&#038;g2i_medium=sub-nav&#038;g2i_campaign=NY26" class="subscribe-button">
+					<span>Subscribe Now</span>				</a>
+
+				</li></ul>
+			</div>
+			
+				<div class="dfm-site-info">
+
+								<div class="colophon">
+
+					<div class="footer-flex-menu-wrap"><ul id="footer-bottom-menu" class="menu"><li id="menu-item-4601033" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4601033"><a href="https://www.tribpub.com/subscriber-terms-and-conditions/">Subscriber Terms and Conditions</a></li>
+<li id="menu-item-4601034" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4601034"><a href="https://www.tribpub.com/cookie-policy/">Cookie Policy</a></li>
+<li id="menu-item-5478966" class="cookie-policy-click menu-item menu-item-type-custom menu-item-object-custom menu-item-5478966"><a href="#">Cookie Preferences</a></li>
+<li id="menu-item-4601035" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4601035"><a href="https://www.tribpub.com/privacy-policy/#eb-table-content-53">California Notice at Collection</a></li>
+<li id="menu-item-4601036" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4601036"><a href="https://www.tribpub.com/privacy-policy/#916-notice-of-financial-incentive">CA Notice of Financial Incentive</a></li>
+<li id="menu-item-4601037" class="cookie-policy-click menu-item menu-item-type-custom menu-item-object-custom menu-item-4601037"><a href="#">Do Not Sell/Share My Personal Information</a></li>
+</ul>	<div class="footer-copyright-notice">
+		<p>Copyright &copy; 2026 Daily Press</p>
+	</div>	</div>
+			</div>
+			
+				</div>
+
+			</footer><!-- .site-footer -->
+			
+			</div><!-- #page -->
+
+			<script>
+		(function(w) {
+			if ( null !== document.cookie.match(/^(.*;)?\s*auth0_sub\s*=\s*[^;]+(.*)?$/) ) {
+				w.PARSELY = {
+	                autotrack: false,
+	                onReady: function() {
+	                    PARSELY.updateDefaults({
+	                        data: {
+	                            plan: "subscriber"
+	                        }
+	                    });
+	                    PARSELY.beacon.trackPageView();
+	                }
+            	};
+			}
+		})(window);
+        </script><div id="mobile-adhesion" class="closed"><button class="close-mobile-adhesion" onclick="closeMobileAdhesionAd()" onkeydown="keyboardHandler(event)">Close</button>
+			<script>
+				function closeMobileAdhesionAd() {
+				    document.getElementById("mobile-adhesion").classList.add("closed");
+				}
+
+				function keyboardHandler(e) {
+				    var keycode = ( e.keyCode ? e.keyCode : e.which );
+				    if (keycode == "13") {
+						closeMobileAdhesionAd();
+					}
+				}
+			</script>
+							<div class="dfp-ad dfp-mobile_adhesion" id="div-gpt-ad-mobile_adhesion" style="visibility:hidden">
+					<div class="htlad-mobile_adhesion" data-unit='dailypress.com/virginia-gazette/mobile_adhesion' data-targeting=''></div>
+				</div></div><script type='text/javascript'>
+/* <![CDATA[ */
+if ( 'undefined' !== typeof _snaq ) {
+_snaq.push(['setAuthor', '']);
+_snaq.push(['setArticlePublishTime','']);
+_snaq.push(['setSection', 'Virginia Gazette']);
+}
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://www.dailypress.com/_static/??-eJyVj8EKwkAMRH/IGqWo9CAevHjxI0p37aZmk6XJKvbrXQVFL4LHGeYxM3BNVSdsng0s+OgVihNbFQaHajAoiLYs+6wmcR6R54PO4ANLlHtkhch9FYzeWNEHo6M4/UWlICZ8QiK4eHYyQsLO8ugf1n8gtdNNcfJffcgdZVdulUXPZUHk/Ers4na5Wa+aRVPX9XAHXlRj/w==" ></script><script src="https://www.dailypress.com/wp-includes/js/dist/i18n.min.js?ver=c26c3dc7bed366793375" id="wp-i18n-js"></script>
+<script id="wp-i18n-js-after">
+wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+//# sourceURL=wp-i18n-js-after
+</script>
+<script id="wp-parsely-loader-js-before">
+window.wpParselySiteId = 'dailypress.com';
+//# sourceURL=wp-parsely-loader-js-before
+</script>
+<script src="https://www.dailypress.com/wp-content/mu-plugins/wp-parsely-3.21/build/loader.js?ver=ecf94842061bea03d54b" id="wp-parsely-loader-js"></script>
+<script data-parsely-site="dailypress.com" src="https://cdn.parsely.com/keys/dailypress.com/p.js?ver=3.21.2" id="parsely-cfg"></script>
+<script src="https://www.dailypress.com/wp-content/themes/wp-mason/dist/js/ads.min.js?ver=1.0" id="can-run-ads-js"></script>
+<script type="text/javascript" src="https://www.dailypress.com/_static/??-eJyVzk0KwkAMQOEL2abKUN2IdOkxxiatKZNJadKKt/cHFy5EdPvggweXsWg1O2UHP5OQQTQjNzCPzi0MBqOma8cpWSmcy8FW8AMSijZPhAufppj9C70XiaYZkM0fNGmvR+kb9+kTG9PcczbAToqIhSjaG43YPFf+lbbJCyPpyx1kv97WdQjVLlTDDRR7bJc=" ></script><script src="//embed.sendtonews.com/player3/embedcode.js?fk=p6qo8hxk&amp;cid=5930&amp;offsetx=0&amp;offsety=112&amp;floatwidth=400&amp;floatposition=bottom-right&amp;ver=1.0.0" id="dfm_stn_player_script-js"></script>
+<script id="mng-cache-control-js-before">
+window.cache_control_adminbar_support = {"rootUrl":"https:\/\/www.dailypress.com\/wp-admin\/admin-ajax.php","rootAction":"cache_control_adminbar_action","nonce":"a6b96bc693","isSectionFront":true,"isHomepage":false,"termId":3653,"taxonomy":"category","slug":"virginia-gazette"}
+//# sourceURL=mng-cache-control-js-before
+</script>
+<script src="https://www.dailypress.com/wp-content/plugins/mng-cache-control/Src/assets/dist/mng-cache-control-adminbar.js?ver=0.2.1" id="mng-cache-control-js"></script>
+<script id="jetpack-stats-js-before">
+_stq = window._stq || [];
+_stq.push([ "view", JSON.parse("{\"v\":\"ext\",\"blog\":\"208786049\",\"post\":\"0\",\"tz\":\"-5\",\"srv\":\"www.dailypress.com\",\"arch_cat\":\"virginia-gazette\",\"arch_results\":\"10\",\"hp\":\"vip\",\"j\":\"1:15.1.1\"}") ]);
+_stq.push([ "clickTrackerInit", "208786049", "0" ]);
+//# sourceURL=jetpack-stats-js-before
+</script>
+<script src="https://stats.wp.com/e-202601.js" id="jetpack-stats-js" defer data-wp-strategy="defer"></script>
+<script async src="https://cdn.p-n.io/pushly-sdk.min.js?domain_key=6K6nAzNbS7CUQt3kiToyzIwsI288XP56GU9u&amp;ver=6.9" id="pushly-sdk-js"></script>
+<script id="wp-emoji-settings" type="application/json">
+{"baseUrl":"https://s.w.org/images/core/emoji/17.0.2/72x72/","ext":".png","svgUrl":"https://s.w.org/images/core/emoji/17.0.2/svg/","svgExt":".svg","source":{"concatemoji":"https://www.dailypress.com/wp-includes/js/wp-emoji-release.min.js?ver=6.9"}}
+</script>
+<script type="module">
+/*! This file is auto-generated */
+const a=JSON.parse(document.getElementById("wp-emoji-settings").textContent),o=(window._wpemojiSettings=a,"wpEmojiSettingsSupports"),s=["flag","emoji"];function i(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function c(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0);const a=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);return t.every((e,t)=>e===a[t])}function p(e,t){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var n=e.getImageData(16,16,1,1);for(let e=0;e<n.data.length;e++)if(0!==n.data[e])return!1;return!0}function u(e,t,n,a){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\udde8\ud83c\uddf6","\ud83c\udde8\u200b\ud83c\uddf6")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!a(e,"\ud83e\u1fac8")}return!1}function f(e,t,n,a){let r;const o=(r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):document.createElement("canvas")).getContext("2d",{willReadFrequently:!0}),s=(o.textBaseline="top",o.font="600 32px Arial",{});return e.forEach(e=>{s[e]=t(o,e,n,a)}),s}function r(e){var t=document.createElement("script");t.src=e,t.defer=!0,document.head.appendChild(t)}a.supports={everything:!0,everythingExceptFlag:!0},new Promise(t=>{let n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(s),u.toString(),c.toString(),p.toString()].join(",")+"));",a=new Blob([e],{type:"text/javascript"});const r=new Worker(URL.createObjectURL(a),{name:"wpTestEmojiSupports"});return void(r.onmessage=e=>{i(n=e.data),r.terminate(),t(n)})}catch(e){}i(n=f(s,u,c,p))}t(n)}).then(e=>{for(const n in e)a.supports[n]=e[n],a.supports.everything=a.supports.everything&&a.supports[n],"flag"!==n&&(a.supports.everythingExceptFlag=a.supports.everythingExceptFlag&&a.supports[n]);var t;a.supports.everythingExceptFlag=a.supports.everythingExceptFlag&&!a.supports.flag,a.supports.everything||((t=a.source||{}).concatemoji?r(t.concatemoji):t.wpemoji&&t.twemoji&&(r(t.twemoji),r(t.wpemoji)))});
+//# sourceURL=https://www.dailypress.com/wp-includes/js/wp-emoji-loader.min.js
+</script>
+
+			</body>
+            </html>
+			

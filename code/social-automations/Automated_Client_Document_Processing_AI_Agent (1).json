@@ -1,0 +1,1132 @@
+{
+  "name": "Automated Client Document Processing AI Agent",
+  "nodes": [
+    {
+      "parameters": {
+        "mode": "expression",
+        "numberOutputs": 3,
+        "output": 0
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        880,
+        -2360
+      ],
+      "id": "599e6b5a-fc12-4f89-93d7-14621514d8f2",
+      "name": "Switch"
+    },
+    {
+      "parameters": {
+        "operation": "pdf",
+        "options": {
+          "joinPages": false
+        }
+      },
+      "type": "n8n-nodes-base.extractFromFile",
+      "typeVersion": 1,
+      "position": [
+        1560,
+        -1880
+      ],
+      "id": "ef7b8027-328f-4a4d-b1cd-e06183b128da",
+      "name": "Extract from File"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.8,
+      "position": [
+        2020,
+        -1880
+      ],
+      "id": "3d227e00-56a4-44fe-8786-532d60190425",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        2000,
+        -1640
+      ],
+      "id": "556df652-3614-4520-8e5d-b47168f256b5",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "3wGnN6ZoYsfXF2pz",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.informationExtractor",
+      "typeVersion": 1,
+      "position": [
+        2440,
+        -1880
+      ],
+      "id": "02bea107-1fd2-438b-8c57-bb4ff5e2c664",
+      "name": "Information Extractor"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        2440,
+        -1640
+      ],
+      "id": "abd7e384-b0a9-43db-aabf-51e0290bdeba",
+      "name": "OpenAI Chat Model1",
+      "credentials": {
+        "openAiApi": {
+          "id": "3wGnN6ZoYsfXF2pz",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "2d779045-b176-40c2-a4ad-366a829c4f1e",
+              "leftValue": "",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        2920,
+        -1880
+      ],
+      "id": "f283b0fb-f458-41b4-a075-e548496a7890",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "f36f0426-7232-4ff5-8636-24b6956a53af",
+              "leftValue": "={{ $json.Second }} % 2",
+              "rightValue": "0",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1300,
+        -2980
+      ],
+      "id": "9450d365-3909-4947-a01a-6e7a242e4cd6",
+      "name": "If1"
+    },
+    {
+      "parameters": {
+        "operation": "pdf",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.extractFromFile",
+      "typeVersion": 1,
+      "position": [
+        820,
+        -1520
+      ],
+      "id": "212e0a47-06a6-41f9-9cf4-d8ad1b55e3c4",
+      "name": "Extract from File2"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.8,
+      "position": [
+        1020,
+        -1520
+      ],
+      "id": "008f5129-223b-4e07-8d0a-9d105c949bc6",
+      "name": "AI Agent1"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        860,
+        -1300
+      ],
+      "id": "c1259c17-771f-482d-b8c0-942e5352a129",
+      "name": "OpenAI Chat Model2",
+      "credentials": {
+        "openAiApi": {
+          "id": "3wGnN6ZoYsfXF2pz",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.informationExtractor",
+      "typeVersion": 1,
+      "position": [
+        1480,
+        -1520
+      ],
+      "id": "54a4cc8c-db73-47da-8ba9-7c69d929b88d",
+      "name": "Information Extractor1"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        1500,
+        -1320
+      ],
+      "id": "c373c11b-eb9d-4a2a-9a52-13c8c02d2780",
+      "name": "OpenAI Chat Model3",
+      "credentials": {
+        "openAiApi": {
+          "id": "3wGnN6ZoYsfXF2pz",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "2d779045-b176-40c2-a4ad-366a829c4f1e",
+              "leftValue": "",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1920,
+        -1400
+      ],
+      "id": "4f6d8e03-c68c-45fa-880c-249d16acdd08",
+      "name": "If2"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "2d779045-b176-40c2-a4ad-366a829c4f1e",
+              "leftValue": "={{ $json.output[\"Order Number\"] }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        2900,
+        -2460
+      ],
+      "id": "3d207b9b-3643-4cfd-9c9e-e20d7d6a914a",
+      "name": "If3"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.text }}",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.8,
+      "position": [
+        2000,
+        -3080
+      ],
+      "id": "c629ce9b-5cee-432d-b799-14fc17f37776",
+      "name": "AI Agent3"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        1980,
+        -2880
+      ],
+      "id": "c71f5a58-887d-4045-82a6-ecae6cf42ea9",
+      "name": "OpenAI Chat Model6",
+      "credentials": {
+        "openAiApi": {
+          "id": "3wGnN6ZoYsfXF2pz",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "text": "={{ $json.output }}",
+        "attributes": {
+          "attributes": [
+            {
+              "name": "Order Number",
+              "description": "Order number",
+              "required": true
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.informationExtractor",
+      "typeVersion": 1,
+      "position": [
+        2540,
+        -2820
+      ],
+      "id": "0fb48f5d-d7be-4d78-9db8-94e5e0b8986a",
+      "name": "Information Extractor3"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        2540,
+        -2660
+      ],
+      "id": "3a8fec5c-ebfc-4f94-a772-f6aa084f71e9",
+      "name": "OpenAI Chat Model7",
+      "credentials": {
+        "openAiApi": {
+          "id": "3wGnN6ZoYsfXF2pz",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {}
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        620,
+        -2360
+      ],
+      "id": "44acab14-7659-4d78-b335-0818383e5e4d",
+      "name": "Schedule Trigger"
+    },
+    {
+      "parameters": {
+        "functionCode": "return [\n  {\n    binary: {\n      data: {\n        data: \"JVBERi0xLjMKJf////8KOSAwIG9iago8PAovVHlwZSAvRXh0R1N0YXRlCi9jYSAxCj4+CmVuZG9iago4IDAgb2JqCjw8Ci9UeXBlIC9QYWdlCi9QYXJlbnQgMSAwIFIKL01lZGlhQm94IFswIDAgNTk1LjI4MDAyOSA4NDEuODkwMDE1XQovQ29udGVudHMgNiAwIFIKL1Jlc291cmNlcyA3IDAgUgovVXNlclVuaXQgMQo+PgplbmRvYmoKNyAwIG9iago8PAovUHJvY1NldCBbL1BERiAvVGV4dCAvSW1hZ2VCIC9JbWFnZUMgL0ltYWdlSV0KL0V4dEdTdGF0ZSA8PAovR3MxIDkgMCBSCj4+Ci9Gb250IDw8Ci9GMSAxMCAwIFIKPj4KPj4KZW5kb2JqCjEyIDAgb2JqCihyZWFjdC1wZGYpCmVuZG9iagoxMyAwIG9iagoocmVhY3QtcGRmKQplbmRvYmoKMTQgMCBvYmoKKEQ6MjAyNTAyMjgwNDAzMTZaKQplbmRvYmoKMTEgMCBvYmoKPDwKL1Byb2R1Y2VyIDEyIDAgUgovQ3JlYXRvciAxMyAwIFIKL0NyZWF0aW9uRGF0ZSAxNCAwIFIKPj4KZW5kb2JqCjEwIDAgb2JqCjw8Ci9UeXBlIC9Gb250Ci9CYXNlRm9udCAvSGVsdmV0aWNhCi9TdWJ0eXBlIC9UeXBlMQovRW5jb2RpbmcgL1dpbkFuc2lFbmNvZGluZwo+PgplbmRvYmoKNCAwIG9iago8PAo+PgplbmRvYmoKMyAwIG9iago8PAovVHlwZSAvQ2F0YWxvZwovUGFnZXMgMSAwIFIKL05hbWVzIDIgMCBSCi9WaWV3ZXJQcmVmZXJlbmNlcyA1IDAgUgo+PgplbmRvYmoKMSAwIG9iago8PAovVHlwZSAvUGFnZXMKL0NvdW50IDEKL0tpZHMgWzggMCBSXQo+PgplbmRvYmoKMiAwIG9iago8PAovRGVzdHMgPDwKICAvTmFtZXMgWwpdCj4+Cj4+CmVuZG9iago1IDAgb2JqCjw8Ci9EaXNwbGF5RG9jVGl0bGUgdHJ1ZQo+PgplbmRvYmoKNiAwIG9iago8PAovTGVuZ3RoIDE2NzAKL0ZpbHRlciAvRmxhdGVEZWNvZGUKPj4Kc3RyZWFtCnic7VvNbuM2EL77KfQC4ZLD4ZAEFjnstl2ghwJpAvSw2EOi2G2BZIEiQPv6HYr6oSRKtrNJbAWyYctDUTLn95shRVVIfl8o/nKohPNSKlOUj5t/6jegEQqrVsDicaONTOiHAT1HlWlfBb5/cWiYJ8t0LPH6QcM8WQ54eRjQc1S5+WvzR/F9c8USUZXI1LDHI5+8qkTWdSgUJsJs2vnjhQvtH37a/vt3uf39y6eifNrI6vxT+X3z4cuTKv584mu6P8zo6NNNcs/k1A3f+Rf+fyhudpuvH3F7yec/krksgI/WViRI3FkgJGOBf+vYZ0dbIvIVYeGyuADDrfekLNatoQtIuAfJ5Lfi5tfNzzc8zJZpQ8KB499vzZ9hvjAwdq+V1hqzw7NeWI9xdFfV/w+1JgsNAiS/VFRdd8JneBJAg1dxaNvLSULJKAmD5EixCu9AWh/VTTtrQBJdFjpS0D8XaOosQbEtABkqa2VfFvw3bDPcSXEnM77Y8pl4c+vZUgxtLYbePIxwxO5mtVnxUCqrMpWBxQtjRzYy1ZhZvMbqfWMPg2p7mIrakg7GHgYO26wZaK8F2qEZZBwYFAnl+WXToNjzZSXs69u60rWt76KtQ3VAjAeTNrIC+81MqSAxVLHZY2miu+vbrHSUJPYSM+8lHMMgCMYvzkt6cW9rDRstJMYYhGIqOWaFQ8w3ZcPbeTG5PSgeahIw8oNBOMR3oWisMMzs0a5BYeD8tatBS/4Y1i0f+Ru0zfOjOEeZ1y8u15GD6w4AY49+tRRyAd5Lt5GnDljvOE7dMbNNGtbCoGIs83AXLABbGCRASXYsHQjQuKP7fNg3IJD2gqJjF3GGdO0mp8XDGsjQ1dBmZMQ82UBdzA2xyXmjcQRIDKGxRtMJGHQcGxHeLQreNgbU2BjIoRFlxcJlj/NHQEbmtFuq0KCcwg1hFhBWjLZVnqMqvdt8SgBa5Mu3s2Jl4ZpY+PA5nyRtdD5AANfPe3IOoxcbAe4YbwPmOg6WyN+G35KPKj/fAK0++5CaqTW1dCI/XXSKEtPGajLmzzV61mgbSqZ4sj6opJLPisGDcOPUYhZKw9ugFeCkDJN51EzKPDLnHfXQo6Z+l6GX6V0zQU39LnuDSS7ONh/eeNB9aU/z4Y3NROaEZH/47s9RTWLWn6/Z3Rl96s/15982UPy3ud58/cYX3bdW09kNFjSMIUq+xeyqamYfvcF6pgXzeTU4QeTmjF8hDznIw56aG6MMmrwPAwqys+kwWCsozogP2CBmQlHg743ZqRWzbcoD5CAme1Novp76rnSYme5xQsoEzcYcySbJ7QsDFXI1xQ4CI2FY4SycQBiR0UYm0M4ONqUQ5mYLy7xYpPDoMmJpeUvEMo71ifs/PtOdzyMraIKAq6fLY359EaaeqQwlVbA2rDCSdF1whTLehpn0fNVpBfqem/UEh2cviuhenBEh7MhFkVidT3ZdsJaxFfGHE8S8Xz0jVp6VfCYSRXp+cOXkyuq54HpW/Ie4YrowBBNFKPNUR91zZiZYeX4uTQuNGdjodHU0bKxqXriaxzBInFIFGKR3AoN1atVBoA9rti1hsUJEaIpGpImci4SeD4YrCIyigxco3RodTqHMiYXivjLHijoeAVYdL1jH4/DvvHAh/Ov3Ev6VNVzblBz2iT86PjUWHxjbH/U9Citn543XqL9GhLNhZo36q46PiPq9xQzF/5isZiTkQ5+cJsqqo+xfN0VOE2V/WDK70JC0H9N64L3VvvZjWjPrGz1hv8Q/PFdhR69zJOjWPZS/9ByhzgMMWS4INZeEyfMITbLQPc87kSs4Lcx4XXXNFdZc4SyZWXOFVccH5gqZ5yIsiVH0B6sbN4fxIyNEQs0ut56V5NCHmpDu0+dLgJt21XaQ/Pqjlf1iccz5hO8oTQ0uyIHvoJBBpAsR2rvynekNCiCFVDRWdKetmSmW1EvcYMU56eWEknIpiq99hBynT2HvlactRxgJ1Gz+qZeiq/1X1VwMn5/Y5uNELjZ18jjeh9gtYbn4oyVstZyI5EhC+lwob3k+zBINg3cQbyZuK8VWahYTuNtnRTh3d3kTc8JQJkwnjB5tY0raNck5ETPHJTmJpg5zDScH66GraxzpGoyWdjFCmtxEboXW57wLb3XtxNIOc+2wp7i/2JUk7cD6PsXToe2zeeP9691GMVXvNp8pRhjRXa4Yafl6BZB7JZn8qE2/0rBeCnjS9/8CXEiyCmVuZHN0cmVhbQplbmRvYmoKeHJlZgowIDE1CjAwMDAwMDAwMDAgNjU1MzUgZiAKMDAwMDAwMDY4MSAwMDAwMCBuIAowMDAwMDAwNzM4IDAwMDAwIG4gCjAwMDAwMDA1OTQgMDAwMDAgbiAKMDAwMDAwMDU3MyAwMDAwMCBuIAowMDAwMDAwNzg1IDAwMDAwIG4gCjAwMDAwMDA4MjggMDAwMDAgbiAKMDAwMDAwMDE4OSAwMDAwMCBuIAowMDAwMDAwMDU5IDAwMDAwIG4gCjAwMDAwMDAwMTUgMDAwMDAgbiAKMDAwMDAwMDQ3NSAwMDAwMCBuIAowMDAwMDAwMzk5IDAwMDAwIG4gCjAwMDAwMDAzMDcgMDAwMDAgbiAKMDAwMDAwMDMzNSAwMDAwMCBuIAowMDAwMDAwMzYzIDAwMDAwIG4gCnRyYWlsZXIKPDwKL1NpemUgMTUKL1Jvb3QgMyAwIFIKL0luZm8gMTEgMCBSCi9JRCBbPGJiZDc3MTBlNWE0ZjdkZGNhNmJkZTkyMWQxOGI5MjlmPiA8YmJkNzcxMGU1YTRmN2RkY2E2YmRlOTIxZDE4YjkyOWY+XQo+PgpzdGFydHhyZWYKMjU3MQolJUVPRgo=\",\n        fileName: \"report.pdf\",\n        mimeType: \"application/pdf\"\n      }\n    }\n  }\n];"
+      },
+      "name": "Build PDF Binary",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [
+        1540,
+        -2980
+      ],
+      "id": "b70b64b1-dfcb-4eb3-ad64-c9201d96f871"
+    },
+    {
+      "parameters": {
+        "operation": "pdf",
+        "options": {}
+      },
+      "name": "Extract from File4",
+      "type": "n8n-nodes-base.extractFromFile",
+      "typeVersion": 1,
+      "position": [
+        1800,
+        -2980
+      ],
+      "id": "77d00efd-144d-416b-a00b-3c133848e1ec"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.text }}",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.8,
+      "position": [
+        2020,
+        -2460
+      ],
+      "id": "54e8b015-ce59-4c3b-a4d8-d0fe8c9cf36b",
+      "name": "AI Agent4"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        2100,
+        -2600
+      ],
+      "id": "a7c849ea-279c-42b0-a2dd-b6dbade11f14",
+      "name": "OpenAI Chat Model8",
+      "credentials": {
+        "openAiApi": {
+          "id": "3wGnN6ZoYsfXF2pz",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "text": "={{ $json.output }}",
+        "attributes": {
+          "attributes": [
+            {
+              "name": "Order Number",
+              "description": "Order number",
+              "required": true
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.informationExtractor",
+      "typeVersion": 1,
+      "position": [
+        2420,
+        -2460
+      ],
+      "id": "c24fbf99-48df-44b5-9850-4dea634a2ee1",
+      "name": "Information Extractor4"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        2380,
+        -2260
+      ],
+      "id": "941a32ff-be0c-4d9b-8dc6-0d2d0640a8fd",
+      "name": "OpenAI Chat Model9",
+      "credentials": {
+        "openAiApi": {
+          "id": "3wGnN6ZoYsfXF2pz",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "functionCode": "return [\n  {\n    binary: {\n      data: {\n        data: \"JVBERi0xLjMKJf////8KOSAwIG9iago8PAovVHlwZSAvRXh0R1N0YXRlCi9jYSAxCj4+CmVuZG9iago4IDAgb2JqCjw8Ci9UeXBlIC9QYWdlCi9QYXJlbnQgMSAwIFIKL01lZGlhQm94IFswIDAgNTk1LjI4MDAyOSA4NDEuODkwMDE1XQovQ29udGVudHMgNiAwIFIKL1Jlc291cmNlcyA3IDAgUgovVXNlclVuaXQgMQo+PgplbmRvYmoKNyAwIG9iago8PAovUHJvY1NldCBbL1BERiAvVGV4dCAvSW1hZ2VCIC9JbWFnZUMgL0ltYWdlSV0KL0V4dEdTdGF0ZSA8PAovR3MxIDkgMCBSCj4+Ci9Gb250IDw8Ci9GMSAxMCAwIFIKPj4KPj4KZW5kb2JqCjEyIDAgb2JqCihyZWFjdC1wZGYpCmVuZG9iagoxMyAwIG9iagoocmVhY3QtcGRmKQplbmRvYmoKMTQgMCBvYmoKKEQ6MjAyNTAyMjgwNDAzMTZaKQplbmRvYmoKMTEgMCBvYmoKPDwKL1Byb2R1Y2VyIDEyIDAgUgovQ3JlYXRvciAxMyAwIFIKL0NyZWF0aW9uRGF0ZSAxNCAwIFIKPj4KZW5kb2JqCjEwIDAgb2JqCjw8Ci9UeXBlIC9Gb250Ci9CYXNlRm9udCAvSGVsdmV0aWNhCi9TdWJ0eXBlIC9UeXBlMQovRW5jb2RpbmcgL1dpbkFuc2lFbmNvZGluZwo+PgplbmRvYmoKNCAwIG9iago8PAo+PgplbmRvYmoKMyAwIG9iago8PAovVHlwZSAvQ2F0YWxvZwovUGFnZXMgMSAwIFIKL05hbWVzIDIgMCBSCi9WaWV3ZXJQcmVmZXJlbmNlcyA1IDAgUgo+PgplbmRvYmoKMSAwIG9iago8PAovVHlwZSAvUGFnZXMKL0NvdW50IDEKL0tpZHMgWzggMCBSXQo+PgplbmRvYmoKMiAwIG9iago8PAovRGVzdHMgPDwKICAvTmFtZXMgWwpdCj4+Cj4+CmVuZG9iago1IDAgb2JqCjw8Ci9EaXNwbGF5RG9jVGl0bGUgdHJ1ZQo+PgplbmRvYmoKNiAwIG9iago8PAovTGVuZ3RoIDE2NzAKL0ZpbHRlciAvRmxhdGVEZWNvZGUKPj4Kc3RyZWFtCnic7VvNbuM2EL77KfQC4ZLD4ZAEFjnstl2ghwJpAvSw2EOi2G2BZIEiQPv6HYr6oSRKtrNJbAWyYctDUTLn95shRVVIfl8o/nKohPNSKlOUj5t/6jegEQqrVsDicaONTOiHAT1HlWlfBb5/cWiYJ8t0LPH6QcM8WQ54eRjQc1S5+WvzR/F9c8USUZXI1LDHI5+8qkTWdSgUJsJs2vnjhQvtH37a/vt3uf39y6eifNrI6vxT+X3z4cuTKv584mu6P8zo6NNNcs/k1A3f+Rf+fyhudpuvH3F7yec/krksgI/WViRI3FkgJGOBf+vYZ0dbIvIVYeGyuADDrfekLNatoQtIuAfJ5Lfi5tfNzzc8zJZpQ8KB499vzZ9hvjAwdq+V1hqzw7NeWI9xdFfV/w+1JgsNAiS/VFRdd8JneBJAg1dxaNvLSULJKAmD5EixCu9AWh/VTTtrQBJdFjpS0D8XaOosQbEtABkqa2VfFvw3bDPcSXEnM77Y8pl4c+vZUgxtLYbePIxwxO5mtVnxUCqrMpWBxQtjRzYy1ZhZvMbqfWMPg2p7mIrakg7GHgYO26wZaK8F2qEZZBwYFAnl+WXToNjzZSXs69u60rWt76KtQ3VAjAeTNrIC+81MqSAxVLHZY2miu+vbrHSUJPYSM+8lHMMgCMYvzkt6cW9rDRstJMYYhGIqOWaFQ8w3ZcPbeTG5PSgeahIw8oNBOMR3oWisMMzs0a5BYeD8tatBS/4Y1i0f+Ru0zfOjOEeZ1y8u15GD6w4AY49+tRRyAd5Lt5GnDljvOE7dMbNNGtbCoGIs83AXLABbGCRASXYsHQjQuKP7fNg3IJD2gqJjF3GGdO0mp8XDGsjQ1dBmZMQ82UBdzA2xyXmjcQRIDKGxRtMJGHQcGxHeLQreNgbU2BjIoRFlxcJlj/NHQEbmtFuq0KCcwg1hFhBWjLZVnqMqvdt8SgBa5Mu3s2Jl4ZpY+PA5nyRtdD5AANfPe3IOoxcbAe4YbwPmOg6WyN+G35KPKj/fAK0++5CaqTW1dCI/XXSKEtPGajLmzzV61mgbSqZ4sj6opJLPisGDcOPUYhZKw9ugFeCkDJN51EzKPDLnHfXQo6Z+l6GX6V0zQU39LnuDSS7ONh/eeNB9aU/z4Y3NROaEZH/47s9RTWLWn6/Z3Rl96s/15982UPy3ud58/cYX3bdW09kNFjSMIUq+xeyqamYfvcF6pgXzeTU4QeTmjF8hDznIw56aG6MMmrwPAwqys+kwWCsozogP2CBmQlHg743ZqRWzbcoD5CAme1Novp76rnSYme5xQsoEzcYcySbJ7QsDFXI1xQ4CI2FY4SycQBiR0UYm0M4ONqUQ5mYLy7xYpPDoMmJpeUvEMo71ifs/PtOdzyMraIKAq6fLY359EaaeqQwlVbA2rDCSdF1whTLehpn0fNVpBfqem/UEh2cviuhenBEh7MhFkVidT3ZdsJaxFfGHE8S8Xz0jVp6VfCYSRXp+cOXkyuq54HpW/Ie4YrowBBNFKPNUR91zZiZYeX4uTQuNGdjodHU0bKxqXriaxzBInFIFGKR3AoN1atVBoA9rti1hsUJEaIpGpImci4SeD4YrCIyigxco3RodTqHMiYXivjLHijoeAVYdL1jH4/DvvHAh/Ov3Ev6VNVzblBz2iT86PjUWHxjbH/U9Citn543XqL9GhLNhZo36q46PiPq9xQzF/5isZiTkQ5+cJsqqo+xfN0VOE2V/WDK70JC0H9N64L3VvvZjWjPrGz1hv8Q/PFdhR69zJOjWPZS/9ByhzgMMWS4INZeEyfMITbLQPc87kSs4Lcx4XXXNFdZc4SyZWXOFVccH5gqZ5yIsiVH0B6sbN4fxIyNEQs0ut56V5NCHmpDu0+dLgJt21XaQ/Pqjlf1iccz5hO8oTQ0uyIHvoJBBpAsR2rvynekNCiCFVDRWdKetmSmW1EvcYMU56eWEknIpiq99hBynT2HvlactRxgJ1Gz+qZeiq/1X1VwMn5/Y5uNELjZ18jjeh9gtYbn4oyVstZyI5EhC+lwob3k+zBINg3cQbyZuK8VWahYTuNtnRTh3d3kTc8JQJkwnjB5tY0raNck5ETPHJTmJpg5zDScH66GraxzpGoyWdjFCmtxEboXW57wLb3XtxNIOc+2wp7i/2JUk7cD6PsXToe2zeeP9691GMVXvNp8pRhjRXa4Yafl6BZB7JZn8qE2/0rBeCnjS9/8CXEiyCmVuZHN0cmVhbQplbmRvYmoKeHJlZgowIDE1CjAwMDAwMDAwMDAgNjU1MzUgZiAKMDAwMDAwMDY4MSAwMDAwMCBuIAowMDAwMDAwNzM4IDAwMDAwIG4gCjAwMDAwMDA1OTQgMDAwMDAgbiAKMDAwMDAwMDU3MyAwMDAwMCBuIAowMDAwMDAwNzg1IDAwMDAwIG4gCjAwMDAwMDA4MjggMDAwMDAgbiAKMDAwMDAwMDE4OSAwMDAwMCBuIAowMDAwMDAwMDU5IDAwMDAwIG4gCjAwMDAwMDAwMTUgMDAwMDAgbiAKMDAwMDAwMDQ3NSAwMDAwMCBuIAowMDAwMDAwMzk5IDAwMDAwIG4gCjAwMDAwMDAzMDcgMDAwMDAgbiAKMDAwMDAwMDMzNSAwMDAwMCBuIAowMDAwMDAwMzYzIDAwMDAwIG4gCnRyYWlsZXIKPDwKL1NpemUgMTUKL1Jvb3QgMyAwIFIKL0luZm8gMTEgMCBSCi9JRCBbPGJiZDc3MTBlNWE0ZjdkZGNhNmJkZTkyMWQxOGI5MjlmPiA8YmJkNzcxMGU1YTRmN2RkY2E2YmRlOTIxZDE4YjkyOWY+XQo+PgpzdGFydHhyZWYKMjU3MQolJUVPRgo=\",\n        fileName: \"report.pdf\",\n        mimeType: \"application/pdf\"\n      }\n    }\n  }\n];"
+      },
+      "name": "Build PDF Binary1",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [
+        1520,
+        -2720
+      ],
+      "id": "7aac400b-b5ef-407a-a97e-8c48dd4274d2"
+    },
+    {
+      "parameters": {
+        "operation": "pdf",
+        "options": {}
+      },
+      "name": "Extract from File5",
+      "type": "n8n-nodes-base.extractFromFile",
+      "typeVersion": 1,
+      "position": [
+        1780,
+        -2720
+      ],
+      "id": "96b664dd-dc05-4b38-a337-3a7c1e14211a"
+    },
+    {
+      "parameters": {
+        "select": "user",
+        "user": {
+          "__rl": true,
+          "value": "U087N84ACC8",
+          "mode": "list",
+          "cachedResultName": "jaykukadiya99"
+        },
+        "text": "=Your order Number is {{ $json.output[\"Order Number\"] }}",
+        "otherOptions": {}
+      },
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.3,
+      "position": [
+        3380,
+        -2480
+      ],
+      "id": "d0ba6723-90e5-4381-b5ce-6c20da29f1a0",
+      "name": "Slack8",
+      "webhookId": "4477ee79-ace6-4cfa-b8b7-dc494265a3bc",
+      "credentials": {
+        "slackApi": {
+          "id": "sEenuaZNrZ3iIn6Y",
+          "name": "Testing - JK"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sendTo": "hello@dashboardlim.com",
+        "subject": "Hello",
+        "message": "Friday report",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        3140,
+        -2820
+      ],
+      "id": "d5e2b0bf-4b62-49ae-9565-a85d4ae2cada",
+      "name": "Gmail4",
+      "webhookId": "5b27c87a-6d12-419d-bf0f-d9ada15ebfc2",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "sSxnHGtwgnj2VZPU",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sendTo": "hello@dashboardlim.com",
+        "subject": "Hello",
+        "message": "Update",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        3380,
+        -2300
+      ],
+      "id": "44c813a4-13a6-4c83-a9af-6379ee4b60c8",
+      "name": "Gmail",
+      "webhookId": "5b27c87a-6d12-419d-bf0f-d9ada15ebfc2",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "sSxnHGtwgnj2VZPU",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sendTo": "hello@dashboardlim.com",
+        "subject": "Hello",
+        "message": "Update",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        3240,
+        -1900
+      ],
+      "id": "c8dc0a67-ed8a-49c5-9745-b5f78756107f",
+      "name": "Gmail1",
+      "webhookId": "5b27c87a-6d12-419d-bf0f-d9ada15ebfc2",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "sSxnHGtwgnj2VZPU",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sendTo": "hello@dashboardlim.com",
+        "subject": "Hello",
+        "message": "Update",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        3260,
+        -1700
+      ],
+      "id": "ccf61508-9c30-45da-9659-a6e9aa2f1497",
+      "name": "Gmail2",
+      "webhookId": "5b27c87a-6d12-419d-bf0f-d9ada15ebfc2",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "sSxnHGtwgnj2VZPU",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sendTo": "hello@dashboardlim.com",
+        "subject": "Hello",
+        "message": "Update",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        2460,
+        -1400
+      ],
+      "id": "6b71f2c5-be7e-4ace-92ec-9f0b433b1093",
+      "name": "Gmail3",
+      "webhookId": "5b27c87a-6d12-419d-bf0f-d9ada15ebfc2",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "sSxnHGtwgnj2VZPU",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sendTo": "hello@dashboardlim.com",
+        "subject": "Hello",
+        "message": "Update",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        2480,
+        -1220
+      ],
+      "id": "8655ff5f-6873-46d7-bb3b-5df2d6fab665",
+      "name": "Gmail5",
+      "webhookId": "5b27c87a-6d12-419d-bf0f-d9ada15ebfc2",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "sSxnHGtwgnj2VZPU",
+          "name": "Gmail account"
+        }
+      }
+    }
+  ],
+  "pinData": {
+    "Schedule Trigger": [
+      {
+        "json": {
+          "timestamp": "2025-07-03T16:28:51.837+10:00",
+          "Readable date": "July 3rd 2025, 4:28:51 pm",
+          "Readable time": "4:28:51 pm",
+          "Day of week": "Thursday",
+          "Year": "2025",
+          "Month": "July",
+          "Day of month": "03",
+          "Hour": "16",
+          "Minute": "28",
+          "Second": "51",
+          "Timezone": "Australia_Melbourne (UTC+10:00)"
+        }
+      }
+    ]
+  },
+  "connections": {
+    "Switch": {
+      "main": [
+        [
+          {
+            "node": "If1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Extract from File",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Extract from File2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract from File": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Information Extractor",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Information Extractor",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Information Extractor": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Gmail1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Gmail2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If1": {
+      "main": [
+        [
+          {
+            "node": "Build PDF Binary",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Build PDF Binary1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract from File2": {
+      "main": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent1": {
+      "main": [
+        [
+          {
+            "node": "Information Extractor1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model2": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Information Extractor1": {
+      "main": [
+        [
+          {
+            "node": "If2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model3": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Information Extractor1",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If2": {
+      "main": [
+        [
+          {
+            "node": "Gmail3",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Gmail5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If3": {
+      "main": [
+        [
+          {
+            "node": "Slack8",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Gmail",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent3": {
+      "main": [
+        [
+          {
+            "node": "Information Extractor3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model6": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent3",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model7": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Information Extractor3",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Information Extractor3": {
+      "main": [
+        [
+          {
+            "node": "Gmail4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build PDF Binary": {
+      "main": [
+        [
+          {
+            "node": "Extract from File4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract from File4": {
+      "main": [
+        [
+          {
+            "node": "AI Agent3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent4": {
+      "main": [
+        [
+          {
+            "node": "Information Extractor4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model8": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent4",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Information Extractor4": {
+      "main": [
+        [
+          {
+            "node": "If3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model9": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Information Extractor4",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build PDF Binary1": {
+      "main": [
+        [
+          {
+            "node": "Extract from File5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract from File5": {
+      "main": [
+        [
+          {
+            "node": "AI Agent4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "816485a3-5761-4ef7-913b-52e4a43af29e",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "e38dd5482639bd61b927f3a5d8425551f6a7f244804be8ea5d2b80e21bfa779c"
+  },
+  "id": "OmY64dn0oDL0enZB",
+  "tags": [
+    {
+      "createdAt": "2025-06-04T07:22:14.580Z",
+      "updatedAt": "2025-06-26T11:35:45.066Z",
+      "id": "kKnHkwozQEN6Ptus",
+      "name": "free_resource"
+    }
+  ]
+}

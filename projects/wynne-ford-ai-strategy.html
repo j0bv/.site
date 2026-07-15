@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <meta name="author" content="Josiah Olivier Belfon-Valentine" />
+  <title>Wynne Ford AI Strategy - Projects</title>
+  <link rel="stylesheet" href="/src/reset.css" />
+  <link rel="stylesheet" href="/src/index.css" />
+  <style>
+    /* Mobile: horizontal scroll for ASCII diagrams and tables */
+    @media screen {
+      body {
+        overflow-y: visible;
+      }
+      .ascii-block {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        padding: 1em;
+        background: var(--background-color-alt);
+        color: var(--text-color);
+        position: relative;
+      }
+      .ascii-block::before {
+        content: "Scroll horizontally";
+        display: block;
+        font-size: 0.7rem;
+        color: var(--text-color-alt);
+        margin-bottom: 0.25em;
+      }
+      .ascii-block::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 2.5em;
+        pointer-events: none;
+        background: linear-gradient(to right, transparent, var(--background-color-alt));
+      }
+      .table-scroll-wrap {
+        position: relative;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        max-width: 100%;
+        margin: var(--line-height) 0;
+      }
+      .table-scroll-wrap::before {
+        content: "Scroll horizontally";
+        display: block;
+        font-size: 0.7rem;
+        color: var(--text-color-alt);
+        margin-bottom: 0.25em;
+      }
+      .table-scroll-wrap::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 2.5em;
+        pointer-events: none;
+        background: linear-gradient(to right, transparent, var(--background-color));
+      }
+      .table-scroll-wrap table {
+        min-width: min-content;
+      }
+    }
+    /* Ensure continuous scrolling and PDF-friendly layout */
+    @media print {
+      @page {
+        size: letter;
+        margin: 0.5in;
+      }
+      body {
+        overflow-y: visible;
+        margin: 0;
+        padding: var(--line-height) 2ch;
+      }
+      /* Fix header spacing */
+      .header {
+        margin-bottom: calc(var(--line-height) * 1.5) !important;
+      }
+      .header h1 {
+        margin-bottom: calc(var(--line-height) * 0.5) !important;
+      }
+      .header p, .header span {
+        margin: 0 !important;
+        line-height: var(--line-height) !important;
+      }
+      /* Fix pre/code blocks for PDF */
+      pre {
+        white-space: pre-wrap !important;
+        word-wrap: break-word !important;
+        overflow-wrap: break-word !important;
+        max-width: 100% !important;
+        font-size: 0.9em !important;
+        line-height: var(--line-height) !important;
+      }
+      pre code {
+        display: block !important;
+        white-space: pre-wrap !important;
+        word-wrap: break-word !important;
+      }
+      /* Fix tables for PDF */
+      table {
+        page-break-inside: avoid !important;
+        width: 100% !important;
+        table-layout: auto !important;
+      }
+      /* Remove all page breaks for continuous scrolling */
+      * {
+        page-break-inside: avoid !important;
+        page-break-after: avoid !important;
+        page-break-before: avoid !important;
+      }
+      h2, h3 {
+        page-break-after: avoid !important;
+        margin-top: calc(var(--line-height) * 1.5) !important;
+      }
+      /* Hide navigation for PDF */
+      nav {
+        display: none;
+      }
+      /* Hide scroll hints when printing */
+      .ascii-block::before,
+      .ascii-block::after,
+      .table-scroll-wrap::before,
+      .table-scroll-wrap::after {
+        display: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+<table class="header">
+  <tr>
+    <td colspan="2" rowspan="2" class="width-auto">
+      <h1 class="title">WYNNE FORD AI STRATEGY</h1>
+      <span class="subtitle">AI Implementation Strategy for Automotive Sales</span>
+    </td>
+    <th>Type</th>
+    <td class="width-min">Strategic Proposal</td>
+  </tr>
+  <tr>
+    <th>Portfolio</th>
+    <td class="width-min">Projects</td>
+  </tr>
+</table>
+<h2 id="overview">Overview</h2>
+<p>Comprehensive AI implementation strategy proposal for transitioning into a tech-assisted sales role at Wynne Ford in Hampton, Virginia. This document presents a detailed assessment of my personal home server infrastructure (5-server enterprise cluster that I own and operate at my home), strategic recommendations for implementing artificial intelligence to enhance sales operations, and a roadmap to achieve three foundational pillars: dynamics of customer satisfaction, maintaining capable and inspired staff, and stimulating market growth.</p>
+<h2 id="executive-summary">Executive Summary</h2>
+<p>This proposal outlines a strategy to leverage my personal home infrastructure (5-server enterprise cluster that I own and operate at my home) to transition into a tech-assisted sales role at Wynne Ford. The strategy utilizes existing computational capacity to support advanced AI automation while maintaining complete data sovereignty and security control. The proposal includes infrastructure assessment, AI workload capacity analysis, and a phased implementation roadmap demonstrating how my personal home-based technical resources can enhance automotive sales performance.</p>
+<h2 id="infrastructure-architecture">Infrastructure Architecture</h2>
+<p><em>Note: All servers listed below are my personal servers that I own and operate at my home. This infrastructure is not owned by Wynne Ford and would be used to support a tech-assisted sales role.</em></p>
+<pre class="ascii-block"><code>┌─────────────────────────────────────────────────────────────┐
+│    PERSONAL HOME INFRASTRUCTURE CLUSTER (My Servers)          │
+│    Operated at My Home - For Tech-Assisted Sales Role        │
+└─────────────────────────────────────────────────────────────┘
+
+┌──────────────────┐  ┌──────────────────┐  ┌──────────────────┐
+│  Supermicro      │  │  HPE ProLiant    │  │  HPE ProLiant    │
+│  828-14          │  │  DL380 Gen9      │  │  DL380 Gen9      │
+│                  │  │                  │  │                  │
+│  4× AMD Opteron  │  │  2× Xeon E5-2670 │  │  2× Xeon E5-2670 │
+│  256 GB RAM      │  │  256 GB RAM      │  │  256 GB RAM      │
+│  800 W           │  │  1,600 W         │  │  1,600 W         │
+└────────┬─────────┘  └────────┬─────────┘  └────────┬─────────┘
+         │                     │                     │
+         └─────────────────────┼─────────────────────┘
+                               │
+                    ┌──────────┴──────────┐
+                    │   Network Switch    │
+                    └──────────┬──────────┘
+                               │
+         ┌─────────────────────┼─────────────────────┐
+         │                     │                     │
+┌────────┴─────────┐  ┌────────┴─────────┐  ┌────────┴─────────┐
+│  HPE ProLiant    │  │  Cisco UCS       │  │  AI Workloads    │
+│  DL380 Gen9      │  │  C240 M4         │  │  Distribution    │
+│                  │  │                  │  │                  │
+│  2× Xeon E5-2670 │  │  2× Xeon E5-2640 │  │  • Ollama Models │
+│  256 GB RAM      │  │  384 GB RAM      │  │  • N8N Workflows │
+│  1,600 W         │  │  2,400 W         │  │  • CrewAI Agents │
+└──────────────────┘  └──────────────────┘  └──────────────────┘
+
+Total: 5 Servers | 132 CPU Cores | 1.4 TB RAM | 8.0 kW Power</code></pre>
+<h2 id="infrastructure-capacity">Infrastructure Capacity</h2>
+<table>
+  <thead>
+    <tr>
+      <th class="width-auto">Server Model</th>
+      <th class="width-min">Qty</th>
+      <th class="width-min">CPU</th>
+      <th class="width-min">RAM</th>
+      <th class="width-min">Power</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Supermicro 828-14 CSE-828 H8QG6-F</td>
+      <td>1</td>
+      <td>4× AMD Opteron 6168 @ 1.9 GHz</td>
+      <td>256 GB</td>
+      <td>800 W</td>
+    </tr>
+    <tr>
+      <td>HPE ProLiant DL380 Gen9</td>
+      <td>3</td>
+      <td>2× Intel Xeon E5-2670 v3 @ 2.3 GHz</td>
+      <td>256 GB</td>
+      <td>1,600 W</td>
+    </tr>
+    <tr>
+      <td>Cisco UCS C240 M4</td>
+      <td>1</td>
+      <td>2× Intel Xeon E5-2640 v3 @ 2.6 GHz</td>
+      <td>384 GB</td>
+      <td>2,400 W</td>
+    </tr>
+  </tbody>
+</table>
+<p><strong>Total Cluster Capacity:</strong></p>
+<ul class="incremental">
+<li>5 Enterprise Servers with 132 CPU cores</li>
+<li>1.4 TB Total RAM (1,408 GB)</li>
+<li>8.0 kW Power Supply Capacity</li>
+<li>Estimated Annual Operating Cost: $6,107 in electricity</li>
+</ul>
+<h2 id="ai-workload-capacity">AI Workload Capacity</h2>
+<pre style="background: #f4f4f4; padding: 1em; overflow-x: auto;"><code>AI Model Capacity Distribution
+
+Small Models (1-7B)     ████████████████████████████████████████████████████████████████  66 instances
+                        Customer Service | Lead Qualification | Basic Chatbots
+
+Medium Models (7-13B)   ██████████████████████████████████████████████████████████      33 instances
+                        Sales Assistance | Complex Queries | Multi-step Tasks
+
+Large Models (13-30B)   ████████████████████████████████████████████████                  16 instances
+                        Market Analysis | Customer Insights | Strategic Planning
+
+Total Capacity: 132 CPU Cores | 1.4 TB RAM | Supports 115+ concurrent AI instances</code></pre>
+<p>Based on hardware specifications and standard AI model resource requirements:</p>
+<ul class="incremental">
+<li><strong>Small Models (1-7B parameters):</strong> Up to 66 concurrent instances - Ideal for customer service chatbots, basic lead qualification</li>
+<li><strong>Medium Models (7-13B parameters):</strong> Up to 33 concurrent instances - Advanced sales assistance, complex query handling</li>
+<li><strong>Large Models (13-30B parameters):</strong> Up to 16 concurrent instances - Sophisticated market analysis, advanced customer insights</li>
+</ul>
+<h2 id="strategic-framework">Strategic Framework: Three Pillars</h2>
+<pre class="ascii-block"><code>                    ┌─────────────────────────────┐
+                    │   WYNNE FORD AI STRATEGY    │
+                    │      Three Pillars          │
+                    └─────────────┬───────────────┘
+                                  │
+        ┌─────────────────────────┼─────────────────────────┐
+        │                         │                         │
+┌───────▼────────┐      ┌─────────▼─────────┐      ┌────────▼────────┐
+│   Pillar 1     │      │    Pillar 2       │      │   Pillar 3      │
+│   Customer     │      │   Staff           │      │   Market        │
+│   Satisfaction │      │   Development     │      │   Growth        │
+├────────────────┤      ├───────────────────┤      ├─────────────────┤
+│ • Personalized │      │ • Personal Brand  │      │ • Digital Reach │
+│   Journeys     │      │   Development     │      │ • Optimization  │
+│ • 24/7 Response│      │ • Task Liberation │      │ • Human+AI      │
+│ • Data Clarity │      │ • Ownership       │      │   Excellence    │
+└────────────────┘      └───────────────────┘      └─────────────────┘
+        │                         │                         │
+        └─────────────────────────┼─────────────────────────┘
+                                  │
+                    ┌─────────────▼───────────────┐
+                    │   Integrated AI Platform    │
+                    │   • Local Deployment       │
+                    │   • Data Sovereignty       │
+                    │   • Real-time Analytics    │
+                    └─────────────────────────────┘</code></pre>
+<h3 id="pillar-1-dynamics-of-customer-satisfaction">Pillar 1: Dynamics of Customer Satisfaction</h3>
+<ul class="incremental">
+<li>Personalized Customer Journeys: AI tailors recommendations, communication, and aftersales service</li>
+<li>24/7 Authentic Response: Automation guarantees every inquiry is met around the clock</li>
+<li>Clarity Through Data: AI helps demystify complex aspects of vehicle purchasing</li>
+</ul>
+<h3 id="pillar-2-maintaining-capable-and-inspired-staff">Pillar 2: Maintaining Capable and Inspired Staff</h3>
+<ul class="incremental">
+<li>Personal Brand Development Strategy: Each team member's unique story and expertise amplified through AI-assisted personal branding</li>
+<li>Liberation from Administrative Tasks: AI automation frees up time for creative energy and personal relationships</li>
+<li>Ownership and Motivation: Investment in both talent and supporting technology cultivates commitment and innovation</li>
+</ul>
+<h3 id="pillar-3-stimulating-market-growth">Pillar 3: Stimulating Market Growth</h3>
+<ul class="incremental">
+<li>Scalable Digital Reach: Expand influence nationally while maintaining complete control over customer data</li>
+<li>Continuous Optimization: Real-time analytics inform sales strategy and team development</li>
+<li>Technology-Amplified Human Excellence: Every team member contributes their best, supported by tailored AI assistance</li>
+</ul>
+<h2 id="implementation-roadmap">Implementation Roadmap</h2>
+<pre style="background: #f4f4f4; padding: 1em; overflow-x: auto;"><code>Implementation Timeline
+
+Phase 1: Foundation (Months 1-2)
+┌─────────────────────────────────────────────────────────────┐
+│ • N8N Workflow Deployment                                    │
+│ • Ollama AI Models Setup                                     │
+│ • VM Environment Configuration                              │
+│ • 24/7 Customer Response System                             │
+│ • Intelligent Call Routing                                   │
+│ • Real-time Lead Scoring                                    │
+└─────────────────────────────────────────────────────────────┘
+         │
+         ▼
+Phase 2: Advanced Automation (Months 3-6)
+┌─────────────────────────────────────────────────────────────┐
+│ • CrewAI Multi-Agent Orchestration                          │
+│ • Hugging Face Model Integration                            │
+│ • Cisco IP Phone AI Integration                            │
+│ • Dynamic Pricing Optimization                              │
+│ • Inventory Intelligence                                    │
+│ • Predictive Maintenance Scheduling                         │
+└─────────────────────────────────────────────────────────────┘
+         │
+         ▼
+Phase 3: Market Leadership (Months 6-12)
+┌─────────────────────────────────────────────────────────────┐
+│ • National Digital Presence                                 │
+│ • Advanced Analytics Platform                               │
+│ • Team Brand Development                                    │
+│ • Industry Leadership Position                              │
+└─────────────────────────────────────────────────────────────┘</code></pre>
+<h3 id="phase-1-foundation-deployment">Phase 1: Foundation Deployment</h3>
+<ul class="incremental">
+<li>Deploy N8N Workflow Automation across existing server cluster</li>
+<li>Implement Ollama local AI models for customer service automation</li>
+<li>Configure secure VM environments bypassing CDK limitations</li>
+<li>24/7 Customer Response System: Automated lead capture and initial qualification</li>
+<li>Intelligent Call Routing: AI-powered analysis routing customer inquiries</li>
+<li>Real-time Lead Scoring: Instant assessment of customer purchase probability</li>
+</ul>
+<h3 id="phase-2-advanced-automation">Phase 2: Advanced Automation</h3>
+<ul class="incremental">
+<li>Multi-Agent Orchestration: Implement CrewAI frameworks for complex sales process automation</li>
+<li>Deploy specialized models from Hugging Face Hub for automotive-specific tasks</li>
+<li>Integration with existing Cisco 8818 IP phone system for AI-powered phone agent capabilities</li>
+<li>Dynamic Pricing Optimization: Real-time market analysis and competitive pricing adjustments</li>
+<li>Inventory Intelligence: Automated matching of customer preferences to available inventory</li>
+<li>Predictive Maintenance Scheduling: Proactive service appointment optimization</li>
+</ul>
+<h3 id="phase-3-market-leadership">Phase 3: Market Leadership</h3>
+<ul class="incremental">
+<li>National Digital Presence: Scaling operations beyond Hampton Roads region</li>
+<li>Advanced Analytics: Comprehensive customer journey mapping and retention analysis</li>
+<li>Team Brand Development: Individual AI-assisted personal branding amplification</li>
+</ul>
+<h2 id="competitive-advantages">Competitive Advantages</h2>
+<p><em>Advantages of using my personal home-based infrastructure to support a tech-assisted sales role:</em></p>
+<ul class="incremental">
+<li><strong>Cost Efficiency:</strong> My personal home infrastructure eliminates ongoing subscription fees for external AI services, reducing operational costs</li>
+<li><strong>Data Sovereignty:</strong> Complete control over infrastructure and data processing operated at my home, essential for automotive industry compliance</li>
+<li><strong>Response Speed:</strong> Local processing at my home eliminates network latency, enabling immediate response times for customer inquiries</li>
+<li><strong>Security:</strong> Enterprise-grade data protection for sensitive customer financial information using my personal, home-operated infrastructure</li>
+<li><strong>Technical Differentiation:</strong> Unique capability to provide tech-enhanced sales services using my personal home-based server resources</li>
+</ul>
+<h2 id="data-flow-architecture">Data Flow Architecture</h2>
+<pre class="ascii-block"><code>Customer Interaction Flow
+
+┌──────────────┐
+│   Customer   │
+│   Inquiry    │
+└──────┬───────┘
+       │
+       ▼
+┌─────────────────────────────────────┐
+│   AI Gateway (24/7 Response)        │
+│   • Lead Capture                    │
+│   • Initial Qualification           │
+└──────┬──────────────────────────────┘
+       │
+       ├─────────────────┬─────────────────┐
+       ▼                 ▼                 ▼
+┌─────────────┐  ┌─────────────┐  ┌─────────────┐
+│  Ollama     │  │  N8N        │  │  CrewAI     │
+│  Models     │  │  Workflows  │  │  Agents     │
+│             │  │             │  │             │
+│  • Chatbot  │  │  • Routing  │  │  • Complex  │
+│  • Scoring  │  │  • Tasks    │  │    Analysis │
+└──────┬──────┘  └──────┬──────┘  └──────┬──────┘
+       │                 │                 │
+       └─────────────────┼─────────────────┘
+                         │
+                         ▼
+              ┌──────────────────────┐
+              │   Data Repository    │
+              │   • Customer Data    │
+              │   • Analytics        │
+              │   • Insights         │
+              └──────────┬────────────┘
+                         │
+                         ▼
+              ┌──────────────────────┐
+              │   Sales Team         │
+              │   • Prioritized      │
+              │   • Enriched         │
+              │   • Actionable       │
+              └──────────────────────┘</code></pre>
+<h2 id="expected-outcomes">Expected Outcomes</h2>
+<h3 id="immediate-benefits-30-60-days">Immediate Benefits (30-60 days)</h3>
+<ul class="incremental">
+<li>Significant reduction in initial customer response time through automated lead qualification</li>
+<li>24/7 availability for customer inquiries and appointment scheduling</li>
+<li>Improved lead quality through AI-powered scoring and prioritization</li>
+</ul>
+<h3 id="medium-term-goals-3-6-months">Medium-term Goals (3-6 months)</h3>
+<ul class="incremental">
+<li>Enhanced sales conversion rates through personalized customer journey automation</li>
+<li>Reduced administrative burden on sales staff, allowing focus on relationship building</li>
+<li>Regional market leadership in automotive technology adoption and customer service excellence</li>
+</ul>
+<h3 id="long-term-vision-6-12-months">Long-term Vision (6-12 months)</h3>
+<ul class="incremental">
+<li>National recognition as a technology-forward automotive retailer</li>
+<li>Substantial revenue increase through improved operational efficiency and expanded market reach</li>
+<li>Industry leadership position in AI-powered automotive sales automation</li>
+</ul>
+  <script src="/src/index.js"></script>
+</body>
+</html>

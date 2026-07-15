@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <meta name="author" content="Josiah Olivier Belfon-Valentine" />
+  <title>NewsLogic - Code Portfolio</title>
+  <link rel="stylesheet" href="../src/reset.css" />
+  <link rel="stylesheet" href="../src/index.css" />
+</head>
+<body>
+<table class="header">
+  <tr>
+    <td colspan="2" rowspan="2" class="width-auto">
+      <h1 class="title">NEWSLOGIC</h1>
+      <span class="subtitle">Rust-based News Processing System</span>
+    </td>
+    <th>Language</th>
+    <td class="width-min">Rust</td>
+  </tr>
+  <tr>
+    <th>Portfolio</th>
+    <td class="width-min"><a href="/code">Code</a></td>
+  </tr>
+</table>
+<h2 id="code-in-repository">Code in this repository</h2>
+<table>
+  <tr>
+    <td class="width-auto">
+      <p style="margin: 0;"><strong>Path</strong></p>
+      <p style="margin: 0;">Code lives in this repo at <code>code/newslogic/</code>. Clone the portfolio repository to get the source.</p>
+      <p style="margin: 0.5em 0 0 0;"><strong>How to run</strong></p>
+      <ul style="margin: 0; padding-left: 1.25em;">
+        <li>Clone this repository, then open a terminal in <code>the-monospace-web/code/newslogic</code>.</li>
+        <li>Install Rust (rustup) if needed. Run <code>cargo build</code> to compile.</li>
+        <li>Start the API server: <code>cargo run -- api-server</code>. The REST API will serve events and map data.</li>
+        <li>Process the memory graph (RSS feeds, BitNet extraction, Neo4j): <code>cargo run -- memory-graph</code>.</li>
+        <li>Configure RSS feeds in <code>config/feeds.yaml</code>. Ensure Neo4j and any required env vars are set before running.</li>
+      </ul>
+    </td>
+    <td class="width-min"><code>code/newslogic/</code></td>
+  </tr>
+</table>
+<h2 id="overview">Overview</h2>
+<p>NewsLogic is a Rust-based system for processing RSS feeds, extracting events from news articles, geocoding locations using GeoJSON data for the 757 area, and storing them in Neo4j with spatial coordinates for visualization.</p>
+<h2 id="architecture">Architecture</h2>
+<table>
+  <tr>
+    <td class="width-auto">
+      <p style="margin: 0;"><strong>Data Flow</strong></p>
+      <p style="margin: 0;">Article → BitNet Agent → Events + Locations → Neo4j → Web API → Leaflet Map</p>
+    </td>
+  </tr>
+</table>
+<h3 id="key-components">Key Components</h3>
+<ul class="incremental">
+<li><strong>GeoJSON Data Layer</strong> - Loads and indexes GeoJSON files for location lookup and geocoding</li>
+<li><strong>BitNet Agent</strong> - Extracts events from article content, classifies event types, and geocodes locations</li>
+<li><strong>Neo4j Storage</strong> - Stores Events with coordinates and creates relationships: Article → Event → Location</li>
+<li><strong>API Server</strong> - REST API for querying events and serving data to frontend visualization</li>
+<li><strong>Worker System</strong> - Processes RSS feeds and extracts structured data</li>
+</ul>
+<h2 id="project-structure">Project Structure</h2>
+<pre><code>newslogic/
+├── src/
+│   ├── main.rs              # CLI entry point
+│   ├── bitnet_agent.rs      # Event extraction agent
+│   ├── geo_data.rs          # GeoJSON loading and lookup
+│   ├── memory_graph.rs      # Neo4j storage
+│   ├── api_server.rs        # REST API server
+│   ├── worker.rs            # RSS feed processing
+│   ├── parser.rs            # RSS/XML parsing
+│   ├── fetcher.rs           # HTTP feed fetching
+│   └── models.rs            # Data structures
+├── config/
+│   └── feeds.yaml           # RSS feed configuration
+└── output/                  # Processed XML outputs</code></pre>
+<h2 id="dependencies">Dependencies</h2>
+<p>Key dependencies from <code>Cargo.toml</code>:</p>
+<ul class="incremental">
+<li><strong>tokio</strong> - Async runtime</li>
+<li><strong>axum</strong> - Web framework for API server</li>
+<li><strong>neo4rs</strong> - Neo4j database driver</li>
+<li><strong>geojson</strong> - GeoJSON parsing and manipulation</li>
+<li><strong>rss</strong> - RSS feed parsing</li>
+<li><strong>reqwest</strong> - HTTP client for fetching feeds</li>
+<li><strong>redis</strong> - Caching layer</li>
+</ul>
+<h2 id="features">Features</h2>
+<ul class="incremental">
+<li>RSS feed aggregation and processing</li>
+<li>Event extraction from news articles using AI agents</li>
+<li>Geocoding using GeoJSON data for 757 area</li>
+<li>Neo4j graph database for spatial event storage</li>
+<li>REST API for event querying and visualization</li>
+<li>Support for multiple event types (accident, crime, weather, etc.)</li>
+</ul>
+<nav>
+<p><a href="code.html">← Back to Code Portfolio</a> | <a href="index.html"><svg class="home-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M11.293 3.293a1 1 0 0 1 1.414 0l6 6 2 2a1 1 0 0 1-1.414 1.414L19 12.414V19a2 2 0 0 1-2 2h-3a1 1 0 0 1-1-1v-3h-2v3a1 1 0 0 1-1 1H7a2 2 0 0 1-2-2v-6.586l-.293.293a1 1 0 0 1-1.414-1.414l2-2 6-6Z" clip-rule="evenodd"/></svg> Home</a></p>
+</nav>
+  <script src="/src/index.js"></script>
+</body>
+</html>

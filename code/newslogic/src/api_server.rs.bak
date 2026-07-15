@@ -1,0 +1,376 @@
+use axum::{
+    extract::{Query, State},
+    http::StatusCode,
+    response::Json,
+    routing::get,
+    Router,
+};
+use serde::{Deserialize, Serialize};
+use std::collections::HashMap;
+use std::sync::Arc;
+use tower_http::cors::{Any, CorsLayer};
+use tower_http::trace::TraceLayer;
+
+use crate::memory_graph::Neo4jClient;
+use crate::error::AppResult;
+
+#[derive(Debug, Clone)]
+pub struct ApiState {
+    pub neo4j: Arc<Neo4jClient>,
+}
+
+#[derive(Debug, Deserialize)]
+pub struct MapQueryParams {
+    pub start_date: Option<String>,
+    pub end_date: Option<String>,
+}
+
+#[derive(Debug, Deserialize)]
+pub struct MemoryGraphQueryParams {
+    pub entry_ids: Option<String>,
+    pub limit: Option<u64>,
+}
+
+#[derive(Debug, Serialize)]
+pub struct MapEvent {
+    pub id: String,
+    pub title: String,
+    pub location_name: String,
+    pub latitude: f64,
+    pub longitude: f64,
+    pub occurred_at: Option<String>,
+    pub entry_id: String,
+    pub entry_title: String,
+}
+
+#[derive(Debug, Serialize)]
+pub struct EventsResponse {
+    pub events: Vec<MapEvent>,
+}
+
+#[derive(Debug, Serialize)]
+pub struct GeoJSONFeature {
+    pub id: Option<String>,
+    #[serde(rename = "type")]
+    pub feature_type: String,
+    pub geometry: GeoJSONGeometry,
+    pub properties: HashMap<String, serde_json::Value>,
+}
+
+#[derive(Debug, Serialize)]
+pub struct GeoJSONGeometry {
+    #[serde(rename = "type")]
+    pub geometry_type: String,
+    pub coordinates: serde_json::Value,
+}
+
+#[derive(Debug, Serialize)]
+pub struct GeoJSONFeatureCollection {
+    #[serde(rename = "type")]
+    pub collection_type: String,
+    pub features: Vec<GeoJSONFeature>,
+}
+
+#[derive(Debug, Serialize)]
+pub struct GraphNode {
+    pub id: String,
+    pub label: String,
+    #[serde(rename = "type")]
+    pub node_type: String,
+    pub properties: HashMap<String, serde_json::Value>,
+}
+
+#[derive(Debug, Serialize)]
+pub struct GraphEdge {
+    pub id: String,
+    pub source: String,
+    pub target: String,
+    #[serde(rename = "type")]
+    pub edge_type: String,
+    pub properties: HashMap<String, serde_json::Value>,
+}
+
+#[derive(Debug, Serialize)]
+pub struct MemoryGraphResponse {
+    pub nodes: Vec<GraphNode>,
+    pub edges: Vec<GraphEdge>,
+}
+
+pub async fn get_map_events(
+    State(state): State<ApiState>,
+    Query(params): Query<MapQueryParams>,
+) -> Result<Json<EventsResponse>, StatusCode> {
+    let events = state.neo4j.get_events_with_locations().await
+        .map_err(|e| {
+            tracing::error!("Failed to fetch events: {}", e);
+            StatusCode::INTERNAL_SERVER_ERROR
+        })?;
+
+    let mut map_events = Vec::new();
+    
+    for event_json in events {
+        let id = event_json.get("event_id")
+            .and_then(|v| v.as_str())
+            .map(|s| s.to_string())
+            .unwrap_or_default();
+        
+        let title = event_json.get("title")
+            .and_then(|v| v.as_str())
+            .map(|s| s.to_string())
+            .unwrap_or_default();
+        
+        let location_name = event_json.get("location_name")
+            .and_then(|v| v.as_str())
+            .map(|s| s.to_string())
+            .unwrap_or_default();
+        
+        let latitude = event_json.get("latitude")
+            .and_then(|v| v.as_f64())
+            .unwrap_or(0.0);
+        
+        let longitude = event_json.get("longitude")
+            .and_then(|v| v.as_f64())
+            .unwrap_or(0.0);
+        
+        let timestamp = event_json.get("timestamp")
+            .and_then(|v| v.as_str())
+            .map(|s| s.to_string());
+        
+        let map_event = MapEvent {
+            id,
+            title,
+            location_name,
+            latitude,
+            longitude,
+            occurred_at: timestamp,
+            entry_id: String::new(),
+            entry_title: String::new(),
+        };
+        
+        if let Some(start_date) = &params.start_date {
+            if let Some(ref occurred_at) = map_event.occurred_at {
+                if occurred_at < start_date {
+                    continue;
+                }
+            }
+        }
+        
+        if let Some(end_date) = &params.end_date {
+            if let Some(ref occurred_at) = map_event.occurred_at {
+                if occurred_at > end_date {
+                    continue;
+                }
+            }
+        }
+        
+        map_events.push(map_event);
+    }
+    
+    Ok(Json(EventsResponse { events: map_events }))
+}
+
+pub async fn get_map_geojson(
+    State(state): State<ApiState>,
+    Query(params): Query<MapQueryParams>,
+) -> Result<Json<GeoJSONFeatureCollection>, StatusCode> {
+    let events = state.neo4j.get_events_with_locations().await
+        .map_err(|e| {
+            tracing::error!("Failed to fetch events: {}", e);
+            StatusCode::INTERNAL_SERVER_ERROR
+        })?;
+
+    let mut features = Vec::new();
+    
+    for event_json in events {
+        let id = event_json.get("event_id")
+            .and_then(|v| v.as_str())
+            .map(|s| s.to_string());
+        
+        let title = event_json.get("title")
+            .and_then(|v| v.as_str())
+            .map(|s| s.to_string())
+            .unwrap_or_default();
+        
+        let location_name = event_json.get("location_name")
+            .and_then(|v| v.as_str())
+            .map(|s| s.to_string())
+            .unwrap_or_default();
+        
+        let latitude = event_json.get("latitude")
+            .and_then(|v| v.as_f64())
+            .unwrap_or(0.0);
+        
+        let longitude = event_json.get("longitude")
+            .and_then(|v| v.as_f64())
+            .unwrap_or(0.0);
+        
+        let timestamp = event_json.get("timestamp")
+            .and_then(|v| v.as_str())
+            .map(|s| s.to_string());
+        
+        if latitude == 0.0 && longitude == 0.0 {
+            continue;
+        }
+        
+        if let Some(start_date) = &params.start_date {
+            if let Some(ref occurred_at) = timestamp {
+                if occurred_at < start_date {
+                    continue;
+                }
+            }
+        }
+        
+        if let Some(end_date) = &params.end_date {
+            if let Some(ref occurred_at) = timestamp {
+                if occurred_at > end_date {
+                    continue;
+                }
+            }
+        }
+        
+        let mut properties = HashMap::new();
+        properties.insert("id".to_string(), serde_json::Value::String(id.clone().unwrap_or_default()));
+        properties.insert("title".to_string(), serde_json::Value::String(title.clone()));
+        properties.insert("location_name".to_string(), serde_json::Value::String(location_name));
+        if let Some(ts) = timestamp {
+            properties.insert("occurred_at".to_string(), serde_json::Value::String(ts));
+        }
+        
+        let geometry = GeoJSONGeometry {
+            geometry_type: "Point".to_string(),
+            coordinates: serde_json::json!([longitude, latitude]),
+        };
+        
+        let feature = GeoJSONFeature {
+            id,
+            feature_type: "Feature".to_string(),
+            geometry,
+            properties,
+        };
+        
+        features.push(feature);
+    }
+    
+    Ok(Json(GeoJSONFeatureCollection {
+        collection_type: "FeatureCollection".to_string(),
+        features,
+    }))
+}
+
+pub async fn get_memory_graph(
+    State(state): State<ApiState>,
+    Query(params): Query<MemoryGraphQueryParams>,
+) -> Result<Json<MemoryGraphResponse>, StatusCode> {
+    let limit = params.limit.unwrap_or(1000);
+    let entry_ids_filter = params.entry_ids.as_ref()
+        .map(|s| s.split(',').map(|id| id.trim().to_string()).collect::<Vec<_>>());
+    
+    let mut result = state.neo4j.graph.execute(neo4rs::query(
+        r#"
+        MATCH (n)
+        OPTIONAL MATCH (n)-[r]->(m)
+        RETURN n, r, m
+        LIMIT $limit
+        "#)
+        .param("limit", limit as i64))
+        .await
+        .map_err(|e| {
+            tracing::error!("Failed to execute graph query: {}", e);
+            StatusCode::INTERNAL_SERVER_ERROR
+        })?;
+    
+    let mut nodes = Vec::new();
+    let mut edges = Vec::new();
+    let mut seen_nodes = std::collections::HashSet::new();
+    
+    while let Ok(Some(row)) = result.next().await {
+        if let Ok(node) = row.get::<neo4rs::Node>("n") {
+            let node_id = format!("{}", node.id());
+            if !seen_nodes.contains(&node_id) {
+                seen_nodes.insert(node_id.clone());
+                
+                let labels = node.labels();
+                let node_type = labels.first().cloned().unwrap_or_else(|| "Node".to_string());
+                
+                let mut properties = HashMap::new();
+                for key in node.keys() {
+                    if let Ok(value) = node.get::<String>(&key) {
+                        properties.insert(key.clone(), serde_json::Value::String(value));
+                    } else if let Ok(value) = node.get::<i64>(&key) {
+                        properties.insert(key.clone(), serde_json::Value::Number(serde_json::Number::from(value)));
+                    } else if let Ok(value) = node.get::<f64>(&key) {
+                        properties.insert(key.clone(), serde_json::Value::Number(serde_json::Number::from_f64(value).unwrap()));
+                    }
+                }
+                
+                let label = properties.get("title")
+                    .or_else(|| properties.get("name"))
+                    .and_then(|v| v.as_str())
+                    .map(|s| s.to_string())
+                    .unwrap_or_else(|| node_type.clone());
+                
+                nodes.push(GraphNode {
+                    id: node_id,
+                    label,
+                    node_type,
+                    properties,
+                });
+            }
+        }
+        
+        if let Ok(rel) = row.get::<neo4rs::Relation>("r") {
+            let edge_id = format!("{}", rel.id());
+            let start_id = format!("{}", rel.start_node_id());
+            let end_id = format!("{}", rel.end_node_id());
+            let rel_type = rel.typ();
+            
+            let mut properties = HashMap::new();
+            for key in rel.keys() {
+                if let Ok(value) = rel.get::<String>(&key) {
+                    properties.insert(key.clone(), serde_json::Value::String(value));
+                }
+            }
+            
+            edges.push(GraphEdge {
+                id: edge_id,
+                source: start_id,
+                target: end_id,
+                edge_type: rel_type,
+                properties,
+            });
+        }
+    }
+    
+    Ok(Json(MemoryGraphResponse { nodes, edges }))
+}
+
+pub fn create_router(neo4j_client: Arc<Neo4jClient>) -> Router {
+    let cors = CorsLayer::new()
+        .allow_origin(Any)
+        .allow_methods(Any)
+        .allow_headers(Any);
+    
+    let state = ApiState { neo4j: neo4j_client };
+    
+    Router::new()
+        .route("/api/map/events", get(get_map_events))
+        .route("/api/map/geojson", get(get_map_geojson))
+        .route("/api/memory/graph", get(get_memory_graph))
+        .layer(cors)
+        .layer(TraceLayer::new_for_http())
+        .with_state(state)
+}
+
+pub async fn start_server(neo4j_client: Arc<Neo4jClient>, port: u16) -> AppResult<()> {
+    let app = create_router(neo4j_client);
+    
+    let listener = tokio::net::TcpListener::bind(format!("0.0.0.0:{}", port)).await
+        .context("Failed to bind server")?;
+    
+    tracing::info!("API server listening on http://0.0.0.0:{}", port);
+    
+    axum::serve(listener, app).await
+        .context("Server error")?;
+    
+    Ok(())
+}

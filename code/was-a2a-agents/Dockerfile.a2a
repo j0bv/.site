@@ -1,0 +1,30 @@
+# Dockerfile for WAS A2A System
+FROM golang:1.21-alpine AS builder
+
+WORKDIR /app
+
+# Copy go mod files
+COPY pkg/go.mod pkg/go.sum ./
+RUN cd pkg && go mod download
+
+# Copy source code
+COPY . .
+
+# Build the A2A system
+RUN cd pkg && go build -o a2a-system ../cmd/a2a-system/main.go
+
+# Final stage
+FROM alpine:latest
+
+RUN apk --no-cache add ca-certificates
+
+WORKDIR /root/
+
+# Copy the binary
+COPY --from=builder /app/pkg/a2a-system .
+
+# Expose ports
+EXPOSE 8080 8081
+
+# Run the A2A system
+CMD ["./a2a-system"]

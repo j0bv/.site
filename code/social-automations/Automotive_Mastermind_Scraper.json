@@ -1,0 +1,82 @@
+{
+  "name": "Automotive Mastermind Scraper",
+  "nodes": [
+    {
+      "parameters": {
+        "trigger": "schedule",
+        "interval": "daily"
+      },
+      "name": "Schedule Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger"
+    },
+    {
+      "parameters": {
+        "authentication": {
+          "type": "puppeteer"
+        },
+        "url": "https://dealer.automotivemastermind.com/portfolio/all",
+        "actions": [
+          { "type": "login", "username": "{{ $env.MASTERMIND_USER }}", "password": "{{ $env.MASTERMIND_PASS }}" },
+          { "type": "waitForSelector", "selector": ".table" },
+          { "type": "extractTable", "selector": ".table", "output": "portfolio_leads" },
+          { "type": "goto", "url": "https://dealer.automotivemastermind.com/service/appointments" },
+          { "type": "waitForSelector", "selector": ".table" },
+          { "type": "extractTable", "selector": ".table", "output": "service_leads" },
+          { "type": "goto", "url": "https://dealer.automotivemastermind.com/turn" },
+          { "type": "waitForSelector", "selector": ".table" },
+          { "type": "extractTable", "selector": ".table", "output": "turn_leads" }
+        ]
+      },
+      "name": "Puppeteer Scraper",
+      "type": "n8n-nodes-base.puppeteer"
+    },
+    {
+      "parameters": {
+        "operation": "transform",
+        "input": [
+          "portfolio_leads",
+          "service_leads",
+          "turn_leads"
+        ],
+        "mapping": "custom",
+        "outputFormat": "json",
+        "fields": [
+          { "name": "lead_type", "source": "page" },
+          { "name": "customer_name", "source": "Buyer/Current Vehicle" },
+          { "name": "vehicle", "source": "vehicle_details" },
+          { "name": "deal_type", "source": "Deal Type" },
+          { "name": "assignee", "source": "Assignee" },
+          { "name": "status", "source": "Status" },
+          { "name": "updated_days", "source": "Updated" },
+          { "name": "bps", "source": "BPS" },
+          { "name": "appointment", "source": "Appointment" },
+          { "name": "service_advisor", "source": "Service Advisor" },
+          { "name": "value", "source": "Value" },
+          { "name": "notes_and_insights", "source": "Notes & Insights" },
+          { "name": "source_page", "source": "page" },
+          { "name": "scrape_date", "source": "now" }
+        ]
+      },
+      "name": "Transform Data",
+      "type": "n8n-nodes-base.function"
+    },
+    {
+      "parameters": {
+        "fileFormat": "json",
+        "fileName": "mastermind_leads.json",
+        "data": "={{ $json }}"
+      },
+      "name": "Save JSON",
+      "type": "n8n-nodes-base.writeBinaryFile"
+    },
+    {
+      "parameters": {
+        "fileFormat": "csv",
+        "fileName": "mastermind_leads.csv",
+        "data": "={{ $json }}"
+      },
+      "name": "Save CSV",
+      "type": "n8n-nodes-base.writeBinaryFile"
+    }
+  ]
+} 

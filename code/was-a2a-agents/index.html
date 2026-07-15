@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <meta name="author" content="Josiah Olivier Belfon-Valentine" />
+  <title>WAS A2A Agents - Code Portfolio</title>
+  <link rel="stylesheet" href="/src/reset.css" />
+  <link rel="stylesheet" href="/src/index.css" />
+</head>
+<body>
+<table class="header">
+  <tr>
+    <td colspan="2" rowspan="2" class="width-auto">
+      <h1 class="title">WAS A2A AGENTS</h1>
+      <span class="subtitle">Multi-agent AI System for Project Management</span>
+    </td>
+    <th>Language</th>
+    <td class="width-min">Go</td>
+  </tr>
+  <tr>
+    <th>Portfolio</th>
+    <td class="width-min"><a href="/code">Code</a></td>
+  </tr>
+</table>
+<h2 id="code-in-repository">Code in this repository</h2>
+<table>
+  <tr>
+    <td class="width-auto">
+      <p style="margin: 0;"><strong>Path</strong></p>
+      <p style="margin: 0;">Code lives in this repo at <code>code/was-a2a-agents/</code>. Clone the portfolio repository to get the source.</p>
+      <p style="margin: 0.5em 0 0 0;"><strong>How to run</strong></p>
+      <ul style="margin: 0; padding-left: 1.25em;">
+        <li>Clone this repository, then open a terminal in <code>the-monospace-web/code/was-a2a-agents</code>.</li>
+        <li>Install Go if needed. Run <code>go build</code> to compile.</li>
+        <li>Use the CLI from <code>cmd/</code> to interact with the agent system.</li>
+        <li>For containerized run: build and run with <code>Dockerfile.a2a</code>. For CI/CD, use <code>cloudbuild-a2a-system.yaml</code> with Google Cloud Build.</li>
+      </ul>
+    </td>
+    <td class="width-min"><code>code/was-a2a-agents/</code></td>
+  </tr>
+</table>
+<h2 id="overview">Overview</h2>
+<p>WAS A2A Agent System is a multi-agent AI system designed for project management and development workflow automation. The system uses a multi-agent architecture to coordinate AI agents for various project management tasks.</p>
+<h2 id="architecture">Architecture</h2>
+<table>
+  <tr>
+    <td class="width-auto">
+      <p style="margin: 0;"><strong>System Type</strong></p>
+      <p style="margin: 0;">Multi-agent AI system with agent coordination and workflow automation</p>
+    </td>
+  </tr>
+</table>
+<h3 id="key-components">Key Components</h3>
+<ul class="incremental">
+<li><strong>Agent System</strong> - Multi-agent architecture for coordinating AI agents</li>
+<li><strong>Workflow Automation</strong> - Automated project management and development workflows</li>
+<li><strong>Command Interface</strong> - CLI interface for interacting with the agent system</li>
+<li><strong>Package System</strong> - Modular package structure for extensibility</li>
+<li><strong>Docker Support</strong> - Containerized deployment with Dockerfile</li>
+<li><strong>Cloud Build</strong> - Google Cloud Build configuration for CI/CD</li>
+</ul>
+<h2 id="project-structure">Project Structure</h2>
+<pre><code>was-a2a-agents/
+├── agents/                    # Agent implementations
+├── cmd/                       # Command-line interfaces
+├── pkg/                       # Shared packages and libraries
+├── Dockerfile.a2a            # Docker container configuration
+├── cloudbuild-a2a-system.yaml # Google Cloud Build config
+├── go.mod                     # Go module dependencies
+└── go.sum                     # Dependency checksums</code></pre>
+<h2 id="features">Features</h2>
+<ul class="incremental">
+<li>Multi-agent AI coordination system</li>
+<li>Project management workflow automation</li>
+<li>Development workflow automation</li>
+<li>Modular agent architecture</li>
+<li>Docker containerization support</li>
+<li>Cloud deployment configuration</li>
+<li>CLI interface for system interaction</li>
+</ul>
+<h2 id="deployment">Deployment</h2>
+<p>The project includes deployment configurations for:</p>
+<ul class="incremental">
+<li><strong>Docker</strong> - Containerized deployment via <code>Dockerfile.a2a</code></li>
+<li><strong>Google Cloud Build</strong> - CI/CD pipeline configuration in <code>cloudbuild-a2a-system.yaml</code></li>
+</ul>
+<h2 id="technology-stack">Technology Stack</h2>
+<ul class="incremental">
+<li><strong>Go</strong> - Primary programming language (100% Go codebase)</li>
+<li><strong>Docker</strong> - Containerization</li>
+<li><strong>Google Cloud Build</strong> - CI/CD pipeline</li>
+</ul>
+<nav>
+<p><a href="code.html">← Back to Code Portfolio</a> | <a href="index.html"><svg class="home-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M11.293 3.293a1 1 0 0 1 1.414 0l6 6 2 2a1 1 0 0 1-1.414 1.414L19 12.414V19a2 2 0 0 1-2 2h-3a1 1 0 0 1-1-1v-3h-2v3a1 1 0 0 1-1 1H7a2 2 0 0 1-2-2v-6.586l-.293.293a1 1 0 0 1-1.414-1.414l2-2 6-6Z" clip-rule="evenodd"/></svg> Home</a></p>
+</nav>
+  <script src="/src/index.js"></script>
+</body>
+</html>

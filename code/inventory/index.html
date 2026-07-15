@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <meta name="author" content="Josiah Olivier Belfon-Valentine" />
+  <title>Truck Inventory Scraper - Code Portfolio</title>
+  <link rel="stylesheet" href="/src/reset.css" />
+  <link rel="stylesheet" href="/src/index.css" />
+</head>
+<body>
+<table class="header">
+  <tr>
+    <td colspan="2" rowspan="2" class="width-auto">
+      <h1 class="title">TRUCK INVENTORY SCRAPER</h1>
+      <span class="subtitle">Go-based Web Scraping &amp; Email Matching System</span>
+    </td>
+    <th>Language</th>
+    <td class="width-min">Go</td>
+  </tr>
+  <tr>
+    <th>Portfolio</th>
+    <td class="width-min"><a href="code.html">Code</a></td>
+  </tr>
+</table>
+<h2 id="code-in-repository">Code in this repository</h2>
+<table>
+  <tr>
+    <td class="width-auto">
+      <p style="margin: 0;"><strong>Path</strong></p>
+      <p style="margin: 0;">Code lives in this repo at <code>code/inventory/</code>. Clone the portfolio repository to get the source.</p>
+      <p style="margin: 0.5em 0 0 0;"><strong>How to run</strong></p>
+      <ul style="margin: 0; padding-left: 1.25em;">
+        <li>Clone this repository, then open a terminal in <code>the-monospace-web/code/inventory</code>.</li>
+        <li>Install Go if needed. Ensure PostgreSQL is running and configured (connection string or env).</li>
+        <li>Configure Microsoft Graph API credentials (OAuth2 client credentials) for Outlook email matching.</li>
+        <li>Run <code>go build</code> then execute the binary. The app starts the scraper coordinator and email matcher in the background; it will run an initial scrape and then periodic scrapes (about every 45–75 minutes) and poll Outlook for new emails to match.</li>
+        <li>For production, use the <code>deployment/</code> systemd service config.</li>
+      </ul>
+    </td>
+    <td class="width-min"><code>code/inventory/</code></td>
+  </tr>
+</table>
+<h2 id="overview">Overview</h2>
+<p>Production-ready Go application that scrapes truck listings from 8 major marketplaces and automatically matches them to client email requests via Outlook integration using Microsoft Graph API.</p>
+<h2 id="architecture">Architecture</h2>
+<table>
+  <tr>
+    <td class="width-auto">
+      <p style="margin: 0;"><strong>Data Flow</strong></p>
+      <p style="margin: 0;">Marketplace websites are scraped via Rod browser automation into the scraper coordinator, which saves listings to PostgreSQL. The email matcher queries the database for matches and fetches emails from Microsoft Graph API (Outlook); it runs in the background alongside the scraper.</p>
+    </td>
+  </tr>
+</table>
+<h3 id="key-components">Key Components</h3>
+<ul class="incremental">
+<li><strong>Scraper Coordinator</strong> - Orchestrates scraping from 8 marketplaces using Rod (Go-native browser automation)</li>
+<li><strong>Database Layer</strong> - PostgreSQL with pgx/v5, auto-creates schema, implements upsert logic</li>
+<li><strong>Email Integration</strong> - Microsoft Graph SDK for Outlook, OAuth2 client credentials flow</li>
+<li><strong>Intelligent Matching</strong> - Parses email content to extract search criteria and matches to listings</li>
+</ul>
+<h2 id="project-structure">Project Structure</h2>
+<pre><code>inventory/
+├── main.go              # Main orchestration
+├── scraper.go           # Scraper coordinator
+├── database.go          # PostgreSQL layer
+├── email.go             # Outlook integration
+├── ready_deals.go       # Deal processing
+├── agent/
+│   ├── extract.go       # Listing extraction
+│   ├── listing.go       # Data structures
+│   └── client.go        # LLM client
+├── scrapers/
+│   ├── arrowtruck/      # JSON API scraper
+│   ├── selectrucks/     # JSON API scraper
+│   ├── truckplanet/     # JSON+HTML scraper
+│   ├── ironconnect/     # HTML scraper
+│   └── ...              # Additional scrapers
+└── deployment/          # Systemd service config</code></pre>
+<h2 id="marketplace-support">Marketplace Support</h2>
+<p>Supports 8 major truck marketplaces with different data extraction strategies:</p>
+<ul class="incremental">
+<li><strong>Pure JSON APIs</strong> - ArrowTruck, SelecTrucks (direct API calls)</li>
+<li><strong>JSON with HTML</strong> - TruckPlanet, TruckTractorTrailer, HeavyTruckDealers</li>
+<li><strong>HTML-only</strong> - IronConnect, IronPlanet, TruckertoTrucker (browser automation)</li>
+</ul>
+<p>All scrapers produce unified <code>[]*agent.ListingExtract</code> output for consistent processing.</p>
+<h2 id="dependencies">Dependencies</h2>
+<p>Key dependencies from <code>go.mod</code>:</p>
+<ul class="incremental">
+<li><strong>go-rod/rod</strong> - Go-native browser automation (no Node.js dependency)</li>
+<li><strong>jackc/pgx/v5</strong> - PostgreSQL driver (direct SQL, no ORM)</li>
+<li><strong>microsoftgraph/msgraph-sdk-go</strong> - Official Microsoft Graph SDK</li>
+<li><strong>PuerkitoBio/goquery</strong> - HTML parsing</li>
+</ul>
+<h2 id="features">Features</h2>
+<ul class="incremental">
+<li>Multi-marketplace scraping with configurable CSS selectors</li>
+<li>PostgreSQL database with automatic schema creation</li>
+<li>Outlook email integration via Microsoft Graph API</li>
+<li>Intelligent email parsing to extract search criteria</li>
+<li>Automated matching and response emails</li>
+<li>Production-ready systemd service configuration</li>
+<li>Graceful error handling and logging</li>
+</ul>
+<nav>
+<p><a href="code.html">← Back to Code Portfolio</a> | <a href="index.html"><svg class="home-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M11.293 3.293a1 1 0 0 1 1.414 0l6 6 2 2a1 1 0 0 1-1.414 1.414L19 12.414V19a2 2 0 0 1-2 2h-3a1 1 0 0 1-1-1v-3h-2v3a1 1 0 0 1-1 1H7a2 2 0 0 1-2-2v-6.586l-.293.293a1 1 0 0 1-1.414-1.414l2-2 6-6Z" clip-rule="evenodd"/></svg> Home</a></p>
+</nav>
+  <script src="/src/index.js"></script>
+</body>
+</html>

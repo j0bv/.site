@@ -1,0 +1,2100 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
+<!-- Google Tag Manager for GA4 -->
+				<script>(function(w,d,s,l,i){w.GAMeasurementID='G-5ZNEW9MZ5K';w[l]=w[l]||[];w[l].push({'gtm.start':
+				new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+				j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+				'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+				})(window,document,'script','cpDataLayerGA4','GTM-K73C5PS');</script>
+				<!-- End Google Tag Manager for GA4 -->
+				<script type='text/javascript'>
+					var enableTelemetry = 'false'
+					var aiConfig = {
+					instrumentationKey: '1cde048e-3185-4906-aa46-c92a7312b60f'						
+					}
+					var appInsights = window.appInsights || function (a) { function b(a) { c[a] = function () { var b = arguments; c.queue.push(function () { c[a].apply(c, b) }) } } var c = { config: a }, d = document, e = window; setTimeout(function () { var b = d.createElement('script'); b.src = a.url || 'https://js.monitor.azure.com/scripts/a/ai.0.js', d.getElementsByTagName('script')[0].parentNode.appendChild(b) }); try { c.cookie = d.cookie } catch (a) { } c.queue = []; for (var f = ['Event', 'Exception', 'Metric', 'PageView', 'Trace', 'Dependency']; f.length;)b('track' + f.pop()); if (b('setAuthenticatedUserContext'), b('clearAuthenticatedUserContext'), b('startTrackEvent'), b('stopTrackEvent'), b('startTrackPage'), b('stopTrackPage'), b('flush'), !a.disableExceptionTracking) { f = 'onerror', b('_' + f); var g = e[f]; e[f] = function (a, b, d, e, h) { var i = g && g(a, b, d, e, h); return !0 !== i && c['_' + f](a, b, d, e, h), i } } return c }(aiConfig);
+					window.appInsights = appInsights, appInsights.queue && 0 === appInsights.queue.length;
+					// Add telemetry initializer
+					appInsights.queue.push(function() {
+						appInsights.context.addTelemetryInitializer(function(envelope) {
+							var telemetryItem = envelope.data.baseData;
+							// To check the telemetry item’s type:
+							if (!false)
+							{
+								//If the telemetry is not enabled, we still want to capture Google map custom event, so only allow that
+								if (envelope.name.indexOf('.Event') == -1)
+									return false;
+							}
+						});
+					});						
+					appInsights.trackPageView();
+				</script>
+	<script>
+		function populateAntiForgery(token) {
+			var input = document.createElement("input");
+			input.name = "__RequestVerificationToken";
+			input.type = "hidden";
+			input.value = token;
+			var absPat = /^https?:\/\/|^\/\//i;
+			var forms = document.getElementsByTagName("form");
+			for (var i = 0; i < forms.length; i++) {
+				if (forms[i].method == "post" &&
+					!forms[i].querySelector('[name="__RequestVerificationToken"]') &&
+					!absPat.test(forms[i].getAttribute("action"))) {
+					forms[i].appendChild(input.cloneNode());
+				}
+			}
+		}
+
+		function getAntiForgeryToken(callback, error) {
+			var xhr = new XMLHttpRequest();
+			xhr.open("GET", "/antiforgery");
+			xhr.addEventListener("load", function() {
+				try {
+					if (this.status !== 200) {
+						throw Error("Invalid status. Could not retrieve antiforgery token.");
+		}
+					var obj = JSON.parse(this.responseText);
+					callback(obj.token);
+				} catch (e) {
+					typeof error === "function" && error(e);
+				}
+			});
+			xhr.send();
+		}
+
+		getAntiForgeryToken(function(token) {
+			if (document.readyState === "complete"
+				|| document.readyState === "loaded" 
+				|| document.readyState === "interactive") {
+				populateAntiForgery(token);
+				return;
+			}
+			document.addEventListener("DOMContentLoaded", function() {
+				populateAntiForgery(token);
+			}, false);
+		}, console.error);
+			</script>
+			
+
+	<script type="text/javascript">
+		window.departmentHeader = {};
+		window.pageSectionTracker = {};
+		window.isResponsiveEnabled = true;
+		window.isRemoveSetHeights= true;
+		if (window.isRemoveSetHeights) {
+			document.documentElement.className += ' removeSetHeights';
+		}
+		window.mainMenuMediaQuery = 'screen and (max-width: 40em)';
+		window.isMobileBrowserIncludingTablets = false;
+		window.fixedResponsiveMenu = false;
+		window.fullWidthResponsiveMenu = true;
+		window.responsiveMenuHeight = '';
+		window.responsiveMenuFontSize = '';
+		(function () {
+			window.setSizeCookie = function () {
+				document.cookie = "dpi=" + window.devicePixelRatio + "; path=/";
+				document.cookie = "viewportWidth=" + window.innerWidth + "; path=/";
+				document.cookie = "viewportHeight=" + window.innerHeight + "; path=/";
+				if (screen && screen.width && screen.height) {
+					document.cookie = "screenWidth=" + screen.width + "; path=/";
+					document.cookie = "screenHeight=" + screen.height + "; path=/";
+				}
+				document.cookie = "responsiveGhost=1; path=/";
+			};
+
+			setSizeCookie();
+		}());
+	</script>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	
+	
+	<meta name="theme-color" content="#a21f4b">
+	<link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
+	<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+		<title>RSS • Chesapeake, VA • CivicEngage</title>
+
+			<script src="/Assets/Scripts/jQuery/jquery-2.2.4.min.js"></script>
+	<script src="/Assets/Scripts/jQuery/jQuery-migrate-1.4.1.js" type="text/javascript"></script>
+	
+
+	<!--[if IE 6]><script language="JavaScript" type="text/javascript"> var isie6 = true; </script><![endif]-->
+	<!--[if IE 7]><script language="JavaScript" type="text/javascript"> var isie7 = true; </script><![endif]-->
+	<!--[if IE 8]><script language="JavaScript" type="text/javascript"> var isie8 = true; </script><![endif]-->
+	<!--[if IE 9]><script language="JavaScript" type="text/javascript"> var isie8 = true; </script><![endif]-->
+	<script type="text/javascript"><!--
+	var intCountryCode = 840;
+	var externalSiteDialogHeight = '390px';
+	var order = '';
+//--></script>
+	
+<link href="/-681783051.css" rel="stylesheet" type="text/css" />	<link href="/-1465647691.css" rel="stylesheet" type="text/css" />	<link href="/-690112712.css" rel="stylesheet" type="text/css" />
+
+	<link rel="stylesheet" type="text/css" href="/Assets/Styles/Print.css" media="print">
+	<script type="text/javascript">
+		window.Pages = window.Pages || {};
+		// FrontEnd RWD initialization
+		window.Pages.rwdReady = $.Deferred();
+		window.Pages.toolBarDeferred = $.Deferred();
+		window.Pages.rwdSetupComplete = $.Deferred();
+		window.Pages.megaMenuLoaded = $.Deferred();
+		window.Pages.angularToolbarComplete = $.Deferred();
+		window.Pages.frontEndToolbarComplete = $.Deferred();
+	</script>
+	
+
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		
+	
+	<link rel="stylesheet" href="/App_Themes/CP/nmenu.css" type="text/css">
+
+    
+	<!-- Dynamic Header Scripts -->
+	
+	<!--Reference Stylesheet-->
+	
+    
+		<!--Dynamic Header Styles-->
+	<style type="text/css">
+	
+	</style>
+	
+	
+	
+
+
+
+	<script src="/41033864.js" type="text/javascript"></script>
+	
+	
+
+	<!--[if lte IE 8]><link rel="stylesheet" type="text/css" href="/App_Themes/ie8.css"><![endif]-->
+	<!--[if lte IE 7]><link rel="stylesheet" type="text/css" href="/App_Themes/ie7.css"><![endif]-->
+	<!--[if lte IE 6]><link rel="stylesheet" type="text/css" href="/App_Themes/ie6.css"><![endif]-->
+	<!--[if lt IE 9]><script type="text/javascript" src="/Scripts/html5.js"></script><![endif]-->
+
+	<script type="text/javascript">
+		setEditorVariables(false, 840);
+		function getPrintPreviewType() { return 0; } function printPreview() {pPreview(getPrintPreviewType()); }
+	</script>
+	<script src="/Assets/Scripts/AlpineJS/3.14.1/alpine.min.js" type="text/javascript" defer="defer"></script>
+</head>
+<body class="wide " >
+
+    <script>jQuery(document).click(function (event) {
+	var target = jQuery(event.target);
+	if (target.attr('src') && target.parents('.image').length && target.parents('.widget').length) {
+		var text = target.attr('title');
+		
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Image',
+				eventAction: 'Image - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.is('button') || target.hasClass('button') || target.parents().hasClass('button')) {
+		var text = "";
+		if (target.parents('.button')[0]) {
+			text = target.parents('.button').first().text();
+		} else if (target.text().length) {
+			text = target.text();
+		} else if (target.attr('title').length) {
+			text = target.attr('title');
+		}
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Button',
+				eventAction: 'Button - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.widgetCustomHtml').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Custom Html',
+				eventAction: 'Custom Html Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.editor').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Editor',
+				eventAction: 'Editor Link Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.GraphicLinks').length) {
+		var text = "";
+		var targetGraphicLink = target;
+		if (target.hasClass('widgetGraphicLinksLink')) {
+			targetGraphicLink = jQuery(target.children()[0]);
+		}
+		if (targetGraphicLink.hasClass('text')) {
+			text = targetGraphicLink.text();
+		} else if (targetGraphicLink.attr('src').length) {
+			if (targetGraphicLink.attr('alt').length) {
+				text = targetGraphicLink.attr('alt');
+			} else {
+				text = targetGraphicLink.attr('src');
+			}
+		} else {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Graphic Links',
+				eventAction: 'Graphic Link - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.InfoAdvanced').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Info Advanced',
+				eventAction: 'Info Advanced Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.list').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'List',
+				eventAction: 'List Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.megaMenuItem').length || target.parents('.topMenuItem').length) {
+		var megaMenuText = jQuery('.topMenuItem.mouseover').find('span').text();
+		var breadCrumbs = [];
+		jQuery('.breadCrumbs > li').each(function () {
+			 breadCrumbs.push(this.textContent);
+		});
+		var pageTitle = breadCrumbs.join('>');
+		var subTitleText = target.parents('.megaMenuItem').children('.widgetTitle').children().text();
+		var text = "";
+		if (pageTitle) {
+			text += pageTitle + " | ";
+		} else {
+			text += document.title + ' - ';
+		}
+		if (target.text() == "" && megaMenuText == "") {
+			text += "N/A";
+		} else if (target.text().length && megaMenuText.length) {
+			if (megaMenuText == target.text()) {
+				text += megaMenuText;
+			} else {
+				text += megaMenuText + " - " + subTitleText + " - " + target.text();
+			}
+		} else if (target.text() == "") {
+			text += megaMenuText;
+		} else {
+			text += target.text();
+		}
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Mega Menu',
+				eventAction: 'Mega Menu : ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.widgetNewsFlash').length && target.parents('.widgetItem').length) {
+		var text = jQuery(target.parents('.widgetItem')[0]).find('.widgetTitle').children().text();
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'News Flash',
+				eventAction: 'News Flash - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.hasClass('widgetQuickLinksLink') || target.find('.widgetQuickLinksLink').length) {
+		var text = target.text();
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Quick Links',
+				eventAction: 'Quick Links - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.attr('src') && target.parents('.cpSlideshow').length) {
+		var text = target.attr('title');
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Slideshow',
+				eventAction: 'Slideshow - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.widgetText').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Text',
+				eventAction: 'Text Link Clicked',
+				eventLabel: window.location.href
+			});
+	}
+});</script>
+
+    <div id="fb-root"></div>
+<div id=skipToContentLinks>
+<a href="#contentarea" target="_self" class="skipToContentLink">Skip to Main Content</a>
+</div>
+    <form id="frmReferenceFormForTelerikEditorDialogs"></form>
+
+        <input type="hidden" id="GoogleMapsKey" value="AIzaSyDWUuE-ifkbhxblF920N8MjpBdTg1Wt784" />
+
+
+
+    <input type="hidden" id="cpcDomain" value="https://cp-civicplusuniversity2.civicplus.com">
+    <input type="hidden" id="hdnStructureID" value="1" />
+    <input type="hidden" id="hdnContentCollectionID" value="787955d2-f56a-43e2-a432-0d269090d0d2" />
+    <input type="hidden" id="hdnWorkingCopyID" value="00000000-0000-0000-0000-000000000000" />
+    <input type="hidden" id="hdnThemeID" value="1" />
+    <input type="hidden" id="pageIsFrontEnd" value="true" />
+    <input type="hidden" id="pageModuleID" value="37" />
+    <input type="hidden" id="pagePageID" />
+
+        <input type="hidden" id="hdnModuleID" value="37" />
+        <div id="stickyPlaceholder"></div>
+    <div id="outer-wrap" class="outer-wrap">
+        <div id="inner-wrap" class="inner-wrap">
+                <div id="divToolbars" class="cpToolbars newCP mui-fixed" style="">
+                    
+
+
+
+                </div>
+            <div id="bodyWrapper">
+                <div id="mainNavHolderMobile" class="mainNavHolderMobile"></div>
+                
+<div data-cpRole="structuralContainer" id="bodyContainerTS">
+<!-- Header Container --><header data-cpRole="structuralContainer" id="headerContainerTS" class="fixedTopTS">
+<div class="siteWrap3"><div data-cpRole="structuralContainer" id="logoWraperContainerTS">
+<div data-cpRole="banner" id="bannerLogoTS" class="bannerLogoTS empty">
+
+
+
+
+				<a id="bannerLogoTS-48" style="			display: block; text-align: center;
+" class="bannerObject" href="/" target="_self"><img alt="Homepage" class="bannerObject" height="201" src="/ImageRepository/Document?documentID=63" width="860" /></a>
+</div>
+</div><div data-cpRole="contentContainer" id="searchTS">	<div id="cce713048b-acac-425d-9375-7a5adad8e3bd" data-containerid="e713048b-acac-425d-9375-7a5adad8e3bd" class="pageContent cpGrid cpGrid24 isLockedContainer showInMobile">
+				                
+
+		<div class="row outer wide"><!--
+--><div class="outer col col24 first last" style="" data-widgetcontainerid="aa7532f0-8019-40e3-9b50-457abddd7c56">				
+	<div class="row nest first last wide">
+	
+	<div class="inner col col24 first last id1d4f53bf-e3d7-4b4e-b23b-32c1d2da4baa" style="" data-widgetcontainerid="1d4f53bf-e3d7-4b4e-b23b-32c1d2da4baa">	
+<div data-widget-id="f83d7e90-a11a-4378-a8d8-855e008d06ce" data-widget-controller-path="/Layout/WidgetSearch">
+	
+	<script defer type="text/javascript" src="/Common/Controls/jquery-ui-1.14.1/jquery-ui.min.js"></script>
+	<script defer src="/Areas/Layout/Assets/Scripts/Search.js" type="text/javascript"></script>
+	<script defer type="text/javascript">
+
+		$(document).ready(function () {
+			try {
+				$(".widgetSearchButton.widgetSearchButtonf83d7e90-a11a-4378-a8d8-855e008d06ce").click(function (e) {
+				e.preventDefault();
+					if (false||$("#ysnSearchOnlyDeptf83d7e90-a11a-4378-a8d8-855e008d06ce").is(':checked'))
+					{
+						doWidgetSearch($(this).siblings(".widgetSearchBox").val(), Number(0));
+					}
+					else {
+						doWidgetSearch($(this).siblings(".widgetSearchBox").val(), 0);
+					}
+			});
+			$("#searchFieldf83d7e90-a11a-4378-a8d8-855e008d06ce").keypress(function (e) {
+				if (window.clipboardData) {
+					if (e.keyCode === 13) {
+						if ($("#ysnSearchOnlyDeptf83d7e90-a11a-4378-a8d8-855e008d06ce").is(':checked') || false) {
+								doWidgetSearch($(this).val(), Number(0));
+							} else {
+								doWidgetSearch($(this).val(), 0);
+							}
+						return false;
+					}
+				} else {
+					if (e.which === 13) {
+						if ($("#ysnSearchOnlyDeptf83d7e90-a11a-4378-a8d8-855e008d06ce").is(':checked') || false) {
+								doWidgetSearch($(this).val(), Number(0));
+							} else {
+								doWidgetSearch($(this).val(), 0);
+							}
+						return false;
+					}
+				}
+				return true;
+			});
+
+				if (true) {
+					var currentRequest = null;
+					var $searchField = $("#searchFieldf83d7e90-a11a-4378-a8d8-855e008d06ce").autocomplete({
+						source: function (request, response) {
+							currentRequest = $.ajax({
+								url: '/Search/AutoComplete' + ($("#ysnSearchOnlyDeptf83d7e90-a11a-4378-a8d8-855e008d06ce").is(':checked') || false? '?departmentId=0' : ''),
+								dataType: "json",
+								timeout: 10000,
+								beforeSend: function () {
+									if (currentRequest != null) {
+										currentRequest.abort();
+									}
+								},
+								data:
+								{
+									term: request.term,
+								},
+								success: function (data) {
+									response(data);
+									$('.autoCompleteError').remove();
+								},
+								error: function (xmlhttprequest, textstatus, message) {
+									if (textstatus === "timeout") {
+										if ($("#searchFieldf83d7e90-a11a-4378-a8d8-855e008d06ce").siblings('.autoCompleteError').length == 0)
+											$('<span class="autoCompleteError"><p class="alert error">Search autocomplete is currently not responding. Please try again later.</p></span>').insertAfter($("#searchFieldf83d7e90-a11a-4378-a8d8-855e008d06ce"));
+									}
+								}
+							});
+						},
+						html: true,
+						delay: 500,
+						select: function (event, ui) {
+							$(this).val(ui.item.value);
+							$(this).next().click();
+						}
+					});
+
+					$searchField.data("ui-autocomplete")._renderItem = function (ul, item) {
+						return $("<li class=\"itemList\"></li>")
+							.data("ui-autocomplete-item", item)
+							.append("<a>" + item.label + "</a>")
+							.appendTo(ul);
+					};
+}
+}
+			catch(e) {} //we're going to eat this error. Autocomplete won't work but we dont wan't to break anything else on the page.
+		});
+	</script>
+
+	<section id="widgetPreviewSearch" class="widget widgetSearch skin39 widgetOptionSet15" style="display: block;" aria-label="Search">
+				<!-- For the button right and inside -->
+		<div class="widgetBody buttonRightInside">
+			<input class="widgetSearchBox widgetSearchBoxf83d7e90-a11a-4378-a8d8-855e008d06ce" cp5ph="true" id="searchFieldf83d7e90-a11a-4378-a8d8-855e008d06ce" name="searchField" onchange="searchBtnApplyQuery();" placeholder="Search..." title="Search..." type="text" value="" />
+						<a href="/Search/Results" id="btnSearchIcon" class="widgetSearchButton widgetSearchButtonf83d7e90-a11a-4378-a8d8-855e008d06ce" role="button"><img alt="Search" class="imageHover" data-hover="/ImageRepository/Document?documentID=77" data-image="/ImageRepository/Document?documentID=76" src="/ImageRepository/Document?documentID=76" /></a>
+
+			<label class="searchLabel" for="searchFieldf83d7e90-a11a-4378-a8d8-855e008d06ce">Search</label>
+		</div>
+
+	</section>
+
+
+<style scoped>
+	  
+		.widgetSearch ::-webkit-input-placeholder {
+		color: #fff;
+	  }
+		.widgetSearch :-moz-placeholder { /* Firefox 18- */
+	   color: #fff;
+	}
+		.widgetSearch ::-moz-placeholder {  /* Firefox 19+ */
+	   color: #fff;
+	}
+	.widgetSearch :-ms-input-placeholder {
+	   color: #fff;
+	}
+	
+
+	.widgetSearch .widgetBody .widgetSearchBoxf83d7e90-a11a-4378-a8d8-855e008d06ce
+	{
+		color: #fff;
+		font-family: Open Sans;
+height: 65px;
+border-radius: 6px;
+border: 1px solid rgba(255,255,255,0);
+background: #A21F4B;
+padding: 0 80px 0 20px;
+
+
+	}
+	.widgetSearch .widgetBody .widgetSearchButtonf83d7e90-a11a-4378-a8d8-855e008d06ce
+	{
+		margin: 5px; padding-top: .50em; 
+padding-right: .75em;
+	}
+	.widgetSearch .widgetSearch-onlyDeptf83d7e90-a11a-4378-a8d8-855e008d06ce
+	{
+		display: inline-block;
+		color: #333;
+		
+		
+		 padding-top: 10px;
+	}
+	#ysnSearchOnlyDeptf83d7e90-a11a-4378-a8d8-855e008d06ce
+	{
+		position: relative;
+		top: .125em;
+	}
+
+</style>
+
+<link rel="stylesheet" href="/Common/Controls/jquery-ui-1.14.1/jquery-ui.min.css">
+<link rel="stylesheet" href="/Common/Controls/jquery-ui-1.14.1/jquery-ui.theme.min.css">
+
+
+
+<script type="text/javascript">
+	//Updates search icons href to have the correct queryString
+	function searchBtnApplyQuery() {
+		document.getElementById("btnSearchIcon").href = "/Search?searchPhrase=" + document.getElementById("searchFieldf83d7e90-a11a-4378-a8d8-855e008d06ce").value;
+	}
+	</script>
+
+</div>
+	</div> <!-- inner column -->
+
+	</div> <!-- inner row -->
+
+			</div><!-- outer column --><!--		--></div> <!-- outer row -->
+
+
+	</div>
+</div><nav data-cpRole="nav" id="mainNav" class="siteNav mainNav" role="navigation">
+<ol id="mainNavMenu" data-parent="1" class="rootNavMenu" role="menu"><!--
+--><li id="MainItem27" class="topMenuItem" role="none" data-pageid="27" data-displaymegamenu="True"><!--
+			--><!--
+			--> <a role = "menuitem" aria-haspopup=true aria-expanded='false' id = "mainNavGovernment" class="navMainItem mainNavItem mainNavItem1" href="/27/Government" target = "_self" >   Government </a>			<!--
+			--><!--
+			--></li><!----><li id="MainItem35" class="topMenuItem" role="none" data-pageid="35" data-displaymegamenu="True"><!--
+			--><!--
+			--> <a role = "menuitem" aria-haspopup=true aria-expanded='false' id = "mainNavBusiness" class="navMainItem mainNavItem mainNavItem2" href="/35/Business" target = "_self" >   Business </a>			<!--
+			--><!--
+			--></li><!----><li id="MainItem31" class="topMenuItem" role="none" data-pageid="31" data-displaymegamenu="True"><!--
+			--><!--
+			--> <a role = "menuitem" aria-haspopup=true aria-expanded='false' id = "mainNavCommunity" class="navMainItem mainNavItem mainNavItem3" href="/31/Community" target = "_self" >   Community </a>			<!--
+			--><!--
+			--></li><!----><li id="MainItem101" class="topMenuItem" role="none" data-pageid="101" data-displaymegamenu="True"><!--
+			--><!--
+			--> <a role = "menuitem" aria-haspopup=true aria-expanded='false' id = "mainNavVisitors" class="navMainItem mainNavItem mainNavItem4" href="/101/Visitors" target = "_self" >   Visitors </a>			<!--
+			--><!--
+			--></li><!----><li id="MainItem9" class="topMenuItem" role="none" data-pageid="9" data-displaymegamenu="True"><!--
+			--><!--
+			--> <a role = "menuitem" aria-haspopup=true aria-expanded='false' id = "mainNavHowDoI" class="navMainItem mainNavItem mainNavItem5" href="/9/How-Do-I" target = "_self" >   How Do I... </a>			<!--
+			--><!--
+			--></li><!---->
+</ol>
+
+
+	<script type="text/javascript">
+		(function () {
+			function setupMenu() {
+				const menuID = 'mainNavMenu';
+				const menuType = MAIN_MENU;
+
+				//setup menu manager properties for main menu
+				if (!menuManager.mobileMainNav && true)
+					menuManager.adjustMainItemsWidth('#' + menuID);
+				menuManager.isMainMenuEditable = false;
+				menuManager.mainMenuMaxSubMenuLevels = 4;
+				menuManager.setMOMMode(2, menuType);
+
+				//Init main menu
+				const setupDraggable = menuManager.isMainMenuEditable;
+				const urlToGetHiddenMenus = '/Pages/MenuMain/HiddenMainSubMenus?pageID=1&moduleID=37&themeID=1&menuContainerID=mainNav';
+
+				menuManager.setupMenu(menuID, 'mainNav', menuType, setupDraggable, urlToGetHiddenMenus);
+				menuManager.mainMenuInit = true;
+				menuManager.mainMenuTextResizer = false;
+				if (1.00 > 0)
+					menuManager.mainMenuTextResizerRatio = 1.00;
+				if (window.isResponsiveEnabled)
+					menuManager.mainMenuReady.resolve();
+
+			}
+
+			if (document.readyState === "complete"
+				|| document.readyState === "loaded"
+				|| document.readyState === "interactive") {
+				setupMenu();
+				return;
+			}
+
+			document.addEventListener("DOMContentLoaded", setupMenu);
+		})();
+	</script>
+
+
+<aside data-cpRole="megaMenu" id="megaMenu" class="megaMenu" style="display: none;"><input type="hidden" id="megaMenuPopupDirection" value="0"><input type="hidden" id="megaMenuWidthReference" value="0"><aside role="menu" data-cpRole="contentContainer" id="mainNavMegaMenu27" class="contentTop mainNavMegaMenu megaMenuContainer pageID_27 hidden" data-orientation="horizontal">	<div id="cc713a5608-324b-4213-a885-d29cb49e286e" data-containerid="713a5608-324b-4213-a885-d29cb49e286e" class="pageContent cpGrid cpGrid24 showInMobile">
+				                
+
+
+
+	</div>
+</aside><aside role="menu" data-cpRole="contentContainer" id="mainNavMegaMenu35" class="contentTop mainNavMegaMenu megaMenuContainer pageID_35 hidden" data-orientation="horizontal">	<div id="ccf3ee4ea2-096f-4d38-9940-234c92d7fa1c" data-containerid="f3ee4ea2-096f-4d38-9940-234c92d7fa1c" class="pageContent cpGrid cpGrid24 showInMobile">
+				                
+
+
+
+	</div>
+</aside><aside role="menu" data-cpRole="contentContainer" id="mainNavMegaMenu31" class="contentTop mainNavMegaMenu megaMenuContainer pageID_31 hidden" data-orientation="horizontal">	<div id="ccad283ce1-65b5-4d96-a39f-a14d6548d45a" data-containerid="ad283ce1-65b5-4d96-a39f-a14d6548d45a" class="pageContent cpGrid cpGrid24 showInMobile">
+				                
+
+
+
+	</div>
+</aside><aside role="menu" data-cpRole="contentContainer" id="mainNavMegaMenu101" class="contentTop mainNavMegaMenu megaMenuContainer pageID_101 hidden" data-orientation="horizontal">	<div id="cc11aa7c90-b42c-4ba0-bce5-d5e43ad19e32" data-containerid="11aa7c90-b42c-4ba0-bce5-d5e43ad19e32" class="pageContent cpGrid cpGrid24 showInMobile">
+				                
+
+
+
+	</div>
+</aside><aside role="menu" data-cpRole="contentContainer" id="mainNavMegaMenu9" class="contentTop mainNavMegaMenu megaMenuContainer pageID_9 hidden" data-orientation="horizontal">	<div id="cc8f4f8506-9ade-42da-9739-c62be4d1584c" data-containerid="8f4f8506-9ade-42da-9739-c62be4d1584c" class="pageContent cpGrid cpGrid24 showInMobile">
+				                
+
+
+
+	</div>
+</aside></aside></nav></div>
+</header><!-- Banner --><div data-cpRole="structuralContainer" id="bannerContainerTS" class="noOverflowTS">
+<div data-cpRole="banner" id="banner1"><div data-cpRole="structuralContainer" id="bannerSizingTS">
+<div class="siteWrap3"><div data-cpRole="structuralContainer" id="bannerContentTS">
+<div data-cpRole="contentContainer" id="socialTS">	<div id="cc74f75c29-8186-4bfb-bca4-1fed44e58c51" data-containerid="74f75c29-8186-4bfb-bca4-1fed44e58c51" class="pageContent cpGrid cpGrid24 showInMobile">
+				                
+
+
+
+	</div>
+</div>
+</div></div>
+</div>
+
+
+
+
+		<div id="bannerImagesJSON2" class="hidden"></div>
+		<div id="bannerSlideshowControls_banner1" class="bannerSlideshowControlsNew none " style="display:none">
+			<a id="arrowPrev_banner1" tabindex="0" class="arrowNew prev" aria-label="Banner Arrow Previous"><svg style=" " class=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#iconSlideshowArrowLeft"></use></svg></a>
+			<a id="arrowNext_banner1" tabindex="0" class="arrowNew next" aria-label="Banner Arrow Next"><svg style=" " class=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#iconSlideshowArrowRight"></use></svg></a>
+		</div>
+			<script type="text/javascript">
+				$(window).on("load", function () {
+					$.when(window.Pages.rwdSetupComplete)
+						.done(function () {
+							renderExternalBannerSlideshow('banner1',
+								{"BannerOptionID":2,"ThemeID":1,"SlotName":"banner1","Name":"Default","IsDefault":true,"BannerMode":2,"SlideShowSlideTiming":"5","SlideshowTransition":0,"SlideShowTransitionTiming":"1","ImageScale":true,"ImageAlignment":1,"ImageScroll":true,"MuteSound":true,"VideoType":0,"Status":40,"SlideshowControlsPosition":0,"SlideshowControlsAlignment":0,"SlideshowBannerControlsColorScheme":0,"DisplayVideoPauseButton":false,"VideoPauseButtonAlignment":1,"VideoPauseButtonControlsAlignment":0,"VideoPauseButtonStyle":"#FFFFFF","VideoPauseButtonBackgroundStyle":"#000000","VideoPauseButtonAlignmentClass":"alignRight viewport","DisplaySlideshowPauseButton":true,"SlideshowControlsColor":"#FFFFFF","SlideshowControlsBackgroundColor":"#000000","SlideshowPauseButtonClass":"isHidden","BannerImages":[{"BannerImageID":57,"BannerOptionID":2,"FileName":"/ImageRepository/Document?documentID=67","Height":450,"Width":2200,"StartingOn":null,"StoppingOn":null,"IsLink":false,"LinkAddress":null,"Sequence":1,"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/","AltText":""},{"BannerImageID":58,"BannerOptionID":2,"FileName":"/ImageRepository/Document?documentID=66","Height":450,"Width":2200,"StartingOn":null,"StoppingOn":null,"IsLink":false,"LinkAddress":null,"Sequence":2,"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/","AltText":""}],"BannerVideos":[],"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/"},
+								'/App_Themes/Interior/Images/',
+								'Rotating');
+						});
+				});
+			</script>
+
+</div>
+</div><!-- Content container --><div data-cpRole="structuralContainer" id="mainContainerTS">
+<div class="siteWrap2"><div data-cpRole="structuralContainer" id="mainWrapTS" class="mainWrap" role="main">
+<div data-cpRole="structuralContainer" id="outerContentWrapTS" class="outerContentWrap">
+<div data-cpRole="structuralContainer" id="contentWrapTS" class="contentWrap">
+<div data-cpRole="breadCrumbs" id="breadCrumbs" class="breadCrumbContainer">		<ol class="semanticList breadCrumbs">
+			<li><a class="breadCrumb" href="/">Home</a></li><li>RSS</li>
+		</ol>
+
+	   
+    
+</div>
+<div data-cpRole="mainContentContainer" id="moduleContent">
+
+<div id="ctl00_ctl00_MainContent_BodyWrapper">
+	
+	<script type="text/javascript"><!--
+	var isie6 = false, isie7 = false, isie6or7 = false;
+	var intCountryCode = 840;
+
+	function setUrlLength(editor) {
+		//Toggle Image Context Menu Items
+		setMenuItems(editor);
+		//setContentBackgroundColor(editor);
+		removeIEParagraphs(editor);
+	}
+	function setUrlLengthAndToolToggle(editor) {
+		var minToolsGroups = 2; // Number of MinimumSetOfTools tools groups.
+		
+		// Hide the MinimumSetOfTools on load.
+		var toolbar = editor.get_toolContainer(); // Get toolbar container.
+		var toolgroups = toolbar.getElementsByTagName("UL"); // Get all toolgroups containers.
+		
+		for (var i = toolgroups.length - 1; i >= minToolsGroups; i--)			toolgroups[i].style.display = "none";
+		
+		if (editor.isIE) {
+			var elem = editor.get_element();
+			elem.style.height = "430px";
+ 			elem.style.minHeight = "430px";
+		}
+		
+		// Toggle Image Context Menu Items.
+		setMenuItems(editor);
+		//setContentBackgroundColor(editor);
+		removeIEParagraphs(editor);
+	}
+//--></script><!--[if IE 6]><script type="text/javascript">isie6 = true; isie6or7 = true;</script><![endif]-->
+<!--[if IE 7]><script type="text/javascript">isie7 = true; isie6or7 = true;</script><![endif]-->
+
+	
+
+	<form name="aspnetForm" method="post" action="./rss.aspx" id="aspnetForm" style="display:inline;" onsubmit="return headerValidationCallback();" enctype="multipart/form-data" autocomplete="off">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="WXx6Qf+4T1tFSGlwnP2FpaIZwdhDrUe/+63VjvdaaoHfP9vvGfF9pwhwTsOVtUt5+1Hr3S/KH5KhN6jVC44Zj3oDertVj1K4sYiR7d79Rm5QsBJxysny/VHWxo76yUrOeUkgmYHStnDk6x1zxoYzamTukQ47i1j5SEEkgauJfXlBKjM4NEaY5f+4W2pqgOXNOrokG0v1KkS0KSHFpiZbETNUOrbEGi4e8kdJhBZY34TBs94gaECrHujWhYxjylTyOp5F83feUH4AWBuGQctL9G8aav+qfpGOniqyO3vPDsZ5hrfk7piweh3uhGZ2ULRc8APDOqPhH0Fwt80BBbRCE4i++JDyl/LZOEiU0m4jM0bYkQq7EZKHPPnIdWFdC+jvm2GSRyuI7ngWo2kNBy1sD0M4X3h3YQA9DoRej3Vjo68HnjFejQp0Y1StZPI7NeJ/0e7r9Ef1hzi6Bd2+rxS3teH6FVJEFVmr006hVUFYu/Uo8HUc7emRqvLnixCO4f+BBegy73UeK6HGpHhbkdrwv85V1WxsYZODGmiamN6hFEF4H4hPaY/Y4QSE4BJNXehOtnRe6jrDHzexxd26yM/dyIObCQgg4vzlRHJw3KmRJu6YV/n2chTam7f6BknH7iF+ynu1MavBB2NkdkM5Yx56/XnES/46T2Wl0lBwJh6ORWhNDihcaoiaVxPU9WzJygKGQoM4HGbwal2ncixvSfHRhnNNBOY1iMAGD18W3dccNAPdUoige1cu5Ilts0FiodRgY5oY6i0b33FLm8wWgApLZp347mjyjM5U6n83ui5x7y8LDWRflYcjYnMjIHXAP8E4zmmq6L99GYnMPUZBjTVmQsmimBq4nMm+vQfU/hNTgToT+jA5Q/BbATj7a9HlqyuGfsDthDAbZE1aJVIeL9UBvr9yPsxUHuPWx5SVhYgkw8qedmcf+2KE4XuDQffvck0YSZNMjTXQAkm7Ani+Q5HodtcmxRgFTnVSvCzwyroC5gmMOXxWPKIR1cfMddgO+wOHUOFmPBLifkhQgVY5FiI5V0BtdtgPkr6KfnfqhYrP+ekcawM+STcw2CMA5FB+26L+S8sWphdKcx5nBIPiGs4gjR+/VhPNAkGEli/nLnch/Xaivqvn+g6ufzIu2MFvYyhMPwfMMM4lsm6G9eFia64eefKKzsYqHPgV/JTbZu+xVdopMeXt7ooxlmEtTrZ5SCLZMbgE4u2+EL7/zZAQRjcfDHOurzKaawuemVsaMtmqC9DLzoCSr5p/Au4fBz/Xv3wCfV/KPJczUSdRjOx/lzTU1kT6stZIyyOjhPk1DM7uWEegevree3k47rNjMhck4tJc4dkQ0091dvGMHi+e9f1OGHnkh/160NuSeA8z9vt1LIhcoVQtiVTR5CKuxI4yXyC/Nwr8GtnSrQkMQEcNKKeQd01kYJdVjNYR938Q7fV2d0Ij6oy9HgTxb80JP4/rvX0nNjBF3AZdC8Vtqc0P4M4TFobyvFJDtB6U9A1EAZRvqot7Tay/7ayg7mhG+JFJDtfax1SjjQO0rCLjWNjUD4rLHgzeyLgQEqppr7geOq7QfxYpoRNwyEweyzSpBLhmdsNiVgeutvT/sGFpJdZfq+lfxYtvRF79vlScd35Kj06jF3QPIr5cl4F8xPlvc3iNlPnsTPIXvYUGtalgFut2bxH9R0jX09t5Hg1WMxsJn/nk0mtmUBkcnU0H8Cyo5upUY2OoIimnCIyCLTarzuJ21Y0W5ecnCtyHWoh/p2liNS3Pnq83+R/da83xQJvV7WdVvxXHnk+WJ42h50/djBKM3+rRNyEnhuJXpAy3KuxUyNS2XAPRqJlpjzvCY3WJ47o64YwkPliwuMw6mFDaUSMKjisJ4+VJ1RnpZe6n7uwFNECekVINuTGnT9QRYtVEqfclfS35LlyQ059/ky+NdRJfQvLH9NBr6AfKr9YqXWT5pxK6FCdwaMlHT1i/CcKMb5y8YTHGcqEdRY8YC9YxTEvdOlQaiyNRgyvNaK0JrCp9P0SB+Y60WyTsazW7TyL3p9elZOMHKprcPCawUIQNdGEt7/ceIxTwbqZ+8QgLPALt2wcRuPxFaZCI7VVNlGrAIMOinWYdLLQNfD1wQ37VsNRBm9VSviSwO13AfsruXZJ00iFjNwa2xsXF5kXewrt7sa5Pmi8Xo302AbCqHtgD4ibwxiDWtSXyocF40eTorbhGl6uqTQzXDOumZpNx2qpGlWhrqpWykxh1S66CyM42fcfKzEJWZmLeFdWgtgG8c9Rm/T+vYUoDdW/4aF4UcaaXeX+7gjtei81xZEg8RW/smu+s61Js+PF7FrVztzBdvBN/id9E8ckkbusyEHynLxqJzUobw0ubRSIKwaycRb483mtd4e4aoPqgrhLFWFsbvUAWPxIUo+tYzTJbyUZxDsGhJrkm9x0IsCbHQzWKHsV++WIh7bBr8it+vjEwR3JhiGyyMM/2zG6i1FNCSH1PHFJDTnkTPlrwTFt4RghpD/33tTO4/y7xlmfZCWiWDkbCySleYIL8TOWLDmaQgDyFwYLIpEI1Ngq4U0KxwWSpnLfP6qz3/CFqej/tI+TvQgwuBy70CPanmyjifAYebgX+dfL7r2OeSgtvFCsyAt5HAY6+u9SK8e/ov59hQgt49NkO0DfDPCeBf8EK9spVP3jsS3q5f0sTwoQIXoGTOw6aa0MQ/rau1EOjLqclzVlayWzaKVVocLWqbg3ODHWQiDrcV4ZykaR/jnALQpHxqG8knSc+gFj7UNZrx6GRtIglBk9ohZdl6MdA225hEug85ZdQe0xpL38P8k7lef5eJfrKCDnyIw5TXfaqr473jM79/XjFtfF0IGz+J9Hsuu+bdOHfaLdfISEJZIkg48lm5IbFtreCfVkMdhoxx/txxvOvub92NaqI9SGDbknuSinjfwxBbBIpIaQbv6Ix" />
+
+
+<script src="/ScriptResource.axd?d=NIbab2j9N3nQ9D8PtLXZL6i9tEa18H64pQ_twRc4MN4Cs6ICLZgAXr3AI2o3sJLjDmOvdccaxyQkOP8j0_PphDBz3FpPHSNqkRXzTKgm9DkQzb1yVbJaaMusVFEHJu2O5UKo-TFZ6hU7aW7xkkiEwrpCS00jk5sX0LmNJ-ok9GT7WPkE62onOHH9fGGaGpVbNrwr0xWjAVwT9qot3mbmWD9CwZLUwYgzi5_BDr0w50W9HG4HKnMeNUhPeDSyro_OOvQExbDEAEwPZk-tGTT7N1W9T_m2W5tIrQPt_WfsvoPm72sztgRj5NdpBmk0xPaV5k4rbTW2XcAcVULF80K2ziuFsDlANdbvyLx4EqwMTDFNjHewAiImwEjfpYF5w5kTA_os4GjT-jVYhPm-mM5ElT8eYUj7QPNj_AOdEENuc6Ccy6FJ0ej3WLrHvrWh_m67u1nZbA_F_icNy-qdLr7mzfIhRH42Li_1b57YgDlsGo0WPTU-qmQyAE_a2EG1Nv6-dd75QDKgs8ZMxLgAWYEmnce3mzR9YlFma2Pgy6SCKnformXwbZCkb23cUxS2Dleo9dPTKQyPOo6GeYCKGkgcv1msfD7Tp08C0tHtMVSQ-ghZ8Rv6UMd1bvwh09-YVlcs0RJFjT6Z4r_-ZQ23ft6Wbb5vehbOE-TuE2-6LYfComh_ihO7aYZ_-eAU8rn6AxPxnOsMhzVqT02vQgTLSMfUzsUmfkRBEjvEor91BdNJaie3nhNxVcogdI_9Xxfyf_3-F-0PZOfdAG92tklLmKhO7xkuoA37ocfWi_pD86GVXNYnMpvisPaF_Waph3LfXS2Uhc1DOKdnoQrDmir0m7yjFB586WzFc--mFVq3bza9JGo1" type="text/javascript"></script>
+<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="39067D5E" />
+		<!--for archiving purpose-->
+		<input name="ysnNotifyMe" type="hidden">
+		<input name="strPage" type="hidden">
+		<input name="intArchMainCatID" type="hidden">
+		<input name="intArchMainItemID" type="hidden">
+		 
+		<script type="text/javascript">
+			Sys.WebForms.PageRequestManager.getInstance().add_beginRequest(beginRequest);
+			Sys.WebForms.PageRequestManager.getInstance().add_pageLoaded(pageLoaded);
+		</script>
+		
+		<div id="modulecontent" name="modulecontent.aspx" style="padding-top: 0px;">
+<div id="contentarea" ></div>
+
+<!-- BEGIN RSSCONTENT.aspx ****************************************************** -->
+<link href="/-1330269336.css" rel="stylesheet" type="text/css" />
+<div id="RSSContent" class="newCP moduleContentNew">
+	
+	<div id="ctl00_ctl00_MainContent_ModuleContent_ctl00_HeaderSection" class="header rssHeader">
+		<div class="mainHeader">
+			<div class="graphic">
+				<img src="/common/images/RSS/RSSIconLarge.png" alt="RSS module icon" width="74" height="74" />
+			</div>
+			<div class="intro">
+				<h1>RSS Feeds</h1><p><strong>To add one of the following feeds in your RSS reader:</strong></p><ol><li>Right click on the feed that interests you and select Copy Shortcut. This will copy the feed link to your clipboard.</li><li>Paste the link into your RSS reader.</li></ol>
+			</div>
+		</div>
+		<div class="sidebar">
+			<h2>Available Feeds:</h2>
+			<ol>
+				<li><a href="#pages" class="pages">Pages</a></li>
+				<li><a class="agendaCenter" href="#agendaCenter">Agenda Center</a></li><li><a class="alertCenter" href="#alertCenter">Alert Center</a></li><li><a class="blog" href="#blog">Blog</a></li><li><a class="calendar" href="#calendar">Calendar</a></li><li><a class="newsFlash" href="#newsFlash">News Flash</a></li><li><a class="photoGallery" href="#photoGallery">Photo Gallery</a></li>
+			</ol>
+		</div>
+	</div>
+
+	
+
+	<div class="contentMain selfClear">
+		<div id="ctl00_ctl00_MainContent_ModuleContent_ctl00_PagesRSSSection" class="listing listingIcon pages">
+			<h2 id="ctl00_ctl00_MainContent_ModuleContent_ctl00_PagesHeading"><a name="pages">Pages</a></h2>
+			<div>
+				<span><a href="/RSSFeed.aspx?ModID=76&CID=All-0" id="ctl00_ctl00_MainContent_ModuleContent_ctl00_PagesFeed" target="_blank">All</a></span>
+			</div>
+		</div>
+		<div id="ctl00_ctl00_MainContent_ModuleContent_ctl00_AgendaCenterRSSSection" class="listing listingIcon agendaCenter" name="agendaCenter"><h2><a name="agendaCenter">Agenda Center</a></h2><ol><li><a href="/RSSFeed.aspx?ModID=65&CID=All-0" target="_blank">All</a></li><li><a href="/RSSFeed.aspx?ModID=65&CID=Bicycle-Trails-Advisory-Committee-3" target="_blank">Bicycle / Trails Advisory Committee</a></li><li><a href="/RSSFeed.aspx?ModID=65&CID=Board-of-Historic-Architectural-Review-4" target="_blank">Board of Historic & Architectural Review</a></li><li><a href="/RSSFeed.aspx?ModID=65&CID=Board-of-Zoning-Appeals-6" target="_blank">Board of Zoning Appeals</a></li><li><a href="/RSSFeed.aspx?ModID=65&CID=Chesapeake-Bay-Preservation-Area-Board-C-7" target="_blank">Chesapeake Bay Preservation Area Board (CBPA)</a></li><li><a href="/RSSFeed.aspx?ModID=65&CID=Chesapeake-City-Council-Audit-Committee-30" target="_blank">Chesapeake City Council Audit Committee</a></li><li><a href="/RSSFeed.aspx?ModID=65&CID=Chesapeake-Environmental-Improvement-Cou-5" target="_blank">Chesapeake Environmental Improvement Council</a></li><li><a href="/RSSFeed.aspx?ModID=65&CID=Chesapeake-Fine-Arts-Commission-15" target="_blank">Chesapeake Fine Arts Commission</a></li><li><a href="/RSSFeed.aspx?ModID=65&CID=Chesapeake-Integrated-Behavioral-Healthc-11" target="_blank">Chesapeake Integrated Behavioral Healthcare (CIBH) Board of Directors</a></li><li><a href="/RSSFeed.aspx?ModID=65&CID=Chesapeake-Land-Bank-Authority-12" target="_blank">Chesapeake Land Bank Authority</a></li></ol><ol><li><a href="/RSSFeed.aspx?ModID=65&CID=Citizen-Advisory-Committee-to-the-CLBA-13" target="_blank">Citizen Advisory Committee to the CLBA</a></li><li><a href="/RSSFeed.aspx?ModID=65&CID=Electoral-Board-2" target="_blank">Electoral Board</a></li><li><a href="/RSSFeed.aspx?ModID=65&CID=Historic-Preservation-Commission-8" target="_blank">Historic Preservation Commission</a></li><li><a href="/RSSFeed.aspx?ModID=65&CID=Human-Services-Advisory-Board-29" target="_blank">Human Services Advisory Board</a></li><li><a href="/RSSFeed.aspx?ModID=65&CID=Local-Board-of-Building-Code-Appeals-10" target="_blank">Local Board of Building Code Appeals</a></li><li><a href="/RSSFeed.aspx?ModID=65&CID=Parks-Recreation-Tourism-Advisory-Board-9" target="_blank">Parks, Recreation & Tourism Advisory Board</a></li><li><a href="/RSSFeed.aspx?ModID=65&CID=Public-Arts-Committee-31" target="_blank">Public Arts Committee</a></li><li><a href="/RSSFeed.aspx?ModID=65&CID=South-Norfolk-Revitalization-Commission-14" target="_blank">South Norfolk Revitalization Commission</a></li><li><a href="/RSSFeed.aspx?ModID=65&CID=Stormwater-Committee-17" target="_blank">Stormwater Committee</a></li><li><a href="/RSSFeed.aspx?ModID=65&CID=Transportation-Toll-Facility-Advisory-Co-16" target="_blank">Transportation Toll Facility Advisory Committee</a></li></ol></div>
+		<div id="ctl00_ctl00_MainContent_ModuleContent_ctl00_AlertCenterRSSSection" class="listing listingIcon alertCenter" name="alertcenter"><h2><a name="alertCenter">Alert Center</a></h2><ol><li><a href="/RSSFeed.aspx?ModID=63&CID=All-0" target="_blank">All</a></li></ol><ol><li><a href="/RSSFeed.aspx?ModID=63&CID=Winter-Weather-Schedule-Updates-13" target="_blank">Winter Weather - Schedule Updates</a></li></ol></div>
+		<div id="ctl00_ctl00_MainContent_ModuleContent_ctl00_BlogRSSSection" class="listing listingIcon blog" name="blog"><h2><a name="blog">Blog</a></h2><div><span><a href="/RSSFeed.aspx?ModID=51&CID=All-blog.xml" target="_blank">All</a></span></div></div>
+		
+		
+		<div id="ctl00_ctl00_MainContent_ModuleContent_ctl00_EventsRSSSection" class="listing listingIcon calendar" name="calendars"></div>
+		<div id="ctl00_ctl00_MainContent_ModuleContent_ctl00_CalendarRSSSection" class="listing listingIcon calendar" name="calendar"><h2><a name="calendar">Calendar</a></h2><ol><li><a href="/RSSFeed.aspx?ModID=58&CID=All-calendar.xml" target="_blank">All</a></li><li><a href="/RSSFeed.aspx?ModID=58&CID=Animal-Services-27" target="_blank">Animal Services</a></li><li><a href="/RSSFeed.aspx?ModID=58&CID=Boards-Commissions-26" target="_blank">Boards & Commissions</a></li><li><a href="/RSSFeed.aspx?ModID=58&CID=Calendar-Events-Activities-14" target="_blank">Calendar - Events & Activities</a></li><li><a href="/RSSFeed.aspx?ModID=58&CID=Calendar-Meetings-39" target="_blank">Calendar - Meetings</a></li><li><a href="/RSSFeed.aspx?ModID=58&CID=Chesapeake-Integrated-Behavioral-Healthc-37" target="_blank">Chesapeake Integrated Behavioral Healthcare (CIBH)</a></li><li><a href="/RSSFeed.aspx?ModID=58&CID=Chesapeake-Thrives-41" target="_blank">Chesapeake Thrives</a></li><li><a href="/RSSFeed.aspx?ModID=58&CID=City-Council-Meetings-32" target="_blank">City Council Meetings</a></li><li><a href="/RSSFeed.aspx?ModID=58&CID=Development-Permits-24" target="_blank">Development & Permits</a></li><li><a href="/RSSFeed.aspx?ModID=58&CID=Human-Resources-31" target="_blank">Human Resources</a></li></ol><ol><li><a href="/RSSFeed.aspx?ModID=58&CID=Mosquito-Control-Commission-35" target="_blank">Mosquito Control Commission</a></li><li><a href="/RSSFeed.aspx?ModID=58&CID=Parks-Recreation-Tourism-Boards-Commissi-34" target="_blank">Parks, Recreation & Tourism - Boards & Commissions</a></li><li><a href="/RSSFeed.aspx?ModID=58&CID=Parks-Recreation-Tourism-Programs-Events-29" target="_blank">Parks, Recreation & Tourism - Programs & Events</a></li><li><a href="/RSSFeed.aspx?ModID=58&CID=Parks-Recreation-Tourism-Special-Events-28" target="_blank">Parks, Recreation & Tourism - Special Events</a></li><li><a href="/RSSFeed.aspx?ModID=58&CID=Planning-Department-33" target="_blank">Planning Department</a></li><li><a href="/RSSFeed.aspx?ModID=58&CID=Police-Recruitment-36" target="_blank">Police Recruitment </a></li><li><a href="/RSSFeed.aspx?ModID=58&CID=Public-Works-Events-Activities-38" target="_blank">Public Works Events & Activities</a></li><li><a href="/RSSFeed.aspx?ModID=58&CID=The-PEAKE-Team-42" target="_blank">The PEAKE Team</a></li><li><a href="/RSSFeed.aspx?ModID=58&CID=Travel-Advisories-23" target="_blank">Travel Advisories</a></li></ol></div>
+		
+		
+		
+		<div id="ctl00_ctl00_MainContent_ModuleContent_ctl00_MediaCenterRSSSection" class="listing listingIcon mediaCenter" name="mediacenter"></div>
+		<div id="ctl00_ctl00_MainContent_ModuleContent_ctl00_NewsflashRSSSection" class="listing listingIcon newsFlash" name="newsflash"><h2><a name="newsFlash">News Flash</a></h2><ol><li><a href="/RSSFeed.aspx?ModID=1&CID=All-newsflash.xml" target="_blank">All</a></li><li><a href="/RSSFeed.aspx?ModID=1&CID=Chesapeake-Commonwealths-Attorney-18" target="_blank">Chesapeake Commonwealth's Attorney</a></li><li><a href="/RSSFeed.aspx?ModID=1&CID=Chesapeake-Police-Department-Featured-Ne-17" target="_blank">Chesapeake Police Department - Featured News</a></li><li><a href="/RSSFeed.aspx?ModID=1&CID=Chesapeake-Thrives-15" target="_blank">Chesapeake Thrives</a></li><li><a href="/RSSFeed.aspx?ModID=1&CID=Home-Featured-News-1" target="_blank">Home - Featured News</a></li><li><a href="/RSSFeed.aspx?ModID=1&CID=Parks-Recreation-Tourism-Info-11" target="_blank">Parks, Recreation & Tourism - Info</a></li></ol><ol><li><a href="/RSSFeed.aspx?ModID=1&CID=Parks-Recreation-Tourism-News-7" target="_blank">Parks, Recreation & Tourism - News</a></li><li><a href="/RSSFeed.aspx?ModID=1&CID=Public-Communications-21" target="_blank">Public Communications</a></li><li><a href="/RSSFeed.aspx?ModID=1&CID=Public-Utilities-14" target="_blank">Public Utilities</a></li><li><a href="/RSSFeed.aspx?ModID=1&CID=Public-Works-19" target="_blank">Public Works </a></li><li><a href="/RSSFeed.aspx?ModID=1&CID=Unsolved-Crimes-16" target="_blank">Unsolved Crimes</a></li><li><a href="/RSSFeed.aspx?ModID=1&CID=Updates-News-6" target="_blank">Updates - News</a></li></ol></div>
+		
+		<div id="ctl00_ctl00_MainContent_ModuleContent_ctl00_photoGalleryRSSSection" class="listing listingIcon photoGallery" name="photoGallery"><h2><a name="photoGallery">Photo Gallery</a></h2><ol><li><a href="/RSSFeed.aspx?ModID=53&CID=All-0" target="_blank">All</a></li><li><a href="/RSSFeed.aspx?ModID=53&CID=2022-Step-Up-to-the-Plate-Initiative-13" target="_blank">2022 "Step Up to the Plate" Initiative</a></li><li><a href="/RSSFeed.aspx?ModID=53&CID=2022-to-2023-Clean-Green-Contest-for-2nd-31" target="_blank">2022 to 2023 Clean & Green Contest for 2nd to 3rd</a></li><li><a href="/RSSFeed.aspx?ModID=53&CID=2022-to-2023-Clean-Green-Contest-for-4th-32" target="_blank">2022 to 2023 Clean & Green Contest for 4th to 5th</a></li><li><a href="/RSSFeed.aspx?ModID=53&CID=2022-to-2023-Clean-Green-Contest-for-6th-33" target="_blank">2022 to 2023 Clean & Green Contest for 6th to 8th</a></li><li><a href="/RSSFeed.aspx?ModID=53&CID=2022-to-2023-Clean-Green-Contest-for-9th-34" target="_blank">2022 to 2023 Clean & Green Contest for 9th to 12th</a></li><li><a href="/RSSFeed.aspx?ModID=53&CID=2022-to-2023-Clean-Green-Contest-for-K-t-30" target="_blank">2022 to 2023 Clean & Green Contest for K to 1st</a></li><li><a href="/RSSFeed.aspx?ModID=53&CID=Badges-of-the-Chesapeake-Police-Departme-11" target="_blank">Badges of the Chesapeake Police Department</a></li><li><a href="/RSSFeed.aspx?ModID=53&CID=Bicycle-Trails-Advisory-Committee-14" target="_blank">Bicycle / Trails Advisory Committee</a></li><li><a href="/RSSFeed.aspx?ModID=53&CID=Centers-Facilities-5" target="_blank">Centers & Facilities</a></li><li><a href="/RSSFeed.aspx?ModID=53&CID=CERT-Team-Photos-3" target="_blank">CERT Team Photos</a></li><li><a href="/RSSFeed.aspx?ModID=53&CID=City-Symbol-Artists-Designs-23" target="_blank">City Symbol - Artists' Designs</a></li><li><a href="/RSSFeed.aspx?ModID=53&CID=Community-Development-6" target="_blank">Community Development</a></li><li><a href="/RSSFeed.aspx?ModID=53&CID=Gold-Star-Families-Memorial-Dedication-2-36" target="_blank">Gold Star Families Memorial Dedication 2023</a></li><li><a href="/RSSFeed.aspx?ModID=53&CID=Gold-Star-Families-Memorial-Monument-37" target="_blank">Gold Star Families Memorial Monument</a></li><li><a href="/RSSFeed.aspx?ModID=53&CID=Holiday-Craft-Show-8" target="_blank">Holiday Craft Show</a></li></ol><ol><li><a href="/RSSFeed.aspx?ModID=53&CID=Mayors-Breakfast-to-Honor-Veterans-2023-38" target="_blank">Mayor's Breakfast to Honor Veterans 2023</a></li><li><a href="/RSSFeed.aspx?ModID=53&CID=Mayors-Breakfast-to-Honor-Veterans-2024-41" target="_blank">Mayor's Breakfast to Honor Veterans 2024</a></li><li><a href="/RSSFeed.aspx?ModID=53&CID=Mayors-Breakfast-to-Honor-Veterans-2025-44" target="_blank">Mayor's Breakfast to Honor Veterans 2025</a></li><li><a href="/RSSFeed.aspx?ModID=53&CID=Memorial-Day-2023-35" target="_blank">Memorial Day 2023</a></li><li><a href="/RSSFeed.aspx?ModID=53&CID=Memorial-Day-2024-40" target="_blank">Memorial Day 2024</a></li><li><a href="/RSSFeed.aspx?ModID=53&CID=Memorial-Day-2025-43" target="_blank">Memorial Day 2025</a></li><li><a href="/RSSFeed.aspx?ModID=53&CID=Park-Shelter-Section-Rentals-4" target="_blank">Park Shelter & Section Rentals</a></li><li><a href="/RSSFeed.aspx?ModID=53&CID=Patches-of-the-Chesapeake-Police-Departm-12" target="_blank">Patches of the Chesapeake Police Department</a></li><li><a href="/RSSFeed.aspx?ModID=53&CID=Previous-City-Managers-2" target="_blank">Previous City Managers</a></li><li><a href="/RSSFeed.aspx?ModID=53&CID=Special-Events-7" target="_blank">Special Events</a></li><li><a href="/RSSFeed.aspx?ModID=53&CID=Stay-Play-After-School-Program-9" target="_blank">Stay & Play After School Program</a></li><li><a href="/RSSFeed.aspx?ModID=53&CID=Summer-Blast-Day-Camp-10" target="_blank">Summer Blast Day Camp</a></li><li><a href="/RSSFeed.aspx?ModID=53&CID=Veterans-Day-2023-39" target="_blank">Veterans Day 2023</a></li><li><a href="/RSSFeed.aspx?ModID=53&CID=Veterans-Day-2024-42" target="_blank">Veterans Day 2024</a></li><li><a href="/RSSFeed.aspx?ModID=53&CID=Veterans-Day-2025-45" target="_blank">Veterans Day 2025</a></li></ol></div>
+		
+	</div>
+	<div id="ctl00_ctl00_MainContent_ModuleContent_ctl00_FooterSection" class="footer">
+		<h3>What is an RSS Feed?</h3><p>A format for content distribution, RSS stands for Really Simple Syndication. RSS is a system that allows a user to get automatic updates from multiple websites whenever new content is published on these sites. It acts like a personal web-based reader by checking your selected sites regularly for new content. If you set up an RSS feed from the New York Times Sports section, for example, you would be notified whenever a new article was posted. The notification takes place in an RSS Reader.</p><h3>How do I start using RSS Feeds?</h3><p>To use a site&#8217;s RSS feature, an RSS reader is required.</p><ol><li>Choose an RSS reader. An internet search will return many options. Some readers are web-based, such as <a class="Hyperlink" href="http://my.yahoo.com/" onkeypress="this.onclick();" onclick="return showExternalSiteDialog(this);" target="_blank">My Yahoo!</a>. Web-based readers require no software installation and are accessible from any computer that has internet access. Other readers are downloadable applications, such as  <a class="Hyperlink" href="http://feedly.com" onkeypress="this.onclick();" onclick="return showExternalSiteDialog(this);" target="_blank">Feedly</a>.</li><li>Once you&#8217;ve chosen an RSS reader, follow the instructions to download, install, and open the reader.</li><li>Decide what type of content you want the RSS reader to monitor. Many websites provide RSS, which can usually be found on those sites as a link. An orange button is often used to display the service&#8217;s availability. Sometimes the RSS feed is automatically added to the RSS reader and updates are sent every time new content is available. Alternatively, you may have to click the RSS link and copy it into your RSS reader.</li></ol>
+		<a class="backtotop" href="#">&#9650;&nbsp;Back to top</a>
+	</div>
+</div>
+<!-- END RSSCONTENT.aspx ****************************************************** --></div>
+<script type="text/javascript">order+='ModuleContent\n'</script>
+
+		<div id="ctl00_ctl00_MainContent_ctl00_liveEditPopupWindow" class="modalContainer modalContainerCP" style="display: none;">
+	<div id="ctl00_liveEditTitleBar" class="modalTitleLeft"><h3 id="ctl00_LiveEditModalTitle" class="modalTitle">Live Edit</h3><a id="ctl00_LiveEditCloseButton" class="modalClose" aria-label="Close this modal" href="/" title="Close this window"><svg viewBox='0 0 25 25' id='modalIconClose'><polygon style='fill:currentcolor' points='18.806,6.98 18.075,6.248 12.532,11.792 6.989,6.248 6.257,6.98 11.786,12.508 6.212,18.084 6.943,18.815 12.532,13.224 18.12,18.815 18.851,18.084 13.277,12.508'></polygon></svg></a></div><div id="ctl00_liveEditContentLeft" class="modalContentLeft"><div id="ctl00_liveEditContentRight" class="modalContentRight"><div id="ctl00_liveEditContent" class="modalContent"><iframe style="display: none; border: none;" src="about:blank" id="liveEditDialog" title="Live Edit Dialog" name="liveEditDialog"></iframe></div></div></div><div id="ctl00_liveEditFooter" class="modalBottomLeft"><div id="ctl00_liveEditfooterbar" class="modalBottomRight"><div id="ctl00_liveEditfooterbar1" class="modalBottom"></div></div></div>
+</div><input type="submit" name="ctl00$ctl00$MainContent$ctl00_liveEditSpawnWindow" value="" id="ctl00_ctl00_MainContent_ctl00_liveEditSpawnWindow" disabled="disabled" aria-hidden="true" style="display: none;" />
+	
+
+<script type="text/javascript">
+//<![CDATA[
+Sys.Application.add_init(function() {
+    $create(AjaxControlToolkit.ModalPopupBehavior, {"BackgroundCssClass":"modalBackground","CancelControlID":"ctl00_LiveEditCloseButton","PopupControlID":"ctl00_ctl00_MainContent_ctl00_liveEditPopupWindow","PopupDragHandleControlID":"ctl00_liveEditTitleBar","dynamicServicePath":"/rss.aspx","id":"editItemBehavior"}, null, null, $get("ctl00_ctl00_MainContent_ctl00_liveEditSpawnWindow"));
+});
+//]]>
+</script>
+</form>
+	<form id="aspnetSearchForm" name="aspnetSearchForm" style="display:none;" action="/Search.aspx" method="get">
+		<input name="SearchString" type = "hidden" value ="" />
+	</form>
+	
+	
+	
+	</div>
+	 
+</div>	
+
+</div><aside data-cpRole="contentContainer" id="featureColumn" class="secondaryContent">	<div id="ccd6923f64-2522-4bce-8783-61ad1b416b69" data-containerid="d6923f64-2522-4bce-8783-61ad1b416b69" class="pageContent cpGrid cpGrid24 showInMobile" data-contentcontainerbreakpoint="40">
+				                
+
+
+
+	</div>
+</aside>
+</div><div data-cpRole="structuralContainer" id="siteSidebarTS" class="siteSidebar">
+<aside data-cpRole="contentContainer" id="sidebarContainer1TS">	<div id="cc22242cca-58b4-442a-8bd5-135a2186c94d" data-containerid="22242cca-58b4-442a-8bd5-135a2186c94d" class="pageContent cpGrid cpGrid24 showInMobile">
+				                
+
+
+
+	</div>
+</aside><nav data-cpRole="nav" id="secondaryNav" class="siteNav secondaryNav">
+
+
+
+
+
+	<ol role="menu" id="secondaryMenusecondaryNav" data-parent="4" class="rootNavMenu accordionNav">
+	<li role="menuitem" aria-haspopup="true" class="topMenuItem sideNavLi hasAccordionChildren" id="SideItem1102" data-pageid="1102">
+		<div class="accordionNavItem">
+			<a href="/1102/Website-Policies" target="_self" class="navMainItem secondaryNavItem cpComponent" data-type="SecondaryMainItem">Website Policies</a>
+				<a href="#" class="openAccordionNav accordionSecondaryNavItem" title="Expand Website Policies Submenu"></a>
+		</div>
+					<ol role="menu" aria-hidden="true" class="accordionNavContainer accordionNavContainer--lvl1" style="display: none;" data-parent="1102">
+						<li role="menuitem" aria-haspopup="true" class="sideNavLi subMenuItem hasAccordionChildren" id="SideItem1103" data-pageid="1103">
+			<div class="accordionNavItem">
+				<a href="/1103/Accessibility" target="_self" class="navMenuItem cpComponent" data-type="SecondaryMenuItem"><span lang="en">Accessibility</span></a>
+			</div>
+					</li>
+		<li role="menuitem" aria-haspopup="true" class="sideNavLi subMenuItem hasAccordionChildren" id="SideItem1105" data-pageid="1105">
+			<div class="accordionNavItem">
+				<a href="/1105/Privacy-Policy" target="_self" class="navMenuItem cpComponent" data-type="SecondaryMenuItem"><span lang="en">Privacy Policy</span></a>
+			</div>
+					</li>
+
+			</ol>
+	</li>
+
+	</ol>
+
+
+	<script type="text/javascript">
+		window.addEventListener('load', function () {
+			//setup menu manager properties for secondary menu
+			menuManager.isSideMenuEditable = false;
+			menuManager.sideMenuMaxSubMenuLevels = 4;
+			menuManager.sideMenuHasCustomLinks = true;
+		});
+	</script>
+
+	<script type="text/javascript">
+		window.addEventListener('load', function () {
+			$('*[id^="SideItem"]').each(function () {
+				var ids = $('[id="' + this.id + '"]');
+				if (ids.length > 1)
+					$.each(ids, function (index, value) {
+						value.id = value.id + '_' + index;
+					});
+			});
+
+			$('.hasAccordionChildren .openAccordionNav').click(function (e) {
+				e.preventDefault();
+				showHideAccordionMenuForSecondaryNav($(this));
+			});
+
+			$("#secondaryNav .grippy").each(function () {
+				menuManager.setupDraggableElement($(this), SIDE_MENU, '#secondaryNav');
+			});
+
+			$("#secondaryNav li").each(function () {
+				menuManager.setupDroppableAccordionElement($(this), SIDE_MENU);
+			});
+		});
+	</script>
+
+
+
+</nav><aside data-cpRole="contentContainer" id="sidebarContainer2TS">	<div id="cc157a30a3-becd-47ea-9b80-4132d78e5275" data-containerid="157a30a3-becd-47ea-9b80-4132d78e5275" class="pageContent cpGrid cpGrid24 showInMobile">
+				                
+
+
+
+	</div>
+</aside>
+</div>
+</div></div>
+</div><!-- GBs --><div data-cpRole="structuralContainer" id="gbsContainerTS">
+<div class="siteWrap"><div data-cpRole="contentContainer" id="gbsTS">	<div id="cc5eea7104-ad22-45da-a46d-14d341442515" data-containerid="5eea7104-ad22-45da-a46d-14d341442515" class="pageContent cpGrid cpGrid24 isLockedContainer showInMobile" data-contentcontainerbreakpoint="2">
+				                
+
+		<div class="row outer wide"><!--
+--><div class="outer col col12 first" style="" data-widgetcontainerid="cc2ea147-679f-4d94-9d5e-cf46908efd1c">				
+	<div class="row nest first last wide">
+	
+	<div class="inner col col12 first last id1d843f90-39a3-47e8-9585-e61255f0b335" style="" data-widgetcontainerid="1d843f90-39a3-47e8-9585-e61255f0b335">	
+<div data-widget-id="eaa75216-4bf5-4ad5-b416-a73331f9d389" data-widget-controller-path="/GraphicLinks/Widget">
+
+
+
+
+<div id="graphicLinkWidgeteaa75216-4bf5-4ad5-b416-a73331f9d389" class="widget widgetGraphicLinks skin45 widgetOptionSet4 wide" data-elementqueryclasses='{"wide-narrow":"min-width:33em"}' data-elementquerymatch='matchMultiColumn' data-elementqueryunmatch='unmatchMultiColumn' data-modulewidgettype="graphicLinks">
+	<div class="widgetHeader">
+		<div class="">
+				</div>
+	</div>
+	<div class="widgetBody cpGrid cpGrid3 "> 	
+				<nav class="widgetGraphicLinksNav" aria-label="Graphic links">
+					<div class="row   wide"><!--
+--><div class="col col1 first "><ul class="semanticList"><!--
+	    --><li class="widgetItem GraphicLinks">
+
+<div>
+	<a href="https://chesapeake-cwiprod.motorolasolutions.com/cwi/select" onkeypress="this.onclick();" onclick="return showExternalSiteDialog(this);" target="_self" class="fancyButton fancyButton65 " >
+		<span>
+			<span><span class="text">Request a City Service</span></span>
+		</span>
+	</a>
+</div>
+		<style scoped="scoped">.fancyButton65.fancyButton:link,.fancyButton65.fancyButton:visited, .fancyButton65div.fancyButton{
+	background-image: url('/ImageRepository/Document?documentID=121');
+	background-repeat: no-repeat;
+	background-position: center top;
+transition: .2s ease-in-out;}
+.fancyButton65.fancyButton:hover,.fancyButton65.fancyButton:focus,.fancyButton65.fancyButton:active,.fancyButton65.fancyButton.hover{
+	background-image: url('/ImageRepository/Document?documentID=120');
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+.fancyButton65.fancyButton:link > span,.fancyButton65.fancyButton:visited > span, .fancyButton65div.fancyButton > span{
+}
+.fancyButton65.fancyButton:hover > span,.fancyButton65.fancyButton:focus > span,.fancyButton65.fancyButton:active > span,.fancyButton65.fancyButton.hover > span{
+}
+.fancyButton65.fancyButton .text{
+	color: #454545;
+	font-size: 1em;
+	font-family: "Open Sans";
+	padding-top: 8em;
+	font-weight: 600;
+	text-decoration: none;
+	padding-top: 8em;
+	background-image: url('/ImageRepository/Document?documentID=127');
+	background-repeat: no-repeat;
+	background-position: center 1.7em ;
+transition: .2s ease-in-out;
+}
+.fancyButton65.fancyButton:hover .text,.fancyButton65.fancyButton:focus .text,.fancyButton65.fancyButton:active .text,.fancyButton65.fancyButton.hover .text{
+	text-decoration: underline;
+	background-image: url('/ImageRepository/Document?documentID=126');
+	background-repeat: no-repeat;
+	background-position: center 1.7em ;
+
+
+}
+</style>
+
+ </li><!--
+--></ul></div><!----><div class="col col1  "><ul class="semanticList"><!--
+	    --><li class="widgetItem GraphicLinks">
+
+<div>
+	<a href="/1848/Pay-Bills-Taxes-Fees-Tickets-Online" target="_self" class="fancyButton fancyButton66 " >
+		<span>
+			<span><span class="text">Online Payments</span></span>
+		</span>
+	</a>
+</div>
+		<style scoped="scoped">.fancyButton66.fancyButton:link,.fancyButton66.fancyButton:visited, .fancyButton66div.fancyButton{
+	background-image: url('/ImageRepository/Document?documentID=117');
+	background-repeat: no-repeat;
+	background-position: center top;
+transition: .2s ease-in-out;}
+.fancyButton66.fancyButton:hover,.fancyButton66.fancyButton:focus,.fancyButton66.fancyButton:active,.fancyButton66.fancyButton.hover{
+	background-image: url('/ImageRepository/Document?documentID=116');
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+.fancyButton66.fancyButton:link > span,.fancyButton66.fancyButton:visited > span, .fancyButton66div.fancyButton > span{
+}
+.fancyButton66.fancyButton:hover > span,.fancyButton66.fancyButton:focus > span,.fancyButton66.fancyButton:active > span,.fancyButton66.fancyButton.hover > span{
+}
+.fancyButton66.fancyButton .text{
+	color: #454545;
+	font-size: 1em;
+	font-family: "Open Sans";
+	padding-top: 8em;
+	font-weight: 600;
+	text-decoration: none;
+	padding-top: 8em;
+	background-image: url('/ImageRepository/Document?documentID=125');
+	background-repeat: no-repeat;
+	background-position: center 1.8em ;
+transition: .2s ease-in-out;
+}
+.fancyButton66.fancyButton:hover .text,.fancyButton66.fancyButton:focus .text,.fancyButton66.fancyButton:active .text,.fancyButton66.fancyButton.hover .text{
+	text-decoration: underline;
+	background-image: url('/ImageRepository/Document?documentID=124');
+	background-repeat: no-repeat;
+	background-position: center 1.8em ;
+
+
+}
+</style>
+
+ </li><!--
+--></ul></div><!----><div class="col col1  last"><ul class="semanticList"><!--
+	    --><li class="widgetItem GraphicLinks">
+
+<div>
+	<a href="/1068/Waste-Management-Division" target="_self" class="fancyButton fancyButton67 " >
+		<span>
+			<span><span class="text">Waste Pickup</span></span>
+		</span>
+	</a>
+</div>
+		<style scoped="scoped">.fancyButton67.fancyButton:link,.fancyButton67.fancyButton:visited, .fancyButton67div.fancyButton{
+	background-image: url('/ImageRepository/Document?documentID=119');
+	background-repeat: no-repeat;
+	background-position: center top;
+transition: .2s ease-in-out;}
+.fancyButton67.fancyButton:hover,.fancyButton67.fancyButton:focus,.fancyButton67.fancyButton:active,.fancyButton67.fancyButton.hover{
+	background-image: url('/ImageRepository/Document?documentID=118');
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+.fancyButton67.fancyButton:link > span,.fancyButton67.fancyButton:visited > span, .fancyButton67div.fancyButton > span{
+}
+.fancyButton67.fancyButton:hover > span,.fancyButton67.fancyButton:focus > span,.fancyButton67.fancyButton:active > span,.fancyButton67.fancyButton.hover > span{
+}
+.fancyButton67.fancyButton .text{
+	color: #454545;
+	font-size: 1em;
+	font-family: "Open Sans";
+	padding-top: 8em;
+	font-weight: 600;
+	text-decoration: none;
+	padding-top: 8em;
+	background-image: url('/ImageRepository/Document?documentID=129');
+	background-repeat: no-repeat;
+	background-position: center 1.8em ;
+transition: .2s ease-in-out;
+}
+.fancyButton67.fancyButton:hover .text,.fancyButton67.fancyButton:focus .text,.fancyButton67.fancyButton:active .text,.fancyButton67.fancyButton.hover .text{
+	text-decoration: underline;
+	background-image: url('/ImageRepository/Document?documentID=128');
+	background-repeat: no-repeat;
+	background-position: center 1.8em ;
+
+
+}
+</style>
+
+ </li><!--
+--></ul></div><!--					--></div>
+				</nav>
+	</div>
+	<div class="widgetFooter">
+			</div>
+</div>
+
+</div>
+	</div> <!-- inner column -->
+
+	</div> <!-- inner row -->
+
+			</div><!-- outer column --><!----><div class="outer col col12 last" style="" data-widgetcontainerid="af4fd048-7e51-4d92-ba0d-7d60e73a57ea">				
+	<div class="row nest first last wide">
+	
+	<div class="inner col col12 first last id2d3e26ee-dbe2-4bec-acdb-2d061f2210bc" style="" data-widgetcontainerid="2d3e26ee-dbe2-4bec-acdb-2d061f2210bc">	
+<div data-widget-id="16484ee5-9f75-43c5-b97d-0ff803dc0359" data-widget-controller-path="/GraphicLinks/Widget">
+
+
+
+
+<div id="graphicLinkWidget16484ee5-9f75-43c5-b97d-0ff803dc0359" class="widget widgetGraphicLinks skin45 widgetOptionSet4 wide" data-elementqueryclasses='{"wide-narrow":"min-width:33em"}' data-elementquerymatch='matchMultiColumn' data-elementqueryunmatch='unmatchMultiColumn' data-modulewidgettype="graphicLinks">
+	<div class="widgetHeader">
+		<div class="">
+				</div>
+	</div>
+	<div class="widgetBody cpGrid cpGrid3 "> 	
+				<nav class="widgetGraphicLinksNav" aria-label="Graphic links">
+					<div class="row   wide"><!--
+--><div class="col col1 first "><ul class="semanticList"><!--
+	    --><li class="widgetItem GraphicLinks">
+
+<div>
+	<a href="/276/City-Forms-Applications" target="_self" class="fancyButton fancyButton68 " >
+		<span>
+			<span><span class="text">Forms &amp; Permits</span></span>
+		</span>
+	</a>
+</div>
+		<style scoped="scoped">.fancyButton68.fancyButton:link,.fancyButton68.fancyButton:visited, .fancyButton68div.fancyButton{
+	background-image: url('/ImageRepository/Document?documentID=121');
+	background-repeat: no-repeat;
+	background-position: center top;
+transition: .2s ease-in-out;}
+.fancyButton68.fancyButton:hover,.fancyButton68.fancyButton:focus,.fancyButton68.fancyButton:active,.fancyButton68.fancyButton.hover{
+	background-image: url('/ImageRepository/Document?documentID=120');
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+.fancyButton68.fancyButton:link > span,.fancyButton68.fancyButton:visited > span, .fancyButton68div.fancyButton > span{
+}
+.fancyButton68.fancyButton:hover > span,.fancyButton68.fancyButton:focus > span,.fancyButton68.fancyButton:active > span,.fancyButton68.fancyButton.hover > span{
+}
+.fancyButton68.fancyButton .text{
+	color: #454545;
+	font-size: 1em;
+	font-family: "Open Sans";
+	padding-top: 8em;
+	font-weight: 600;
+	text-decoration: none;
+	padding-top: 8em;
+	background-image: url('/ImageRepository/Document?documentID=115');
+	background-repeat: no-repeat;
+	background-position: center 1.8em ;
+transition: .2s ease-in-out;
+}
+.fancyButton68.fancyButton:hover .text,.fancyButton68.fancyButton:focus .text,.fancyButton68.fancyButton:active .text,.fancyButton68.fancyButton.hover .text{
+	text-decoration: underline;
+	background-image: url('/ImageRepository/Document?documentID=114');
+	background-repeat: no-repeat;
+	background-position: center 1.8em ;
+
+
+}
+</style>
+
+ </li><!--
+--></ul></div><!----><div class="col col1  "><ul class="semanticList"><!--
+	    --><li class="widgetItem GraphicLinks">
+
+<div>
+	<a href="/3059/Government-Meetings" target="_self" class="fancyButton fancyButton70 " >
+		<span>
+			<span><span class="text">Government Meetings</span></span>
+		</span>
+	</a>
+</div>
+		<style scoped="scoped">.fancyButton70.fancyButton:link,.fancyButton70.fancyButton:visited, .fancyButton70div.fancyButton{
+	background-image: url('/ImageRepository/Document?documentID=117');
+	background-repeat: no-repeat;
+	background-position: center top;
+transition: .2s ease-in-out;}
+.fancyButton70.fancyButton:hover,.fancyButton70.fancyButton:focus,.fancyButton70.fancyButton:active,.fancyButton70.fancyButton.hover{
+	background-image: url('/ImageRepository/Document?documentID=116');
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+.fancyButton70.fancyButton:link > span,.fancyButton70.fancyButton:visited > span, .fancyButton70div.fancyButton > span{
+}
+.fancyButton70.fancyButton:hover > span,.fancyButton70.fancyButton:focus > span,.fancyButton70.fancyButton:active > span,.fancyButton70.fancyButton.hover > span{
+}
+.fancyButton70.fancyButton .text{
+	color: #454545;
+	font-size: 1em;
+	font-family: "Open Sans";
+	padding-top: 8em;
+	font-weight: 600;
+	text-decoration: none;
+	padding-top: 8em;
+	background-image: url('/ImageRepository/Document?documentID=123');
+	background-repeat: no-repeat;
+	background-position: center 1.8em ;
+transition: .2s ease-in-out;
+}
+.fancyButton70.fancyButton:hover .text,.fancyButton70.fancyButton:focus .text,.fancyButton70.fancyButton:active .text,.fancyButton70.fancyButton.hover .text{
+	text-decoration: underline;
+	background-image: url('/ImageRepository/Document?documentID=122');
+	background-repeat: no-repeat;
+	background-position: center 1.8em ;
+
+
+}
+</style>
+
+ </li><!--
+--></ul></div><!----><div class="col col1  last"><ul class="semanticList"><!--
+	    --><li class="widgetItem GraphicLinks">
+
+<div>
+	<a href="/1677/Your-Property" target="_self" class="fancyButton fancyButton71 " >
+		<span>
+			<span><span class="text">Your Property</span></span>
+		</span>
+	</a>
+</div>
+		<style scoped="scoped">.fancyButton71.fancyButton:link,.fancyButton71.fancyButton:visited, .fancyButton71div.fancyButton{
+	background-image: url('/ImageRepository/Document?documentID=119');
+	background-repeat: no-repeat;
+	background-position: center top;
+transition: .2s ease-in-out;}
+.fancyButton71.fancyButton:hover,.fancyButton71.fancyButton:focus,.fancyButton71.fancyButton:active,.fancyButton71.fancyButton.hover{
+	background-image: url('/ImageRepository/Document?documentID=118');
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+.fancyButton71.fancyButton:link > span,.fancyButton71.fancyButton:visited > span, .fancyButton71div.fancyButton > span{
+}
+.fancyButton71.fancyButton:hover > span,.fancyButton71.fancyButton:focus > span,.fancyButton71.fancyButton:active > span,.fancyButton71.fancyButton.hover > span{
+}
+.fancyButton71.fancyButton .text{
+	color: #454545;
+	font-size: 1em;
+	font-family: "Open Sans";
+	padding-top: 8em;
+	font-weight: 600;
+	text-decoration: none;
+	padding-top: 8em;
+	background-image: url('/ImageRepository/Document?documentID=131');
+	background-repeat: no-repeat;
+	background-position: center 1.7em ;
+transition: .2s ease-in-out;
+}
+.fancyButton71.fancyButton:hover .text,.fancyButton71.fancyButton:focus .text,.fancyButton71.fancyButton:active .text,.fancyButton71.fancyButton.hover .text{
+	text-decoration: underline;
+	background-image: url('/ImageRepository/Document?documentID=130');
+	background-repeat: no-repeat;
+	background-position: center 1.7em ;
+
+
+}
+</style>
+
+ </li><!--
+--></ul></div><!--					--></div>
+				</nav>
+	</div>
+	<div class="widgetFooter">
+			</div>
+</div>
+
+</div>
+	</div> <!-- inner column -->
+
+	</div> <!-- inner row -->
+
+			</div><!-- outer column --><!--		--></div> <!-- outer row -->
+
+
+	</div>
+</div></div>
+</div><!-- Calendar/Carousel --><!-- <div data-cpRole="structuralContainer" id="homeContainer1">
+    <div class="siteWrap2">
+      <div data-cpRole="contentContainer" id="homeContent1a"></div>
+    </div>
+  </div> --><!-- Footer --><footer data-cpRole="structuralContainer" id="footerContainerTS" class="noOverflowTS">
+<div data-cpRole="banner" id="banner2"><div data-cpRole="structuralContainer" id="bannerfooterTS">
+<div class="siteWrap"><div data-cpRole="contentContainer" id="footerTS">	<div id="cc71a6cae8-eaf0-415c-8720-449542a9ad63" data-containerid="71a6cae8-eaf0-415c-8720-449542a9ad63" class="pageContent cpGrid cpGrid24 isLockedContainer showInMobile" data-contentcontainerbreakpoint="45">
+				                
+
+		<div class="row outer wide"><!--
+--><div class="outer col col7 first" style="" data-widgetcontainerid="3133bef2-8b2e-4152-b777-e1fb47061ae9">				
+	<div class="row nest first wide">
+	
+	<div class="inner col col7 first last id8ba50787-ac54-48d3-a280-c9858b3a4cf7" style="" data-widgetcontainerid="8ba50787-ac54-48d3-a280-c9858b3a4cf7">	
+    <div data-widget-id="e33e899d-3e31-45f0-a2c1-72ab3e77deb8" data-widget-controller-path="/InfoAdvanced/Widget">
+
+
+
+
+
+	<section id="divInfoAdve33e899d-3e31-45f0-a2c1-72ab3e77deb8" class="widget widgetInfoAdvanced skin39 widgetOptionSet5 wide" data-modulewidgettype="infoAdv" data-elementqueryclasses='{"wide-narrow":"min-width:25em"}' data-elementquerymatch='matchMultiColumn' data-elementqueryunmatch='unmatchMultiColumn' aria-label="Info Advanced">
+			<header class="widgetHeader" id="headere33e899d-3e31-45f0-a2c1-72ab3e77deb8">
+		<div class="">
+								</div>
+	</header>
+	<div class="widgetBody  cpGrid cpGrid1 ">
+		<div class="row  wide">
+					<div class="col col1 first last">
+						<ol class="pageStyles semanticList">
+
+<li class="InfoAdvanced widgetItem fr-view">
+	<p><a href="/"><img src="/ImageRepository/Document?documentId=132" class="fr-dib" alt="Heron logo linking to Chesapeake homepage"></a></p>
+</li>						</ol>
+					</div>
+		</div>
+	</div>
+	<div class="widgetFooter">
+
+	</div>
+
+	</section>
+
+
+
+<script type="text/javascript">
+	//Render slideshow if info advacned items contain one.
+	$(document).ready(function (e) {
+		$('#divInfoAdve33e899d-3e31-45f0-a2c1-72ab3e77deb8 .InfoAdvanced.widgetItem').each(function () {
+			renderSlideshowIfApplicable($(this));		
+		});
+	});
+</script></div>	</div> <!-- inner column -->
+
+	</div> <!-- inner row -->
+	<div class="row nest last wide">
+	
+	<div class="inner col col7 first last idb2f6f0ad-45c9-4714-a222-4eed1f55555a" style="" data-widgetcontainerid="b2f6f0ad-45c9-4714-a222-4eed1f55555a">	
+<div data-widget-id="ad742e29-a823-4ef9-a6e5-a6a79f962196" data-widget-controller-path="/GraphicLinks/Widget">
+
+
+
+
+<div id="graphicLinkWidgetad742e29-a823-4ef9-a6e5-a6a79f962196" class="widget widgetGraphicLinks skin55 widgetOptionSet46 wide" data-elementqueryclasses='{"wide-narrow":"min-width:2em"}' data-elementquerymatch='matchMultiColumn' data-elementqueryunmatch='unmatchMultiColumn' data-modulewidgettype="graphicLinks">
+	<div class="widgetHeader">
+		<div class="">
+				</div>
+	</div>
+	<div class="widgetBody cpGrid cpGrid3 "> 	
+				<nav class="widgetGraphicLinksNav" aria-label="Graphic links">
+					<div class="row   wide"><!--
+--><div class="col col1 first "><ul class="semanticList"><!--
+	    --><li class="widgetItem GraphicLinks"><a class="widgetDesc widgetGraphicLinksLink" href="https://www.facebook.com/CityofChesapeake" onkeypress="this.onclick();" onclick="return showExternalSiteDialog(this);" target="_self"  aria-label=" Facebook graphic"><img src="/ImageRepository/Document?documentID=48" 
+     class="graphicButtonLink" alt=" Facebook" 
+     onmouseover="this.src='/ImageRepository/Document?documentID=48'" 
+	onmouseout="this.src='/ImageRepository/Document?documentID=48'"
+     onfocus="this.src='/ImageRepository/Document?documentID=48'" 
+	onblur="this.src='/ImageRepository/Document?documentID=48'"> </a></li><!--
+--></ul></div><!----><div class="col col1  "><ul class="semanticList"><!--
+	    --><li class="widgetItem GraphicLinks"><a class="widgetDesc widgetGraphicLinksLink" href="https://twitter.com/AboutChesapeake" onkeypress="this.onclick();" onclick="return showExternalSiteDialog(this);" target="_self"  aria-label="City of Chesapeake on X graphic"><img src="/ImageRepository/Document?documentID=16646" 
+     class="graphicButtonLink" alt="City of Chesapeake on X" 
+     onmouseover="this.src='/ImageRepository/Document?documentID=16646'" 
+	onmouseout="this.src='/ImageRepository/Document?documentID=16646'"
+     onfocus="this.src='/ImageRepository/Document?documentID=16646'" 
+	onblur="this.src='/ImageRepository/Document?documentID=16646'"> </a></li><!--
+--></ul></div><!----><div class="col col1  last"><ul class="semanticList"><!--
+	    --><li class="widgetItem GraphicLinks"><a class="widgetDesc widgetGraphicLinksLink" href="https://www.instagram.com/cityofchesapeakeva/?hl=en" onkeypress="this.onclick();" onclick="return showExternalSiteDialog(this);" target="_self"  aria-label=" Instagram graphic"><img src="/ImageRepository/Document?documentID=49" 
+     class="graphicButtonLink" alt=" Instagram" 
+     onmouseover="this.src='/ImageRepository/Document?documentID=49'" 
+	onmouseout="this.src='/ImageRepository/Document?documentID=49'"
+     onfocus="this.src='/ImageRepository/Document?documentID=49'" 
+	onblur="this.src='/ImageRepository/Document?documentID=49'"> </a></li><!--
+--></ul></div><!--					--></div>
+				</nav>
+	</div>
+	<div class="widgetFooter">
+			</div>
+</div>
+
+</div>
+	</div> <!-- inner column -->
+
+	</div> <!-- inner row -->
+
+			</div><!-- outer column --><!----><div class="outer col col1" style="" data-widgetcontainerid="af1bfa52-a7c0-4203-ad75-caac33b0d1b8">				
+	<div class="row nest first last wide">
+	
+	<div class="inner col col1 first last id56e256f6-5b2a-4858-8933-c61d43bfa10e" style="" data-widgetcontainerid="56e256f6-5b2a-4858-8933-c61d43bfa10e">	
+
+<div class="widget widgetSpacer" id="433f09ef-4b8d-4280-abb6-8f4225b2563d"></div>	</div> <!-- inner column -->
+
+	</div> <!-- inner row -->
+
+			</div><!-- outer column --><!----><div class="outer col col6" style="" data-widgetcontainerid="db70547e-d516-49d9-9438-7862ae802983">				
+	<div class="row nest first last wide">
+	
+	<div class="inner col col6 first last idfa96b30f-86ae-4048-9df3-193ecd996a01" style="" data-widgetcontainerid="fa96b30f-86ae-4048-9df3-193ecd996a01">	
+    <div data-widget-id="a981df06-288d-477c-8182-e61371adc17b" data-widget-controller-path="/InfoAdvanced/Widget">
+
+
+
+
+
+	<section id="divInfoAdva981df06-288d-477c-8182-e61371adc17b" class="widget widgetInfoAdvanced skin37 widgetOptionSet5 wide" data-modulewidgettype="infoAdv" data-elementqueryclasses='{"wide-narrow":"min-width:25em"}' data-elementquerymatch='matchMultiColumn' data-elementqueryunmatch='unmatchMultiColumn' aria-labelledby="headera981df06-288d-477c-8182-e61371adc17b">
+			<header class="widgetHeader" id="headera981df06-288d-477c-8182-e61371adc17b">
+		<div class="">
+					<h3 >Contact Us</h3>
+								</div>
+	</header>
+	<div class="widgetBody  cpGrid cpGrid1 ">
+		<div class="row  wide">
+					<div class="col col1 first last">
+						<ol class="pageStyles semanticList">
+
+<li class="InfoAdvanced widgetItem fr-view">
+	<p><strong>City of Chesapeake&nbsp;</strong><br>306 Cedar Road<br>Chesapeake, VA 23322</p><p>Phone:&nbsp;<a href="tel:757-382-2489">757-382-2489</a><br><br>View <a href="/1846/Contact-the-City-of-Chesapeake">More Contact Information</a></p>
+</li>						</ol>
+					</div>
+		</div>
+	</div>
+	<div class="widgetFooter">
+
+	</div>
+
+	</section>
+
+
+
+<script type="text/javascript">
+	//Render slideshow if info advacned items contain one.
+	$(document).ready(function (e) {
+		$('#divInfoAdva981df06-288d-477c-8182-e61371adc17b .InfoAdvanced.widgetItem').each(function () {
+			renderSlideshowIfApplicable($(this));		
+		});
+	});
+</script></div>	</div> <!-- inner column -->
+
+	</div> <!-- inner row -->
+
+			</div><!-- outer column --><!----><div class="outer col col5" style="" data-widgetcontainerid="5bac906d-f879-4a0e-811c-ce58e804eb2f">				
+	<div class="row nest first last wide">
+	
+	<div class="inner col col5 first last id7034213f-1a4c-4dc7-9142-356c00155fa2" style="" data-widgetcontainerid="7034213f-1a4c-4dc7-9142-356c00155fa2">	
+	<div data-widget-id="337a918c-dee4-46e9-824e-c5ad08a4b409" data-widget-controller-path="/QuickLinks/Widget">
+
+
+
+
+
+ 
+
+
+	<section id="widgetQuicklink337a918c-dee4-46e9-824e-c5ad08a4b409" class="widget widgetQuickLinks skin37 widgetOptionSet30 narrow" data-modulewidgettype="quickLinks" data-elementqueryclasses='{"wide-narrow":"min-width:25em"}' data-elementquerymatch='matchMultiColumn' data-elementqueryunmatch='unmatchMultiColumn' aria-labelledby="quickLinksHeader337a918c-dee4-46e9-824e-c5ad08a4b409">
+			<header class="widgetHeader" id="quickLinksHeader337a918c-dee4-46e9-824e-c5ad08a4b409">
+		<div class="">
+					<h3><a  style="" href="/QuickLinks.aspx?CID=15" >Quick Links</a></h3>
+						</div>
+	</header>
+	<div class="widgetBody cpGrid cpGrid1 ">
+        <div class="row  narrow">
+				<div class="col col1 first last">
+					<ol class="semanticList">
+
+    <li style="position:relative" class="widgetItem QuickLinks">
+        <a class="widgetDesc widgetQuickLinksLink" href="https://chesapeake-cwiprod.motorolasolutions.com/cwi/select" onkeypress="this.onclick();" onclick="return showExternalSiteDialog(this);" target="_self" >Request a City Service</a>
+        <div class="widgetMeta"></div>
+    </li>
+
+    <li style="position:relative" class="widgetItem QuickLinks">
+        <a class="widgetDesc widgetQuickLinksLink" href="/833/Chesapeake-Alert" target="_self" >Chesapeake Alert</a>
+        <div class="widgetMeta"></div>
+    </li>
+
+    <li style="position:relative" class="widgetItem QuickLinks">
+        <a class="widgetDesc widgetQuickLinksLink" href="/1082/Treasurers-Payment-Center" target="_self" >Payment Center</a>
+        <div class="widgetMeta"></div>
+    </li>
+
+    <li style="position:relative" class="widgetItem QuickLinks">
+        <a class="widgetDesc widgetQuickLinksLink" href="/264/Online-Services" target="_self" >Online Services</a>
+        <div class="widgetMeta"></div>
+    </li>
+
+    <li style="position:relative" class="widgetItem QuickLinks">
+        <a class="widgetDesc widgetQuickLinksLink" href="/1162/Agendas-Video" target="_self" >City Council Agendas</a>
+        <div class="widgetMeta"></div>
+    </li>
+
+    <li style="position:relative" class="widgetItem QuickLinks">
+        <a class="widgetDesc widgetQuickLinksLink" href="/834/Chesapeake-Television" target="_self" >Chesapeake TV</a>
+        <div class="widgetMeta"></div>
+    </li>
+
+    <li style="position:relative" class="widgetItem QuickLinks">
+        <a class="widgetDesc widgetQuickLinksLink" href="/206/Virginia-Freedom-of-Information-Act-FOIA" target="_self" >Virginia FOIA</a>
+        <div class="widgetMeta"></div>
+    </li>
+					</ol>
+				</div>
+		</div>
+        
+	</div>
+	<div class="widgetFooter">
+	</div>
+	<div class="addItemModal hidden">
+		<div class="url hidden">/QuickLinks.aspx</div>
+	</div>
+
+	</section>
+</div>
+	</div> <!-- inner column -->
+
+	</div> <!-- inner row -->
+
+			</div><!-- outer column --><!----><div class="outer col col5 last" style="" data-widgetcontainerid="4383dd7f-ada1-42b5-afc4-d4adabde65be">				
+	<div class="row nest first last wide">
+	
+	<div class="inner col col5 first last idd9bc6331-6ce5-492f-ab1f-acfdb83daa37" style="" data-widgetcontainerid="d9bc6331-6ce5-492f-ab1f-acfdb83daa37">	
+	<div data-widget-id="df99026c-8280-485b-98c5-d2540b637d81" data-widget-controller-path="/QuickLinks/Widget">
+
+
+
+
+
+ 
+
+
+	<section id="widgetQuicklinkdf99026c-8280-485b-98c5-d2540b637d81" class="widget widgetQuickLinks skin37 widgetOptionSet30 narrow" data-modulewidgettype="quickLinks" data-elementqueryclasses='{"wide-narrow":"min-width:25em"}' data-elementquerymatch='matchMultiColumn' data-elementqueryunmatch='unmatchMultiColumn' aria-labelledby="quickLinksHeaderdf99026c-8280-485b-98c5-d2540b637d81">
+			<header class="widgetHeader" id="quickLinksHeaderdf99026c-8280-485b-98c5-d2540b637d81">
+		<div class="">
+					<h3><a  style="" href="/QuickLinks.aspx?CID=16" >Helpful Links</a></h3>
+						</div>
+	</header>
+	<div class="widgetBody cpGrid cpGrid1 ">
+        <div class="row  narrow">
+				<div class="col col1 first last">
+					<ol class="semanticList">
+
+    <li style="position:relative" class="widgetItem QuickLinks">
+        <a class="widgetDesc widgetQuickLinksLink" href="/" target="_self" >Home</a>
+        <div class="widgetMeta"></div>
+    </li>
+
+    <li style="position:relative" class="widgetItem QuickLinks">
+        <a class="widgetDesc widgetQuickLinksLink" href="/1846/Contact-the-City-of-Chesapeake" target="_self" >Contact the City</a>
+        <div class="widgetMeta"></div>
+    </li>
+
+    <li style="position:relative" class="widgetItem QuickLinks">
+        <a class="widgetDesc widgetQuickLinksLink" href="/sitemap" target="_self" >Site Map</a>
+        <div class="widgetMeta"></div>
+    </li>
+
+    <li style="position:relative" class="widgetItem QuickLinks">
+        <a class="widgetDesc widgetQuickLinksLink" href="/accessibility" target="_self" >Accessibility</a>
+        <div class="widgetMeta"></div>
+    </li>
+
+    <li style="position:relative" class="widgetItem QuickLinks">
+        <a class="widgetDesc widgetQuickLinksLink" href="/privacy" target="_self" >Privacy Policy</a>
+        <div class="widgetMeta"></div>
+    </li>
+
+    <li style="position:relative" class="widgetItem QuickLinks">
+        <a class="widgetDesc widgetQuickLinksLink" href="/copyright" target="_self" >Copyright Notices</a>
+        <div class="widgetMeta"></div>
+    </li>
+					</ol>
+				</div>
+		</div>
+        
+	</div>
+	<div class="widgetFooter">
+	</div>
+	<div class="addItemModal hidden">
+		<div class="url hidden">/QuickLinks.aspx</div>
+	</div>
+
+	</section>
+</div>
+	</div> <!-- inner column -->
+
+	</div> <!-- inner row -->
+
+			</div><!-- outer column --><!--		--></div> <!-- outer row -->
+
+
+	</div>
+</div><div data-cpRole="contentContainer" id="footerTS2">	<div id="cc680978cd-777d-49de-a2ad-6014c31e3100" data-containerid="680978cd-777d-49de-a2ad-6014c31e3100" class="pageContent cpGrid cpGrid24 isLockedContainer showInMobile">
+				                
+
+
+
+	</div>
+</div></div>
+</div>
+
+
+
+
+		<div id="banner2-9" style="display: none"></div>
+			<script type="text/javascript">
+				$(window).on("load", function () {
+					$.when(window.Pages.rwdSetupComplete)
+						.done(function () {
+							renderBanner('banner2-9',
+								'banner2',
+								{"BannerOptionID":9,"ThemeID":1,"SlotName":"banner2","Name":"Default","IsDefault":true,"BannerMode":1,"SlideShowSlideTiming":null,"SlideshowTransition":0,"SlideShowTransitionTiming":null,"ImageScale":false,"ImageAlignment":2,"ImageScroll":true,"MuteSound":true,"VideoType":0,"Status":40,"SlideshowControlsPosition":0,"SlideshowControlsAlignment":0,"SlideshowBannerControlsColorScheme":0,"DisplayVideoPauseButton":false,"VideoPauseButtonAlignment":1,"VideoPauseButtonControlsAlignment":0,"VideoPauseButtonStyle":"#FFFFFF","VideoPauseButtonBackgroundStyle":"#000000","VideoPauseButtonAlignmentClass":"alignRight viewport","DisplaySlideshowPauseButton":true,"SlideshowControlsColor":"#FFFFFF","SlideshowControlsBackgroundColor":"#000000","SlideshowPauseButtonClass":"isHidden","BannerImages":[{"BannerImageID":59,"BannerOptionID":9,"FileName":"/ImageRepository/Document?documentID=70","Height":1132,"Width":2200,"StartingOn":null,"StoppingOn":null,"IsLink":false,"LinkAddress":null,"Sequence":1,"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/","AltText":null}],"BannerVideos":[],"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/"},
+								{"BannerImageID":59,"BannerOptionID":9,"FileName":"/ImageRepository/Document?documentID=70","Height":1132,"Width":2200,"StartingOn":null,"StoppingOn":null,"IsLink":false,"LinkAddress":null,"Sequence":1,"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/","AltText":null},
+								'/App_Themes/Interior/Images/',
+								'<img alt="" class="bannerObject" src="/ImageRepository/Document?documentID=70" />');
+						});
+				});
+			</script>
+
+</div>
+</footer><!-- Powered By --><div data-cpRole="structuralContainer" id="poweredByContainerTS">
+<div class="siteWrap"><div data-cpRole="contentContainer" id="poweredByTS">	<div id="cc066136d8-18e6-4b6c-895b-02bcbe872c0d" data-containerid="066136d8-18e6-4b6c-895b-02bcbe872c0d" class="pageContent cpGrid cpGrid24 isLockedContainer showInMobile">
+				                
+
+		<div class="row outer wide"><!--
+--><div class="outer col col24 first last" style="" data-widgetcontainerid="52809657-d15c-48d6-bd71-58a89b7f34e4">				
+	<div class="row nest first last wide">
+	
+	<div class="inner col col24 first last id55edd775-8571-41a6-aa73-92b50b447498" style="" data-widgetcontainerid="55edd775-8571-41a6-aa73-92b50b447498">	
+ 
+	<div data-widget-id='31f84506-3539-4cd3-b6f0-134d95df5f99' data-moduleName="customHtml" id='widgetCustomHtml31f84506-3539-4cd3-b6f0-134d95df5f99' class="widget widgetCustomHtml skin39 narrow" >
+	<div class="widgetBody pageStyles" id="widgetBody31f84506-3539-4cd3-b6f0-134d95df5f99">
+		<div id="customHtml31f84506-3539-4cd3-b6f0-134d95df5f99"><div><style>
+  /* CP icon */
+  .cpBylineIconTS {
+    color: #fff;
+  }
+  /* CP Text */
+  .cpBylineTextTS,
+  .cpBylineTextTS a:link {
+    color: #fff;
+  }
+
+  .cpBylineTS {
+    text-align: center;
+  }
+  
+  .cpBylineIconTS {
+    fill: currentColor;
+    width: 39px;
+    height: 26px;
+    display: inline;
+    vertical-align: middle;
+  }
+</style>
+
+<div class="widgetItem cpBylineTS">
+  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 100 100" class="cpBylineIconTS">
+    <path class="c" d="M73.4,23.2h-19v16.7h19c2.8,0,5,2.2,5,5c0,2.8-2.2,5-5,5h-19v28.4h5.5l11.3-11.7h2.2c11.9,0,21.6-9.7,21.6-21.6C95,33,85.3,23.2,73.4,23.2"></path>
+    <path class="p" d="M45.8,66.5H26.6C14.7,66.5,5,56.8,5,44.9C5,33,14.7,23.2,26.6,23.2h19.1v16.7H26.6c-2.8,0-5,2.2-5,5c0,2.8,2.2,5,5,5h19.1V66.5z"></path>
+  </svg>
+  <span class="cpBylineTextTS">Government Websites by <a href="https://connect.civicplus.com/referral" onkeypress="this.onclick();" onclick="return showExternalSiteDialog(this);">CivicPlus&reg;</a></span>
+</div>
+</div></div>
+	</div>
+	</div>
+	</div> <!-- inner column -->
+
+	</div> <!-- inner row -->
+
+			</div><!-- outer column --><!--		--></div> <!-- outer row -->
+
+
+	</div>
+</div></div>
+</div>
+</div>
+
+            </div>
+        </div>
+    </div>
+
+
+<link href="/745732998.css" rel="stylesheet" type="text/css" />
+
+<div tabindex="0"></div>
+<div id="SplashMessageWrapper" class="cp-Splash-wrapper">
+	<div role="dialog" aria-labelledby="cp-Splash-title" aria-describedby="editorContentDesc" aria-modal="true" tabindex="-1" id="SplashMessage" class="hidden cp-Splash cp-Splash--modal is-open">
+		<div class="cp-Splash-header">
+			<span class="cp-Splash-title" id="cp-Splash-title">Loading</span>
+			<button class="cp-Splash-Btn cp-Splash-close" aria-label="Close this modal" title="Close this window">
+				<svg id="iconClose" viewBox="0 0 25 25">
+					<polygon style="fill:currentcolor"
+							 points="18.806,6.98 18.075,6.248 12.532,11.792 6.989,6.248 6.257,6.98 11.786,12.508 6.212,18.084 6.943,18.815 12.532,13.224 18.12,18.815 18.851,18.084 13.277,12.508"></polygon>
+				</svg>
+			</button>
+		</div>
+		<div class="cp-Splash-body">
+			<div class="cp-Splash-Prose editorContent fr-view fr-element" id="editorContentDesc">
+				<!-- Content from the Froala Editor will go here. -->
+				Loading
+			</div>
+		</div>
+		<div class="cp-Splash-footer">
+			<button class="cp-Splash-Btn cp-Splash-Btn--NoShow">Do Not Show Again</button>
+			<button class="cp-Splash-Btn cp-Splash-Btn--Close">Close</button>
+		</div>
+	</div>
+</div>
+<div tabindex="0"></div>
+
+<script src="/Assets/Scripts/APIClient.js"></script>
+<script src="/Assets/Mystique/Shared/Scripts/Moment/Moment.min.js"></script>
+<script src="/Assets/Scripts/SplashModal/SplashModalRender.js"></script>
+<script>
+
+		$(document).ready(function () {
+			var filter = {
+				targetId: '',
+				targetType: 0
+			}
+
+			new SplashModalRender().triggerRender(filter);
+		});
+</script>
+    
+	
+	
+
+
+
+
+
+
+    <script src="/1729008743.js" type="text/javascript"></script>
+    <!-- Fixed Nav Adjustment -->
+<script>
+  function getValueTS(elem, attr) {
+    const val = elem.css(attr);
+    if (val === undefined) return undefined;
+    const num = parseInt(val, 10);
+    if (num === NaN) return undefined;
+    return num;
+  }
+
+  function clampTS(number, min, max) {
+    return Math.min(Math.max(number, min), max);
+  }
+
+  function isPageEditingTS() {
+    return (
+      $("#doneEditing").length > 0 || // In live edit
+      typeof DesignCenter !== "undefined" // In theme manager
+    );
+  }
+
+  const bgColorRegexTS = /rgba\((\d+), (\d+), (\d+), (\d*\.?\d*)\)/;
+  function isTransparentTS(elem) {
+    const bg = elem.css('background-color');
+    if (typeof bg !== "string" || !bg.startsWith('rgba(')) return false;
+    const matchState = bg.match(bgColorRegexTS);
+    if (!matchState || matchState.length !== 5) return false;
+    const alpha = parseFloat(matchState[4], 10);
+    if (!(alpha >= 0 && alpha < 1)) return false;
+    return true;
+  }
+
+  function iterateLeftpads(cb) {
+    const containersTS = $("[class^='siteWrap'],[class*=' siteWrap']");
+    for (let i = 0; i < containersTS.length; i++) {
+      const containerTS = containersTS[i];
+      // Skip the body container and anything with data-skip-leftpad
+      if (
+        containerTS.id !== "bodyContainerTS" &&
+        containerTS.getAttribute('data-skip-leftpad') === null
+      ) {
+        cb(containerTS);
+      }
+    }
+  }
+
+  const anchor = $("#divToolbars");
+  const bodyContainerTS = $("#bodyContainerTS");
+
+  // Outer banner padding (push banner down)
+  const outerSizingTS = $("#bannerContainerTS");
+  // Inner banner padding (push banner content down) - Transparent header OR on attaching headers
+  const innerSizingTS = $("#bannerSizingTS");
+
+  const forceUnfixClassTS = "forceUnfixTS";
+
+  const fixedTopTS = $(".fixedTopTS");
+  const fixedBottomTS = $(".fixedBottomTS");
+  const fixedLeftTS = $(".fixedLeftTS");
+
+  var initialTopTS;
+  var topAttachTS;
+  if (fixedTopTS && fixedTopTS.length === 1) {
+    initialTopTS = getValueTS(fixedTopTS, 'top');
+    const attachment = fixedTopTS.attr('data-attach');
+    if (attachment) topAttachTS = $("#" + attachment);
+    if (!topAttachTS || topAttachTS.length !== 1) topAttachTS = undefined;
+  }
+
+  function resizeAdjustmentTS() {
+    const editing = isPageEditingTS();
+
+    // Fixed top script
+    (function () {
+      if (!fixedTopTS || fixedTopTS.length !== 1 || initialTopTS === undefined) return;
+
+      if (editing) {
+        fixedTopTS[0].classList.add(forceUnfixClassTS);
+      } else {
+        fixedTopTS[0].classList.remove(forceUnfixClassTS);
+      }
+
+      const topPosition = fixedTopTS.css('position');
+      if (topPosition === 'fixed') {
+        if (topAttachTS) {
+          scrollAdjustmentTS();
+        } else {
+          const anchorHeight = anchor.outerHeight() - 1;
+          fixedTopTS.css('top', anchorHeight + initialTopTS);
+        }
+      } else {
+        fixedTopTS.css('top', initialTopTS);
+      }
+
+      if (topPosition === 'fixed' || topPosition === 'absolute') {
+        // Bump the banner content down
+        if (isTransparentTS(fixedTopTS)) {
+          innerSizingTS.css('padding-top', initialTopTS + fixedTopTS.outerHeight());
+          outerSizingTS.css('padding-top', '');
+
+          try {
+            window.Pages.onResizeHandlersExecute();
+          } catch (e) { }
+        } else {
+          outerSizingTS.css('padding-top', fixedTopTS.outerHeight());
+          innerSizingTS.css('padding-top', '');
+        }
+      } else {
+        innerSizingTS.css('padding-top', '');
+        outerSizingTS.css('padding-top', '');
+      }
+    })();
+
+    // Fixed bottom script
+    (function () {
+      if (!fixedBottomTS || fixedBottomTS.length === 0) return;
+
+      // If the widget has gone narrow, force unfix
+      if (editing || fixedBottomTS.outerHeight() > 200) {
+        fixedBottomTS[0].classList.add(forceUnfixClassTS);
+      } else {
+        fixedBottomTS[0].classList.remove(forceUnfixClassTS);
+      }
+
+      if (fixedBottomTS.css('position') === 'fixed') {
+        bodyContainerTS.css('padding-bottom', fixedBottomTS.outerHeight());
+      } else {
+        bodyContainerTS.css('padding-bottom', '');
+      }
+    })();
+
+    // Fixed left script
+    (function () {
+      if (!fixedLeftTS || fixedLeftTS.length === 0) return;
+
+      if (editing) {
+        fixedLeftTS[0].classList.add(forceUnfixClassTS);
+      } else {
+        fixedLeftTS[0].classList.remove(forceUnfixClassTS);
+      }
+
+      if (fixedLeftTS.css('position') === 'fixed') {
+        const anchorHeight = anchor.outerHeight() - 1;
+        fixedLeftTS.css('top', anchorHeight);
+        const leftBoundingTS = fixedLeftTS[0].getBoundingClientRect();
+        iterateLeftpads(function (containerTS) {
+          const containerBoundingTS = containerTS.getBoundingClientRect();
+          if (containerBoundingTS.left <= leftBoundingTS.right) {
+            $(containerTS).css('padding-left', leftBoundingTS.width + 16);
+          }
+        });
+      } else {
+        fixedLeftTS.css('top', '');
+        iterateLeftpads(function (containerTS) {
+          $(containerTS).css('padding-left', '');
+        });
+      }
+    })();
+  }
+
+  function scrollAdjustmentTS() {
+    if (!fixedTopTS || fixedTopTS.length !== 1 || !topAttachTS || topAttachTS.length !== 1) return;
+    const topPosition = fixedTopTS.css('position');
+    if (topPosition === 'fixed' || topPosition === 'absolute') {
+      const anchorBounding = anchor[0].getBoundingClientRect();
+      const attachBounding = topAttachTS[0].getBoundingClientRect();
+      const scrollTop = $(window).scrollTop();
+
+      fixedTopTS.css('top', Math.max(anchorBounding.bottom - 1, attachBounding.bottom));
+    } else {
+      fixedTopTS.css('top', initialTopTS);
+    }
+  }
+
+  $(window).load(function () {
+    setTimeout(function () {
+      try {
+        resizeAdjustmentTS();
+      } catch (e) {
+        console.error(e);
+      }
+    }, 350);
+
+    $(window).scroll(function () {
+      try {
+        scrollAdjustmentTS();
+      } catch (e) {
+        console.error(e);
+      }
+    });
+
+    var adjustTimeoutTS;
+    $(window).resize(function () {
+      clearTimeout(adjustTimeoutTS);
+      adjustTimeoutTS = setTimeout(function () {
+        try {
+          resizeAdjustmentTS();
+        } catch (e) {
+          console.error(e);
+        }
+      }, 350);
+    });
+
+    $.when(window.Pages.angularToolbarComplete).done(function () {
+      try {
+        resizeAdjustmentTS();
+      } catch (e) {
+        console.error(e);
+      }
+    });
+  });
+</script>
+<!-- End Fixed Nav Adjustment -->
+
+<script type="text/javascript">
+window._monsido = window._monsido || {
+token: "nF0_FwLh7A6xLjVGVwU0kA",
+statistics: {
+enabled: true,
+cookieLessTracking: false,
+documentTracking: {
+enabled: false,
+documentCls: "monsido_download",
+documentIgnoreCls: "monsido_ignore_download",
+documentExt: [],
+},
+},
+heatmap: {
+enabled: true,
+},
+pageCorrect: {
+enabled: true,
+},
+};
+</script>
+<script type="text/javascript" async src="https://app-script.monsido.com/v2/monsido-script.js"></script>
+
+
+<!----------Google Translate (Mobile Friendly)--------->
+<style>#google-translate-container {float: left;padding: 3px 5px 0px 0px;}.goog-te-combo,.goog-te-banner *,.goog-te-ftab *,.goog-te-menu *,.goog-te-menu2 *,.goog-te-balloon * {font-family: arial;font-size: 10pt;background-image: url("https://theme.zdassets.com/theme_assets/958586/bae8aa24db8d43595871692a9d259186f2db3fb4.png");background-position: 3px 4px;background-size: 22px;background-repeat: no-repeat;text-indent: 20px;background-color: #fff;color: #000 !important;}.goog-logo-link {display: none !important;}.goog-te-gadget {color: transparent !important;}.goog-te-gadget .goog-te-combo {margin: 2px 0 !important;border-radius: 15px !important;}.goog-te-combo{border: 1px solid !important;border-color: #BCC9D7 #96A3B1 #96A3B1 #BCC9D7 !important;border-radius: 0 !important;height:32px; !important;padding: 0 1px 0 .25rem !important;}
+#launcher-wrapper {bottom: 50px !important;}
+</style>
+<div id="google-translate-container">
+<div id="google_translate_element" style="position: fixed; bottom: 0px; right: 20px; z-index: 5;"></div>
+</div>
+<script>
+function googleTranslateElementInit() {
+var el = document.getElementById("google_translate_element");
+if (el && el.innerHTML.trim() !== "") {
+    return;
+}
+
+new google.translate.TranslateElement({ pageLanguage: "en" }, "google_translate_element");
+// begin accessibility compliance
+$('img.goog-te-gadget-icon').attr('alt','Google Translate');
+$('div#goog-gt-tt div.logo img').attr('alt','translate');
+$('div#goog-gt-tt .original-text').css('text-align','right');
+$('.goog-te-gadget-simple .goog-te-menu-value span').css('color','#000000');
+$('.goog-te-combo').attr('aria-label','google translate languages');
+$('svg.goog-te-spinner').attr('title','Google Translate Spinner');
+$('.goog-te-gadget-simple .goog-te-menu-value span').css('color','#000000');
+}
+$(function() {
+$.getScript("//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit");
+});
+</script>
+<!--------------End Google Translate----------------->
+
+
+    <script type="text/javascript">
+        $(function () {
+            document.cookie = "responsiveGhost=0; path=/";
+        });
+        $(window).on("load", function () {
+            $('body').addClass('doneLoading').removeClass('hideContent');
+
+            if ($('#404Content').length > 0)
+                $('div#bodyWrapper').css('padding', '0px');
+        });
+    </script>
+
+    <noscript>
+        <style>
+            body.hideContent {
+                opacity: 1 !important;
+            }
+        </style>
+    </noscript>
+
+        
+<div style="display: none;">
+	<svg xmlns="http://www.w3.org/2000/svg" style="display:none;">
+
+		<symbol id="iconArrow--left" viewbox="0 0 25 25">
+			<title>Arrow Left</title>
+			<polygon style="fill:currentcolor" points="18.044,25 19.498,23.545 8.409,12.454 19.408,1.455 17.954,0 5.502,12.452"></polygon>
+		</symbol>
+
+		<symbol id="iconArrow--right" viewbox="0 0 25 25">
+			<title>Arrow Right</title>
+			<polygon style="fill:currentcolor" points="6.957,0 5.502,1.455 16.591,12.546 5.592,23.545 7.047,25 19.498,12.548"></polygon>
+		</symbol>
+
+	</svg>
+</div>
+    <script type="text/javascript">loadCSS('//fonts.googleapis.com/css?family=Libre+Baskerville:700,regular|Open+Sans:500,600,700,regular|');</script>
+    
+
+    <div class="hidden activeWidgetSkinComponentsOnPageJson">[]</div>
+        <div style="display: none;">
+            <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+                <symbol id="iconSlideshowArrowLeft" viewBox="0 0 22.68 40">
+                    <title>Slideshow Left Arrow</title>
+                    <g>
+                        <path style="fill:currentcolor;" d="M20,40a2.67,2.67,0,0,1-1.9-.79L.79,21.9a2.68,2.68,0,0,1,0-3.79L18.1.79a2.68,2.68,0,1,1,3.79,3.79L6.47,20,21.89,35.42A2.68,2.68,0,0,1,20,40Z"></path>
+                    </g>
+                </symbol>
+                <symbol id="iconSlideshowArrowRight" viewBox="0 0 22.68 40">
+                    <title>Slideshow Right Arrow</title>
+                    <g>
+                        <path style="fill:currentcolor;" d="M2.68,0a2.67,2.67,0,0,1,1.9.79L21.89,18.1a2.68,2.68,0,0,1,0,3.79L4.58,39.21A2.68,2.68,0,0,1,.79,35.42L16.21,20,.79,4.58A2.68,2.68,0,0,1,2.68,0Z"></path>
+                    </g>
+                </symbol>
+            </svg>
+        </div>
+    
+	
+
+    <div id="root-picker-outlet"></div>
+</body>
+</html>

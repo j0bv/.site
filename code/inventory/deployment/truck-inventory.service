@@ -1,0 +1,30 @@
+[Unit]
+Description=Truck Inventory Scraper + Email Matcher
+After=network.target postgresql.service
+Wants=postgresql.service
+
+[Service]
+Type=simple
+User=truck_service
+Group=truck_service
+WorkingDirectory=/opt/truck-inventory
+ExecStart=/opt/truck-inventory/truck-inventory
+Restart=always
+RestartSec=60
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=truck-inventory
+
+# Environment variables
+Environment="NODE_ENV=production"
+EnvironmentFile=/opt/truck-inventory/.env
+
+# Security settings
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/opt/truck-inventory
+
+[Install]
+WantedBy=multi-user.target

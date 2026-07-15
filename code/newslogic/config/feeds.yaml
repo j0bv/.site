@@ -1,0 +1,364 @@
+version: "1.0"
+description: "757 Area News and Geospatial Data Aggregation"
+
+# ========== NEWS & MEDIA FEEDS ==========
+feeds:
+  local_news:
+    enabled: true
+    sources:
+      # TV News Stations
+      - id: "wavy-news-10"
+        name: "WAVY 10 News"
+        type: "rss"
+        url: "https://www.wavy.com/feed/"
+        category: "news"
+        priority: "high"
+        refresh_interval: 3600
+        tags: ["breaking-news", "757", "TV"]
+        geo_tags: ["hampton", "norfolk", "hampton-roads"]
+        enabled: true
+
+      - id: "wavy-weather"
+        name: "WAVY 10 Weather"
+        type: "rss"
+        url: "https://www.wavy.com/weather/feed/"
+        category: "weather"
+        priority: "high"
+        refresh_interval: 3600
+        tags: ["weather", "757", "TV"]
+        geo_tags: ["hampton-roads"]
+        enabled: true
+
+      - id: "13news-now"
+        name: "13News Now WVEC"
+        type: "rss"
+        url: "https://www.13newsnow.com/rss/"
+        category: "news"
+        priority: "high"
+        refresh_interval: 3600
+        tags: ["breaking-news", "757", "TV"]
+        geo_tags: ["hampton", "norfolk", "virginia-beach", "hampton-roads"]
+        enabled: true
+
+      - id: "wtkr-news-3"
+        name: "WTKR News 3 RSS"
+        type: "rss"
+        url: "https://www.wtkr.com/news/rss"
+        category: "news"
+        priority: "high"
+        refresh_interval: 3600
+        tags: ["breaking-news", "757", "TV"]
+        geo_tags: ["virginia-beach", "norfolk", "hampton-roads"]
+        enabled: true
+
+      # Newspapers / Publications
+      - id: "virginian-pilot"
+        name: "The Virginian-Pilot"
+        type: "rss"
+        url: "https://www.pilotonline.com/feed/"
+        category: "news"
+        priority: "medium"
+        refresh_interval: 3600
+        tags: ["news", "757", "publication"]
+        geo_tags: ["hampton-roads", "norfolk", "virginia-beach"]
+        enabled: true
+
+      - id: "virginian-pilot-filtered"
+        name: "The Virginian-Pilot (Last 7 Days)"
+        type: "rss"
+        url: "https://www.pilotonline.com/arcio/rss/category/news/?query=display_date:[now-7d+TO+*]"
+        category: "news"
+        priority: "medium"
+        refresh_interval: 3600
+        tags: ["news", "757", "publication"]
+        geo_tags: ["hampton-roads"]
+        enabled: true
+
+      - id: "daily-press"
+        name: "The Daily Press"
+        type: "rss"
+        url: "https://www.dailypress.com/feed/"
+        category: "news"
+        priority: "medium"
+        refresh_interval: 3600
+        tags: ["news", "757", "publication"]
+        geo_tags: ["hampton", "newport-news", "williamsburg"]
+        enabled: true
+
+      - id: "daily-press-filtered"
+        name: "Daily Press (Last 7 Days)"
+        type: "rss"
+        url: "https://www.dailypress.com/arcio/rss/category/news/?query=display_date:[now-7d+TO+*]"
+        category: "news"
+        priority: "medium"
+        refresh_interval: 3600
+        tags: ["news", "757", "publication"]
+        geo_tags: ["hampton-roads"]
+        enabled: true
+
+      - id: "williamsburg-yorktown-daily"
+        name: "Williamsburg Yorktown Daily"
+        type: "rss"
+        url: "https://wydaily.com/feed/"
+        category: "news"
+        priority: "low"
+        refresh_interval: 86400
+        tags: ["news", "publication"]
+        geo_tags: ["williamsburg", "yorktown"]
+        enabled: true
+
+      - id: "suffolk-news-herald"
+        name: "The Suffolk News-Herald"
+        type: "rss"
+        url: "https://www.suffolknewsherald.com/feed/"
+        category: "news"
+        priority: "low"
+        refresh_interval: 86400
+        tags: ["news", "publication"]
+        geo_tags: ["suffolk"]
+        enabled: false
+
+      - id: "virginian-review"
+        name: "The Virginian Review"
+        type: "rss"
+        url: "https://virginianreview.com/feed/"
+        category: "news"
+        priority: "low"
+        refresh_interval: 86400
+        tags: ["news", "publication"]
+        geo_tags: ["hampton-roads"]
+        enabled: true
+
+      - id: "coastal-virginia-magazine"
+        name: "Coastal Virginia Magazine"
+        type: "rss"
+        url: "https://covabizmag.com/feed/"
+        category: "business"
+        priority: "low"
+        refresh_interval: 86400
+        tags: ["business", "publication"]
+        geo_tags: ["hampton-roads"]
+        enabled: true
+
+      - id: "inside-business"
+        name: "Inside Business"
+        type: "rss"
+        url: "https://www.insidebiz.com/feed/"
+        category: "business"
+        priority: "low"
+        refresh_interval: 86400
+        tags: ["business", "publication"]
+        geo_tags: ["hampton-roads"]
+        enabled: true
+
+      - id: "port-folio-weekly"
+        name: "Port Folio Weekly"
+        type: "rss"
+        url: "https://www.portfolioweekly.com/feed/"
+        category: "news"
+        priority: "low"
+        refresh_interval: 604800
+        tags: ["news", "publication"]
+        geo_tags: ["hampton-roads"]
+        enabled: false
+
+      - id: "virginia-gazette"
+        name: "Virginia Gazette"
+        type: "rss"
+        url: "https://www.vagazette.com/feed/"
+        category: "news"
+        priority: "low"
+        refresh_interval: 86400
+        tags: ["news", "publication"]
+        geo_tags: ["williamsburg"]
+        enabled: true
+
+      - id: "virginia-business"
+        name: "Virginia Business"
+        type: "rss"
+        url: "https://www.virginiabusiness.com/feed/"
+        category: "business"
+        priority: "medium"
+        refresh_interval: 3600
+        tags: ["business", "757"]
+        geo_tags: ["virginia"]
+        enabled: true
+
+  government:
+    enabled: true
+    sources:
+      # City Government Feeds
+      - id: "hampton-city"
+        name: "City of Hampton RSS"
+        type: "rss"
+        url: "https://www.hampton.gov/rss.aspx"
+        category: "government"
+        priority: "medium"
+        refresh_interval: 86400
+        tags: ["government", "hampton", "city_government"]
+        geo_tags: ["hampton"]
+        enabled: true
+
+      - id: "newport-news-city"
+        name: "City of Newport News RSS"
+        type: "rss"
+        url: "https://www.nnva.gov/rss.aspx"
+        category: "government"
+        priority: "medium"
+        refresh_interval: 86400
+        tags: ["government", "newport-news", "city_government"]
+        geo_tags: ["newport-news"]
+        enabled: true
+
+      - id: "norfolk-city"
+        name: "City of Norfolk RSS"
+        type: "rss"
+        url: "https://www.norfolk.gov/rss.aspx"
+        category: "government"
+        priority: "medium"
+        refresh_interval: 86400
+        tags: ["government", "norfolk", "city_government"]
+        geo_tags: ["norfolk"]
+        enabled: true
+
+      - id: "chesapeake-city"
+        name: "City of Chesapeake RSS"
+        type: "rss"
+        url: "https://www.cityofchesapeake.net/rss.aspx"
+        category: "government"
+        priority: "medium"
+        refresh_interval: 86400
+        tags: ["government", "chesapeake", "city_government"]
+        geo_tags: ["chesapeake"]
+        enabled: true
+
+      - id: "portsmouth-city"
+        name: "City of Portsmouth RSS"
+        type: "rss"
+        url: "https://www.portsmouthva.gov/rss.aspx"
+        category: "government"
+        priority: "medium"
+        refresh_interval: 86400
+        tags: ["government", "portsmouth", "city_government"]
+        geo_tags: ["portsmouth"]
+        enabled: true
+
+      - id: "suffolk-city"
+        name: "City of Suffolk RSS"
+        type: "rss"
+        url: "https://www.suffolkva.us/rss.aspx"
+        category: "government"
+        priority: "medium"
+        refresh_interval: 86400
+        tags: ["government", "suffolk", "city_government"]
+        geo_tags: ["suffolk"]
+        enabled: true
+
+      # Regional Planning
+      - id: "hrpdc"
+        name: "Hampton Roads Planning District Commission RSS"
+        type: "rss"
+        url: "https://www.hrpdcva.gov/rss.aspx"
+        category: "government"
+        priority: "medium"
+        refresh_interval: 86400
+        tags: ["government", "planning", "757", "regional_planning"]
+        geo_tags: ["hampton-roads"]
+        enabled: true
+
+      - id: "hrtpo"
+        name: "Hampton Roads Transportation Planning Organization"
+        type: "rss"
+        url: "https://www.hrtpo.org/rss.aspx"
+        category: "government"
+        priority: "medium"
+        refresh_interval: 86400
+        tags: ["government", "transportation", "757", "transportation_planning"]
+        geo_tags: ["hampton-roads"]
+        enabled: true
+
+  transit:
+    enabled: true
+    sources:
+      - id: "gohrt-announcements"
+        name: "GoHRT Announcements RSS"
+        type: "rss"
+        url: "https://gohrt.com/feed/"
+        category: "transit"
+        priority: "high"
+        refresh_interval: 3600
+        tags: ["transit", "public_transit", "announcements"]
+        geo_tags: ["hampton-roads"]
+        enabled: true
+
+      - id: "port-of-virginia"
+        name: "Port of Virginia News"
+        type: "rss"
+        url: "https://www.portofvirginia.com/feed/"
+        category: "transit"
+        priority: "medium"
+        refresh_interval: 86400
+        tags: ["transit", "port_operations", "maritime"]
+        geo_tags: ["hampton-roads"]
+        enabled: true
+
+      - id: "norfolk-airport"
+        name: "Norfolk International Airport"
+        type: "rss"
+        url: "https://www.norfolkairport.com/feed/"
+        category: "transit"
+        priority: "medium"
+        refresh_interval: 86400
+        tags: ["transit", "airport", "aviation"]
+        geo_tags: ["norfolk"]
+        enabled: true
+
+  education:
+    enabled: true
+    sources:
+      - id: "odu-mace-crown"
+        name: "Old Dominion U. Mace & Crown"
+        type: "rss"
+        url: "https://maceandcrown.com/feed/"
+        category: "education"
+        priority: "low"
+        refresh_interval: 86400
+        tags: ["education", "university"]
+        geo_tags: ["norfolk"]
+        enabled: true
+
+      - id: "regent-university"
+        name: "Regent University News"
+        type: "rss"
+        url: "https://www.regent.edu/news/feed/"
+        category: "education"
+        priority: "low"
+        refresh_interval: 86400
+        tags: ["education", "university"]
+        geo_tags: ["virginia-beach"]
+        enabled: true
+
+      - id: "evms-news"
+        name: "Eastern Virginia Medical School News"
+        type: "rss"
+        url: "https://www.evms.edu/news/feed/"
+        category: "education"
+        priority: "low"
+        refresh_interval: 86400
+        tags: ["education", "university", "medical"]
+        geo_tags: ["norfolk"]
+        enabled: true
+
+  real_time:
+    enabled: true
+    sources:
+      - id: "noaa-alerts"
+        name: "NOAA Alerts"
+        type: "rss"
+        url: "https://alerts.weather.gov/cap/wwaatmget.php?x=VAZ095&y=0"
+        category: "weather"
+        priority: "critical"
+        refresh_interval: 300
+        tags: ["weather", "alerts", "real-time"]
+        geo_tags: ["virginia", "hampton-roads"]
+        enabled: true

@@ -1,0 +1,765 @@
+{
+  "name": "Creative Director Agent",
+  "nodes": [
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -120,
+        160
+      ],
+      "id": "0738d2fc-51ac-4b5a-b1eb-5f0adce15f4d",
+      "name": "When chat message received",
+      "webhookId": "8aad58cc-a144-45ab-aa68-3212be6db137"
+    },
+    {
+      "parameters": {
+        "options": {
+          "systemMessage": "You are a an expert copywriter and marketing creative director.\n\nYour job is taking in request for image marketing content generation from the user and use a tool given to you which lets you trigger some image generation workflow\n\nGiven an user request about creating a image marketing set of content, you will generate for each request of the user an array of different variant descriptions of the content you want to create which will be sent to actual image generation workflow. Ensure to be really precise with your requests, image models cant get implicit context so you must carefully describe the image even in small details, element positioning, photographic details etc...\n\nThe image model you will working with is an advanced model for generating ultra-realistic images, with the ability of including text in the image.\n\nThis is a sample description used to prompt the model:\n```txt\nThe text \"V3 Turbo\" in the center middle. A color film-inspired portrait of a young man looking to the side with a shallow depth of field that blurs the surrounding elements, drawing attention to his eye. The fine grain and cast suggest a high ISO film stock, while the wide aperture lens creates a motion blur effect, enhancing the candid and natural documentary style.\n```\n\nIf the user don't tell you important details, try to clarify this by asking question before generating descriptions.\n\nNote: When we need to represent people ultra-realistic photographic look is preferred (unless specified otherwise)"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2,
+      "position": [
+        80,
+        160
+      ],
+      "id": "89beb4af-fa2a-4ecc-a93c-6643b6e7d566",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "contextWindowLength": 15
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        100,
+        380
+      ],
+      "id": "3c6619c3-9fa7-43cd-9f0d-e531d616bed6",
+      "name": "Simple Memory"
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "12b2f502-3ec7-4d71-b647-b68acd8f7c18",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -180,
+        -360
+      ],
+      "id": "6881aefa-1969-4b0c-9e53-6830d12847fb",
+      "name": "Webhook",
+      "webhookId": "12b2f502-3ec7-4d71-b647-b68acd8f7c18"
+    },
+    {
+      "parameters": {
+        "inputDataFieldName": "image",
+        "name": "=image-{{ (Math.random() * (100000 - 999) + 999).round() }}",
+        "driveId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "My Drive"
+        },
+        "folderId": {
+          "__rl": true,
+          "value": "1IAZITsISsz-ULOETlH3P5bdIeS_RAZZw",
+          "mode": "list",
+          "cachedResultName": "business",
+          "cachedResultUrl": "https://drive.google.com/drive/folders/1IAZITsISsz-ULOETlH3P5bdIeS_RAZZw"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        1540,
+        -80
+      ],
+      "id": "148ca3bc-8482-4992-a469-247667952afb",
+      "name": "Google Drive",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "eBFhEOVIrK0AXZD9",
+          "name": "Google Drive account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "image",
+        "operation": "analyze",
+        "modelId": {
+          "__rl": true,
+          "value": "gpt-4o",
+          "mode": "list",
+          "cachedResultName": "GPT-4O"
+        },
+        "text": "### Instruction\nYour job is to analyze an image generated with a specific prompt by an AI image model\n\nYou will be given an image and the prompt which generated it\n\nYour TASK is to output a SCORE which represent how much the image is actually compelling to the prompt and if it suitable for an HIGH QUALITY marketing campaign.\n\nOUTPUT ONLY ONE SCORE FROM 1-10 (only integers)\nOUTPUT ONLY THE SCORE NO OTHER TEXT\nExamples:\n\"8\" --> Valid\n\"the score is 8\" --> Invalid\n\"8 and 4\" --> Invalid",
+        "inputType": "base64",
+        "binaryPropertyName": "=image",
+        "options": {
+          "detail": "auto"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.8,
+      "position": [
+        1180,
+        -360
+      ],
+      "id": "247dd9ad-b4d7-4c2c-b6b7-9382de93c5e1",
+      "name": "Quality Control",
+      "credentials": {
+        "openAiApi": {
+          "id": "Z3R8Ji2VnI8qLeU1",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "gpt-4.1",
+          "mode": "list",
+          "cachedResultName": "GPT-4.1"
+        },
+        "messages": {
+          "values": [
+            {
+              "content": "=### INSTRUCTIONS\nYou will be given an description of an image which will be used to create an image using an AI image generation model. The model create ultra-realistic images but needs to be prompted with very detailed and descriptive instructions cause it cant infer implicit context so the prompt should carefully describe the image even in small details, element positioning, photographic details etc...\n\nYour job is to ensure the prompt is valid and can produce an high quality result OR improve it adding more details to it.\n\nModify a prompt ONLY if you think is needed to do so. Don't just overcomplicate or even worse CHANGE THE ORIGINAL CONCEPT (NEVER DO THIS, NEVER).\n\nCAREFULLY FOLLOW ALL THE INSTRUCTIONS I GAVE YOU.\n\nYOUR OUTPUT SHOULD BE A JSON OBJECT:\n```json\n{\n   \"prompt\": \"<improved_prompt or original_prompt>\"\n}\n```\n\nOUTPUT ONLY THE JSON, NOTHING ELSE\n\n### User Input\n {{ $json.body.imageGenerationPrompt }}"
+            }
+          ]
+        },
+        "jsonOutput": true,
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.8,
+      "position": [
+        40,
+        -420
+      ],
+      "id": "995b9bdf-8c37-4e3e-ba38-31c76c1a2ed7",
+      "name": "Prompt Reviewer",
+      "credentials": {
+        "openAiApi": {
+          "id": "Z3R8Ji2VnI8qLeU1",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "e8091d32-f2c8-4696-9358-1aa0e0c94110",
+              "leftValue": "={{ $json.content.toNumber() }}",
+              "rightValue": 7,
+              "operator": {
+                "type": "number",
+                "operation": "gt"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1320,
+        -360
+      ],
+      "id": "85730b2c-182b-4c50-905b-653987a0832b",
+      "name": "Threshold Check"
+    },
+    {
+      "parameters": {
+        "toolDescription": "Makes an HTTP request to trigger image generation workflow",
+        "method": "POST",
+        "url": "https://paoloanzn.app.n8n.cloud/webhook-test/12b2f502-3ec7-4d71-b647-b68acd8f7c18",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "imageGenerationPrompt",
+              "value": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('parameters0_Value', ``, 'string') }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequestTool",
+      "typeVersion": 4.2,
+      "position": [
+        340,
+        320
+      ],
+      "id": "1a13ab0e-5dd6-42dd-8181-1fd3d856d61d",
+      "name": "Trigger Image Gen"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "claude-3-7-sonnet-20250219",
+          "cachedResultName": "Claude 3.7 Sonnet"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+      "typeVersion": 1.3,
+      "position": [
+        -40,
+        380
+      ],
+      "id": "0fdc6041-23f0-49b2-830b-44f204d4b0c0",
+      "name": "Anthropic Chat Model",
+      "credentials": {
+        "anthropicApi": {
+          "id": "9c9yxx7Njl7hn93m",
+          "name": "Anthropic account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "amount": 10
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        720,
+        -360
+      ],
+      "id": "338362f1-712d-43b4-8c14-6ba88aa44a5d",
+      "name": "Wait",
+      "webhookId": "14ddf410-ecf3-48f1-b11f-fa6b8a844d27"
+    },
+    {
+      "parameters": {
+        "mode": "chooseBranch"
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.1,
+      "position": [
+        1340,
+        -80
+      ],
+      "id": "d57a1ab5-ed43-4e68-9c36-4d490bf13639",
+      "name": "Merge"
+    },
+    {
+      "parameters": {
+        "content": "## Creative Director Agent\n\n- Model `Claude 3.5-Sonnet` + custom system prompt.",
+        "height": 480,
+        "width": 660,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -180,
+        40
+      ],
+      "typeVersion": 1,
+      "id": "5b492dc1-b88c-4cf2-87e2-51ce4fafbdfa",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "content": "## Content Creation Chain\n\n- Image Models `ideogram-ai/ideogram-v3-turbo`, `google/imagen-4`, `\n- Reviewer Model `gpt-4.1`\n- Scoring Model `gpt-4o`\n\n## Workflow\n1. Review and improve the prompt\n2. Generate and download the image\n3. Score the result\n4. Check the score against the threshold\n5. Iterate again OR Upload to Google Drive\n\n## IMPORTANT NOTE\nYou must set your own REPLICATE API key in the image generation nodes ",
+        "height": 460,
+        "width": 440
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -620,
+        -520
+      ],
+      "typeVersion": 1,
+      "id": "0a4e933a-c06c-4c83-b80b-9cd1fd24be74",
+      "name": "Sticky Note1"
+    },
+    {
+      "parameters": {
+        "content": "## Review (and improve) The Prompt",
+        "height": 400,
+        "width": 580,
+        "color": 3
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -60,
+        -500
+      ],
+      "typeVersion": 1,
+      "id": "728d6e01-6aa6-4b23-9353-6f876036a210",
+      "name": "Sticky Note2"
+    },
+    {
+      "parameters": {
+        "content": "## Download The Image\n",
+        "height": 260,
+        "width": 280,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        700,
+        -440
+      ],
+      "typeVersion": 1,
+      "id": "ade60f91-1695-4380-b055-108209b7ef3e",
+      "name": "Sticky Note3"
+    },
+    {
+      "parameters": {
+        "content": "## Quality Control Step",
+        "height": 260,
+        "width": 280,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        1160,
+        -440
+      ],
+      "typeVersion": 1,
+      "id": "bcc90897-4ecb-4f51-b00b-0aa70f49dc6d",
+      "name": "Sticky Note4"
+    },
+    {
+      "parameters": {
+        "content": "## Upload to GDrive",
+        "height": 220,
+        "width": 220,
+        "color": 6
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        1480,
+        -140
+      ],
+      "typeVersion": 1,
+      "id": "6944c058-2e48-4225-b5eb-abe1db99497f",
+      "name": "Sticky Note5"
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.output }}",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "file",
+              "outputPropertyName": "image"
+            }
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        840,
+        -360
+      ],
+      "id": "5b9203f4-4dd0-479a-81ea-a72311032f0a",
+      "name": "Download The Image"
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "gpt-4.1",
+          "mode": "list",
+          "cachedResultName": "GPT-4.1"
+        },
+        "messages": {
+          "values": [
+            {
+              "content": "=### INSTRUCTIONS\nYou will be given an description of an image which will be used to create an image using an AI image generation model. The model create ultra-realistic images but needs to be prompted with very detailed and descriptive instructions cause it cant infer implicit context so the prompt should carefully describe the image even in small details, element positioning, photographic details etc...\n\nYour job is to ensure the prompt is valid and can produce an high quality result OR improve it adding more details to it.\n\nYOU MUST IMPROVE THE PROMPT\n\nCAREFULLY FOLLOW ALL THE INSTRUCTIONS I GAVE YOU.\n\nYOUR OUTPUT SHOULD BE A JSON OBJECT:\n```json\n{\n   \"prompt\": \"<improved_prompt>\"\n}\n```\n\nOUTPUT ONLY THE JSON, NOTHING ELSE\n\n### User Input\n {{ $json.body.imageGenerationPrompt }}"
+            }
+          ]
+        },
+        "jsonOutput": true,
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.8,
+      "position": [
+        40,
+        -300
+      ],
+      "id": "f1a9a415-71c5-4490-befc-a95ec7bac9d3",
+      "name": "Force Improvement",
+      "credentials": {
+        "openAiApi": {
+          "id": "Z3R8Ji2VnI8qLeU1",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.replicate.com/v1/models/google/imagen-4/predictions",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer [Set your Replicate API key here, don't remove Bearer]"
+            },
+            {
+              "name": "Prefer",
+              "value": "wait"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"input\": {\n    \"prompt\": {{ JSON.stringify($json.message.content.prompt) }},\n    \"aspect_ratio\": \"16:9\",\n    \"safety_filter_level\": \"block_medium_and_above\"\n  }\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        540,
+        -520
+      ],
+      "id": "8d62f54d-b9b1-454c-883c-4b4b261d7c2c",
+      "name": "Image Generation Request (IMAGEN V4)"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.replicate.com/v1/models/ideogram-ai/ideogram-v3-turbo/predictions",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer [Set your Replicate API key here, don't remove Bearer]"
+            },
+            {
+              "name": "Prefer",
+              "value": "wait"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"input\": {\n    \"prompt\": {{ JSON.stringify($json.message.content.prompt) }},\n    \"aspect_ratio\": \"3:2\"\n  }\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        540,
+        -360
+      ],
+      "id": "5851a2a8-80d0-4b84-9292-e78d524ff773",
+      "name": "Image Generation Request (IDEOGRAM V3 TURBO)"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.replicate.com/v1/models/recraft-ai/recraft-v3/predictions",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer [Set your Replicate API key here, don't remove Bearer]"
+            },
+            {
+              "name": "Prefer",
+              "value": "wait"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"input\": {\n    \"size\": \"1365x1024\",\n    \"prompt\": {{ JSON.stringify($json.message.content.prompt) }}\n  }\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        540,
+        -200
+      ],
+      "id": "64afa835-560a-471b-8a0d-ce423d657e79",
+      "name": "Image Generation Request (RECRAFT V3)"
+    }
+  ],
+  "pinData": {
+    "Webhook": [
+      {
+        "json": {
+          "headers": {
+            "host": "paoloanzn.app.n8n.cloud",
+            "user-agent": "axios/1.8.3",
+            "content-length": "522",
+            "accept": "application/json,text/html,application/xhtml+xml,application/xml,text/*;q=0.9, image/*;q=0.8, */*;q=0.7",
+            "accept-encoding": "gzip, br",
+            "cdn-loop": "cloudflare; loops=1; subreqs=1",
+            "cf-connecting-ip": "20.218.238.119",
+            "cf-ew-via": "15",
+            "cf-ipcountry": "DE",
+            "cf-ray": "9498c024a208365a-FRA",
+            "cf-visitor": "{\"scheme\":\"https\"}",
+            "cf-worker": "n8n.cloud",
+            "content-type": "application/json",
+            "x-forwarded-for": "20.218.238.119, 162.158.111.49",
+            "x-forwarded-host": "paoloanzn.app.n8n.cloud",
+            "x-forwarded-port": "443",
+            "x-forwarded-proto": "https",
+            "x-forwarded-server": "traefik-prod-users-gwc-32-7487c6b997-gc8kf",
+            "x-is-trusted": "yes",
+            "x-real-ip": "20.218.238.119"
+          },
+          "params": {},
+          "query": {},
+          "body": {
+            "imageGenerationPrompt": "A minimalist futuristic scene with the text \"FOREVER BEGINS NOW\" prominently displayed. An elderly woman's hand is touching a sleek glass interface, while her reflection shows a young vibrant version of herself smiling back. The composition is clean with a monochromatic color palette and subtle blue lighting, characteristic of Black Mirror's aesthetic. The image has high contrast with sharp details and a polished, clean look that suggests advanced technology without being overtly sci-fi."
+          },
+          "webhookUrl": "https://paoloanzn.app.n8n.cloud/webhook-test/12b2f502-3ec7-4d71-b647-b68acd8f7c18",
+          "executionMode": "test"
+        }
+      }
+    ]
+  },
+  "connections": {
+    "When chat message received": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Prompt Reviewer",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Drive": {
+      "main": [
+        []
+      ]
+    },
+    "Quality Control": {
+      "main": [
+        [
+          {
+            "node": "Threshold Check",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prompt Reviewer": {
+      "main": [
+        [
+          {
+            "node": "Image Generation Request (IDEOGRAM V3 TURBO)",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Image Generation Request (IMAGEN V4)",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Image Generation Request (RECRAFT V3)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Threshold Check": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          }
+        ],
+        [
+          {
+            "node": "Force Improvement",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Trigger Image Gen": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Anthropic Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait": {
+      "main": [
+        [
+          {
+            "node": "Download The Image",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge": {
+      "main": [
+        [
+          {
+            "node": "Google Drive",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Download The Image": {
+      "main": [
+        [
+          {
+            "node": "Quality Control",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Force Improvement": {
+      "main": [
+        [
+          {
+            "node": "Image Generation Request (IDEOGRAM V3 TURBO)",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Image Generation Request (RECRAFT V3)",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Image Generation Request (IMAGEN V4)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Image Generation Request (IMAGEN V4)": {
+      "main": [
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Image Generation Request (IDEOGRAM V3 TURBO)": {
+      "main": [
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Image Generation Request (RECRAFT V3)": {
+      "main": [
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "68936ad1-6f1a-4396-8670-5ec2d7b8976b",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "db3c2d3698a1d65c9632c318b0f8874c99c3c8ec38f9fa1684001dc1e7ae08d8"
+  },
+  "id": "zPFyytI3TFF13QrB",
+  "tags": []
+}

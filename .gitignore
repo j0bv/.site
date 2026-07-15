@@ -1,0 +1,32 @@
+# Hostinger deployment artifacts
+default.php
+deploy-package.zip
+.htaccess
+
+# Old archive files
+the-monospace-web_*.zip
+
+# Personal draft documents
+cover-letter.md
+rewritten_experience.txt
+
+# Environment / secrets
+.env
+*.env
+.env.*
+!.env.example
+
+# Large media (hosted on jobv.site directly, linked via URL)
+*.mov
+
+# OS files
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~

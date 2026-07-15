@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	xmlns:dcterms="http://purl.org/dc/terms/"
+>
+
+<channel>
+	<title>WAVY.com</title>
+	<atom:link href="https://www.wavy.com/feed/" rel="self" type="application/rss+xml" />
+	<link>https://www.wavy.com</link>
+	<description>Hampton Roads Virginia and Northeastern North Carolina News, Weather, Traffic and Sports.</description>
+	<lastBuildDate>Fri, 02 Jan 2026 15:16:31 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.8.3</generator>
+
+<image>
+	<url>https://www.wavy.com/wp-content/uploads/sites/3/2020/06/cropped-wavy-icon-2.jpg?w=32</url>
+	<title>WAVY.com</title>
+	<link>https://www.wavy.com</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+	<item>
+		<title>Hampton Police: 1 killed, 3 injured in multi-vehicle crash</title>
+		<link>https://www.wavy.com/news/local-news/hampton/hampton-police-confirm-multi-vehicle-crash-is-fatal/</link>
+		
+		<dc:creator><![CDATA[Jimmy LaRoue]]></dc:creator>
+		<pubDate>Fri, 02 Jan 2026 04:11:13 +0000</pubDate>
+		<category><![CDATA[Hampton]]></category>		<category><![CDATA[Breaking News Email Alerts]]></category>
+		
+		<category><![CDATA[Instagram]]></category>
+		<category><![CDATA[Local News]]></category>
+		<category><![CDATA[Video]]></category>
+		<guid isPermaLink="false">https://www.wavy.com/?p=2987526</guid>
+
+					<description><![CDATA[One person was killed and three people were injured in a multi-vehicle crash Thursday at the intersection of Floyd Thompson Drive and Commander Shepard Boulevard near NASA Langley Research Center, Hampton Police said. ]]></description>
+		
+		
+		
+		      <dc:creator><![CDATA[Michael Rinker]]></dc:creator>
+<enclosure url="https://www.wavy.com/wp-content/uploads/sites/3/2026/01/Hamp-Floyd-Thompson-crash-Patrick-pic-2.jpg?w=900" type="image/jpeg" length="488092" />
+<dcterms:modified>2026-01-02T15:16:31+00:00</dcterms:modified>
+	</item>
+		<item>
+		<title>Family identifies man shot and killed at Frazier Lane house party, VBPD investigating</title>
+		<link>https://www.wavy.com/news/local-news/vbpd-gunshot-wound-reported-on-frazier-lane/</link>
+		
+		<dc:creator><![CDATA[Chrysnel Banzouzi]]></dc:creator>
+		<pubDate>Thu, 01 Jan 2026 18:07:24 +0000</pubDate>
+		<category><![CDATA[Local News]]></category>		<category><![CDATA[Breaking News Email Alerts]]></category>
+		<category><![CDATA[Crime]]></category>
+		<category><![CDATA[Instagram]]></category>
+		
+		<category><![CDATA[News]]></category>
+		<category><![CDATA[Video]]></category>
+		<category><![CDATA[Virginia Beach]]></category>
+		<guid isPermaLink="false">https://www.wavy.com/?p=2987238</guid>
+
+					<description><![CDATA[A man has died as the result of a shooting at a house party along Frazier Lane in Virginia Beach early Thursday morning, his family has confirmed to 10 On Your Side. ]]></description>
+		
+		
+		
+		      <dc:creator><![CDATA[Nick Broadway]]></dc:creator>
+<enclosure url="https://www.wavy.com/wp-content/uploads/sites/3/2026/01/snapshot-2026-01-01T161116.994.jpg?w=900" type="image/jpeg" length="271177" />
+<dcterms:modified>2026-01-02T07:02:22+00:00</dcterms:modified>
+	</item>
+		<item>
+		<title>VBPD: Teen dies following single-vehicle crash on First Court Road</title>
+		<link>https://www.wavy.com/news/local-news/fatal-single-vehicle-crash-in-virginia-beach-leaves-one-dead/</link>
+		
+		<dc:creator><![CDATA[Chrysnel Banzouzi]]></dc:creator>
+		<pubDate>Mon, 29 Dec 2025 11:45:06 +0000</pubDate>
+		<category><![CDATA[Local News]]></category>		<category><![CDATA[Instagram]]></category>
+		
+		<category><![CDATA[News]]></category>
+		<category><![CDATA[Virginia Beach]]></category>
+		<guid isPermaLink="false">https://www.wavy.com/?p=2984520</guid>
+
+					<description><![CDATA[One person has died following an overnight single-vehicle crash Monday in Virginia Beach, according to police.]]></description>
+		
+		
+		
+		      <dc:creator><![CDATA[Dana Hazzard]]></dc:creator>
+<enclosure url="https://www.wavy.com/wp-content/uploads/sites/3/2025/12/4FCBAB8E8BBCC3C154C3FF74AEBF8F4F.jpg?w=900" type="image/jpeg" length="140308" />
+<dcterms:modified>2026-01-02T11:12:50+00:00</dcterms:modified>
+	</item>
+		<item>
+		<title>Blog: Small warmup today. Some cold rain Saturday</title>
+		<link>https://www.wavy.com/blogs/weather-blog/blog-small-warmup-today-some-cold-rain-saturday/</link>
+		
+		<dc:creator><![CDATA[Jeremy Wheeler]]></dc:creator>
+		<pubDate>Fri, 02 Jan 2026 13:59:55 +0000</pubDate>
+		<category><![CDATA[Weather Blog]]></category>		<category><![CDATA[Blogs]]></category>
+		
+		<category><![CDATA[cold]]></category>
+		<category><![CDATA[mild]]></category>
+		<category><![CDATA[rain]]></category>
+		<category><![CDATA[travel]]></category>
+		<category><![CDATA[warm]]></category>
+		<category><![CDATA[Wintry mix]]></category>
+		<guid isPermaLink="false">https://www.wavy.com/?p=2987695</guid>
+
+					<description><![CDATA[We started off with beautiful sunshine today. However, it was cold. Temps were in the 20s and 30s. However, we will warm up fast today. High temps will aim for the low 50s this afternoon. Temps will warm to the 60s to our southwest. It will only be in the 40s around D.C. and on [...]]]></description>
+		
+		
+		
+		<enclosure url="https://www.wavy.com/wp-content/uploads/sites/3/2026/01/RPM_WIDE_CLOUDS_RAIN_WIND.png?w=900" type="image/png" length="2586932" />
+<dcterms:modified>2026-01-02T14:28:59+00:00</dcterms:modified>
+	</item>
+		<item>
+		<title>VBPD: Man dead, juvenile injured in single-vehicle crash on Lynnhaven Parkway</title>
+		<link>https://www.wavy.com/news/local-news/virginia-beach/vbpd-man-dead-juvenile-injured-in-single-vehicle-crash-on-lynnhaven-parkway/</link>
+		
+		<dc:creator><![CDATA[Chrysnel Banzouzi]]></dc:creator>
+		<pubDate>Thu, 01 Jan 2026 17:44:44 +0000</pubDate>
+		<category><![CDATA[Virginia Beach]]></category>		<category><![CDATA[Local News]]></category>
+		<category><![CDATA[News]]></category>
+		<category><![CDATA[Video]]></category>
+		
+		<guid isPermaLink="false">https://www.wavy.com/?p=2987196</guid>
+
+					<description><![CDATA[A man died and a juvenile was hurt in a single-vehicle crash Saturday evening on Lynnhaven Parkway in Virginia Beach, according to police.]]></description>
+		
+		
+		
+		<enclosure url="https://www.wavy.com/wp-content/uploads/sites/3/2026/01/vb-deadly-crash.jpg?w=800" type="image/jpeg" length="50633" />
+<dcterms:modified>2026-01-02T13:55:38+00:00</dcterms:modified>
+	</item>
+		<item>
+		<title>&#039;She was hilarious&#039;: Friends mourn woman killed in Newport News crash</title>
+		<link>https://www.wavy.com/news/local-news/newport-news/she-was-hilarious-friends-mourn-woman-killed-in-newport-news-crash/</link>
+		
+		<dc:creator><![CDATA[Karina F. Garcia]]></dc:creator>
+		<pubDate>Fri, 02 Jan 2026 01:53:32 +0000</pubDate>
+		<category><![CDATA[Newport News]]></category>		<category><![CDATA[Local News]]></category>
+		
+		<category><![CDATA[Video]]></category>
+		<guid isPermaLink="false">https://www.wavy.com/?p=2987420</guid>
+
+					<description><![CDATA[NEWPORT NEWS, Va. (WAVY) — Friends and family are remembering 34-year-old Lauren Zimmerman as funny and full of life after she was struck and killed in an auto-pedestrian crash on Jefferson Avenue just two days after Christmas. Police responded to Jefferson Avenue shortly after 7 p.m. for reports of a pedestrian hit by a vehicle across [...]]]></description>
+		
+		
+		
+		<enclosure url="https://www.wavy.com/wp-content/uploads/sites/3/2026/01/snapshot-2026-01-01T205251.614.jpg?w=900" type="image/jpeg" length="439019" />
+<dcterms:modified>2026-01-02T14:24:10+00:00</dcterms:modified>
+	</item>
+		<item>
+		<title>&#039;We&#039;re not going to tolerate that kind of stuff&#039;: Graffiti found on 30+ sites in Edenton, police seek help identifying suspect</title>
+		<link>https://www.wavy.com/news/north-carolina/edenton-police-seek-suspect-after-early-morning-vandalism-hits-30-locations/</link>
+		
+		<dc:creator><![CDATA[Jenna Lejano]]></dc:creator>
+		<pubDate>Wed, 31 Dec 2025 22:22:18 +0000</pubDate>
+		<category><![CDATA[North Carolina]]></category>		<category><![CDATA[Crime]]></category>
+		<category><![CDATA[Instagram]]></category>
+		<category><![CDATA[Local News]]></category>
+		
+		<category><![CDATA[Video]]></category>
+		<guid isPermaLink="false">https://www.wavy.com/?p=2986625</guid>
+
+					<description><![CDATA[A vandalism incident took place around 2:30 a.m. in downtown Edenton on Dec. 27, affecting more than 30 locations, according to police.]]></description>
+		
+		
+		
+		      <dc:creator><![CDATA[Cheyenne Pagan]]></dc:creator>
+<enclosure url="https://www.wavy.com/wp-content/uploads/sites/3/2025/12/edenton-nc.png?w=501" type="image/png" length="136467" />
+<dcterms:modified>2026-01-02T07:00:39+00:00</dcterms:modified>
+	</item>
+		<item>
+		<title>Report: Numerous crashes on Chesapeake Expressway due to wrong-way driver</title>
+		<link>https://www.wavy.com/news/local-news/chesapeake/report-several-crashes-on-chesapeake-expressway-due-to-wrong-way-driver/</link>
+		
+		<dc:creator><![CDATA[Jimmy LaRoue]]></dc:creator>
+		<pubDate>Thu, 01 Jan 2026 02:59:13 +0000</pubDate>
+		<category><![CDATA[Chesapeake]]></category>		
+		<category><![CDATA[Local News]]></category>
+		<category><![CDATA[Video]]></category>
+		<guid isPermaLink="false">https://www.wavy.com/?p=2986863</guid>
+
+					<description><![CDATA[CHESAPEAKE, Va. (WAVY) — Numerous crashes were reported on the Chesapeake Expressway Wednesday night caused by a wrong-way driver who has been taken into custody, according to Chesapeake Police. Police said the crashes happened as the suspect, 51-year-od Daniel Tucker, was driving northbound on the southbound Chesapeake Expressway between the area of Battlefield Boulevard and [...]]]></description>
+		
+		
+		
+		      <dc:creator><![CDATA[Dana Hazzard]]></dc:creator>
+<enclosure url="https://www.wavy.com/wp-content/uploads/sites/3/2025/12/Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Template-for-vertical-images.jpg?w=900" type="image/jpeg" length="104097" />
+<dcterms:modified>2026-01-02T03:08:59+00:00</dcterms:modified>
+	</item>
+		<item>
+		<title>Portsmouth Police search for 2 teen suspects in fatal shooting of 13-year-old boy</title>
+		<link>https://www.wavy.com/news/local-news/portsmouth/portsmouth-police-search-for-2-teen-suspects-in-fatal-shooting-of-13-year-old-boy/</link>
+		
+		<dc:creator><![CDATA[Jimmy LaRoue]]></dc:creator>
+		<pubDate>Wed, 31 Dec 2025 22:05:31 +0000</pubDate>
+		<category><![CDATA[Portsmouth]]></category>		<category><![CDATA[Crime]]></category>
+		<category><![CDATA[Local News]]></category>
+		
+		<guid isPermaLink="false">https://www.wavy.com/?p=2986611</guid>
+
+					<description><![CDATA[PORTSMOUTH, Va. (WAVY) — Portsmouth Police continue to search for two suspects in the Dec. 22 shooting death of 13-year-old Jahkari Corbett, an eighth-grader at Cradock Middle School who died after being shot on Atlanta Avenue. Police have identified the suspects as Kiron Thristan Curry, 16 (also known as Buddy) and Persohn Finesse Mitchell, 15 [...]]]></description>
+		
+		
+		
+		      <dc:creator><![CDATA[Andy Fox]]></dc:creator>
+<enclosure url="https://www.wavy.com/wp-content/uploads/sites/3/2025/12/Jahkari-1-1-26.jpg?w=900" type="image/jpeg" length="362224" />
+<dcterms:modified>2026-01-02T00:47:43+00:00</dcterms:modified>
+	</item>
+		<item>
+		<title>NPD: Woman injured in shooting on East Ocean View Avenue</title>
+		<link>https://www.wavy.com/news/local-news/npd-woman-injured-in-shooting-on-east-ocean-view-avenue/</link>
+		
+		<dc:creator><![CDATA[Chrysnel Banzouzi]]></dc:creator>
+		<pubDate>Thu, 01 Jan 2026 12:51:43 +0000</pubDate>
+		<category><![CDATA[Local News]]></category>		
+		<category><![CDATA[News]]></category>
+		<category><![CDATA[Norfolk]]></category>
+		<guid isPermaLink="false">https://www.wavy.com/?p=2987061</guid>
+
+					<description><![CDATA[NORFOLK, Va. (WAVY) -- A woman was wounded following a shooting at a Norfolk residence Wednesday night, according to police. It happened around 11:55 p.m. in the 1800 block of East Ocean View Avenue. When officers arrived, they discovered a woman suffering from a gunshot wound that was not life-threatening. She was taken to the [...]]]></description>
+		
+		
+		
+		<enclosure url="https://www.wavy.com/wp-content/uploads/sites/3/2019/05/norfolk-police-generic-at-night_37720286_ver1.0.jpg?w=900" type="image/jpeg" length="1105839" />
+<dcterms:modified>2026-01-02T07:01:48+00:00</dcterms:modified>
+	</item>
+		<item>
+		<title>Joy, pain for Suffolk family after death of former soldier who suffered from depression</title>
+		<link>https://www.wavy.com/news/local-news/suffolk/joy-pain-for-suffolk-family-after-death-of-former-soldier-who-suffered-from-depression/</link>
+		
+		<dc:creator><![CDATA[Regina Mobley]]></dc:creator>
+		<pubDate>Thu, 01 Jan 2026 10:26:29 +0000</pubDate>
+		<category><![CDATA[Suffolk]]></category>		<category><![CDATA[Health]]></category>
+		<category><![CDATA[Local News]]></category>
+		
+		<category><![CDATA[Video]]></category>
+		<guid isPermaLink="false">https://www.wavy.com/?p=2985740</guid>
+
+					<description><![CDATA[SUFFOLK, Va. (WAVY) -- The Christmas tree big brother Jamari White decorated was tall and it made him proud — a small picture of each family member nestled in a star-shaped ornament. His mother, Aretha Jones was pleased to see her son's skills all aglow for the holiday season. "That's not normal for him," Jones [...]]]></description>
+		
+		
+		
+		<enclosure url="https://www.wavy.com/wp-content/uploads/sites/3/2025/12/snapshot-2026-01-01T045750.206.jpg?w=900" type="image/jpeg" length="237498" />
+<dcterms:modified>2026-01-02T07:02:04+00:00</dcterms:modified>
+	</item>
+		<item>
+		<title>Local residents react to minimum wage increase</title>
+		<link>https://www.wavy.com/news/local-news/local-residents-react-to-minimum-wage-increase/</link>
+		
+		<dc:creator><![CDATA[Markeshia Jackson ]]></dc:creator>
+		<pubDate>Fri, 02 Jan 2026 06:29:40 +0000</pubDate>
+				<category><![CDATA[Local News]]></category>
+		<guid isPermaLink="false">https://www.wavy.com/?p=2987425</guid>
+
+					<description><![CDATA[PORTSMOUTH, Va. (WAVY) – While the minimum wage has increased with the start of the new year, so have other things, such as tolls. It puts making more money as a goal for many in this new year. "Life is expensive and you need money to pretty much do anything in the world," local resident [...]]]></description>
+		
+		
+		
+		<enclosure url="https://www.wavy.com/wp-content/uploads/sites/3/2026/01/snapshot-2026-01-02T012855.106.jpg?w=900" type="image/jpeg" length="238125" />
+<dcterms:modified>2026-01-02T07:00:12+00:00</dcterms:modified>
+	</item>
+		<item>
+		<title>Family looks for answers in homicide of loved one in Newport News</title>
+		<link>https://www.wavy.com/news/local-news/family-looks-for-answers-in-homicide-of-loved-one-in-newport-news/</link>
+		
+		<dc:creator><![CDATA[Regina Mobley]]></dc:creator>
+		<pubDate>Thu, 01 Jan 2026 11:10:33 +0000</pubDate>
+		<category><![CDATA[Local News]]></category>		<category><![CDATA[Crime]]></category>
+		<category><![CDATA[Hampton]]></category>
+		
+		<category><![CDATA[Newport News]]></category>
+		<category><![CDATA[Video]]></category>
+		<guid isPermaLink="false">https://www.wavy.com/?p=2986631</guid>
+
+					<description><![CDATA[NEWPORT NEWS, Va. (WAVY) -- Instead of planning Dewand McGowan's upcoming 32nd birthday, loved ones are planning his funeral. On the night of Dec. 16 at the Wendy's restaurant in the 14000 block of Warwick Blvd., someone opened fire and killed McGowan who was a manager there. He was proud of his work and he [...]]]></description>
+		
+		
+		
+		<enclosure url="https://www.wavy.com/wp-content/uploads/sites/3/2025/12/Dewand-McGowan.jpg?w=900" type="image/jpeg" length="188375" />
+<dcterms:modified>2026-01-02T05:53:34+00:00</dcterms:modified>
+	</item>
+		<item>
+		<title>How to donate your old bike to help those in need this holiday season</title>
+		<link>https://www.wavy.com/news/local-news/virginia-beach/how-to-donate-your-old-bike-to-help-those-in-need-this-holiday-season/</link>
+		
+		<dc:creator><![CDATA[Angela Bohon]]></dc:creator>
+		<pubDate>Thu, 01 Jan 2026 23:38:04 +0000</pubDate>
+		<category><![CDATA[Virginia Beach]]></category>		<category><![CDATA[Local News]]></category>
+		<category><![CDATA[Video]]></category>
+		
+		<guid isPermaLink="false">https://www.wavy.com/?p=2978990</guid>
+
+					<description><![CDATA[VIRGINIA BEACH, Va. (WAVY) — For many, the holiday season means finding a shiny new bicycle under the tree. But what happens with old ones? A Virginia Beach outreach ministry is asking community members to consider a different fate for their old bikes: providing a lifeline for those who desperately need transportation. Tim Farabaugh operates [...]]]></description>
+		
+		
+		
+		<enclosure url="https://www.wavy.com/wp-content/uploads/sites/3/2025/12/bike-repair-potters-house-vb-rotated.jpg?w=900" type="image/jpeg" length="3055479" />
+<dcterms:modified>2026-01-01T23:48:42+00:00</dcterms:modified>
+	</item>
+		<item>
+		<title>A lesson for the ages is shared at the historic St. Paul&#039;s Episcopal Church</title>
+		<link>https://www.wavy.com/news/local-news/norfolk/a-lesson-for-the-ages-is-shared-at-the-historic-st-pauls-episcopal-church/</link>
+		
+		<dc:creator><![CDATA[Regina Mobley]]></dc:creator>
+		<pubDate>Fri, 02 Jan 2026 01:15:58 +0000</pubDate>
+		<category><![CDATA[Norfolk]]></category>		<category><![CDATA[Local News]]></category>
+		
+		<category><![CDATA[Video]]></category>
+		<guid isPermaLink="false">https://www.wavy.com/?p=2987308</guid>
+
+					<description><![CDATA[NORFOLK, Va. (WAVY) -- Dozens of local families on New Years Day visited a place that is critical in the history of Hampton Roads and the entire nation. "You can't tell the story of Norfolk or the early colony of Virginia, for that matter, without telling the the story of St. Paul's," said Ken Marks, [...]]]></description>
+		
+		
+		
+		<enclosure url="https://www.wavy.com/wp-content/uploads/sites/3/2026/01/snapshot-2026-01-01T200926.860.jpg?w=900" type="image/jpeg" length="417750" />
+<dcterms:modified>2026-01-02T01:33:13+00:00</dcterms:modified>
+	</item>
+		<item>
+		<title>Babies born in 2026: Hampton Roads hospitals welcome first New Year&#039;s babies</title>
+		<link>https://www.wavy.com/news/local-news/babies-born-in-2026-hampton-roads-hospitals-welcome-first-new-years-babies/</link>
+		
+		<dc:creator><![CDATA[Chrysnel Banzouzi]]></dc:creator>
+		<pubDate>Thu, 01 Jan 2026 11:53:26 +0000</pubDate>
+		<category><![CDATA[Local News]]></category>		
+		<category><![CDATA[News]]></category>
+		<category><![CDATA[North Carolina]]></category>
+		<category><![CDATA[Video]]></category>
+		<guid isPermaLink="false">https://www.wavy.com/?p=2987028</guid>
+
+					<description><![CDATA[VIRGINIA BEACH, Va. (WAVY) -- Hampton Roads hospitals welcomed the first babies of 2026 Thursday. Kenlee Johnson was born at 12:11 a.m. at Sentara Princess Anne Hospital to Britny and Kenneth Johnson of Moyock, North Carolina. Kenlee weighs 7 pounds, 2 ounces and is 19.5 inches tall. “We were due on Jan. 7, and we [...]]]></description>
+		
+		
+		
+		<enclosure url="https://www.wavy.com/wp-content/uploads/sites/3/2026/01/New-Years-baby-2026-Johnson.jpg?w=900" type="image/jpeg" length="586850" />
+<dcterms:modified>2026-01-01T22:42:00+00:00</dcterms:modified>
+	</item>
+		<item>
+		<title>Political Analyst: 2026 will be all about Gov.-elect Abigail Spanberger</title>
+		<link>https://www.wavy.com/news/political-analyst-2026-will-be-all-about-gov-elect-abigail-spanberger/</link>
+		
+		<dc:creator><![CDATA[Tyler Englander]]></dc:creator>
+		<pubDate>Thu, 01 Jan 2026 21:29:50 +0000</pubDate>
+				<category><![CDATA[Local News]]></category>
+		<category><![CDATA[News]]></category>
+		<category><![CDATA[Politics]]></category>
+		<category><![CDATA[Video]]></category>
+		<category><![CDATA[Virginia]]></category>
+		<category><![CDATA[Virginia Politics]]></category>
+		<guid isPermaLink="false">https://www.wavy.com/?p=2987316</guid>
+
+					<description><![CDATA[2026 promises to be a transformational year in Virginia politics. ]]></description>
+		
+		
+		
+		<enclosure url="https://www.wavy.com/wp-content/uploads/sites/3/2026/01/AP25309093286965.jpg?w=900" type="image/jpeg" length="3974150" />
+<dcterms:modified>2026-01-01T23:33:27+00:00</dcterms:modified>
+	</item>
+	</channel>
+</rss>
