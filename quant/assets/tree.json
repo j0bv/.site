@@ -1,0 +1,171 @@
+{
+  "categories": [
+    {
+      "id": "launch-mev",
+      "label": "launch-mev/",
+      "open": true,
+      "strategies": [
+        {
+          "slug": "launch-mev-sol-v1",
+          "label": "launch-mev-sol-v1/",
+          "href": "strategies/launch-mev-sol-v1.html",
+          "status": "experimental"
+        },
+        {
+          "slug": "launch-mev-sol-trending-v1",
+          "label": "launch-mev-sol-trending-v1/",
+          "href": "strategies/launch-mev-sol-trending-v1.html",
+          "status": "experimental"
+        },
+        {
+          "slug": "launch-mev-bsc-v1",
+          "label": "launch-mev-bsc-v1/",
+          "href": "strategies/launch-mev-bsc-v1.html",
+          "status": "experimental"
+        },
+        {
+          "slug": "launch-mev-rhchain-v1",
+          "label": "launch-mev-rhchain-v1/",
+          "href": "strategies/launch-mev-rhchain-v1.html",
+          "status": "experimental"
+        }
+      ]
+    },
+    {
+      "id": "gains-intermarket",
+      "label": "gains-intermarket/",
+      "open": true,
+      "strategies": [
+        {
+          "slug": "gains-intermarket-roro-v1",
+          "label": "roro/",
+          "href": "strategies/gains-intermarket-roro-v1.html",
+          "status": "experimental"
+        },
+        {
+          "slug": "gains-intermarket-gold-dollar-v1",
+          "label": "gold-dollar/",
+          "href": "strategies/gains-intermarket-gold-dollar-v1.html",
+          "status": "experimental"
+        },
+        {
+          "slug": "gains-intermarket-oil-cad-v1",
+          "label": "oil-cad/",
+          "href": "strategies/gains-intermarket-oil-cad-v1.html",
+          "status": "experimental"
+        },
+        {
+          "slug": "gains-intermarket-etf-momentum-v1",
+          "label": "etf-momentum/",
+          "href": "strategies/gains-intermarket-etf-momentum-v1.html",
+          "status": "experimental"
+        },
+        {
+          "slug": "gains-intermarket-copper-equity-v1",
+          "label": "copper-equity/",
+          "href": "strategies/gains-intermarket-copper-equity-v1.html",
+          "status": "experimental"
+        },
+        {
+          "slug": "gains-intermarket-pairs-divergence-v1",
+          "label": "pairs-divergence/",
+          "href": "strategies/gains-intermarket-pairs-divergence-v1.html",
+          "status": "experimental"
+        },
+        {
+          "slug": "gains-intermarket-safe-haven-fx-v1",
+          "label": "safe-haven-fx/",
+          "href": "strategies/gains-intermarket-safe-haven-fx-v1.html",
+          "status": "experimental"
+        },
+        {
+          "slug": "gains-intermarket-commodity-sector-v1",
+          "label": "commodity-sector/",
+          "href": "strategies/gains-intermarket-commodity-sector-v1.html",
+          "status": "experimental"
+        }
+      ]
+    },
+    {
+      "id": "sol-momentum",
+      "label": "sol-momentum/",
+      "open": true,
+      "strategies": [
+        {
+          "slug": "sol-momentum-dex-ladder-v1",
+          "label": "sol-momentum-dex-ladder-v1/",
+          "href": "strategies/sol-momentum-dex-ladder-v1.html",
+          "status": "experimental"
+        },
+        {
+          "slug": "directional-meme-v1",
+          "label": "directional-meme-v1/",
+          "href": "strategies/directional-meme-v1.html",
+          "status": "experimental"
+        }
+      ]
+    },
+    {
+      "id": "chronos",
+      "label": "chronos/",
+      "open": true,
+      "strategies": [
+        {
+          "slug": "gains-degen-fast",
+          "label": "gains-degen-fast/",
+          "href": "strategies/gains-degen-fast.html",
+          "status": "experimental"
+        },
+        {
+          "slug": "chronos-swing-v1",
+          "label": "chronos-swing-v1/",
+          "href": "strategies/chronos-swing-v1.html",
+          "status": "experimental"
+        },
+        {
+          "slug": "gains-eth-structural-v1",
+          "label": "gains-eth-structural-v1/",
+          "href": "strategies/gains-eth-structural-v1.html",
+          "status": "experimental"
+        },
+        {
+          "slug": "chronos-spot-weth-micro-v1",
+          "label": "chronos-spot-weth-micro-v1/",
+          "href": "strategies/chronos-spot-weth-micro-v1.html",
+          "status": "experimental"
+        },
+        {
+          "slug": "chronos-spot-weth-bull-v1",
+          "label": "chronos-spot-weth-bull-v1/",
+          "href": "strategies/chronos-spot-weth-bull-v1.html",
+          "status": "experimental"
+        }
+      ]
+    },
+    {
+      "id": "infra",
+      "label": "infra/",
+      "open": true,
+      "strategies": [
+        {
+          "slug": "all-4-all",
+          "label": "all-4-all/",
+          "href": "strategies/all-4-all.html",
+          "status": "experimental"
+        },
+        {
+          "slug": "legacy-portfolio-hedger",
+          "label": "legacy-portfolio-hedger/",
+          "href": "strategies/legacy-portfolio-hedger.html",
+          "status": "experimental"
+        },
+        {
+          "slug": "directional-follow",
+          "label": "directional-follow/",
+          "href": "strategies/directional-follow.html",
+          "status": "experimental"
+        }
+      ]
+    }
+  ]
+}

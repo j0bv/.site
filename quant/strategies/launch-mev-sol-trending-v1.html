@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Launch MEV Sol Trending v1 — Strategy Portfolio</title>
+  <link rel="stylesheet" href="../assets/reset.css">
+  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="stylesheet" href="../assets/custom.css">
+  <link rel="stylesheet" href="../assets/tree.css">
+</head>
+<body class="portfolio-layout" data-asset-base=".." data-slug="launch-mev-sol-trending-v1">
+  <header>
+    <nav><a href="../index.html">Portfolio</a> / Launch MEV Sol Trending v1</nav>
+    <h1>Launch MEV Sol Trending v1</h1>
+    <p class="subtitle">Established token momentum via DexScreener bridge with 5-slice TWAP entry</p>
+    <span class="badge badge-live">LIVE</span>
+  </header>
+  <main>
+    <section>
+      <h2>Instrument / Architecture</h2>
+      <table>
+        <tr><th>Field</th><th>Value</th></tr>
+        <tr><td>Chain</td><td>Solana</td></tr>
+        <tr><td>Target</td><td>Established tokens (pair age >= 1h), trending momentum</td></tr>
+        <tr><td>Discovery</td><td>Playwright Chromium SSE sidecar intercepting DexScreener WS frames</td></tr>
+        <tr><td>Entry</td><td>5-slice TWAP buy via Jupiter (~15s total)</td></tr>
+        <tr><td>Exit</td><td>Tier1 snipe (+30% TP, -20% stop) for 15m, then TWAP unwind</td></tr>
+        <tr><td>Market cap band</td><td>100K-10M</td></tr>
+      </table>
+      <figure>
+        <pre>
++--------------------+     +------------------+     +------------------+
+| Playwright Bridge  | --> | Trending Filter  | --> | Risk Gate +      |
+| (Chromium SSE,     |     | (liq 25K, txns   |     |  RugCheck HTTP)  |
+|  DexScreener WS)   |     |  50, m5 +5%)     |     |                  |
++--------------------+     +------------------+     +------------------+
+                                                           |
+                                                           v
++--------------------+     +------------------+     +------------------+
+| Exit Sidecar       | <-- | Position Monitor | <-- | 5-Slice TWAP     |
+| (tier1 + TWAP      |     | (vault math,     |     | (Jupiter + Jito  |
+|  after 15m)        |     |  dev rug watch)  |     |  tip on 0,N-1)   |
++--------------------+     +------------------+     +------------------+
+        </pre>
+        <figcaption>Distinct from cradle: older tokens, TWAP entry, shorter hold window</figcaption>
+      </figure>
+    </section>
+
+    <section>
+      <h2>Signal</h2>
+      <p>Playwright bridge sidecar loads DexScreener screener in headless Chromium, intercepts WebSocket frames from the screener, and exposes localhost SSE. The Rust screener consumes SSE (never calls DexScreener directly). Fallback: GeckoTerminal <code>trending_pools</code> REST when bridge is unhealthy.</p>
+      <p>Trending filter is distinct from cradle: minimum liquidity 25K, minimum 24h transactions 50, minimum 5m price change +5%, pair age >= 1h (vs cradle max 1h), market cap 100K-10M.</p>
+    </section>
+
+    <section id="math-logic">
+      <h2>Mathematics and Logic</h2>
+
+<h3>Trending vs cradle</h3>
+<p>Same pipeline as cradle but inverted age gate: pairs must be <strong>established</strong>
+(age >= 1h). Momentum is measured on longer-lived pools; entry uses 5-slice TWAP instead of
+single bundle snipe.</p>
+<figure><pre>
+pair_age_sec >= min_trending_age
+pool_var_proxy from DexScreener bridge (m5 change)
+TWAP entry: 5 slices across hold window
+Exit: snipe tier-1 + TWAP (shared exit sidecar)
+</pre></figure>
+
+    </section>
+
+    <section>
+      <h2>Status and Outcome</h2>
+      <p><strong>Live</strong> with dedicated signer. Discovery sidecar and filter chain validated. Shares exit sidecar binary with launch-mev-sol-v1 but uses distinct trending-specific thresholds (15m hold window, +30% tier1 vs cradle's 30m/+50%).</p>
+    </section>
+
+    <section>
+      <h2>Failures and Corrections</h2>
+      <p>No documented post-mortem failures. Key differences from cradle that preempt cradle's issues: TWAP entry (5 slices) distributes execution risk vs single bundle; shorter hold window (15m vs 30m) reduces time-in-market exposure; lower tier1 take-profit (+30% vs +50%) captures smaller moves more reliably.</p>
+    </section>
+
+    <section>
+      <h2>Related Strategies</h2>
+      <ul>
+        <li><a href="launch-mev-sol-v1.html">launch-mev-sol-v1</a> — cradle sniping (young pools, single bundle entry)</li>
+        <li><a href="sol-momentum-dex-ladder-v1.html">sol-momentum-dex-ladder-v1</a> — spot ladder with larger caps and different filter</li>
+      </ul>
+    </section>
+  </main>
+  <script src="../assets/site.js" defer></script>
+</body>
+</html>

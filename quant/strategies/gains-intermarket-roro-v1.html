@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gains Intermarket RORO v1 — Strategy Portfolio</title>
+  <link rel="stylesheet" href="../assets/reset.css">
+  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="stylesheet" href="../assets/custom.css">
+  <link rel="stylesheet" href="../assets/tree.css">
+</head>
+<body class="portfolio-layout" data-asset-base=".." data-slug="gains-intermarket-roro-v1">
+  <header>
+    <nav><a href="../index.html">Portfolio</a> / Gains Intermarket RORO v1</nav>
+    <h1>Gains Intermarket RORO v1</h1>
+    <p class="subtitle">QQQ vs XAU risk-on/risk-off proxy with SPY/FX context panel</p>
+    <span class="badge badge-experimental">EXPERIMENTAL</span>
+  </header>
+  <main>
+    <section>
+      <h2>Instrument / Architecture</h2>
+      <table>
+        <tr><th>Field</th><th>Value</th></tr>
+        <tr><td>Venue</td><td>Gains gTrade</td></tr>
+        <tr><td>Trade legs</td><td>QQQ, XAU</td></tr>
+        <tr><td>Context panel</td><td>SPY/FX</td></tr>
+        <tr><td>Signal</td><td>Chronos directional_follow (Phase 1)</td></tr>
+        <tr><td>Intermarket thesis</td><td>Risk-on/risk-off rotation between tech equity and gold</td></tr>
+      </table>
+    </section>
+
+    <section>
+      <h2>Signal</h2>
+      <p>Phase 1: Chronos <code>directional_follow</code> on trade leg(s). The intermarket thesis identifies QQQ and XAU as risk-on/risk-off proxies, using SPY and FX as context signals for regime classification. Trade execution uses the same Chronos infrastructure as other directional follow arms.</p>
+    </section>
+
+    <section id="math-logic">
+      <h2>Mathematics and Logic</h2>
+
+<h3>RORO thesis</h3>
+<p>Risk-on/risk-off rotation: QQQ (growth) vs XAU (safe haven). When equity momentum dominates,
+long QQQ; when fear dominates, long XAU. SPY and FX panel provide regime context.</p>
+
+<p>Phase 1 uses Chronos <code>directional_follow</code> on one or more trade legs. Context instruments
+(SPY, FX, sector ETFs) inform regime classification; the optimizer ranks candidates with
+<code>open_leg_selection = intermarket_optimal</code> (Strategy 9 engine in hedger-intermarket).</p>
+<figure>
+  <pre>
+For each candidate leg j:
+  score_j = |r_hat_j| - market_cost_j(borrowing, spread, crowded_side)
+
+Open if score* > threshold and US-hours guard passes
+Pairs-divergence variant: dollar-neutral spread target
+  long_leg:  +frac x notional
+  short_leg: -frac x notional
+  </pre>
+</figure>
+
+    </section>
+
+    <section>
+      <h2>Status and Outcome</h2>
+      <p><strong>Experimental</strong> — Phase 1 (single-leg directional follow) designed. Part of the 8-strategy intermarket suite sharing identical execution infrastructure with different instrument pairs.</p>
+    </section>
+
+    <section>
+      <h2>Failures and Corrections</h2>
+      <p>No documented failures — strategy in experimental/Phase 1 design state.</p>
+    </section>
+
+    <section>
+      <h2>Related Strategies</h2>
+      <ul>
+        <li><a href="gains-intermarket-gold-dollar-v1.html">gold-dollar</a> — XAU primary with EUR/USD context</li>
+        <li><a href="gains-intermarket-safe-haven-fx-v1.html">safe-haven-fx</a> — SPY/QQQ with FX panel</li>
+        <li><a href="directional-follow.html">directional-follow</a> — shared Chronos infrastructure</li>
+      </ul>
+    </section>
+  </main>
+  <script src="../assets/site.js" defer></script>
+</body>
+</html>

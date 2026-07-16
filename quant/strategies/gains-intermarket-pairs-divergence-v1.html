@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gains Intermarket Pairs Divergence v1 — Strategy Portfolio</title>
+  <link rel="stylesheet" href="../assets/reset.css">
+  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="stylesheet" href="../assets/custom.css">
+  <link rel="stylesheet" href="../assets/tree.css">
+</head>
+<body class="portfolio-layout" data-asset-base=".." data-slug="gains-intermarket-pairs-divergence-v1">
+  <header>
+    <nav><a href="../index.html">Portfolio</a> / Gains Intermarket Pairs Divergence v1</nav>
+    <h1>Gains Intermarket Pairs Divergence v1</h1>
+    <p class="subtitle">Single-leg Phase 1 directional follow; spread deferred</p>
+    <span class="badge badge-experimental">EXPERIMENTAL</span>
+  </header>
+  <main>
+    <section>
+      <h2>Instrument / Architecture</h2>
+      <table>
+        <tr><th>Field</th><th>Value</th></tr>
+        <tr><td>Venue</td><td>Gains gTrade</td></tr>
+        <tr><td>Mode</td><td>Single-leg Phase 1 (spread deferred)</td></tr>
+        <tr><td>Signal</td><td>Chronos directional_follow (Phase 1)</td></tr>
+        <tr><td>Intermarket thesis</td><td>Pairs divergence mean-reversion (spread execution deferred to Phase 2)</td></tr>
+      </table>
+    </section>
+
+    <section>
+      <h2>Signal</h2>
+      <p>Phase 1: Chronos <code>directional_follow</code> on single trade leg. The pairs divergence thesis targets mean-reversion on correlated asset spreads, but Phase 1 executes only the directional component. Full spread (simultaneous long/short) execution is deferred to Phase 2 pending venue support for hedged positions.</p>
+    </section>
+
+    <section id="math-logic">
+      <h2>Mathematics and Logic</h2>
+
+<h3>Pairs divergence thesis</h3>
+<p>Two-leg spread mode: dollar-neutral long/short when intermarket spread z-score diverges.
+Phase 1 defers full spread execution to single-leg directional follow.</p>
+
+<p>Phase 1 uses Chronos <code>directional_follow</code> on one or more trade legs. Context instruments
+(SPY, FX, sector ETFs) inform regime classification; the optimizer ranks candidates with
+<code>open_leg_selection = intermarket_optimal</code> (Strategy 9 engine in hedger-intermarket).</p>
+<figure>
+  <pre>
+For each candidate leg j:
+  score_j = |r_hat_j| - market_cost_j(borrowing, spread, crowded_side)
+
+Open if score* > threshold and US-hours guard passes
+Pairs-divergence variant: dollar-neutral spread target
+  long_leg:  +frac x notional
+  short_leg: -frac x notional
+  </pre>
+</figure>
+
+    </section>
+
+    <section>
+      <h2>Status and Outcome</h2>
+      <p><strong>Experimental</strong> — Phase 1 (single-leg) designed. Spread execution deferred. Part of the 8-strategy intermarket suite.</p>
+    </section>
+
+    <section>
+      <h2>Failures and Corrections</h2>
+      <p>No documented failures — strategy in experimental/Phase 1 design state.</p>
+    </section>
+
+    <section>
+      <h2>Related Strategies</h2>
+      <ul>
+        <li><a href="gains-intermarket-roro-v1.html">roro</a> — related risk-on/risk-off regime</li>
+        <li><a href="gains-intermarket-safe-haven-fx-v1.html">safe-haven-fx</a> — equity vs FX pairs</li>
+        <li><a href="directional-follow.html">directional-follow</a> — shared Chronos infrastructure</li>
+      </ul>
+    </section>
+  </main>
+  <script src="../assets/site.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gains Degen Fast — Strategy Portfolio</title>
+  <link rel="stylesheet" href="../assets/reset.css">
+  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="stylesheet" href="../assets/custom.css">
+  <link rel="stylesheet" href="../assets/tree.css">
+</head>
+<body class="portfolio-layout" data-asset-base=".." data-slug="gains-degen-fast">
+  <header>
+    <nav><a href="../index.html">Portfolio</a> / Gains Degen Fast</nav>
+    <h1>Gains Degen Fast</h1>
+    <p class="subtitle">High-cadence Chronos entry on SOLDEGEN at ~500x with keeper TP+SL exits</p>
+    <span class="badge badge-halted">HALTED</span>
+  </header>
+  <main>
+    <section>
+      <h2>Instrument / Architecture</h2>
+      <table>
+        <tr><th>Field</th><th>Value</th></tr>
+        <tr><td>Pair</td><td>314 (SOLDEGEN)</td></tr>
+        <tr><td>Venue</td><td>Gains gTrade</td></tr>
+        <tr><td>Poll</td><td>1s</td></tr>
+        <tr><td>Chronos</td><td>h=1 (horizon_index=1)</td></tr>
+        <tr><td>Collateral</td><td>Micro</td></tr>
+        <tr><td>Leverage</td><td>~500x</td></tr>
+        <tr><td>Lane</td><td>degen / degen_fast</td></tr>
+      </table>
+      <figure>
+        <pre>
++------------------+     +-------------------+     +------------------+
+|  Chronos Sidecar | --> | Execution Router  | --> |   Gains gTrade   |
+|  (r_hat, h=1)    |     | (entry-only mode) |     | (keeper TP + SL) |
++------------------+     +-------------------+     +------------------+
+        |                         |
+        v                         v
++------------------+     +-------------------+
+| md-collector     |     |  Position Reg.    |
+| (1s poll SOLDEGEN)|     | (chain-confirmed) |
++------------------+     +-------------------+
+        </pre>
+        <figcaption>Data flow: bot handles entry; on-chain keeper handles all exits</figcaption>
+      </figure>
+    </section>
+
+    <section>
+      <h2>Signal</h2>
+      <p>Chronos2 <code>r_hat</code> at horizon index 1 (fastest) drives entry direction. The bot submits an open with keeper TP+SL set at open time. After open, the bot is <strong>entry-only</strong> — contract keeper orders (oracle-triggered) are the sole exit path.</p>
+      <p>Fee-aware SL math ensures the stop-loss accounts for the ~0.1% open/close fees at high leverage.</p>
+    </section>
+
+    <section id="math-logic">
+      <h2>Mathematics and Logic</h2>
+
+
+<p>Chronos2 emits a one-step expected return estimate <code>r_hat</code> at horizon index <code>h</code>.
+The execution router treats <code>sign(r_hat)</code> as trade direction and gates size with hysteresis:</p>
+<figure>
+  <pre>
+Open (flat):     |r_hat| > R_OPEN
+Flip (in-pos):   |r_hat| > R_FLIP   where R_FLIP > R_OPEN
+Min hold:        N ticks before flip allowed
+Target notional: n_target from collateral cap x leverage
+  </pre>
+</figure>
+<p>Hysteresis reduces flip-churn: enter on weaker evidence, exit only on stronger counter-evidence.
+Calibration uses the tail of |r_hat| from dryrun audit NDJSON — not blind median percentiles when the
+distribution is bimodal (noise floor ~1e-6 to 1e-5 vs signal tail ~5e-5 to 1e-4 at 30s cadence).</p>
+
+<h3>Degen lane specifics</h3>
+<figure><pre>
+h = 1 (fastest Chronos horizon)
+poll = 1s
+leverage ~ 500x  =>  notional ~ collateral x 500
+
+Fee-aware keeper SL at open:
+  SL price accounts for ~0.1% open + close fees at high leverage
+  TP target: GAINS_DEGEN_TP_R_TARGET = 1.5 (R-multiple on collateral)
+
+Bot is entry-only after open; exits are oracle-triggered keeper orders
+</pre></figure>
+<p>At 500x, a 0.1% fee round-trip is material relative to collateral — flip-churn destroys edge.</p>
+
+    </section>
+
+    <section>
+      <h2>Status and Outcome</h2>
+      <p><strong>Halted</strong> after Jun 18 2026 session. Equity drawn down ~65% during the session (shared wallet with chronos-swing-v1). Kill-switch active; dryrun gate required before any live re-enable.</p>
+      <p>The strategy is mechanically sound post-fix but requires capital isolation (one arm per wallet) and bounded flip-rate verification before re-deployment.</p>
+    </section>
+
+    <section>
+      <h2>Failures and Corrections</h2>
+
+      <h3>1. Bot flip-close vs keeper (pre-fix)</h3>
+      <p>The bot issued <code>directional_force_exit</code> while keeper TP/SL orders were active on-chain. A phantom position state (<code>x_curr_frac ~ 79</code> after open with <code>x_star = 0</code>) drove flip-close intent, creating rapid open-close cycles that bled fees without capturing any directional move.</p>
+      <p><strong>Root cause:</strong> The bot set <code>was_in_position</code> on submit before chain confirmation, then attempted to exit a position the keeper was already managing.</p>
+      <p><strong>Fix:</strong> Block flip-close when <code>had_keeper_tp_at_open</code>; do not set position state on submit before chain confirm.</p>
+
+      <h3>2. Phantom position / stale snapshot</h3>
+      <p>Post-fix restart carried a phantom short position from the previous session. One successful flip-close on the first trade at startup before entry-only logic engaged.</p>
+      <p><strong>Root cause:</strong> Stale snapshot from prior session persisted across restart without chain verification.</p>
+      <p><strong>Fix:</strong> Registry-backed exit sizing; clear stale snapshot on restart; verify chain flat before trading.</p>
+
+      <h3>3. Fee bleed at ~500x leverage</h3>
+      <p>Seven rapid opens in one session with approximately 0.1% round-trip fee per cycle at ~3k notional. Scratch cycles (no directional gain) dominate PnL on a small book. At this leverage, even a few churned cycles consume a meaningful percentage of collateral.</p>
+      <p><strong>Status:</strong> Structural to the degen lane at high leverage. Mitigation requires bounded open frequency and minimum signal confidence before entry.</p>
+
+      <h3>4. Dual-bot wallet amplifier</h3>
+      <p>Chronos Swing locked collateral concurrently with degen on the same wallet. Not a correlated market loss — sequential drain on shared USDC as swing drew down first, then degen continued on depleted collateral.</p>
+      <p><strong>Fix:</strong> One arm per wallet, or explicit capital governor with reserved collateral per arm.</p>
+    </section>
+
+    <section>
+      <h2>Related Strategies</h2>
+      <ul>
+        <li><a href="chronos-swing-v1.html">chronos-swing-v1</a> — complementary slower-cadence arm (30s poll, 100x)</li>
+        <li><a href="directional-follow.html">directional-follow</a> — shared infrastructure umbrella</li>
+        <li><a href="gains-eth-structural-v1.html">gains-eth-structural-v1</a> — alternative non-Chronos approach on ETH</li>
+      </ul>
+    </section>
+  </main>
+  <script src="../assets/site.js" defer></script>
+</body>
+</html>

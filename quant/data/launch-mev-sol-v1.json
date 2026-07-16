@@ -1,0 +1,44 @@
+{
+  "slug": "launch-mev-sol-v1",
+  "code_samples": [
+    {
+      "title": "Cradle filter gate",
+      "path": "cradle.rs",
+      "content": "pub enum CradleDecision {\n    Pass,\n    Reject(CradleRejectReason),\n}\n\npub fn evaluate(cfg: &CradleFilterConfig, candidate: &LaunchCandidate) -> CradleDecision {\n    if candidate.pool_var_proxy_pct < cfg.min_pool_var_proxy_pct {\n        return CradleDecision::Reject(CradleRejectReason::PoolVarTooLow);\n    }\n    if cfg.max_pool_var_proxy_pct > 0.0\n        && candidate.pool_var_proxy_pct >= cfg.max_pool_var_proxy_pct\n    {\n        return CradleDecision::Reject(CradleRejectReason::PoolVarTooHigh);\n    }\n    if candidate.pair_age_sec > cfg.max_pair_age_sec {\n        return CradleDecision::Reject(CradleRejectReason::PairTooOld);\n    }\n    if candidate.liquidity_usd < cfg.min_liquidity_usd {\n        return CradleDecision::Reject(CradleRejectReason::LiquidityTooLow);\n    }\n    if candidate.market_cap_usd < cfg.min_market_cap_usd {\n        return CradleDecision::Reject(CradleRejectReason::MarketCapTooLow);\n    }\n    if cfg.max_market_cap_usd > 0.0 && candidate.market_cap_usd > cfg.max_market_cap_usd {\n        return CradleDecision::Reject(CradleRejectReason::MarketCapTooHigh);\n    }\n    if cfg.min_volume_24h_usd > 0.0 && candidate.volume_24h_usd < cfg.min_volume_24h_usd {\n        return CradleDecision::Reject(CradleRejectReason::VolumeTooLow);\n    }\n    CradleDecision::Pass\n}\n\n#[cfg(test)]\nmod tests {\n    use super::*;"
+    },
+    {
+      "title": "Thresholds",
+      "path": "launch-mev-sol-v1-thresholds.env",
+      "content": "# Launch MEV Sol v1 thresholds\nRISK_GATE_MODE=block\nSCREENER_MIN_POOL_VAR_PROXY_PCT=10\nSCREENER_MAX_POOL_VAR_PROXY_PCT=30\nSCREENER_MAX_PAIR_AGE_SEC=3600\nSCREENER_MIN_LIQUIDITY_USD=15000\nSCREENER_MIN_MARKET_CAP_USD=50000\nSCREENER_MAX_MARKET_CAP_USD=2000000\nSCREENER_POLL_INTERVAL_MS=5000\nJITO_TIP_LAMPORTS=100000"
+    }
+  ],
+  "logs": [
+    "{\"event\":\"candidate_rejected\",\"ts_ms\":1784226035186,\"chain\":\"solana\",\"mint\":\"[address redacted]\",\"pair_address\":\"[address redacted]\",\"reason\":\"pool_var_too_low\",\"discovery_source\":\"coingecko\"}",
+    "{\"event\":\"candidate_rejected\",\"ts_ms\":1784226035186,\"chain\":\"solana\",\"mint\":\"[address redacted]\",\"pair_address\":\"[address redacted]\",\"reason\":\"pool_var_too_low\",\"discovery_source\":\"coingecko\"}",
+    "{\"event\":\"candidate_rejected\",\"ts_ms\":1784226035186,\"chain\":\"solana\",\"mint\":\"[address redacted]\",\"pair_address\":\"[address redacted]\",\"reason\":\"pool_var_too_high\",\"discovery_source\":\"coingecko\"}",
+    "{\"event\":\"candidate_rejected\",\"ts_ms\":1784226035186,\"chain\":\"solana\",\"mint\":\"[address redacted]\",\"pair_address\":\"[address redacted]\",\"reason\":\"pool_var_too_low\",\"discovery_source\":\"coingecko\"}",
+    "{\"event\":\"candidate_rejected\",\"ts_ms\":1784226035186,\"chain\":\"solana\",\"mint\":\"[address redacted]\",\"pair_address\":\"[address redacted]\",\"reason\":\"pool_var_too_low\",\"discovery_source\":\"coingecko\"}",
+    "{\"event\":\"candidate_rejected\",\"ts_ms\":1784226035186,\"chain\":\"solana\",\"mint\":\"[address redacted]\",\"pair_address\":\"[address redacted]\",\"reason\":\"pool_var_too_low\",\"discovery_source\":\"coingecko\"}",
+    "{\"event\":\"candidate_rejected\",\"ts_ms\":1784226035186,\"chain\":\"solana\",\"mint\":\"[address redacted]\",\"pair_address\":\"[address redacted]\",\"reason\":\"pool_var_too_low\",\"discovery_source\":\"coingecko\"}",
+    "{\"event\":\"candidate_rejected\",\"ts_ms\":1784226035186,\"chain\":\"solana\",\"mint\":\"[address redacted]\",\"pair_address\":\"[address redacted]\",\"reason\":\"pool_var_too_low\",\"discovery_source\":\"coingecko\"}",
+    "{\"event\":\"candidate_rejected\",\"ts_ms\":1784226035186,\"chain\":\"solana\",\"mint\":\"[address redacted]\",\"pair_address\":\"[address redacted]\",\"reason\":\"pool_var_too_low\",\"discovery_source\":\"coingecko\"}",
+    "{\"event\":\"candidate_rejected\",\"ts_ms\":1784226041420,\"chain\":\"solana\",\"mint\":\"[address redacted]\",\"pair_address\":\"[address redacted]\",\"reason\":\"pool_var_too_low\",\"discovery_source\":\"dexscreener\"}",
+    "{\"event\":\"candidate_rejected\",\"ts_ms\":1784226041420,\"chain\":\"solana\",\"mint\":\"[address redacted]\",\"pair_address\":\"[address redacted]\",\"reason\":\"pool_var_too_low\",\"discovery_source\":\"dexscreener\"}",
+    "{\"event\":\"candidate_rejected\",\"ts_ms\":1784226041420,\"chain\":\"solana\",\"mint\":\"[address redacted]\",\"pair_address\":\"[address redacted]\",\"reason\":\"pool_var_too_low\",\"discovery_source\":\"dexscreener\"}",
+    "{\"event\":\"candidate_rejected\",\"ts_ms\":1784226041420,\"chain\":\"solana\",\"mint\":\"[address redacted]\",\"pair_address\":\"[address redacted]\",\"reason\":\"pool_var_too_high\",\"discovery_source\":\"dexscreener\"}",
+    "{\"event\":\"candidate_rejected\",\"ts_ms\":1784226041420,\"chain\":\"solana\",\"mint\":\"[address redacted]\",\"pair_address\":\"[address redacted]\",\"reason\":\"pool_var_too_high\",\"discovery_source\":\"dexscreener\"}",
+    "{\"event\":\"candidate_rejected\",\"ts_ms\":1784226041420,\"chain\":\"solana\",\"mint\":\"[address redacted]\",\"pair_address\":\"[address redacted]\",\"reason\":\"pool_var_too_low\",\"discovery_source\":\"dexscreener\"}",
+    "{\"event\":\"candidate_rejected\",\"ts_ms\":1784226041420,\"chain\":\"solana\",\"mint\":\"[address redacted]\",\"pair_address\":\"[address redacted]\",\"reason\":\"pool_var_too_low\",\"discovery_source\":\"dexscreener\"}",
+    "{\"event\":\"candidate_rejected\",\"ts_ms\":1784226041420,\"chain\":\"solana\",\"mint\":\"[address redacted]\",\"pair_address\":\"[address redacted]\",\"reason\":\"pool_var_too_high\",\"discovery_source\":\"dexscreener\"}",
+    "{\"event\":\"candidate_rejected\",\"ts_ms\":1784226041420,\"chain\":\"solana\",\"mint\":\"[address redacted]\",\"pair_address\":\"[address redacted]\",\"reason\":\"pool_var_too_high\",\"discovery_source\":\"dexscreener\"}",
+    "{\"event\":\"candidate_rejected\",\"ts_ms\":1784226041420,\"chain\":\"solana\",\"mint\":\"[address redacted]\",\"pair_address\":\"[address redacted]\",\"reason\":\"pool_var_too_low\",\"discovery_source\":\"dexscreener\"}",
+    "{\"event\":\"candidate_rejected\",\"ts_ms\":1784226041420,\"chain\":\"solana\",\"mint\":\"[address redacted]\",\"pair_address\":\"[address redacted]\",\"reason\":\"pair_too_old\",\"discovery_source\":\"dexscreener\"}",
+    "{\"event\":\"candidate_rejected\",\"ts_ms\":1784226041420,\"chain\":\"solana\",\"mint\":\"[address redacted]\",\"pair_address\":\"[address redacted]\",\"reason\":\"pair_too_old\",\"discovery_source\":\"dexscreener\"}",
+    "{\"event\":\"candidate_rejected\",\"ts_ms\":1784226041420,\"chain\":\"solana\",\"mint\":\"[address redacted]\",\"pair_address\":\"[address redacted]\",\"reason\":\"pool_var_too_low\",\"discovery_source\":\"dexscreener\"}",
+    "{\"event\":\"candidate_rejected\",\"ts_ms\":1784226041420,\"chain\":\"solana\",\"mint\":\"[address redacted]\",\"pair_address\":\"[address redacted]\",\"reason\":\"pool_var_too_low\",\"discovery_source\":\"dexscreener\"}",
+    "{\"event\":\"candidate_rejected\",\"ts_ms\":1784226041420,\"chain\":\"solana\",\"mint\":\"[address redacted]\",\"pair_address\":\"[address redacted]\",\"reason\":\"pool_var_too_low\",\"discovery_source\":\"dexscreener\"}",
+    "{\"event\":\"candidate_rejected\",\"ts_ms\":1784226041420,\"chain\":\"solana\",\"mint\":\"[address redacted]\",\"pair_address\":\"[address redacted]\",\"reason\":\"pool_var_too_low\",\"discovery_source\":\"dexscreener\"}"
+  ],
+  "log_source": "launch-mev-sol-candidates.ndjson",
+  "updated_at": "2026-07-16 18:20 UTC"
+}

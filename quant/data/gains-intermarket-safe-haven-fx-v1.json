@@ -1,0 +1,23 @@
+{
+  "slug": "gains-intermarket-safe-haven-fx-v1",
+  "code_samples": [
+    {
+      "title": "Intermarket run",
+      "path": "run.sh",
+      "content": "#!/usr/bin/env bash\nset -euo pipefail\nROOT=\"$(cd \"$(dirname \"${BASH_SOURCE[0]}\")/../../..\" && pwd)\"\nexec \"$ROOT/scripts/testing/run-gains-intermarket-safe-haven-fx.sh\" \"$@\""
+    },
+    {
+      "title": "Execution router",
+      "path": "execution-router.directional-intermarket-safe-haven-fx.toml",
+      "content": "# signal_mode = \"gains_intermarket_safe_haven_fx_v1\"\n# gains-intermarket-safe-haven-fx directional follow (Phase 1).\n\n[execution_router]\nmode = \"dryrun\"\nexecution_enabled = true\nkill_switch = false\nallow_live = false\nwealth_usdc = [redacted]\nmin_delta_usd = 1.0\nmin_delta_mode = \"fractional\"\nmin_delta_frac = 0.05\nper_venue_cap_usd = 15.0\nopen_signal_cap_usd = 15.0\nopen_collateral_cap_usd = 15.0\nmax_concurrent_open_legs = 1\nopen_leg_selection = \"intermarket_optimal\"\nmax_open_fee_frac_of_collateral = 0.20\nmin_liq_distance_bps = 100\nprotective_exit_bypass_reduce_cap = true\nper_venue_reduce_cap_usd = 15.0\nopportunity_rotation_enabled = false\nopportunity_rotation_r_hat_margin = 0.0\nmax_orders_per_venue_per_minute = 6\nrebalance_cooldown_ms = 0\nrebalance_force_threshold_frac = 0.12\ntrailing_stop_enabled = false\ntrailing_stop_frac = 0.05\nrebalance_policy = \"directional_follow\"\ndirectional_r_hat_open = 6e-6\ndirectional_r_hat_flip = 9e-6\ndirectional_min_hold_ticks = 11\ndirectional_post_flip_cooldown_ticks = 0\ndirectional_close_settle_polls = 5\ndirectional_profit_lock_r = 0.0\ndirectional_profit_flip_relief_r = 0.0\ndirectional_r_collateral_frac = 0.25\ndirectional_disaster_sl_at_open = true\ndirectional_sl_collateral_loss_frac = 0.55\ndirectional_sl_liq_buffer_bps = 40\nallowed_venues = [\"gains_gtrade\"]\nexecution_audit_ndjson_path = \"./[path redacted]\"\nequity_live_enabled = true\nwealth_usdc_cap = [redacted]\n\n[execution_router.gains_market_costs]\nenabled = true\ntelemetry_only = true\ncache_ttl_ms = 60000\nlog_crowded_side_bps = 10.0\nlog_borrowing_bps_per_hour = 50.0\nborrow_hold_relief_bps_per_hour = 100.0\nmin_hold_relief_ticks = 5\nflip_threshold_relief_frac = 0.85\n"
+    },
+    {
+      "title": "Thresholds",
+      "path": "gains-intermarket-safe-haven-fx-thresholds.env",
+      "content": "# Calibrated r_hat thresholds for gains_intermarket_safe_haven_fx_v1\n# Populate via scripts/calibrate.sh after dryrun audit"
+    }
+  ],
+  "logs": [],
+  "log_source": "no log file found",
+  "updated_at": "2026-07-16 18:20 UTC"
+}

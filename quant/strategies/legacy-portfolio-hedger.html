@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Legacy Portfolio Hedger — Strategy Portfolio</title>
+  <link rel="stylesheet" href="../assets/reset.css">
+  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="stylesheet" href="../assets/custom.css">
+  <link rel="stylesheet" href="../assets/tree.css">
+</head>
+<body class="portfolio-layout" data-asset-base=".." data-slug="legacy-portfolio-hedger">
+  <header>
+    <nav><a href="../index.html">Portfolio</a> / Legacy Portfolio Hedger</nav>
+    <h1>Legacy Portfolio Hedger</h1>
+    <p class="subtitle">Three-leg BTC/ETH/SOL hedger on Gains — archived in favor of single-symbol follow</p>
+    <span class="badge badge-archived">ARCHIVED</span>
+  </header>
+  <main>
+    <section>
+      <h2>Instrument / Architecture</h2>
+      <table>
+        <tr><th>Field</th><th>Value</th></tr>
+        <tr><td>Venue</td><td>Gains gTrade</td></tr>
+        <tr><td>Legs</td><td>BTC, ETH, SOL (joint panel)</td></tr>
+        <tr><td>Signal</td><td>Chronos2 joint forecast panel</td></tr>
+        <tr><td>Optimizer</td><td>Penalized log-growth (target fractions x*)</td></tr>
+        <tr><td>Execution</td><td>Execution-router with anti-churn guards</td></tr>
+        <tr><td>Tag</td><td>v0-three-leg-hedger</td></tr>
+      </table>
+      <figure>
+        <pre>
++------------------+     +-------------------+     +------------------+
+| Chronos2 Panel   | --> | Hedger-Core       | --> | Execution Router |
+| (BTC, ETH, SOL   |     | (penalized log-   |     | (anti-churn:     |
+|  joint forecast)  |     |  growth optimizer) |     |  cooldown, min-  |
++------------------+     +-------------------+     |  delta, lock)    |
+                                |                   +------------------+
+                                v
+                         +-------------------+
+                         | best_feasible_    |
+                         | signal leg select |
+                         +-------------------+
+        </pre>
+        <figcaption>Multi-leg optimizer selects best feasible signal under leverage/cap constraints</figcaption>
+      </figure>
+    </section>
+
+    <section>
+      <h2>Signal</h2>
+      <p>Chronos2 produces a joint forecast panel for BTC, ETH, and SOL. The hedger-core penalized log-growth optimizer yields target fractions <code>x*</code> under per-leg caps and gross leverage limits. Execution-router maps delta (<code>x* - x_curr</code>) to venue orders with anti-churn guards (rebalance cooldown, min-delta threshold, in-flight open lock).</p>
+    </section>
+
+    <section id="math-logic">
+      <h2>Mathematics and Logic</h2>
+
+<h3>Penalized log-growth objective (hedger-core)</h3>
+<p>Chronos2 produces joint forecast <code>(r_hat, Sigma)</code> over BTC/ETH/SOL legs.
+Optimizer finds allocation fractions <code>x</code> maximizing:</p>
+<figure><pre>
+inner(x) = 1 + x·r_hat - C(x)        # C = transaction costs when cost_in_log
+
+U(x) = log(inner) - lambda_L |x|_1^2 - variance_penalty(x, Sigma)
+
+variance_penalty = Sigma quadratic form / (2 inner^2)  if curvature_correction
+                 = lambda_sigma x^T Sigma x             otherwise
+
+Execute: Delta_x = x* - x_current  subject to per-leg caps, gross leverage limit
+</pre></figure>
+<p>Small-book failure mode: venue min notional forced concentrated BTC leg while ETH/SOL targets
+were min_delta_skipped — motivated pivot to single-symbol directional follow.</p>
+
+    </section>
+
+    <section>
+      <h2>Status and Outcome</h2>
+      <p><strong>Archived</strong> — pivoted to single-symbol directional follow (SOLDEGEN first) for small-book deployment. The full hedger stack is preserved for larger-capital configurations. This package documents legacy behavior for portfolio export and intent replay.</p>
+    </section>
+
+    <section>
+      <h2>Failures and Corrections</h2>
+
+      <h3>1. BTC concentration from venue minimums</h3>
+      <p><code>best_feasible_signal</code> plus venue minimum notional (~800 at venue minimum) forced BTC opens while ETH/SOL targets were skipped as <code>min_delta_skipped</code>. On a small book, the optimizer's unconstrained target fractions hit venue floor constraints on the non-BTC legs, creating unintended single-asset concentration.</p>
+
+      <h3>2. Partial shrink held (stuck position)</h3>
+      <p><code>chronos_reduce_suppressed</code> locked a long BTC position while <code>r_hat</code> and <code>x*</code> had already moved. The reduce-suppression logic (designed to prevent premature exit) interacted badly with multi-leg rebalancing where the optimizer wanted to rotate out of BTC into another leg.</p>
+
+      <h3>3. Double-open incident</h3>
+      <p>Trades 28/29 in one session exposed a snapshot vs trade-index settlement gap. Two opens fired in sequence because the position snapshot used for the second trade had not yet reflected the first trade's settlement. Anti-churn in-flight lock was the intended guard but failed at the snapshot timing boundary.</p>
+
+      <h3>Decision</h3>
+      <p>The hedger's complexity (joint optimizer, multi-leg venue constraints, reduce-suppression interactions) exceeded what could be validated on a small book. Pivot to single-symbol directional follow eliminated venue minimum constraints, multi-leg coordination bugs, and reduce-suppression interactions while preserving the core Chronos signal value.</p>
+    </section>
+
+    <section>
+      <h2>Related Strategies</h2>
+      <ul>
+        <li><a href="gains-degen-fast.html">gains-degen-fast</a> — single-symbol successor (SOLDEGEN)</li>
+        <li><a href="chronos-swing-v1.html">chronos-swing-v1</a> — single-symbol successor (SOL)</li>
+        <li><a href="directional-follow.html">directional-follow</a> — shared directional infrastructure</li>
+      </ul>
+    </section>
+  </main>
+  <script src="../assets/site.js" defer></script>
+</body>
+</html>

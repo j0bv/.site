@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gains Intermarket ETF Momentum v1 — Strategy Portfolio</title>
+  <link rel="stylesheet" href="../assets/reset.css">
+  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="stylesheet" href="../assets/custom.css">
+  <link rel="stylesheet" href="../assets/tree.css">
+</head>
+<body class="portfolio-layout" data-asset-base=".." data-slug="gains-intermarket-etf-momentum-v1">
+  <header>
+    <nav><a href="../index.html">Portfolio</a> / Gains Intermarket ETF Momentum v1</nav>
+    <h1>Gains Intermarket ETF Momentum v1</h1>
+    <p class="subtitle">Six ETF/metals candidates at Chronos horizon_index=3</p>
+    <span class="badge badge-experimental">EXPERIMENTAL</span>
+  </header>
+  <main>
+    <section>
+      <h2>Instrument / Architecture</h2>
+      <table>
+        <tr><th>Field</th><th>Value</th></tr>
+        <tr><td>Venue</td><td>Gains gTrade</td></tr>
+        <tr><td>Trade legs</td><td>Six ETF/metals candidates</td></tr>
+        <tr><td>Chronos</td><td>horizon_index=3</td></tr>
+        <tr><td>Signal</td><td>Chronos directional_follow (Phase 1)</td></tr>
+        <tr><td>Intermarket thesis</td><td>Cross-asset momentum with metals as macro indicator</td></tr>
+      </table>
+    </section>
+
+    <section>
+      <h2>Signal</h2>
+      <p>Phase 1: Chronos <code>directional_follow</code> at horizon_index=3 across six ETF and metals candidates. The broader candidate universe allows rotation into the strongest momentum signal at any given time. Execution uses standard Chronos infrastructure.</p>
+    </section>
+
+    <section id="math-logic">
+      <h2>Mathematics and Logic</h2>
+
+<h3>ETF momentum thesis</h3>
+<p>Six ETF/metals candidates at Chronos h=3; strongest |r_hat| among panel wins
+<code>intermarket_optimal</code> selection.</p>
+
+<p>Phase 1 uses Chronos <code>directional_follow</code> on one or more trade legs. Context instruments
+(SPY, FX, sector ETFs) inform regime classification; the optimizer ranks candidates with
+<code>open_leg_selection = intermarket_optimal</code> (Strategy 9 engine in hedger-intermarket).</p>
+<figure>
+  <pre>
+For each candidate leg j:
+  score_j = |r_hat_j| - market_cost_j(borrowing, spread, crowded_side)
+
+Open if score* > threshold and US-hours guard passes
+Pairs-divergence variant: dollar-neutral spread target
+  long_leg:  +frac x notional
+  short_leg: -frac x notional
+  </pre>
+</figure>
+
+    </section>
+
+    <section>
+      <h2>Status and Outcome</h2>
+      <p><strong>Experimental</strong> — Phase 1 designed. Part of the 8-strategy intermarket suite.</p>
+    </section>
+
+    <section>
+      <h2>Failures and Corrections</h2>
+      <p>No documented failures — strategy in experimental/Phase 1 design state.</p>
+    </section>
+
+    <section>
+      <h2>Related Strategies</h2>
+      <ul>
+        <li><a href="gains-intermarket-roro-v1.html">roro</a> — QQQ/XAU risk-on/risk-off</li>
+        <li><a href="gains-intermarket-copper-equity-v1.html">copper-equity</a> — equity vs copper</li>
+        <li><a href="directional-follow.html">directional-follow</a> — shared Chronos infrastructure</li>
+      </ul>
+    </section>
+  </main>
+  <script src="../assets/site.js" defer></script>
+</body>
+</html>

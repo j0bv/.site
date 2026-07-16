@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sol Momentum DEX Ladder v1 — Strategy Portfolio</title>
+  <link rel="stylesheet" href="../assets/reset.css">
+  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="stylesheet" href="../assets/custom.css">
+  <link rel="stylesheet" href="../assets/tree.css">
+</head>
+<body class="portfolio-layout" data-asset-base=".." data-slug="sol-momentum-dex-ladder-v1">
+  <header>
+    <nav><a href="../index.html">Portfolio</a> / Sol Momentum DEX Ladder v1</nav>
+    <h1>Sol Momentum DEX Ladder v1</h1>
+    <p class="subtitle">Open-market Solana spot trending memecoins with 3-tranche ladder and tiered exits</p>
+    <span class="badge badge-experimental">EXPERIMENTAL</span>
+  </header>
+  <main>
+    <section>
+      <h2>Instrument / Architecture</h2>
+      <table>
+        <tr><th>Field</th><th>Value</th></tr>
+        <tr><td>Chain</td><td>Solana</td></tr>
+        <tr><td>Target</td><td>Trending memecoins on any DEX Screener pool</td></tr>
+        <tr><td>Entry</td><td>3-tranche ladder (40% / 35% / 25%)</td></tr>
+        <tr><td>Exit</td><td>4-tier ladder (+50%, +100%, +200-300%, moonbag)</td></tr>
+        <tr><td>Hard stops</td><td>-20% pre-tier1, -15% trailing post-tier1, liquidity drop, time stop</td></tr>
+        <tr><td>Risk unit</td><td>Default 1.0 SOL</td></tr>
+      </table>
+      <figure>
+        <pre>
++-------------------+     +------------------+     +------------------+
+| DEX Screener      | --> | Filter           | --> | Rug Screen       |
+| (trending pools)  |     | (liq 50K, mcap   |     | (mint+freeze     |
+|                   |     |  500K-5M, m5+10%)|     |  revoked, LP)    |
++-------------------+     +------------------+     +------------------+
+                                                          |
+                                                          v
++-------------------+     +------------------+     +------------------+
+| Exit Ladder       | <-- | Position Monitor | <-- | 3-Tranche Entry  |
+| (T1:+50% T2:+100%|     | (local high,     |     | (A:40% B:35%     |
+|  T3:+200% Moon)   |     |  trailing stop)  |     |  C:25%)          |
++-------------------+     +------------------+     +------------------+
+        </pre>
+        <figcaption>Spot ladder: 3 entries with progressively smaller size, 4 tiered exits</figcaption>
+      </figure>
+    </section>
+
+    <section>
+      <h2>Signal</h2>
+      <p>DEX Screener filter: liquidity >= 50K, market cap 500K-5M, 5m price change >= +10%, 1h price change >= +50%, buy/sell ratio > 1.5, holders >= 200 (optional). Rug screen: mint authority revoked, freeze authority revoked, LP lock verification.</p>
+      <p>Entry tranches: A fires on filter pass, B on 5-10% pullback from post-A high, C on new high above A entry (skip if A+B already profitable).</p>
+    </section>
+
+    <section id="math-logic">
+      <h2>Mathematics and Logic</h2>
+
+<h3>Filter score (conjunctive gates)</h3>
+<figure><pre>
+pass = liq >= 50k
+     AND mcap in [500k, 5M]
+     AND m5_change >= +10%
+     AND h1_change >= +50%
+     AND buy_sell_ratio_1h > 1.5
+     AND rug_checks_pass
+</pre></figure>
+<h3>Ladder entry (tranches of risk unit R)</h3>
+<figure><pre>
+A: 0.40 R  on filter pass
+B: 0.35 R  on 5-10% pullback from post-A high
+C: 0.25 R  on new high above A (skip if A+B already profitable)
+</pre></figure>
+<h3>Tiered exit</h3>
+<figure><pre>
+T1: +50%  -> sell 40% of position
+T2: +100% -> sell 30%
+T3: +200-300% -> sell 20%
+Moonbag: remainder until trailing stop / time stop / liq drop
+
+Hard stop: -20% pre-T1 | trailing -15% post-T1 | liq drop >15% in 5m
+</pre></figure>
+
+    </section>
+
+    <section>
+      <h2>Status and Outcome</h2>
+      <p><strong>Experimental</strong> — filter and entry logic designed, distinct from the Gains meme perp strategy (directional-meme-v1) which targets listed memes only.</p>
+    </section>
+
+    <section>
+      <h2>Failures and Corrections</h2>
+      <p>No documented failures — strategy in experimental state.</p>
+    </section>
+
+    <section>
+      <h2>Related Strategies</h2>
+      <ul>
+        <li><a href="directional-meme-v1.html">directional-meme-v1</a> — Gains perp meme momentum (separate strategy)</li>
+        <li><a href="launch-mev-sol-v1.html">launch-mev-sol-v1</a> — cradle sniping (younger pools, different filter)</li>
+        <li><a href="launch-mev-sol-trending-v1.html">launch-mev-sol-trending-v1</a> — trending MEV (different entry mechanics)</li>
+      </ul>
+    </section>
+  </main>
+  <script src="../assets/site.js" defer></script>
+</body>
+</html>

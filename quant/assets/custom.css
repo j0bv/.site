@@ -1,0 +1,131 @@
+/* Status badges */
+.badge {
+  display: inline-block;
+  padding: 0 1ch;
+  font-size: 0.75rem;
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  border: var(--border-thickness) solid;
+  line-height: calc(var(--line-height) * 1.5);
+  vertical-align: middle;
+}
+.badge-live {
+  color: #116611;
+  border-color: #116611;
+  background: #e6f4e6;
+}
+.badge-halted {
+  color: #991111;
+  border-color: #991111;
+  background: #fde6e6;
+}
+.badge-experimental {
+  color: #886600;
+  border-color: #886600;
+  background: #fef9e6;
+}
+.badge-archived {
+  color: #555;
+  border-color: #555;
+  background: #eee;
+}
+
+@media (prefers-color-scheme: dark) {
+  .badge-live {
+    color: #66cc66;
+    border-color: #66cc66;
+    background: #112211;
+  }
+  .badge-halted {
+    color: #ff6666;
+    border-color: #ff6666;
+    background: #221111;
+  }
+  .badge-experimental {
+    color: #ccaa33;
+    border-color: #ccaa33;
+    background: #221f11;
+  }
+  .badge-archived {
+    color: #999;
+    border-color: #666;
+    background: #1a1a1a;
+  }
+}
+
+/* Breadcrumb navigation */
+nav {
+  font-size: 0.85rem;
+  color: var(--text-color-alt);
+  margin-bottom: var(--line-height);
+}
+nav a {
+  color: var(--text-color-alt);
+  text-decoration: underline;
+  text-decoration-thickness: var(--border-thickness);
+}
+nav a:hover {
+  color: var(--text-color);
+}
+
+/* Subtitle line */
+.subtitle {
+  color: var(--text-color-alt);
+  font-style: italic;
+  margin-top: 0;
+}
+
+/* Strategy card grid on index */
+.strategy-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(30ch, 1fr));
+  gap: var(--line-height) 2ch;
+  margin-bottom: calc(var(--line-height) * 2);
+}
+.strategy-card {
+  border: var(--border-thickness) solid var(--text-color);
+  padding: calc(var(--line-height) - var(--border-thickness)) 1ch;
+}
+.strategy-card h3 {
+  margin: 0 0 0;
+  font-size: 1rem;
+}
+.strategy-card p {
+  margin: calc(var(--line-height) / 2) 0;
+  font-size: 0.85rem;
+  color: var(--text-color-alt);
+}
+.strategy-card .badge {
+  margin-top: calc(var(--line-height) / 2);
+}
+.strategy-card a {
+  text-decoration: none;
+}
+.strategy-card a:hover h3 {
+  text-decoration: underline;
+}
+
+#math-logic h3 {
+  font-size: 0.9rem;
+  margin-top: calc(var(--line-height) * 1.5);
+  margin-bottom: 0;
+}
+
+#math-logic figure pre {
+  border: var(--border-thickness) solid var(--text-color);
+  padding: var(--line-height) 1ch;
+  overflow-x: auto;
+  font-size: 0.75rem;
+  line-height: 1.15rem;
+}
+
+#math-logic p + figure {
+  margin-top: calc(var(--line-height) / 2);
+}
+
+/* ASCII diagrams */
+figure pre {
+  border: var(--border-thickness) solid var(--text-color);
+  padding: var(--line-height) 1ch;
+  overflow-x: auto;
+}

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chronos Spot WETH Bull v1 — Strategy Portfolio</title>
+  <link rel="stylesheet" href="../assets/reset.css">
+  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="stylesheet" href="../assets/custom.css">
+  <link rel="stylesheet" href="../assets/tree.css">
+</head>
+<body class="portfolio-layout" data-asset-base=".." data-slug="chronos-spot-weth-bull-v1">
+  <header>
+    <nav><a href="../index.html">Portfolio</a> / Chronos Spot WETH Bull v1</nav>
+    <h1>Chronos Spot WETH Bull v1</h1>
+    <p class="subtitle">Directional WETH/USDC spot on Uniswap V3 with USDC baseline and net-edge gate</p>
+    <span class="badge badge-experimental">EXPERIMENTAL</span>
+  </header>
+  <main>
+    <section>
+      <h2>Instrument / Architecture</h2>
+      <table>
+        <tr><th>Field</th><th>Value</th></tr>
+        <tr><td>Venue</td><td>Uniswap V3 (Arbitrum)</td></tr>
+        <tr><td>Pair</td><td>WETH/USDC</td></tr>
+        <tr><td>Mode</td><td>Directional bull-run (USDC baseline)</td></tr>
+        <tr><td>Neutral WETH</td><td>0% (cash neutral when flat)</td></tr>
+        <tr><td>Open size</td><td>~10 per rebalance</td></tr>
+        <tr><td>Poll</td><td>30s (validated in dryrun #6)</td></tr>
+        <tr><td>Leverage</td><td>None (spot)</td></tr>
+      </table>
+      <figure>
+        <pre>
++------------------+     +-------------------+     +-------------------+
+|  Chronos Sidecar | --> | Execution Router  | --> | Uniswap V3 Pool   |
+|  (r_hat, h=3)    |     | + net-edge gate   |     | (0.01% fee tier)  |
++------------------+     +-------------------+     +-------------------+
+        |                         |
+        v                         v
++------------------+     +-------------------+
+| md-collector     |     | Legacy SwapRouter |
+| (30s poll WETH)  |     | (exactInputSingle)|
++------------------+     +-------------------+
+        </pre>
+        <figcaption>USDC baseline: buy WETH on bullish r_hat, sell back on bearish flip</figcaption>
+      </figure>
+    </section>
+
+    <section>
+      <h2>Signal</h2>
+      <p>Chronos2 <code>r_hat</code> at horizon index 3 with 30s poll. Sit in USDC when flat. Buy WETH when <code>r_hat</code> clears open threshold (5e-4). Sell to USDC on bearish flip or profit-lock.</p>
+      <p>Net-edge gate blocks opens where forecast edge is below round-trip cost (pool fee + gas). Success measured as alpha vs buy-and-hold ETH, not raw equity drift.</p>
+    </section>
+
+    <section id="math-logic">
+      <h2>Mathematics and Logic</h2>
+
+
+<p>Chronos2 emits a one-step expected return estimate <code>r_hat</code> at horizon index <code>h</code>.
+The execution router treats <code>sign(r_hat)</code> as trade direction and gates size with hysteresis:</p>
+<figure>
+  <pre>
+Open (flat):     |r_hat| > R_OPEN
+Flip (in-pos):   |r_hat| > R_FLIP   where R_FLIP > R_OPEN
+Min hold:        N ticks before flip allowed
+Target notional: n_target from collateral cap x leverage
+  </pre>
+</figure>
+<p>Hysteresis reduces flip-churn: enter on weaker evidence, exit only on stronger counter-evidence.
+Calibration uses the tail of |r_hat| from dryrun audit NDJSON — not blind median percentiles when the
+distribution is bimodal (noise floor ~1e-6 to 1e-5 vs signal tail ~5e-5 to 1e-4 at 30s cadence).</p>
+
+<h3>USDC baseline (directional spot)</h3>
+<figure><pre>
+inventory_target_weth_frac = 0.0    # flat = all USDC
+
+Open:  r_hat > R_OPEN  -> buy WETH up to open_cap
+Close: r_hat < -R_FLIP OR profit_lock hit -> sell to USDC
+
+profit_lock_r ~ 0.02 on ~10 leg => ~0.05 absolute target
+poll = 5s, min_hold = 1 tick
+
+Alpha metric: E_t - buy_and_hold_ETH(same capital)
+Net-edge gate: expected move > swap_fee + gas + slippage buffer
+</pre></figure>
+
+    </section>
+
+    <section>
+      <h2>Status and Outcome</h2>
+      <p><strong>Experimental</strong> — conditional go after dryrun #6 validated gated economics. First net-edge gate pass achieved at 30s poll with <code>r_hat ~ 1.1e-3</code>. Not yet live; awaiting confirmation of multiple gate passes across different market windows.</p>
+    </section>
+
+    <section>
+      <h2>Failures and Corrections</h2>
+      <p>Seven experiment iterations documented the progression from a non-functional configuration to validated economics:</p>
+
+      <h3>Dryrun #1: Wrong starting inventory</h3>
+      <p>Wallet held ~34% WETH from the predecessor micro-rebalancer era. The bull strategy targets 0% neutral but <code>directional_follow</code> only exits on bearish flip, not inventory drift. Most ticks attempted exit but <code>r_hat</code> was too weak. Net-edge gate was never exercised because the book never reached USDC baseline.</p>
+      <p><strong>Fix:</strong> Flatten wallet to USDC before running bull configuration.</p>
+
+      <h3>Dryrun #2: Net-edge gate exercised — all blocked</h3>
+      <p>From correct USDC-flat starting point, 8 ticks crossed the open threshold but all were blocked by <code>spot_below_net_edge</code>. At 0.05% pool tier, round-trip pool fees (~0.01% on a ~10 leg) exceeded forecast edge by an order of magnitude. Gate behavior was correct — the economics did not support trading.</p>
+
+      <h3>Dryrun #3: Diagnostic — signal is active enough</h3>
+      <p>With gate disabled, 35 bullish ticks produced buy intents over 30 minutes. Max <code>r_hat</code> reached 7.1e-4. Signals clustered in momentum bursts (median inter-arrival 10.1s). This proved the signal regime was active; economics were the sole blocker.</p>
+
+      <h3>Dryrun #4: Pool tier switch insufficient alone</h3>
+      <p>Switched to 0.01% fee tier. Pool cost dropped to ~0.002% round-trip, but gas estimate (200k gas limit) dominated total cost at ~0.012% round-trip. Max <code>r_hat</code> of 5.26e-4 produced edge of ~0.005% — still blocked.</p>
+      <p><strong>Fix:</strong> Calibrate gas limit to observed on-chain swap gas (~127k for legacy router). Updated to 130k.</p>
+
+      <h3>Dryrun #5: Calibrated gas — still below break-even on quiet session</h3>
+      <p>With 130k gas + 0.01% pool, break-even <code>r_hat</code> is ~1e-3. This session's max was 4.9e-4 — all 10 bullish threshold crosses blocked. The signal can reach 7e-4 (dryrun #3 proved this) but the current session was not volatile enough.</p>
+
+      <h3>ARB symbol probe: alternative rejected</h3>
+      <p>Tested ARB/USDC as potentially higher-volatility alternative. Native USDC pools on Arbitrum showed stale or near-stale slot0 prices — Chronos received flat input and produced <code>r_hat ~ 1.6e-6</code>. WETH confirmed as the better symbol for this stack.</p>
+
+      <h3>Dryrun #6: Signal regime change closes the gap</h3>
+      <p>Switched to 30s poll (from 5s). Max <code>r_hat</code> reached 1.1e-3, above the ~1e-3 break-even. <strong>One bullish tick produced the first gated pass across all dryruns</strong> — a buy leg with no <code>spot_below_net_edge</code> skip. The signal regime change (longer forecast horizon at 30s pace) was the key unlocking economically viable opens.</p>
+      <p><strong>Current status:</strong> Conditional go. Awaiting second observation window with multiple gate passes before live deployment.</p>
+    </section>
+
+    <section>
+      <h2>Related Strategies</h2>
+      <ul>
+        <li><a href="chronos-spot-weth-micro-v1.html">chronos-spot-weth-micro-v1</a> — predecessor (50/50 micro-rebalancer, archived)</li>
+        <li><a href="directional-follow.html">directional-follow</a> — shared Chronos directional_follow infrastructure</li>
+      </ul>
+    </section>
+  </main>
+  <script src="../assets/site.js" defer></script>
+</body>
+</html>

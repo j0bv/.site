@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All-4-All — Strategy Portfolio</title>
+  <link rel="stylesheet" href="../assets/reset.css">
+  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="stylesheet" href="../assets/custom.css">
+  <link rel="stylesheet" href="../assets/tree.css">
+</head>
+<body class="portfolio-layout" data-asset-base=".." data-slug="all-4-all">
+  <header>
+    <nav><a href="../index.html">Portfolio</a> / All-4-All</nav>
+    <h1>All-4-All</h1>
+    <p class="subtitle">Cross-chain wrapped-asset spread scanner with LayerZero DVN verifier</p>
+    <span class="badge badge-experimental">EXPERIMENTAL</span>
+  </header>
+  <main>
+    <section>
+      <h2>Instrument / Architecture</h2>
+      <table>
+        <tr><th>Field</th><th>Value</th></tr>
+        <tr><td>Scope</td><td>Cross-chain wrapped assets (USDC, USDT, DAI, ETH, WBTC, etc.)</td></tr>
+        <tr><td>Lane</td><td>cross_chain_arb</td></tr>
+        <tr><td>Signal mode</td><td>all_4_all_v1</td></tr>
+        <tr><td>Price source</td><td>Multicall3 batch (Uniswap V2 pools from OFT registry)</td></tr>
+        <tr><td>Execution</td><td>Deferred (returns bridge_module_deferred)</td></tr>
+        <tr><td>DVN</td><td>lz-dvn-verifier crate</td></tr>
+      </table>
+      <figure>
+        <pre>
++-------------------+     +------------------+     +------------------+
+| OFT Registry      | --> | Multicall3 Batch | --> | Spread Scanner   |
+| (wrapped-asset    |     | (Uniswap V2      |     | (cross-chain     |
+|  mapping)         |     |  pool pricing)   |     |  price deltas)   |
++-------------------+     +------------------+     +------------------+
+                                                          |
+                                                          v
+                                                   +------------------+
+                                                   | LZ DVN Verifier  |
+                                                   | (operator crate) |
+                                                   +------------------+
+        </pre>
+        <figcaption>DVN verifier is the primary deliverable; arb execution is deferred</figcaption>
+      </figure>
+    </section>
+
+    <section>
+      <h2>Signal</h2>
+      <p>Cross-chain price comparison via OFT registry + Multicall3 batch pricing on Uniswap V2 pools. Identifies wrapped-asset spreads across chains. The LayerZero DVN (Decentralized Verifier Network) operator is the primary operational deliverable — arbitrage execution itself is deferred pending bridge module implementation.</p>
+    </section>
+
+    <section id="math-logic">
+      <h2>Mathematics and Logic</h2>
+
+<h3>Cross-chain spread</h3>
+<p>For each wrapped symbol in OFT registry, batch Uniswap V2 reserves via Multicall3:</p>
+<figure><pre>
+price_i = reserve_quote_i / reserve_base_i  (per chain)
+
+spread_bps = (max(price) - min(price)) / min(price) x 10_000
+
+arb if spread_bps > MIN_SPREAD_BPS (20) + cost_floor_bps(bridge, gas)
+estimated_profit = notional x (spread_bps - costs) / 10_000
+</pre></figure>
+<p>Execution deferred; DVN verifier is the operational deliverable for LayerZero message validation.</p>
+
+    </section>
+
+    <section>
+      <h2>Status and Outcome</h2>
+      <p><strong>Experimental (DVN phase)</strong>. Standalone binaries: <code>cross-chain-mapping</code> (scanner) and <code>lz-dvn-verifier</code> (DVN operator). Not integrated with execution-router. Status machine: pending_deploy -> experimental_dvn -> testnet_live -> mainnet_live.</p>
+      <p>Current gate: DVN crate builds clean. Next gate: gate script passes + dryrun verified + DVN registered on testnet.</p>
+    </section>
+
+    <section>
+      <h2>Failures and Corrections</h2>
+      <p>No documented failures — strategy in experimental DVN phase. Execution is explicitly deferred until OFT bridge module and FROST 2-of-3 signing are implemented.</p>
+    </section>
+
+    <section>
+      <h2>Related Strategies</h2>
+      <ul>
+        <li><a href="legacy-portfolio-hedger.html">legacy-portfolio-hedger</a> — multi-asset on single chain (different approach)</li>
+        <li><a href="directional-follow.html">directional-follow</a> — single-chain directional infrastructure</li>
+      </ul>
+    </section>
+  </main>
+  <script src="../assets/site.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chronos Spot WETH Micro v1 — Strategy Portfolio</title>
+  <link rel="stylesheet" href="../assets/reset.css">
+  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="stylesheet" href="../assets/custom.css">
+  <link rel="stylesheet" href="../assets/tree.css">
+</head>
+<body class="portfolio-layout" data-asset-base=".." data-slug="chronos-spot-weth-micro-v1">
+  <header>
+    <nav><a href="../index.html">Portfolio</a> / Chronos Spot WETH Micro v1</nav>
+    <h1>Chronos Spot WETH Micro v1</h1>
+    <p class="subtitle">WETH/USDC micro-rebalancer maintaining 50/50 neutral — archived predecessor</p>
+    <span class="badge badge-archived">ARCHIVED</span>
+  </header>
+  <main>
+    <section>
+      <h2>Instrument / Architecture</h2>
+      <table>
+        <tr><th>Field</th><th>Value</th></tr>
+        <tr><td>Venue</td><td>Uniswap V3 (Arbitrum)</td></tr>
+        <tr><td>Pair</td><td>WETH/USDC (0.05% pool)</td></tr>
+        <tr><td>Mode</td><td>Micro-rebalancer (50/50 neutral)</td></tr>
+        <tr><td>Size cap</td><td>~10 per open (observed ~0.45 micro-skew swaps)</td></tr>
+        <tr><td>Poll</td><td>10s</td></tr>
+        <tr><td>Leverage</td><td>None (spot)</td></tr>
+      </table>
+      <figure>
+        <pre>
++------------------+     +-------------------+     +-------------------+
+|  Chronos Sidecar | --> | Execution Router  | --> | Uniswap V3 Pool   |
+|  (r_hat, h=3)    |     | (50/50 rebalance) |     | (0.05% fee tier)  |
++------------------+     +-------------------+     +-------------------+
+        </pre>
+        <figcaption>Maintains wallet near 50/50 USDC/WETH while nudging on weak Chronos signals</figcaption>
+      </figure>
+    </section>
+
+    <section>
+      <h2>Signal</h2>
+      <p>Chronos2 <code>r_hat</code> via <code>directional_follow</code>. The rebalancer nudges inventory toward 50/50 neutral, sizing swaps to the ~0.45 inventory skew rather than the full cap. Swaps fire on any non-zero signal that creates a rebalance opportunity.</p>
+    </section>
+
+    <section id="math-logic">
+      <h2>Mathematics and Logic</h2>
+
+
+<p>Chronos2 emits a one-step expected return estimate <code>r_hat</code> at horizon index <code>h</code>.
+The execution router treats <code>sign(r_hat)</code> as trade direction and gates size with hysteresis:</p>
+<figure>
+  <pre>
+Open (flat):     |r_hat| > R_OPEN
+Flip (in-pos):   |r_hat| > R_FLIP   where R_FLIP > R_OPEN
+Min hold:        N ticks before flip allowed
+Target notional: n_target from collateral cap x leverage
+  </pre>
+</figure>
+<p>Hysteresis reduces flip-churn: enter on weaker evidence, exit only on stronger counter-evidence.
+Calibration uses the tail of |r_hat| from dryrun audit NDJSON — not blind median percentiles when the
+distribution is bimodal (noise floor ~1e-6 to 1e-5 vs signal tail ~5e-5 to 1e-4 at 30s cadence).</p>
+
+<h3>Inventory-neutral target</h3>
+<figure><pre>
+inventory_target_weth_frac = 0.50   # 50/50 USDC/WETH neutral
+
+position_usd = weth_balance x mid_price
+delta = target_frac x equity - current_weth_frac
+
+Rebalance when |r_hat| clears threshold (weak nudges toward neutral band)
+</pre></figure>
+<p>Jun 2026 experiment showed most PnL was passive ETH beta, not Chronos timing — motivated bull fork.</p>
+
+    </section>
+
+    <section>
+      <h2>Status and Outcome</h2>
+      <p><strong>Archived</strong> (Jun 2026). Succeeded by <a href="chronos-spot-weth-bull-v1.html">chronos-spot-weth-bull-v1</a> (USDC baseline). The micro-rebalancer validated infrastructure but failed to achieve the stated goal of bull-run timing capture.</p>
+      <p>Live session result: +0.3% over ~23.5 hours with 96 on-chain swaps. This was almost entirely ETH beta (underlying moved +0.37%) with negligible timing alpha.</p>
+    </section>
+
+    <section>
+      <h2>Failures and Corrections</h2>
+
+      <h3>Finding: Passive ETH exposure, not directional timing</h3>
+      <p>The stated goal was "enter/exit WETH on optimal timing for bull runs." Observed behavior: passive half-ETH exposure with micro rebalances. With ~50% WETH at all times, a +0.37% ETH move explains most of the +0.3% return. The bot did not demonstrate bull-run capture — it maintained neutral inventory and churned ~43 notional across 96 swaps averaging ~0.45 each.</p>
+      <p><strong>Root cause:</strong> The 50/50 inventory target means the strategy is structurally a passive holder with micro-rebalancing noise, not a directional timing tool.</p>
+      <p><strong>Correction:</strong> Forked to <a href="chronos-spot-weth-bull-v1.html">chronos-spot-weth-bull-v1</a> with <code>inventory_target_weth_frac = 0.0</code> (USDC baseline) so bullish signals add WETH exposure intentionally rather than maintaining passive half-ETH.</p>
+
+      <h3>Infrastructure issues (fixed during session)</h3>
+      <p>Wrong pool address in config (contract had no bytecode on Arbitrum) — 96 historical "swaps" were actually no-op transactions. Also experienced a false drawdown halt when RPC 429 caused equity read to drop to near-zero, triggering the monitor incorrectly.</p>
+      <p><strong>Fixes:</strong> Correct pool address deployed; drawdown monitor hardened against RPC equity glitches.</p>
+    </section>
+
+    <section>
+      <h2>Related Strategies</h2>
+      <ul>
+        <li><a href="chronos-spot-weth-bull-v1.html">chronos-spot-weth-bull-v1</a> — successor (USDC baseline, directional)</li>
+        <li><a href="directional-follow.html">directional-follow</a> — shared Chronos directional_follow infrastructure</li>
+      </ul>
+    </section>
+  </main>
+  <script src="../assets/site.js" defer></script>
+</body>
+</html>

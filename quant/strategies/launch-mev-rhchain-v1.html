@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Launch MEV RH Chain v1 — Strategy Portfolio</title>
+  <link rel="stylesheet" href="../assets/reset.css">
+  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="stylesheet" href="../assets/custom.css">
+  <link rel="stylesheet" href="../assets/tree.css">
+</head>
+<body class="portfolio-layout" data-asset-base=".." data-slug="launch-mev-rhchain-v1">
+  <header>
+    <nav><a href="../index.html">Portfolio</a> / Launch MEV RH Chain v1</nav>
+    <h1>Launch MEV RH Chain v1</h1>
+    <p class="subtitle">Monitor-first RH Chain launch strategy pending factory address disclosure</p>
+    <span class="badge badge-experimental">EXPERIMENTAL</span>
+  </header>
+  <main>
+    <section>
+      <h2>Instrument / Architecture</h2>
+      <table>
+        <tr><th>Field</th><th>Value</th></tr>
+        <tr><td>Chain</td><td>RH Chain (chain ID user-supplied)</td></tr>
+        <tr><td>Discovery</td><td>Factory websocket (TBD pending official addresses)</td></tr>
+        <tr><td>Secondary</td><td>GeckoTerminal (if network slug confirmed)</td></tr>
+        <tr><td>Risk gate</td><td>Anvil-fork buy-sell simulation (primary)</td></tr>
+        <tr><td>Live execution</td><td>Locked by default (monitor-first)</td></tr>
+      </table>
+      <figure>
+        <pre>
++--------------------+     +------------------+     +------------------+
+| Factory Websocket  | --> | Cradle Filter    | --> | Anvil Fork Sim   |
+| (TBD - user-       |     | (TBD - pending   |     | (primary gate;   |
+|  supplied address)  |     |  chain tooling)  |     |  GoPlus unknown) |
++--------------------+     +------------------+     +------------------+
+                                                           |
+                                                           v
+                                                    +------------------+
+                                                    | Monitor Only     |
+                                                    | (live locked)    |
+                                                    +------------------+
+        </pre>
+        <figcaption>Monitor-first: live execution disabled until chain tooling confirmed</figcaption>
+      </figure>
+    </section>
+
+    <section>
+      <h2>Signal</h2>
+      <p>Primary discovery via factory websocket from DEX factory address (when provided). Secondary via GeckoTerminal only when the network slug is confirmed and indexed. Anvil-fork simulation is the primary risk gate; GoPlus support unknown for this chain. Timeboost integration is an explicit stub pending final endpoint disclosure.</p>
+    </section>
+
+    <section id="math-logic">
+      <h2>Mathematics and Logic</h2>
+
+<h3>Monitor-first</h3>
+<p>Same cradle filter and risk-gate semantics as Sol/BSC packages. Live execution disabled until
+factory address and RPC endpoints are disclosed. Math is identical; only discovery source differs.</p>
+<figure><pre>
+evaluate(candidate) -> Pass | Reject(reason)
+reason in { pool_var_too_low, pool_var_too_high, pair_too_old, ... }
+</pre></figure>
+
+    </section>
+
+    <section>
+      <h2>Status and Outcome</h2>
+      <p><strong>Experimental</strong> (monitor-first). Live execution remains locked by default. Chain ID is user-supplied and must not be assumed. Multiple dependencies on external confirmation (factory addresses, GoPlus indexing, Timeboost endpoints) before any live path.</p>
+    </section>
+
+    <section>
+      <h2>Failures and Corrections</h2>
+      <p>No documented failures — strategy in monitor-first state with live execution disabled. Design explicitly avoids premature activation by requiring dual confirmation before live enable.</p>
+    </section>
+
+    <section>
+      <h2>Related Strategies</h2>
+      <ul>
+        <li><a href="launch-mev-sol-v1.html">launch-mev-sol-v1</a> — Solana cradle (production reference)</li>
+        <li><a href="launch-mev-bsc-v1.html">launch-mev-bsc-v1</a> — BSC equivalent</li>
+      </ul>
+    </section>
+  </main>
+  <script src="../assets/site.js" defer></script>
+</body>
+</html>

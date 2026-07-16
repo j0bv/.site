@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Launch MEV Sol v1 — Strategy Portfolio</title>
+  <link rel="stylesheet" href="../assets/reset.css">
+  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="stylesheet" href="../assets/custom.css">
+  <link rel="stylesheet" href="../assets/tree.css">
+</head>
+<body class="portfolio-layout" data-asset-base=".." data-slug="launch-mev-sol-v1">
+  <header>
+    <nav><a href="../index.html">Portfolio</a> / Launch MEV Sol v1</nav>
+    <h1>Launch MEV Sol v1</h1>
+    <p class="subtitle">Solana cradle sniping with Jito bundle entry and mechanical tiered exits</p>
+    <span class="badge badge-live">LIVE</span>
+  </header>
+  <main>
+    <section>
+      <h2>Instrument / Architecture</h2>
+      <table>
+        <tr><th>Field</th><th>Value</th></tr>
+        <tr><td>Chain</td><td>Solana</td></tr>
+        <tr><td>Target</td><td>Young pools (max ~1h age), high 5m price change</td></tr>
+        <tr><td>Entry</td><td>Jito bundle buy + tip</td></tr>
+        <tr><td>Exit</td><td>Snipe ladder (tier1) + TWAP partial unwind after hold window</td></tr>
+        <tr><td>Mark price</td><td>On-chain vault math (Raydium CPMM, PumpSwap, Pump.fun bonding curve)</td></tr>
+        <tr><td>Venues</td><td>Raydium CPMM, PumpSwap, Pump.fun</td></tr>
+      </table>
+      <figure>
+        <pre>
++-------------------+     +------------------+     +------------------+
+| Discovery Rotator | --> | Cradle Filter    | --> | Risk Gate        |
+| (DexScreener 3x, |     | (pool_var_proxy, |     | (block mode,     |
+|  Gecko, CoinGecko)|     |  liq, mcap, age) |     |  simulate_tx)    |
++-------------------+     +------------------+     +------------------+
+                                                           |
+                                                           v
++-------------------+     +------------------+     +------------------+
+| Exit Sidecar      | <-- | Position Monitor | <-- | Jito Bundle      |
+| (tier1 snipe +    |     | (vault subscribe,|     | (buy + tip)      |
+|  TWAP unwind)     |     |  dev rug watch)  |     |                  |
++-------------------+     +------------------+     +------------------+
+        </pre>
+        <figcaption>Pipeline: discovery, filter, risk gate, bundle entry, monitored exit</figcaption>
+      </figure>
+    </section>
+
+    <section>
+      <h2>Signal</h2>
+      <p>Discovery via free-tier round-robin: DexScreener weighted 3x (~60 req/min), GeckoTerminal <code>new_pools</code>, CoinGecko demo. Cradle filter selects pools with high <code>pool_var_proxy</code> (5-minute price change percentage), minimum liquidity, and age under ~1 hour.</p>
+      <p>Entry requires: risk gate pass, mandatory <code>simulate_transaction</code>, and entry refresh validation (price still meets criteria at submit time). Exit uses snipe ladder (tier1 at +50% take-profit, hard stop) for first 30 minutes, then TWAP partial unwind.</p>
+    </section>
+
+    <section id="math-logic">
+      <h2>Mathematics and Logic</h2>
+
+<h3>Cradle filter (pool_var_proxy)</h3>
+<p><code>pool_var_proxy</code> is the 5-minute price change percentage from discovery. A candidate passes when:</p>
+<figure><pre>
+pool_var_min <= pool_var_proxy < pool_var_max   (default 10% .. 30%)
+pair_age_sec <= max_pair_age                    (default 3600s)
+liquidity_usd >= min_liq
+market_cap_usd in [min_mcap, max_mcap]
+</pre></figure>
+<p>Reject if <code>pool_var >= max</code> — pools already extended are "Late" entries with adverse selection.</p>
+
+<h3>Entry refresh</h3>
+<p>Re-validate pool state at submit time. If discovery-time variance no longer holds, skip permanently
+or retry after rate-limit cooldown (429 sources).</p>
+
+<h3>Exit ladder</h3>
+<figure><pre>
+Tier-1 snipe window (first 30m):
+  TP at +50% mark-to-vault
+  Hard stop below entry
+
+After hold window OR TWAP_FORCE:
+  Partial TWAP unwind in slices
+
+Emergency: vault liquidity drop vs baseline, dev rug monitor
+</pre></figure>
+
+<h3>Jito landing feedback</h3>
+<p>Tip ladder escalates when observed landing rate is 0%: base tip multiplied up to 4x until bundles
+land on-chain. This is a competitiveness control, not a timeout fix.</p>
+
+    </section>
+
+    <section>
+      <h2>Status and Outcome</h2>
+      <p><strong>Live</strong> in micro-sizing mode. 2074+ lifetime candidates passed screener. Discovery and filter infrastructure validated. Primary bottleneck identified: Jito bundle landing rate at competitive tip levels.</p>
+      <p>Two confirmed fills in pre-micro era (both successfully closed via exit sidecar). Micro-sized entries (24 bundles) showed 0/24 on-chain landing — Jito accepted bundles but transactions never landed due to insufficient tip.</p>
+    </section>
+
+    <section>
+      <h2>Failures and Corrections</h2>
+
+      <h3>1. Jito landing rate: 0% at initial tip levels</h3>
+      <p>24 micro-sized swap signatures showed 0/24 on-chain landing. Jito accepted the bundles (no rejection), but transactions never appeared on-chain. This is a tip competitiveness issue, not a confirmation-timeout bug.</p>
+      <p><strong>Root cause:</strong> Initial tip was too low for competitive block inclusion in the current Solana fee market (200k lamport era).</p>
+      <p><strong>Correction:</strong> Tip ladder escalated across sessions:</p>
+      <table>
+        <tr><th>Date</th><th>Base tip</th><th>At 0% landing (4x multiplier)</th></tr>
+        <tr><td>Jul 10 early</td><td>100k lamports</td><td>200k</td></tr>
+        <tr><td>Jul 10 eve</td><td>500k lamports</td><td>2M</td></tr>
+        <tr><td>Jul 11</td><td>1M lamports</td><td>4M (0.004 SOL)</td></tr>
+      </table>
+      <p>Awaiting first fill confirmation at the 4M calibrated tip level.</p>
+
+      <h3>2. Late entry discovery (entry refresh gap)</h3>
+      <p>Screener candidates passed filter at discovery time but by entry submission the pool state had changed. The entry refresh fallback (Gecko then DexScreener then RPC) was implemented to re-validate price before live buy.</p>
+      <p><strong>Status:</strong> Entry refresh fallback validated as working. Rate-limited sources (429) trigger 30s cooldown retry; true dead pools stay permanently skipped.</p>
+
+      <h3>3. Venue-specific simulation failures</h3>
+      <p>49 simulation failures observed. Meteora DBC (Dynamic Bonding Curve) pools had heavy sim failure rates and zero micro landings.</p>
+      <p><strong>Fix:</strong> Added <code>Meteora DBC</code> to entry DEX blocklist. Simulation pass rate improved on remaining venues (PumpSwap, Pump.fun, Raydium CPMM).</p>
+
+      <h3>4. Exit sidecar + TWAP close validation</h3>
+      <p>Two pre-micro fills (both on Pump.fun/PumpSwap) were successfully closed via the exit sidecar, validating the tier1 snipe + TWAP close path. Jupiter is the primary execution path for sells on Pump/PumpSwap until direct Pump CPI ships.</p>
+
+      <h3>5. Variance window and screener tuning</h3>
+      <p>Recent reject reasons dominated by <code>pool_var_too_low</code> (~79%), then <code>liquidity_too_low</code> (~12%). The <code>pool_var_proxy</code> threshold vs pass rate tradeoff is an ongoing calibration lever.</p>
+    </section>
+
+    <section>
+      <h2>Related Strategies</h2>
+      <ul>
+        <li><a href="launch-mev-sol-trending-v1.html">launch-mev-sol-trending-v1</a> — established token momentum (separate from cradle)</li>
+        <li><a href="launch-mev-bsc-v1.html">launch-mev-bsc-v1</a> — BSC chain equivalent</li>
+        <li><a href="launch-mev-rhchain-v1.html">launch-mev-rhchain-v1</a> — RH Chain monitor-first</li>
+      </ul>
+    </section>
+  </main>
+  <script src="../assets/site.js" defer></script>
+</body>
+</html>

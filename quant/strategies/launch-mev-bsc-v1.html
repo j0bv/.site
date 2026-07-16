@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Launch MEV BSC v1 — Strategy Portfolio</title>
+  <link rel="stylesheet" href="../assets/reset.css">
+  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="stylesheet" href="../assets/custom.css">
+  <link rel="stylesheet" href="../assets/tree.css">
+</head>
+<body class="portfolio-layout" data-asset-base=".." data-slug="launch-mev-bsc-v1">
+  <header>
+    <nav><a href="../index.html">Portfolio</a> / Launch MEV BSC v1</nav>
+    <h1>Launch MEV BSC v1</h1>
+    <p class="subtitle">BSC launch sniping with multi-factory discovery and block-level reserve exits</p>
+    <span class="badge badge-experimental">EXPERIMENTAL</span>
+  </header>
+  <main>
+    <section>
+      <h2>Instrument / Architecture</h2>
+      <table>
+        <tr><th>Field</th><th>Value</th></tr>
+        <tr><td>Chain</td><td>BSC (BNB Smart Chain)</td></tr>
+        <tr><td>Discovery</td><td>Factory websocket events (PancakeSwap V2, V3, Four Meme)</td></tr>
+        <tr><td>Quote focus</td><td>WBNB/USDT</td></tr>
+        <tr><td>Risk gate</td><td>GoPlus (chain_id=56, block mode) + Anvil fork sim</td></tr>
+        <tr><td>Exit</td><td>Block-level LP reserve watcher (per-block WBNB reserve deltas)</td></tr>
+      </table>
+      <figure>
+        <pre>
++--------------------+     +------------------+     +------------------+
+| Factory Websocket  | --> | Cradle Filter    | --> | GoPlus Gate +    |
+| (PCS V2, V3,      |     | (WBNB/USDT quote |     |  Anvil Fork Sim) |
+|  Four Meme)        |     |  focus)          |     |                  |
++--------------------+     +------------------+     +------------------+
+                                                           |
+                                                           v
++--------------------+                             +------------------+
+| Reserve Watcher    | <--------------------------- | Submit Buy       |
+| (per-block LP      |                             | (private RPC)    |
+|  reserve deltas)   |                             +------------------+
++--------------------+
+        </pre>
+        <figcaption>Block-level reserve changes drive exits (not 5m candle liquidity)</figcaption>
+      </figure>
+    </section>
+
+    <section>
+      <h2>Signal</h2>
+      <p>Factory event discovery from PancakeSwap V2, V3, and Four Meme factory contracts. New pool creation events trigger cradle filter. Mandatory pre-submit simulation via Anvil fork (buy then sell cycle) plus GoPlus token safety check in block mode.</p>
+    </section>
+
+    <section id="math-logic">
+      <h2>Mathematics and Logic</h2>
+
+<h3>Multi-factory discovery</h3>
+<p>BSC factories (PancakeSwap V2/V3, Four.meme) emit new pair events. Cradle filter math matches
+Solana: pool variance, liquidity, mcap bands.</p>
+<figure><pre>
+reserve_delta_exit:
+  if (reserve_quote / reserve_quote_baseline) < (1 - threshold)
+    emergency sell (block-level watcher)
+</pre></figure>
+<p>GoPlus risk gate blocks honeypots before simulate. Mark price from on-chain reserve math.</p>
+
+    </section>
+
+    <section>
+      <h2>Status and Outcome</h2>
+      <p><strong>Experimental</strong> — infrastructure built, not yet in live execution. Discovery limited to three configured factory addresses; launchers outside those are out of scope.</p>
+    </section>
+
+    <section>
+      <h2>Failures and Corrections</h2>
+      <p>No documented failures — strategy in experimental/pre-live state. Known limitation: explicit discovery gap for factories outside the three configured addresses.</p>
+    </section>
+
+    <section>
+      <h2>Related Strategies</h2>
+      <ul>
+        <li><a href="launch-mev-sol-v1.html">launch-mev-sol-v1</a> — Solana cradle (same concept, different chain)</li>
+        <li><a href="launch-mev-rhchain-v1.html">launch-mev-rhchain-v1</a> — RH Chain (monitor-first)</li>
+      </ul>
+    </section>
+  </main>
+  <script src="../assets/site.js" defer></script>
+</body>
+</html>

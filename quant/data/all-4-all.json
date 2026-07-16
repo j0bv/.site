@@ -1,0 +1,18 @@
+{
+  "slug": "all-4-all",
+  "code_samples": [
+    {
+      "title": "Spread scanner",
+      "path": "scanner.rs",
+      "content": "use crate::audit::write_audit_event;\nuse crate::common::{estimated_profit_usd, spread_bps, CrossChainMap};\nuse crate::config::{chain_by_id, chain_rpc_map, ChainsConfig, Thresholds};\nuse crate::oft_registry::{cost_floor_bps_for, oft_registry_path, OftRegistryLoader};\nuse alloy::primitives::Address;\nuse alloy::providers::ProviderBuilder;\nuse alloy::sol;\nuse alloy::sol_types::SolCall;\nuse anyhow::Result;\nuse serde::Serialize;\nuse std::collections::HashMap;\nuse std::sync::Arc;\nuse std::time::{SystemTime, UNIX_EPOCH};\nuse tokio::sync::mpsc;\n\nsol! {\n    #[sol(rpc)]\n    interface IMulticall3 {\n        struct Call3 {\n            address target;\n            bool allowFailure;\n            bytes callData;\n        }\n        struct Result {\n            bool success;\n            bytes returnData;\n        }\n        function aggregate3(Call3[] calldata calls) external payable returns (Result[] memory returnData);\n    }\n\n    #[sol(rpc)]\n    interface IUniswapV2Pair {\n        function token0() external view returns (address);\n        function token1() external view returns (address);\n        function getReserves() external view returns (uint112 reserve0, uint112 reserve1, uint32 blockTimestampLast);\n    }\n}\n\npub const MIN_SPREAD_BPS: i64 = 20;\n\n#[derive(Debug, Clone, Serialize)]\npub struct ArbOpportunity {\n    pub symbol: String,\n    pub buy_chain: u64,\n    pub buy_address: String,\n    pub sell_chain: u64,\n    pub sell_address: String,\n    pub spread_bps: i64,\n    pub estimated_profit_usd: f64,\n    pub cost_floor_bps: i64,\n    pub timestamp_ms: u64,\n    pub buy_price_usd: f64,\n    pub sell_price_usd: f64,\n}\n"
+    },
+    {
+      "title": "Run wrapper",
+      "path": "run.sh",
+      "content": "#!/usr/bin/env bash\n# Wrapper: strategies/all-4-all \u2192 canonical run script.\nset -euo pipefail\nROOT=\"$(cd \"$(dirname \"${BASH_SOURCE[0]}\")/../../..\" && pwd)\"\nexec \"$ROOT/scripts/testing/run-all-4-all.sh\" \"$@\""
+    }
+  ],
+  "logs": [],
+  "log_source": "no log file found",
+  "updated_at": "2026-07-16 18:20 UTC"
+}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gains Intermarket Oil CAD v1 — Strategy Portfolio</title>
+  <link rel="stylesheet" href="../assets/reset.css">
+  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="stylesheet" href="../assets/custom.css">
+  <link rel="stylesheet" href="../assets/tree.css">
+</head>
+<body class="portfolio-layout" data-asset-base=".." data-slug="gains-intermarket-oil-cad-v1">
+  <header>
+    <nav><a href="../index.html">Portfolio</a> / Gains Intermarket Oil CAD v1</nav>
+    <h1>Gains Intermarket Oil CAD v1</h1>
+    <p class="subtitle">Fixed DIA trade with WTI/CAD intermarket context</p>
+    <span class="badge badge-experimental">EXPERIMENTAL</span>
+  </header>
+  <main>
+    <section>
+      <h2>Instrument / Architecture</h2>
+      <table>
+        <tr><th>Field</th><th>Value</th></tr>
+        <tr><td>Venue</td><td>Gains gTrade</td></tr>
+        <tr><td>Trade leg</td><td>DIA (fixed)</td></tr>
+        <tr><td>Context panel</td><td>WTI, CAD</td></tr>
+        <tr><td>Signal</td><td>Chronos directional_follow (Phase 1)</td></tr>
+        <tr><td>Intermarket thesis</td><td>Energy-sensitive equity with oil/commodity-currency confirmation</td></tr>
+      </table>
+    </section>
+
+    <section>
+      <h2>Signal</h2>
+      <p>Phase 1: Chronos <code>directional_follow</code> on DIA trade leg. WTI oil price and CAD (commodity currency) serve as intermarket context — energy price strength correlates with industrial equity momentum. Execution uses standard Chronos infrastructure.</p>
+    </section>
+
+    <section id="math-logic">
+      <h2>Mathematics and Logic</h2>
+
+<h3>Oil-CAD thesis</h3>
+<p>DIA as trade leg with WTI/CAD intermarket context — oil-sensitive equity vs commodity FX.</p>
+
+<p>Phase 1 uses Chronos <code>directional_follow</code> on one or more trade legs. Context instruments
+(SPY, FX, sector ETFs) inform regime classification; the optimizer ranks candidates with
+<code>open_leg_selection = intermarket_optimal</code> (Strategy 9 engine in hedger-intermarket).</p>
+<figure>
+  <pre>
+For each candidate leg j:
+  score_j = |r_hat_j| - market_cost_j(borrowing, spread, crowded_side)
+
+Open if score* > threshold and US-hours guard passes
+Pairs-divergence variant: dollar-neutral spread target
+  long_leg:  +frac x notional
+  short_leg: -frac x notional
+  </pre>
+</figure>
+
+    </section>
+
+    <section>
+      <h2>Status and Outcome</h2>
+      <p><strong>Experimental</strong> — Phase 1 designed. Part of the 8-strategy intermarket suite.</p>
+    </section>
+
+    <section>
+      <h2>Failures and Corrections</h2>
+      <p>No documented failures — strategy in experimental/Phase 1 design state.</p>
+    </section>
+
+    <section>
+      <h2>Related Strategies</h2>
+      <ul>
+        <li><a href="gains-intermarket-copper-equity-v1.html">copper-equity</a> — SPY/DIA vs copper</li>
+        <li><a href="gains-intermarket-commodity-sector-v1.html">commodity-sector</a> — XAU with mining sector</li>
+        <li><a href="directional-follow.html">directional-follow</a> — shared Chronos infrastructure</li>
+      </ul>
+    </section>
+  </main>
+  <script src="../assets/site.js" defer></script>
+</body>
+</html>

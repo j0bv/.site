@@ -1,0 +1,44 @@
+{
+  "slug": "sol-momentum-dex-ladder-v1",
+  "code_samples": [
+    {
+      "title": "Thresholds",
+      "path": "sol-momentum-dex-ladder-v1-thresholds.env",
+      "content": "# Sol Momentum DEX Ladder v1 thresholds\n# Source: STRATEGY.md filter/exit tables\n\n# --- Screener filters ---\nSCREENER_MIN_MARKET_CAP_USD=500000\nSCREENER_MAX_MARKET_CAP_USD=5000000\nSCREENER_MIN_LIQUIDITY_USD=50000\nSCREENER_MIN_VOLUME_24H_USD=0\nSCREENER_MIN_PRICE_CHANGE_5M_PCT=10\nSCREENER_MIN_PRICE_CHANGE_1H_PCT=50\nSCREENER_MIN_BUY_SELL_RATIO=1.5\nSCREENER_MIN_HOLDERS=200\nSCREENER_HOLDERS_REQUIRED=false\nSCREENER_POLL_INTERVAL_MS=30000\n\n# --- Spot ladder ---\nSPOT_RISK_UNIT_SOL=1.0\nMAX_CONCURRENT_SPOT_POSITIONS=1\nLADDER_TRANCHE_A_FRAC=0.40\nLADDER_TRANCHE_B_FRAC=0.35\nLADDER_TRANCHE_C_FRAC=0.25\nLADDER_TRANCHE_B_PULLBACK_MIN_PCT=5\nLADDER_TRANCHE_B_PULLBACK_MAX_PCT=10\n\n# --- Exit tiers ---\nEXIT_TIER1_GAIN_PCT=50\nEXIT_TIER1_SELL_FRAC=0.40\nEXIT_TIER2_GAIN_PCT=100\nEXIT_TIER2_SELL_FRAC=0.30\nEXIT_TIER3_GAIN_MIN_PCT=200\nEXIT_TIER3_GAIN_MAX_PCT=300\nEXIT_TIER3_SELL_FRAC=0.20\n\n# --- Hard stops ---\nHARD_STOP_PCT=20\nTRAILING_STOP_FRAC=0.15\nLIQUIDITY_DROP_PCT=15\nLIQUIDITY_DROP_WINDOW_SEC=300\nTIME_STOP_FLAT_SEC=1800\n\n# --- Jupiter ---\nJUPITER_SLIPPAGE_BPS=100\nJUPITER_PRIORITY_FEE_LAMPORTS=50000\nJUPITER_CONFIRM_TIMEOUT_SEC=60\n\n# --- Live gate ---\nSOLANA_MIN_BALANCE_SOL=0.5\nGATE_LIVE_MIN_CANDIDATE_EVENTS=1\n\n# --- Audit paths ---\nSOL_MOMENTUM_CANDIDATES_NDJSON=[path redacted]\nSOL_MOMENTUM_LADDER_NDJSON=[path redacted]\nSOL_MOMENTUM_LADDER_STATE_PATH=[path redacted]"
+    },
+    {
+      "title": "Run wrapper",
+      "path": "run.sh",
+      "content": "#!/usr/bin/env bash\n# Wrapper: strategies/sol-momentum-dex-ladder-v1 -> canonical run script.\nset -euo pipefail\nROOT=\"$(cd \"$(dirname \"${BASH_SOURCE[0]}\")/../../..\" && pwd)\"\nexec \"$ROOT/scripts/testing/run-sol-momentum-dex-ladder.sh\" \"$@\""
+    }
+  ],
+  "logs": [
+    "{\"event\":\"candidate_rejected\",\"ts_ms\":1783639925028,\"mint\":\"[address redacted]\",\"reason\":\"liquidity_too_low\"}",
+    "{\"event\":\"candidate_rejected\",\"ts_ms\":1783639925028,\"mint\":\"[address redacted]\",\"reason\":\"liquidity_too_low\"}",
+    "{\"event\":\"candidate_rejected\",\"ts_ms\":1783639925028,\"mint\":\"[address redacted]\",\"reason\":\"liquidity_too_low\"}",
+    "{\"event\":\"candidate_rejected\",\"ts_ms\":1783639925028,\"mint\":\"[address redacted]\",\"reason\":\"liquidity_too_low\"}",
+    "{\"event\":\"candidate_rejected\",\"ts_ms\":1783639925028,\"mint\":\"[address redacted]\",\"reason\":\"liquidity_too_low\"}",
+    "{\"event\":\"candidate_rejected\",\"ts_ms\":1783639925028,\"mint\":\"[address redacted]\",\"reason\":\"liquidity_too_low\"}",
+    "{\"event\":\"candidate_rejected\",\"ts_ms\":1783639925028,\"mint\":\"[address redacted]\",\"reason\":\"liquidity_too_low\"}",
+    "{\"event\":\"candidate_rejected\",\"ts_ms\":1783639925028,\"mint\":\"[address redacted]\",\"reason\":\"liquidity_too_low\"}",
+    "{\"event\":\"candidate_rejected\",\"ts_ms\":1783639925028,\"mint\":\"[address redacted]\",\"reason\":\"liquidity_too_low\"}",
+    "{\"event\":\"candidate_rejected\",\"ts_ms\":1783639925028,\"mint\":\"[address redacted]\",\"reason\":\"liquidity_too_low\"}",
+    "{\"event\":\"candidate_rejected\",\"ts_ms\":1783640077585,\"mint\":\"[address redacted]\",\"reason\":\"liquidity_too_low\"}",
+    "{\"event\":\"candidate_rejected\",\"ts_ms\":1783640077585,\"mint\":\"[address redacted]\",\"reason\":\"liquidity_too_low\"}",
+    "{\"event\":\"candidate_rejected\",\"ts_ms\":1783640077585,\"mint\":\"[address redacted]\",\"reason\":\"liquidity_too_low\"}",
+    "{\"event\":\"candidate_rejected\",\"ts_ms\":1783640077585,\"mint\":\"[address redacted]\",\"reason\":\"liquidity_too_low\"}",
+    "{\"event\":\"candidate_rejected\",\"ts_ms\":1783640077585,\"mint\":\"[address redacted]\",\"reason\":\"liquidity_too_low\"}",
+    "{\"event\":\"candidate_rejected\",\"ts_ms\":1783640077585,\"mint\":\"[address redacted]\",\"reason\":\"liquidity_too_low\"}",
+    "{\"event\":\"candidate_rejected\",\"ts_ms\":1783640077585,\"mint\":\"[address redacted]\",\"reason\":\"liquidity_too_low\"}",
+    "{\"event\":\"candidate_rejected\",\"ts_ms\":1783640077585,\"mint\":\"[address redacted]\",\"reason\":\"liquidity_too_low\"}",
+    "{\"event\":\"candidate_rejected\",\"ts_ms\":1783640077585,\"mint\":\"[address redacted]\",\"reason\":\"liquidity_too_low\"}",
+    "{\"event\":\"candidate_rejected\",\"ts_ms\":1783640077585,\"mint\":\"[address redacted]\",\"reason\":\"liquidity_too_low\"}",
+    "{\"event\":\"candidate_rejected\",\"ts_ms\":1783640077585,\"mint\":\"[address redacted]\",\"reason\":\"liquidity_too_low\"}",
+    "{\"event\":\"candidate_rejected\",\"ts_ms\":1783640077585,\"mint\":\"[address redacted]\",\"reason\":\"liquidity_too_low\"}",
+    "{\"event\":\"candidate_rejected\",\"ts_ms\":1783640077585,\"mint\":\"[address redacted]\",\"reason\":\"liquidity_too_low\"}",
+    "{\"event\":\"candidate_rejected\",\"ts_ms\":1783640077585,\"mint\":\"[address redacted]\",\"reason\":\"liquidity_too_low\"}",
+    "{\"event\":\"candidate_rejected\",\"ts_ms\":1783640077585,\"mint\":\"[address redacted]\",\"reason\":\"liquidity_too_low\"}"
+  ],
+  "log_source": "sol-momentum-candidates.ndjson",
+  "updated_at": "2026-07-16 18:20 UTC"
+}

@@ -1,0 +1,131 @@
+/* Portfolio layout: monospace file tree + content pane */
+
+body.portfolio-layout {
+  display: grid;
+  grid-template-columns: minmax(28ch, 36ch) 1fr;
+  gap: 0 3ch;
+  max-width: none;
+  margin: 0;
+  padding: calc(var(--line-height) * 2) 2ch;
+  min-height: 100vh;
+  align-items: start;
+}
+
+.portfolio-nav {
+  position: sticky;
+  top: calc(var(--line-height) * 2);
+  align-self: start;
+  max-height: calc(100vh - var(--line-height) * 4);
+  overflow: auto;
+}
+
+.portfolio-nav h2 {
+  font-size: 1rem;
+  margin: 0 0 var(--line-height) 0;
+}
+
+/* the-monospace-web .tree lives in the nav */
+.portfolio-nav .tree {
+  margin-top: 0;
+}
+
+.portfolio-nav .tree a {
+  text-decoration: none;
+}
+
+.portfolio-nav .tree a:hover,
+.portfolio-nav .tree a.active {
+  text-decoration: underline;
+  text-decoration-thickness: var(--border-thickness);
+  font-weight: var(--font-weight-bold);
+}
+
+.content-pane {
+  min-width: 0;
+  max-width: 90ch;
+}
+
+.content-pane > header {
+  margin-bottom: calc(var(--line-height) * 2);
+}
+
+.welcome-panel p {
+  color: var(--text-color-alt);
+}
+
+/* Code samples */
+.code-sample {
+  margin-bottom: calc(var(--line-height) * 2);
+}
+
+.code-sample h3 {
+  font-size: 0.9rem;
+  margin-bottom: 0;
+}
+
+.code-sample .code-label {
+  font-size: 0.75rem;
+  color: var(--text-color-alt);
+  margin: 0 0 calc(var(--line-height) / 2) 0;
+}
+
+.code-sample pre {
+  border: var(--border-thickness) solid var(--text-color);
+  padding: var(--line-height) 1ch;
+  overflow-x: auto;
+  font-size: 0.75rem;
+  line-height: 1.15rem;
+  margin: 0;
+}
+
+/* Live log panel */
+.log-panel {
+  margin-top: calc(var(--line-height) * 2);
+  border: var(--border-thickness) solid var(--text-color);
+}
+
+.log-panel header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: calc(var(--line-height) / 2) 1ch;
+  border-bottom: var(--border-thickness) solid var(--text-color);
+  margin: 0;
+}
+
+.log-panel header h2 {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.log-status {
+  font-size: 0.7rem;
+  color: var(--text-color-alt);
+}
+
+.log-panel pre {
+  margin: 0;
+  padding: var(--line-height) 1ch;
+  max-height: 40ch;
+  overflow: auto;
+  font-size: 0.7rem;
+  line-height: 1.1rem;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.log-panel.live .log-status::after {
+  content: " (polling)";
+}
+
+@media (max-width: 768px) {
+  body.portfolio-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .portfolio-nav {
+    position: static;
+    max-height: none;
+    margin-bottom: calc(var(--line-height) * 2);
+  }
+}

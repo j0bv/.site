@@ -1,0 +1,18 @@
+{
+  "slug": "directional-meme-v1",
+  "code_samples": [
+    {
+      "title": "Execution router",
+      "path": "execution-router.directional-meme.toml",
+      "content": "# signal_mode = \"directional_meme_v1\"\n# Gains meme momentum long: crowded-side block + structural skew exit.\n\n[execution_router]\nmode = \"dryrun\"\nexecution_enabled = true\nkill_switch = false\nallow_live = false\nwealth_usdc = [redacted]\nmin_delta_usd = 1.0\nmin_delta_mode = \"fractional\"\nmin_delta_frac = 0.05\nper_venue_cap_usd = 15.0\nopen_signal_cap_usd = 15.0\nopen_collateral_cap_usd = 12.0\nmax_concurrent_open_legs = 1\nopen_leg_selection = \"strongest_r_hat\"\nmax_open_fee_frac_of_collateral = 0.20\nmin_liq_distance_bps = 100\nprotective_exit_bypass_reduce_cap = true\nper_venue_reduce_cap_usd = 15.0\nopportunity_rotation_enabled = false\nopportunity_rotation_r_hat_margin = 0.0\nmax_orders_per_venue_per_minute = 6\nrebalance_cooldown_ms = 0\nrebalance_force_threshold_frac = 0.12\ntrailing_stop_enabled = false\ntrailing_stop_frac = 0.05\nrebalance_policy = \"directional_follow\"\ndirectional_exit_mode = \"structural_skew_exit\"\ndirectional_r_hat_open = 0.00001\ndirectional_r_hat_flip = 0.0001\ndirectional_min_hold_ticks = 20\ndirectional_post_flip_cooldown_ticks = 0\ndirectional_close_settle_polls = 5\ndirectional_profit_lock_r = 0.0\ndirectional_profit_flip_relief_r = 0.0\ndirectional_r_collateral_frac = 0.25\ndirectional_disaster_sl_at_open = true\ndirectional_sl_collateral_loss_frac = 0.42\ndirectional_sl_liq_buffer_bps = 40\nallowed_venues = [\"gains_gtrade\"]\nexecution_audit_ndjson_path = \"./[path redacted]\"\nequity_live_enabled = true\nwealth_usdc_cap = [redacted]\n\n[execution_router.gains_market_costs]\nenabled = true\ntelemetry_only = false\nblock_crowded_side_opens = true\ncache_ttl_ms = 60000\nlog_crowded_side_bps = 10.0\nlog_borrowing_bps_per_hour = 50.0\nborrow_hold_relief_bps_per_hour = 100.0\nmin_hold_relief_ticks = 5"
+    },
+    {
+      "title": "Thresholds",
+      "path": "directional-meme-v1-thresholds.env",
+      "content": "# Directional Meme v1 \u2014 Gains meme perp leg\n\nDIRECTIONAL_MEME_PAIR_INDEX=193\nDIRECTIONAL_MEME_SYMBOL=BONK\nDIRECTIONAL_MEME_COLLATERAL_USD=12\nDIRECTIONAL_MEME_MAX_LEVERAGE_1E3=100000\nDIRECTIONAL_MEME_OPEN_SKEW_BLOCK=0.60\nDIRECTIONAL_MEME_R_HAT_OPEN=1e-5\nEXECUTION_GAINS_BLOCK_CROWDED_SIDE_OPENS=1\nMEME_CORRELATION_PATH=strategies/directional-meme-v1/[path redacted]\nDIRECTIONAL_MEME_AUDIT_NDJSON=[path redacted]\nSOL_MOMENTUM_LADDER_STATE_PATH=[path redacted]"
+    }
+  ],
+  "logs": [],
+  "log_source": "no log file found",
+  "updated_at": "2026-07-16 18:20 UTC"
+}

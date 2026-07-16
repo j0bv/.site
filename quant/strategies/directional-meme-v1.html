@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Directional Meme v1 — Strategy Portfolio</title>
+  <link rel="stylesheet" href="../assets/reset.css">
+  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="stylesheet" href="../assets/custom.css">
+  <link rel="stylesheet" href="../assets/tree.css">
+</head>
+<body class="portfolio-layout" data-asset-base=".." data-slug="directional-meme-v1">
+  <header>
+    <nav><a href="../index.html">Portfolio</a> / Directional Meme v1</nav>
+    <h1>Directional Meme v1</h1>
+    <p class="subtitle">Gains gTrade momentum long on listed meme perps (BONK, PEPE, WIF, DOGE, SHIB)</p>
+    <span class="badge badge-experimental">EXPERIMENTAL</span>
+  </header>
+  <main>
+    <section>
+      <h2>Instrument / Architecture</h2>
+      <table>
+        <tr><th>Field</th><th>Value</th></tr>
+        <tr><td>Venue</td><td>Gains gTrade</td></tr>
+        <tr><td>Instruments</td><td>BONK/USD, PEPE/USD, WIF/USD, DOGE/USD, SHIB/USD</td></tr>
+        <tr><td>Direction</td><td>Momentum long only</td></tr>
+        <tr><td>Collateral</td><td>10-12 USDC</td></tr>
+        <tr><td>Leverage</td><td>50-100x (pair max from trading-variables)</td></tr>
+        <tr><td>Max concurrent</td><td>1 leg</td></tr>
+      </table>
+      <figure>
+        <pre>
++------------------+     +-------------------+     +------------------+
+| md-collector     | --> | Momentum Signal   | --> | Execution Router |
+| (gains_momentum_ |     | (r_hat + momentum |     | (OI skew guard,  |
+|  follow backend) |     |  active + depth)  |     |  single leg)     |
++------------------+     +-------------------+     +------------------+
+                                |
+                                v
+                         +-------------------+
+                         | Sol Ladder Feed   |
+                         | (Tier 2 signal    |
+                         |  from spot strat) |
+                         +-------------------+
+        </pre>
+        <figcaption>Perp momentum long with optional cross-feed from spot ladder strategy</figcaption>
+      </figure>
+    </section>
+
+    <section>
+      <h2>Signal</h2>
+      <p>Backend: <code>gains_momentum_follow</code> via md-collector. Direction: momentum long only (not structural fade). Open on positive <code>r_hat</code> when momentum signal active and depth available. Guard: <code>block_crowded_side_opens</code> — skip if OI skew > 0.60 long.</p>
+      <p>Exit via structural skew normalization. Optional feed from Solana spot ladder Tier 2 state for cross-strategy signal.</p>
+    </section>
+
+    <section id="math-logic">
+      <h2>Mathematics and Logic</h2>
+
+
+<p>Chronos2 emits a one-step expected return estimate <code>r_hat</code> at horizon index <code>h</code>.
+The execution router treats <code>sign(r_hat)</code> as trade direction and gates size with hysteresis:</p>
+<figure>
+  <pre>
+Open (flat):     |r_hat| > R_OPEN
+Flip (in-pos):   |r_hat| > R_FLIP   where R_FLIP > R_OPEN
+Min hold:        N ticks before flip allowed
+Target notional: n_target from collateral cap x leverage
+  </pre>
+</figure>
+<p>Hysteresis reduces flip-churn: enter on weaker evidence, exit only on stronger counter-evidence.
+Calibration uses the tail of |r_hat| from dryrun audit NDJSON — not blind median percentiles when the
+distribution is bimodal (noise floor ~1e-6 to 1e-5 vs signal tail ~5e-5 to 1e-4 at 30s cadence).</p>
+
+<h3>Meme perp universe</h3>
+<p>Same directional_follow math on Gains-listed meme perps (BONK, PEPE, WIF, DOGE, SHIB).
+Pair indices resolved at runtime via discovery script. Momentum long when
+<code>r_hat > R_OPEN</code> and depth available.</p>
+
+    </section>
+
+    <section>
+      <h2>Status and Outcome</h2>
+      <p><strong>Experimental</strong> — designed as the perp complement to the Solana spot ladder. Maps spot meme symbols to Gains pair indices via correlation config.</p>
+    </section>
+
+    <section>
+      <h2>Failures and Corrections</h2>
+      <p>No documented failures — strategy in experimental state.</p>
+    </section>
+
+    <section>
+      <h2>Related Strategies</h2>
+      <ul>
+        <li><a href="sol-momentum-dex-ladder-v1.html">sol-momentum-dex-ladder-v1</a> — Solana spot ladder (independent, different venue)</li>
+        <li><a href="gains-eth-structural-v1.html">gains-eth-structural-v1</a> — ETH structural on same venue (contrarian vs momentum)</li>
+      </ul>
+    </section>
+  </main>
+  <script src="../assets/site.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+{
+  "slug": "launch-mev-bsc-v1",
+  "code_samples": [
+    {
+      "title": "Cradle filter",
+      "path": "cradle.rs",
+      "content": "pub enum CradleDecision {\n    Pass,\n    Reject(CradleRejectReason),\n}\n\npub fn evaluate(cfg: &CradleFilterConfig, candidate: &LaunchCandidate) -> CradleDecision {\n    if candidate.pool_var_proxy_pct < cfg.min_pool_var_proxy_pct {\n        return CradleDecision::Reject(CradleRejectReason::PoolVarTooLow);\n    }\n    if cfg.max_pool_var_proxy_pct > 0.0\n        && candidate.pool_var_proxy_pct >= cfg.max_pool_var_proxy_pct\n    {\n        return CradleDecision::Reject(CradleRejectReason::PoolVarTooHigh);\n    }\n    if candidate.pair_age_sec > cfg.max_pair_age_sec {\n        return CradleDecision::Reject(CradleRejectReason::PairTooOld);\n    }\n    if candidate.liquidity_usd < cfg.min_liquidity_usd {\n        return CradleDecision::Reject(CradleRejectReason::LiquidityTooLow);\n    }\n    if candidate.market_cap_usd < cfg.min_market_cap_usd {\n        return CradleDecision::Reject(CradleRejectReason::MarketCapTooLow);\n    }\n    if cfg.max_market_cap_usd > 0.0 && candidate.market_cap_usd > cfg.max_market_cap_usd {\n        return CradleDecision::Reject(CradleRejectReason::MarketCapTooHigh);\n    }\n    if cfg.min_volume_24h_usd > 0.0 && candidate.volume_24h_usd < cfg.min_volume_24h_usd {\n        return CradleDecision::Reject(CradleRejectReason::VolumeTooLow);\n    }\n    CradleDecision::Pass\n}\n\n#[cfg(test)]\nmod tests {\n    use super::*;"
+    },
+    {
+      "title": "Thresholds",
+      "path": "launch-mev-bsc-v1-thresholds.env",
+      "content": "# Launch MEV BSC v1 thresholds\nRISK_GATE_MODE=block\nSCREENER_MIN_POOL_VAR_PROXY_PCT=100\nSCREENER_MAX_PAIR_AGE_SEC=3600\nSCREENER_MIN_LIQUIDITY_USD=15000\nSCREENER_MIN_MARKET_CAP_USD=50000\nSCREENER_MAX_MARKET_CAP_USD=2000000\nANVIL_SIM_SELLBACK_RATIO=0.75"
+    }
+  ],
+  "logs": [],
+  "log_source": "no log file found",
+  "updated_at": "2026-07-16 18:20 UTC"
+}

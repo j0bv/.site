@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gains ETH Structural v1 — Strategy Portfolio</title>
+  <link rel="stylesheet" href="../assets/reset.css">
+  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="stylesheet" href="../assets/custom.css">
+  <link rel="stylesheet" href="../assets/tree.css">
+</head>
+<body class="portfolio-layout" data-asset-base=".." data-slug="gains-eth-structural-v1">
+  <header>
+    <nav><a href="../index.html">Portfolio</a> / Gains ETH Structural v1</nav>
+    <h1>Gains ETH Structural v1</h1>
+    <p class="subtitle">ETH/USD contrarian OI skew fade at 100x — no Chronos</p>
+    <span class="badge badge-experimental">EXPERIMENTAL</span>
+  </header>
+  <main>
+    <section>
+      <h2>Instrument / Architecture</h2>
+      <table>
+        <tr><th>Field</th><th>Value</th></tr>
+        <tr><td>Pair</td><td>1 (ETH/USD)</td></tr>
+        <tr><td>Venue</td><td>Gains gTrade</td></tr>
+        <tr><td>Leverage</td><td>100x</td></tr>
+        <tr><td>Signal backend</td><td>gains_structural (not Chronos)</td></tr>
+        <tr><td>Poll</td><td>30s</td></tr>
+        <tr><td>Min hold</td><td>20 ticks (~10+ min)</td></tr>
+      </table>
+      <figure>
+        <pre>
++------------------+     +-------------------+     +------------------+
+| md-collector     | --> | Structural Signal | --> | Execution Router |
+| (OI skew +       |     | (fade crowded OI, |     | (skew exit mode, |
+|  depth-band v10.2)|     |  sigma_diag=1.0)  |     |  disaster SL)    |
++------------------+     +-------------------+     +------------------+
+        </pre>
+        <figcaption>Contrarian: short when longs crowded, long when shorts crowded</figcaption>
+      </figure>
+    </section>
+
+    <section>
+      <h2>Signal</h2>
+      <p>Contrarian OI skew fade: short when long share exceeds <code>open_skew</code> threshold, long when long share drops below <code>1 - open_skew</code>. Uses v10.2 depth-band impact data from md-collector. No Chronos <code>r_hat</code> involvement — <code>sigma_diag</code> floor fixed at 1.0.</p>
+      <p>Exit via skew normalization (not Chronos flip). Guards: block crowded-side opens, skip when depth unavailable.</p>
+    </section>
+
+    <section id="math-logic">
+      <h2>Mathematics and Logic</h2>
+
+<h3>OI skew contrarian signal (no Chronos)</h3>
+<p>Let <code>skew = OI_long / (OI_long + OI_short)</code>. Fade crowded side:</p>
+<figure><pre>
+if skew > open_skew (default 0.60):
+    edge_bps = -(skew - 0.5) x 10_000   # short bias
+elif skew < 1 - open_skew:
+    edge_bps = +(0.5 - skew) x 10_000   # long bias
+else:
+    no signal
+
+r_hat = edge_bps x return_scale / 10_000
+Gate: net edge after impact + holding_fee_buffer > min_edge_bps
+</pre></figure>
+<h3>Exit: skew normalization</h3>
+<figure><pre>
+exit when |skew - 0.5| < exit_skew_band (default 0.08)
+NOT Chronos r_hat flip
+</pre></figure>
+
+    </section>
+
+    <section>
+      <h2>Status and Outcome</h2>
+      <p><strong>Experimental</strong> — designed as an alternative non-Chronos approach after the Chronos arms (gains-degen-fast, chronos-swing-v1) were halted. Structural signal avoids the flip-churn failure mode since exits are driven by OI skew normalization rather than Chronos signal flips.</p>
+    </section>
+
+    <section>
+      <h2>Failures and Corrections</h2>
+      <p>No documented failures — strategy in experimental state. Design incorporates lessons from halted Chronos arms: longer min-hold (20 ticks), no flip-based exit, crowded-side open blocking.</p>
+    </section>
+
+    <section>
+      <h2>Related Strategies</h2>
+      <ul>
+        <li><a href="gains-degen-fast.html">gains-degen-fast</a> — halted Chronos arm (same venue, different signal)</li>
+        <li><a href="chronos-swing-v1.html">chronos-swing-v1</a> — halted Chronos arm</li>
+        <li><a href="directional-follow.html">directional-follow</a> — Chronos infrastructure (not used here)</li>
+      </ul>
+    </section>
+  </main>
+  <script src="../assets/site.js" defer></script>
+</body>
+</html>

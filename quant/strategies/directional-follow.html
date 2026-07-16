@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Directional Follow — Strategy Portfolio</title>
+  <link rel="stylesheet" href="../assets/reset.css">
+  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="stylesheet" href="../assets/custom.css">
+  <link rel="stylesheet" href="../assets/tree.css">
+</head>
+<body class="portfolio-layout" data-asset-base=".." data-slug="directional-follow">
+  <header>
+    <nav><a href="../index.html">Portfolio</a> / Directional Follow</nav>
+    <h1>Directional Follow</h1>
+    <p class="subtitle">Shared infrastructure umbrella for Chronos directional_follow arms on Gains</p>
+    <span class="badge badge-live">LIVE</span>
+  </header>
+  <main>
+    <section>
+      <h2>Instrument / Architecture</h2>
+      <table>
+        <tr><th>Field</th><th>Value</th></tr>
+        <tr><td>Type</td><td>Infrastructure umbrella (not a standalone strategy)</td></tr>
+        <tr><td>Arms served</td><td>Gains Degen Fast (pair 314), Chronos Swing v1 (pair 33)</td></tr>
+        <tr><td>Shared component</td><td>Chronos sidecar (:50051)</td></tr>
+        <tr><td>Design</td><td>Complementary two-arm layout (fast scalps + slower swings)</td></tr>
+      </table>
+      <figure>
+        <pre>
+                    +-------------------+
+                    | Chronos Sidecar   |
+                    | (:50051, shared)  |
+                    +-------------------+
+                       /           \
+                      v             v
++-------------------+     +-------------------+
+| Degen Fast        |     | Chronos Swing v1  |
+| (314, 1s, ~500x) |     | (33, 30s, 100x)   |
+| Entry-only mode   |     | Flip-exit mode    |
++-------------------+     +-------------------+
+        </pre>
+        <figcaption>Two arms share one Chronos sidecar but target different time horizons</figcaption>
+      </figure>
+    </section>
+
+    <section>
+      <h2>Signal</h2>
+      <p>This package provides shared infrastructure and historical context for Chronos <code>directional_follow</code> strategies on Gains gTrade. The two arms target different time horizons on related SOL exposure: degen-fast at 1s poll with h=1, swing at 30s poll with h=3. Both can share one Chronos sidecar process.</p>
+    </section>
+
+    <section id="math-logic">
+      <h2>Mathematics and Logic</h2>
+
+
+<p>Chronos2 emits a one-step expected return estimate <code>r_hat</code> at horizon index <code>h</code>.
+The execution router treats <code>sign(r_hat)</code> as trade direction and gates size with hysteresis:</p>
+<figure>
+  <pre>
+Open (flat):     |r_hat| > R_OPEN
+Flip (in-pos):   |r_hat| > R_FLIP   where R_FLIP > R_OPEN
+Min hold:        N ticks before flip allowed
+Target notional: n_target from collateral cap x leverage
+  </pre>
+</figure>
+<p>Hysteresis reduces flip-churn: enter on weaker evidence, exit only on stronger counter-evidence.
+Calibration uses the tail of |r_hat| from dryrun audit NDJSON — not blind median percentiles when the
+distribution is bimodal (noise floor ~1e-6 to 1e-5 vs signal tail ~5e-5 to 1e-4 at 30s cadence).</p>
+
+<h3>Shared state machine</h3>
+<figure><pre>
+Flat     --(|r_hat|>R_OPEN)--> Open
+Open     --(opposite sign, |r_hat|>R_FLIP, min_hold met)--> Flip
+Open     --(disaster SL breach)--> Force close
+
+close_in_flight lock prevents double-open during settlement
+</pre></figure>
+<p>Umbrella for degen-fast (h=1, 1s) and chronos-swing (h=3, 30s). Capital must be isolated per arm.</p>
+
+    </section>
+
+    <section>
+      <h2>Status and Outcome</h2>
+      <p><strong>Live</strong> as infrastructure. Individual arms have their own status (both currently halted pending post-mortem fixes). The shared infrastructure (sidecar, calibration scripts, policy definitions) remains active and serves as the foundation for any future Chronos directional arms.</p>
+    </section>
+
+    <section>
+      <h2>Failures and Corrections</h2>
+      <p>Key lesson from Jun 18 session: <strong>do not run both arms live on one wallet</strong> without capital split. The shared-wallet failure was an amplifier that converted swing's flip-churn drawdown into a depleted-collateral problem for degen. See individual arm post-mortems for detailed failure analysis.</p>
+    </section>
+
+    <section>
+      <h2>Related Strategies</h2>
+      <ul>
+        <li><a href="gains-degen-fast.html">gains-degen-fast</a> — fast-cadence arm (halted)</li>
+        <li><a href="chronos-swing-v1.html">chronos-swing-v1</a> — slower-cadence arm (halted)</li>
+        <li><a href="gains-eth-structural-v1.html">gains-eth-structural-v1</a> — non-Chronos alternative</li>
+        <li><a href="chronos-spot-weth-bull-v1.html">chronos-spot-weth-bull-v1</a> — spot Chronos arm (experimental)</li>
+      </ul>
+    </section>
+  </main>
+  <script src="../assets/site.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chronos Swing v1 — Strategy Portfolio</title>
+  <link rel="stylesheet" href="../assets/reset.css">
+  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="stylesheet" href="../assets/custom.css">
+  <link rel="stylesheet" href="../assets/tree.css">
+</head>
+<body class="portfolio-layout" data-asset-base=".." data-slug="chronos-swing-v1">
+  <header>
+    <nav><a href="../index.html">Portfolio</a> / Chronos Swing v1</nav>
+    <h1>Chronos Swing v1</h1>
+    <p class="subtitle">Slower-cadence Chronos directional on SOL/USD with flip exit and disaster SL</p>
+    <span class="badge badge-halted">HALTED</span>
+  </header>
+  <main>
+    <section>
+      <h2>Instrument / Architecture</h2>
+      <table>
+        <tr><th>Field</th><th>Value</th></tr>
+        <tr><td>Pair</td><td>33 (SOL/USD)</td></tr>
+        <tr><td>Venue</td><td>Gains gTrade</td></tr>
+        <tr><td>Poll</td><td>30s</td></tr>
+        <tr><td>Chronos</td><td>h=3 (horizon_index=3, history_length=40)</td></tr>
+        <tr><td>Leverage</td><td>100x</td></tr>
+        <tr><td>Lane</td><td>standard / chronos_swing_v1</td></tr>
+      </table>
+      <figure>
+        <pre>
++------------------+     +-------------------+     +------------------+
+|  Chronos Sidecar | --> | Execution Router  | --> |   Gains gTrade   |
+|  (r_hat, h=3)    |     | (flip exit mode)  |     | (disaster SL)    |
++------------------+     +-------------------+     +------------------+
+        |                         |
+        v                         v
++------------------+     +-------------------+
+| md-collector     |     | Calibration env   |
+| (30s poll SOL/USD)|     | (London-validated)|
++------------------+     +-------------------+
+        </pre>
+        <figcaption>Bot manages both entry and exit; keeper provides only disaster stop-loss</figcaption>
+      </figure>
+    </section>
+
+    <section>
+      <h2>Signal</h2>
+      <p>Chronos2 <code>r_hat</code> at horizon index 3 with 40-tick history. London-validated thresholds: OPEN at 2.5e-4, FLIP at 7.0e-4. The bot enters on bullish/bearish threshold crossing and exits on the opposite signal flip after minimum hold period.</p>
+      <p>No static take-profit; profit-lock scalp is disabled (<code>directional_profit_lock_r = 0</code>). The only non-signal exit is the keeper disaster SL set at open.</p>
+    </section>
+
+    <section id="math-logic">
+      <h2>Mathematics and Logic</h2>
+
+
+<p>Chronos2 emits a one-step expected return estimate <code>r_hat</code> at horizon index <code>h</code>.
+The execution router treats <code>sign(r_hat)</code> as trade direction and gates size with hysteresis:</p>
+<figure>
+  <pre>
+Open (flat):     |r_hat| > R_OPEN
+Flip (in-pos):   |r_hat| > R_FLIP   where R_FLIP > R_OPEN
+Min hold:        N ticks before flip allowed
+Target notional: n_target from collateral cap x leverage
+  </pre>
+</figure>
+<p>Hysteresis reduces flip-churn: enter on weaker evidence, exit only on stronger counter-evidence.
+Calibration uses the tail of |r_hat| from dryrun audit NDJSON — not blind median percentiles when the
+distribution is bimodal (noise floor ~1e-6 to 1e-5 vs signal tail ~5e-5 to 1e-4 at 30s cadence).</p>
+
+<h3>Swing calibration (London-validated)</h3>
+<figure><pre>
+R_OPEN = 2.5e-4
+R_FLIP = 7.0e-4
+h = 3, history_length = 40, poll = 30s
+
+Primary exit: Chronos flip (not static TP)
+Disaster SL: keeper at open, collateral loss cap + liq buffer
+</pre></figure>
+<p>100x leverage on ~600 notional implies ~0.7 round-trip fee per flip — churn dominates if
+|r_hat| oscillates around threshold.</p>
+
+    </section>
+
+    <section>
+      <h2>Status and Outcome</h2>
+      <p><strong>Halted</strong> after Jun 18 2026 session. This arm caused the largest single-session drawdown: equity dropped from ~77% (relative) due to flip-churn. 21 opens against 59 force-exit events in one session.</p>
+      <p>Flip-churn policy review and bounded flip-rate verification required before any live re-enable.</p>
+    </section>
+
+    <section>
+      <h2>Failures and Corrections</h2>
+
+      <h3>1. Flip-churn: the primary failure mode</h3>
+      <p>Pattern observed: open position, weak opposite <code>r_hat</code> after min-hold (~5.5 min at 30s poll), mandatory full exit via <code>directional_force_exit</code>, immediate re-open on next signal. Each cycle paid ~0.1% round-trip fees. With 21 opens and 59 force-exit events, the account bled from fees without any large adverse market move.</p>
+      <p><strong>Root cause:</strong> This is <em>policy behavior</em>, not a bug. The swing arm uses bot flip as primary exit (unlike degen entry-only). Weak counter-signals after minimum hold trigger mandatory exit, and the next tick's signal re-opens. The threshold calibration was London-validated but the execution policy had no churn rate bound.</p>
+      <p><strong>Fix required:</strong> Bounded flip rate — no open-close cycle within N ticks unless <code>|r_hat| > FLIP</code> sustained. Review <code>protective_exit_sized</code> count per hour in dryrun audit before live.</p>
+
+      <h3>2. Sequential wallet drain (shared context)</h3>
+      <p>Swing drew down first on the shared wallet, then degen-fast continued on the depleted collateral. Not a correlated market loss — sequential drain of the same USDC pool.</p>
+      <p><strong>Fix:</strong> One arm per wallet unless explicit capital split is designed and tested.</p>
+
+      <h3>3. Not the primary blow cause (verified)</h3>
+      <p>Investigated and ruled out: <code>0x3a23d825</code> partial close revert (absent from this session), correlated SOL crash (fees dominated, not directional loss), and bad calibration alone (thresholds were London-validated; the churn was an execution policy gap).</p>
+    </section>
+
+    <section>
+      <h2>Related Strategies</h2>
+      <ul>
+        <li><a href="gains-degen-fast.html">gains-degen-fast</a> — complementary fast-cadence arm (1s poll, ~500x)</li>
+        <li><a href="directional-follow.html">directional-follow</a> — shared infrastructure umbrella</li>
+        <li><a href="gains-eth-structural-v1.html">gains-eth-structural-v1</a> — non-Chronos structural approach</li>
+      </ul>
+    </section>
+  </main>
+  <script src="../assets/site.js" defer></script>
+</body>
+</html>
