@@ -2,113 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="pandoc" />
+  <meta http-equiv="refresh" content="0; url=quant/" />
+  <link rel="canonical" href="quant/" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <link rel="icon" type="image/png" href="/favicon.png" />
-  <meta name="author" content="Josiah Olivier Belfon-Valentine" />
+  <link rel="icon" type="image/png" href="../favicon.png" />
   <title>Quant Strategy Portfolio - Finance</title>
-  <link rel="stylesheet" href="/src/reset.css" />
-  <link rel="stylesheet" href="/src/index.css" />
+  <link rel="stylesheet" href="../src/reset.css" />
+  <link rel="stylesheet" href="../src/index.css" />
 </head>
 <body>
-<table class="header">
-  <tr>
-    <td colspan="2" rowspan="2" class="width-auto">
-      <h1 class="title">QUANT STRATEGY PORTFOLIO</h1>
-      <span class="subtitle">Systematic trading research and production infrastructure</span>
-    </td>
-    <th>Type</th>
-    <td class="width-min">Algorithmic Trading</td>
-  </tr>
-  <tr>
-    <th>Portfolio</th>
-    <td class="width-min"><a href="/finance">Finance</a></td>
-  </tr>
-</table>
-
-<h2 id="overview">Overview</h2>
-<p>
-  Twenty-two algorithmic strategies across Solana MEV, Gains gTrade perpetuals, Uniswap spot,
-  and cross-chain arbitrage. Built in <strong>Rust</strong> and <strong>Go</strong> with shared
-  crates for execution routing, market-data collection, Chronos forecasting, and portfolio hedging.
-  Each strategy documents thesis, architecture, <strong>mathematics and logic</strong>, failures,
-  corrections, sample code, and audit logs.
-</p>
-
-<h2 id="live-site">Live documentation</h2>
-<p>
-  <a href="/quant/">Open the quant strategy portfolio</a> on
-  <a href="https://jobv.site">jobv.site</a> — file-tree navigation, per-strategy write-ups,
-  sanitized code excerpts, and log panels.
-</p>
-
-<h2 id="strategy-families">Strategy families</h2>
-<table>
-  <thead>
-    <tr>
-      <th class="width-auto">Family</th>
-      <th class="width-min">Count</th>
-      <th class="width-auto">Core logic</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Launch MEV (multi-chain cradle)</td>
-      <td>4</td>
-      <td>pool_var_proxy filter, Jito bundle entry, mechanical exits</td>
-    </tr>
-    <tr>
-      <td>Gains intermarket (A–H)</td>
-      <td>8</td>
-      <td>Chronos directional_follow with intermarket_optimal leg selection</td>
-    </tr>
-    <tr>
-      <td>Chronos directional</td>
-      <td>5</td>
-      <td>r_hat hysteresis (R_OPEN, R_FLIP), flip exits, spot WETH bull/micro</td>
-    </tr>
-    <tr>
-      <td>Sol momentum / meme</td>
-      <td>2</td>
-      <td>DEX screener ladder, Gains meme perp momentum</td>
-    </tr>
-    <tr>
-      <td>Infrastructure</td>
-      <td>3</td>
-      <td>Penalized log-growth hedger, cross-chain spread scanner, DVN verifier</td>
-    </tr>
-  </tbody>
-</table>
-
-<h2 id="highlighted-case-studies">Highlighted case studies</h2>
-<ul>
-  <li><a href="/quant/strategies/launch-mev-sol-v1.html">Launch MEV Sol v1</a> — Jito landing rate, Late entry discovery, tip ladder calibration</li>
-  <li><a href="/quant/strategies/gains-degen-fast.html">Gains Degen Fast</a> — 500x flip-churn post-mortem, keeper TP+SL entry-only model</li>
-  <li><a href="/quant/strategies/chronos-swing-v1.html">Chronos Swing v1</a> — London-validated r_hat thresholds, flip-churn drawdown</li>
-  <li><a href="/quant/strategies/chronos-spot-weth-bull-v1.html">WETH Bull v1</a> — seven dryrun iterations toward net-edge gate</li>
-  <li><a href="/quant/strategies/legacy-portfolio-hedger.html">Legacy Portfolio Hedger</a> — penalized log-growth optimizer on BTC/ETH/SOL panel</li>
-</ul>
-
-<h2 id="stack">Stack</h2>
-<figure>
-<pre>
-crates/execution-router   directional_follow, structural exits, gates
-crates/hedger-core        penalized log-growth objective
-crates/launch-mev         cradle filter, Jito runner, exit sidecar
-crates/md-collector       venue polling, Chronos sidecar integration
-strategies/*              22 portable strategy packages (STRATEGY.md, manifests)
-</pre>
-</figure>
-
-<h2 id="repository">Source</h2>
-<p>
-  Strategy packages and Rust crates are developed in a private monorepo. Public documentation
-  is generated into <code>/quant/</code> on this site. Sanitized — no keys, paths, or dollar equity.
-</p>
-
-<nav>
-<p><a href="/finance">← Back to Finance</a> | <a href="/quant/">Quant Portfolio</a> | <a href="/"><svg class="home-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M11.293 3.293a1 1 0 0 1 1.414 0l6 6 2 2a1 1 0 0 1-1.414 1.414L19 12.414V19a2 2 0 0 1-2 2h-3a1 1 0 0 1-1-1v-3h-2v3a1 1 0 0 1-1 1H7a2 2 0 0 1-2-2v-6.586l-.293.293a1 1 0 0 1-1.414-1.414l2-2 6-6Z" clip-rule="evenodd"/></svg> Home</a></p>
-</nav>
-  <script src="/src/index.js"></script>
+<p>Moved to <a href="quant/">finance/quant/</a>.</p>
+<script>window.location.replace("quant/");</script>
 </body>
 </html>

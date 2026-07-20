@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gains Intermarket Gold Dollar v1 — Strategy Portfolio</title>
+  <title>Gains Intermarket Safe Haven FX v1 — Strategy Portfolio</title>
   <link rel="stylesheet" href="../assets/reset.css">
   <link rel="stylesheet" href="../assets/style.css">
   <link rel="stylesheet" href="../assets/custom.css">
   <link rel="stylesheet" href="../assets/tree.css">
 </head>
-<body class="portfolio-layout" data-asset-base=".." data-slug="gains-intermarket-gold-dollar-v1">
+<body class="portfolio-layout" data-asset-base=".." data-slug="gains-intermarket-safe-haven-fx-v1">
   <header>
-    <nav><a href="../index.html">Portfolio</a> / Gains Intermarket Gold Dollar v1</nav>
-    <h1>Gains Intermarket Gold Dollar v1</h1>
-    <p class="subtitle">Fixed XAU primary with EUR/USD and USD/CAD context</p>
+    <nav><a href="../../../">jobv.site</a> / <a href="../../">finance</a> / <a href="../index.html">quant</a> / Gains Intermarket Safe Haven FX v1</nav>
+    <h1>Gains Intermarket Safe Haven FX v1</h1>
+    <p class="subtitle">SPY/QQQ trade with 24/5 FX panel context</p>
     <span class="badge badge-experimental">EXPERIMENTAL</span>
   </header>
   <main>
@@ -22,23 +22,23 @@
       <table>
         <tr><th>Field</th><th>Value</th></tr>
         <tr><td>Venue</td><td>Gains gTrade</td></tr>
-        <tr><td>Trade leg</td><td>XAU (fixed primary)</td></tr>
-        <tr><td>Context panel</td><td>EUR/USD, USD/CAD</td></tr>
+        <tr><td>Trade legs</td><td>SPY, QQQ</td></tr>
+        <tr><td>Context panel</td><td>FX (24/5 coverage)</td></tr>
         <tr><td>Signal</td><td>Chronos directional_follow (Phase 1)</td></tr>
-        <tr><td>Intermarket thesis</td><td>Gold as inverse-dollar proxy with FX confirmation</td></tr>
+        <tr><td>Intermarket thesis</td><td>Equity direction with safe-haven FX flow as confirmation</td></tr>
       </table>
     </section>
 
     <section>
       <h2>Signal</h2>
-      <p>Phase 1: Chronos <code>directional_follow</code> on XAU trade leg. EUR/USD and USD/CAD serve as dollar-strength context — when dollar weakens (EUR/USD up, USD/CAD down), gold directional signals have higher conviction. Execution uses standard Chronos infrastructure.</p>
+      <p>Phase 1: Chronos <code>directional_follow</code> on SPY/QQQ trade legs. The 24/5 FX panel provides continuous safe-haven flow context (JPY, CHF, USD strength) even when equity markets are closed. FX flows into safe-haven currencies typically precede equity weakness. Execution uses standard Chronos infrastructure.</p>
     </section>
 
     <section id="math-logic">
       <h2>Mathematics and Logic</h2>
 
-<h3>Gold-dollar thesis</h3>
-<p>Fixed XAU primary leg; EUR/USD and USD/CAD context capture dollar strength effects on gold.</p>
+<h3>Safe-haven FX thesis</h3>
+<p>SPY/QQQ trade with 24/5 FX panel (JPY, CHF crosses) for risk-off detection.</p>
 
 <p>Phase 1 uses Chronos <code>directional_follow</code> on one or more trade legs. Context instruments
 (SPY, FX, sector ETFs) inform regime classification; the optimizer ranks candidates with
@@ -59,7 +59,7 @@ Pairs-divergence variant: dollar-neutral spread target
 
     <section>
       <h2>Status and Outcome</h2>
-      <p><strong>Experimental</strong> — Phase 1 designed. Part of the 8-strategy intermarket suite.</p>
+      <p><strong>Experimental</strong> — Phase 1 designed. The 24/5 FX panel coverage is an advantage over equity-only signals. Part of the 8-strategy intermarket suite.</p>
     </section>
 
     <section>
@@ -71,7 +71,7 @@ Pairs-divergence variant: dollar-neutral spread target
       <h2>Related Strategies</h2>
       <ul>
         <li><a href="gains-intermarket-roro-v1.html">roro</a> — QQQ/XAU risk-on/risk-off</li>
-        <li><a href="gains-intermarket-commodity-sector-v1.html">commodity-sector</a> — XAU with mining sector context</li>
+        <li><a href="gains-intermarket-gold-dollar-v1.html">gold-dollar</a> — XAU with FX context</li>
         <li><a href="directional-follow.html">directional-follow</a> — shared Chronos infrastructure</li>
       </ul>
     </section>

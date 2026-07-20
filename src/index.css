@@ -178,6 +178,11 @@ th {
 .header h1 {
   margin: 0;
 }
+.header h1.title {
+  font-size: 1.25rem;
+  line-height: calc(2 * var(--line-height));
+  white-space: nowrap;
+}
 .header tr td:last-child {
   text-align: right;
 }

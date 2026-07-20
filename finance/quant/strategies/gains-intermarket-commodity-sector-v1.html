@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gains Intermarket ETF Momentum v1 — Strategy Portfolio</title>
+  <title>Gains Intermarket Commodity Sector v1 — Strategy Portfolio</title>
   <link rel="stylesheet" href="../assets/reset.css">
   <link rel="stylesheet" href="../assets/style.css">
   <link rel="stylesheet" href="../assets/custom.css">
   <link rel="stylesheet" href="../assets/tree.css">
 </head>
-<body class="portfolio-layout" data-asset-base=".." data-slug="gains-intermarket-etf-momentum-v1">
+<body class="portfolio-layout" data-asset-base=".." data-slug="gains-intermarket-commodity-sector-v1">
   <header>
-    <nav><a href="../index.html">Portfolio</a> / Gains Intermarket ETF Momentum v1</nav>
-    <h1>Gains Intermarket ETF Momentum v1</h1>
-    <p class="subtitle">Six ETF/metals candidates at Chronos horizon_index=3</p>
+    <nav><a href="../../../">jobv.site</a> / <a href="../../">finance</a> / <a href="../index.html">quant</a> / Gains Intermarket Commodity Sector v1</nav>
+    <h1>Gains Intermarket Commodity Sector v1</h1>
+    <p class="subtitle">Fixed XAU with GDX/URA/URNM sector context</p>
     <span class="badge badge-experimental">EXPERIMENTAL</span>
   </header>
   <main>
@@ -22,24 +22,23 @@
       <table>
         <tr><th>Field</th><th>Value</th></tr>
         <tr><td>Venue</td><td>Gains gTrade</td></tr>
-        <tr><td>Trade legs</td><td>Six ETF/metals candidates</td></tr>
-        <tr><td>Chronos</td><td>horizon_index=3</td></tr>
+        <tr><td>Trade leg</td><td>XAU (fixed)</td></tr>
+        <tr><td>Context panel</td><td>GDX (gold miners), URA/URNM (uranium)</td></tr>
         <tr><td>Signal</td><td>Chronos directional_follow (Phase 1)</td></tr>
-        <tr><td>Intermarket thesis</td><td>Cross-asset momentum with metals as macro indicator</td></tr>
+        <tr><td>Intermarket thesis</td><td>Gold with mining/energy sector equity confirmation</td></tr>
       </table>
     </section>
 
     <section>
       <h2>Signal</h2>
-      <p>Phase 1: Chronos <code>directional_follow</code> at horizon_index=3 across six ETF and metals candidates. The broader candidate universe allows rotation into the strongest momentum signal at any given time. Execution uses standard Chronos infrastructure.</p>
+      <p>Phase 1: Chronos <code>directional_follow</code> on XAU trade leg. GDX (gold miners ETF) and URA/URNM (uranium ETFs) provide sector equity context. Gold miner outperformance relative to spot gold historically signals directional continuation. Execution uses standard Chronos infrastructure.</p>
     </section>
 
     <section id="math-logic">
       <h2>Mathematics and Logic</h2>
 
-<h3>ETF momentum thesis</h3>
-<p>Six ETF/metals candidates at Chronos h=3; strongest |r_hat| among panel wins
-<code>intermarket_optimal</code> selection.</p>
+<h3>Commodity-sector thesis</h3>
+<p>Fixed XAU primary with GDX/URA/URNM sector ETFs as mining/energy context.</p>
 
 <p>Phase 1 uses Chronos <code>directional_follow</code> on one or more trade legs. Context instruments
 (SPY, FX, sector ETFs) inform regime classification; the optimizer ranks candidates with
@@ -71,8 +70,8 @@ Pairs-divergence variant: dollar-neutral spread target
     <section>
       <h2>Related Strategies</h2>
       <ul>
-        <li><a href="gains-intermarket-roro-v1.html">roro</a> — QQQ/XAU risk-on/risk-off</li>
-        <li><a href="gains-intermarket-copper-equity-v1.html">copper-equity</a> — equity vs copper</li>
+        <li><a href="gains-intermarket-gold-dollar-v1.html">gold-dollar</a> — XAU with FX context</li>
+        <li><a href="gains-intermarket-roro-v1.html">roro</a> — QQQ/XAU risk rotation</li>
         <li><a href="directional-follow.html">directional-follow</a> — shared Chronos infrastructure</li>
       </ul>
     </section>
