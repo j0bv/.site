@@ -19,5 +19,21 @@
   ],
   "logs": [],
   "log_source": "no log file found",
-  "updated_at": "2026-07-16 18:20 UTC"
+  "updated_at": "2026-07-20 15:50 UTC",
+  "decision_replay": {
+    "kind": "deterministic_decision_replay",
+    "disclaimer": "Policy regression replay only. This is not a historical market backtest and does not verify profitability.",
+    "generated_at_utc": "2026-07-18T20:39:12.710979961+00:00",
+    "status": "no_recorded_session",
+    "status_label": "No recorded session",
+    "source": "logs/gains-intermarket-oil-cad.ndjson",
+    "config": null,
+    "config_fingerprint": null,
+    "matches": 0,
+    "mismatches": 0,
+    "unsupported": 0,
+    "malformed": 0,
+    "rows_seen": 0,
+    "non_router": []
+  }
 }

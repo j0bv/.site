@@ -40,5 +40,32 @@
     "{\"event\":\"candidate_rejected\",\"ts_ms\":1783728222388,\"chain\":\"solana\",\"mint\":\"[address redacted]\",\"pair_address\":\"[address redacted]\",\"reason\":\"price_change_5m_too_low\",\"discovery_source\":\"gecko_trending_fallback\"}"
   ],
   "log_source": "launch-mev-sol-trending-candidates.ndjson",
-  "updated_at": "2026-07-16 18:20 UTC"
+  "updated_at": "2026-07-20 15:50 UTC",
+  "decision_replay": {
+    "kind": "deterministic_decision_replay",
+    "disclaimer": "Policy regression replay only. This is not a historical market backtest and does not verify profitability.",
+    "generated_at_utc": "2026-07-18T20:39:12.710979961+00:00",
+    "status": "recorded_inputs_insufficient",
+    "status_label": "Recorded inputs insufficient",
+    "source": "logs/launch-mev-sol-trending-candidates.ndjson",
+    "config": null,
+    "config_fingerprint": null,
+    "matches": 0,
+    "mismatches": 0,
+    "unsupported": 66,
+    "malformed": 0,
+    "rows_seen": 66,
+    "non_router": [
+      {
+        "family": "launch_mev_candidate",
+        "source": "logs/launch-mev-sol-trending-candidates.ndjson",
+        "note": "Legacy candidate rows omit cradle/config inputs; enriched future rows replay cradle and rug-policy decisions.",
+        "matches": 0,
+        "mismatches": 0,
+        "unsupported": 66,
+        "malformed": 0,
+        "rows_seen": 66
+      }
+    ]
+  }
 }

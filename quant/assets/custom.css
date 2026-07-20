@@ -123,6 +123,115 @@ nav a:hover {
   margin-top: calc(var(--line-height) / 2);
 }
 
+/* Decision replay report */
+.report-disclaimer {
+  border-left: 3px solid var(--text-color);
+  padding-left: 1ch;
+  color: var(--text-color-alt);
+  font-size: 0.9rem;
+}
+
+.report-status {
+  margin-top: calc(var(--line-height) / 2);
+}
+
+.report-meta {
+  color: var(--text-color-alt);
+  font-size: 0.85rem;
+}
+
+.metric-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12ch, 1fr));
+  gap: 1ch;
+  margin: var(--line-height) 0;
+}
+
+.metric-card {
+  border: var(--border-thickness) solid var(--text-color);
+  padding: calc(var(--line-height) / 2) 1ch;
+}
+
+.metric-label {
+  font-size: 0.75rem;
+  color: var(--text-color-alt);
+  text-transform: uppercase;
+}
+
+.metric-value {
+  font-size: 1.25rem;
+  font-weight: var(--font-weight-bold);
+}
+
+.outcome-bar {
+  display: block;
+  margin: calc(var(--line-height) / 2) 0;
+  border: var(--border-thickness) solid var(--text-color);
+}
+
+.outcome-legend {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 var(--line-height) 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75ch 1.5ch;
+  font-size: 0.85rem;
+}
+
+.outcome-legend .swatch {
+  display: inline-block;
+  width: 1.1ch;
+  height: 1.1ch;
+  margin-right: 0.5ch;
+  border: 1px solid var(--text-color);
+  vertical-align: middle;
+}
+
+.report-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+  margin-bottom: var(--line-height);
+}
+
+.report-table th,
+.report-table td {
+  border: var(--border-thickness) solid var(--text-color);
+  padding: 0.4ch 0.7ch;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.report-table th {
+  background: color-mix(in srgb, var(--text-color) 8%, transparent);
+}
+
+.report-table .outcome-bar {
+  min-width: 12ch;
+  margin: 0;
+}
+
+.family-coverage {
+  margin: var(--line-height) 0;
+  padding-top: calc(var(--line-height) / 2);
+  border-top: var(--border-thickness) dashed color-mix(in srgb, var(--text-color) 35%, transparent);
+}
+
+.family-coverage h4 {
+  margin: 0 0 calc(var(--line-height) / 2) 0;
+  font-size: 0.95rem;
+}
+
+.family-list {
+  font-size: 0.9rem;
+  color: var(--text-color-alt);
+}
+
+.decision-replay h3 {
+  margin-top: calc(var(--line-height) * 1.5);
+}
+
 /* ASCII diagrams */
 figure pre {
   border: var(--border-thickness) solid var(--text-color);

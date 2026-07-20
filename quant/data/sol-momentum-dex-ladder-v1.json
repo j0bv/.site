@@ -40,5 +40,42 @@
     "{\"event\":\"candidate_rejected\",\"ts_ms\":1783640077585,\"mint\":\"[address redacted]\",\"reason\":\"liquidity_too_low\"}"
   ],
   "log_source": "sol-momentum-candidates.ndjson",
-  "updated_at": "2026-07-16 18:20 UTC"
+  "updated_at": "2026-07-20 15:50 UTC",
+  "decision_replay": {
+    "kind": "deterministic_decision_replay",
+    "disclaimer": "Policy regression replay only. This is not a historical market backtest and does not verify profitability.",
+    "generated_at_utc": "2026-07-18T20:39:12.710979961+00:00",
+    "status": "recorded_inputs_insufficient",
+    "status_label": "Recorded inputs insufficient",
+    "source": "logs/sol-momentum-candidates.ndjson",
+    "config": null,
+    "config_fingerprint": null,
+    "matches": 0,
+    "mismatches": 0,
+    "unsupported": 45056,
+    "malformed": 0,
+    "rows_seen": 45056,
+    "non_router": [
+      {
+        "family": "sol_momentum_candidate",
+        "source": "logs/sol-momentum-candidates.ndjson",
+        "note": "Legacy rows omit pair/config inputs; enriched future rows replay filter decisions without inventing missing data.",
+        "matches": 0,
+        "mismatches": 0,
+        "unsupported": 45056,
+        "malformed": 0,
+        "rows_seen": 45056
+      },
+      {
+        "family": "sol_momentum_ladder",
+        "source": "logs/sol-momentum-ladder.ndjson",
+        "note": "No historical ladder audit exists yet; enriched future rows replay state transitions and tranche/tier sizing.",
+        "matches": 0,
+        "mismatches": 0,
+        "unsupported": 0,
+        "malformed": 0,
+        "rows_seen": 0
+      }
+    ]
+  }
 }

@@ -40,5 +40,21 @@
     "{\"intent_set\":{\"converged\":true,\"event_ts_ms\":1782348837641,\"forecast_panel\":[{\"delta_x_frac\":0.0,\"directional_thresholds\":{\"borrow_hold_relief_applied\":false,\"min_hold_base\":1,\"min_hold_ticks\":1,\"post_flip_cooldown_ticks\":0,\"profit_flip_relief_applied\":false,\"r_hat_flip\":0.0005,\"r_hat_flip_base\":0.0005,\"r_hat_open\":0.0005},\"instrument\":{\"market_id\":\"WETH/USDC\",\"venue\":\"uniswap_v3\"},\"n_target_usd\": \"[redacted]\",\"order_submitted\":false,\"r_hat\":0.0,\"sigma_diag\":5.379319190979004e-6,\"skip_reason\":\"directional_below_r_hat_threshold\",\"utc_hour\":0,\"x_curr_frac\":0.0,\"x_star_frac\":0.0}],\"legs\":[],\"objective\":0.0,\"skipped_legs\":[{\"delta_x_frac\":0.0,\"directional_thresholds\":{\"borrow_hold_relief_applied\":false,\"min_hold_base\":1,\"min_hold_ticks\":1,\"post_flip_cooldown_ticks\":0,\"profit_flip_relief_applied\":false,\"r_hat_flip\":0.0005,\"r_hat_flip_base\":0.0005,\"r_hat_open\":0.0005},\"instrument\":{\"market_id\":\"WETH/USDC\",\"venue\":\"uniswap_v3\"},\"n_target_usd\": \"[redacted]\",\"r_hat\":0.0,\"reason\":\"directional_below_r_hat_threshold\",\"sigma_diag\":5.379319190979004e-6,\"x_star_frac\":0.0}],\"summary\":{\"gross_n_exec_usd\": \"[redacted]\",\"gross_n_target_usd\": \"[redacted]\",\"per_venue_gross_exec\":{},\"sum_collateral_clipped_usd\": \"[redacted]\",\"sum_margin_required_usd\": \"[redacted]\",\"tracking_error_hint\":0.0}},\"venue_results\":[]}"
   ],
   "log_source": "chronos-spot-weth-bull.ndjson",
-  "updated_at": "2026-07-16 18:20 UTC"
+  "updated_at": "2026-07-20 15:50 UTC",
+  "decision_replay": {
+    "kind": "deterministic_decision_replay",
+    "disclaimer": "Policy regression replay only. This is not a historical market backtest and does not verify profitability.",
+    "generated_at_utc": "2026-07-18T20:39:12.710979961+00:00",
+    "status": "replay_complete",
+    "status_label": "Replay complete",
+    "source": "logs/chronos-spot-weth-bull.ndjson",
+    "config": "config/execution-router.directional-spot-weth-bull.toml",
+    "config_fingerprint": "409b1d6fae7e62b0",
+    "matches": 56,
+    "mismatches": 0,
+    "unsupported": 0,
+    "malformed": 0,
+    "rows_seen": 56,
+    "non_router": []
+  }
 }

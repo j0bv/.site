@@ -40,5 +40,21 @@
     "{\"intent_set\":{\"converged\":false,\"event_ts_ms\":1781828462563,\"forecast_panel\":[{\"delta_x_frac\":-35.57355490967672,\"directional_thresholds\":{\"borrow_hold_relief_applied\":false,\"min_hold_base\":11,\"min_hold_ticks\":11,\"post_flip_cooldown_ticks\":0,\"profit_flip_relief_applied\":true,\"r_hat_flip\":0.0005949999999999999,\"r_hat_flip_base\":0.0007,\"r_hat_open\":0.00025},\"gains_market_cost\":{\"borrowing_bps_per_hour\":3.4236,\"depth_available\":false,\"dominant_side\":\"long\",\"fixed_spread_bps\":0.0,\"joining_crowded_side\":true,\"oi_skew_ratio\":0.8960315235919734},\"instrument\":{\"market_id\":\"33\",\"venue\":\"gains_g_trade\"},\"n_target_usd\": \"[redacted]\",\"order_submitted\":true,\"r_hat\":-0.00022963072115089744,\"sigma_diag\":0.017145147547125816,\"x_curr_frac\":35.57355490967672,\"x_star_frac\":0.0}],\"legs\":[{\"explanation\":{\"available_collateral_usd\": \"[redacted]\",\"capped_notional_usd\": \"[redacted]\",\"collateral_bucket\":\"live:gains_gtrade\",\"collateral_clamp_applied\":false,\"confidence_q\":1.0,\"delta_x_frac\":-35.57355490967672,\"equity_usd\": \"[redacted]\",\"g_execution\":1.0,\"g_health\":1.0,\"g_multiplier\":1.0,\"g_signal\":1.0,\"initial_margin_rate_m\":0.0,\"instrument\":{\"market_id\":\"33\",\"venue\":\"gains_g_trade\"},\"margin_required_usd\": \"[redacted]\",\"max_leverage\":0.0,\"min_delta_skipped\":false,\"n_after_quality_usd\": \"[redacted]\",\"n_raw_usd\": \"[redacted]\",\"n_target_usd\": \"[redacted]\",\"native_preview\":{\"market_id\":\"33\",\"price\":null,\"reduce_only\":true,\"side\":\"sell\",\"size\":\"599.00000000\",\"venue\":\"gains_gtrade\",\"venue_params\":{\"lane\":\"standard\",\"strategy_arm\":\"chronos_swing_v1\"}},\"net_pnl_usd\": \"[redacted]\",\"notional_after_collateral_usd\": \"[redacted]\",\"notional_max_from_collateral_usd\":null,\"opportunity_rotation_triggered\":false,\"per_venue_cap_applied\":true,\"position_usd_current\":598.8027928942433,\"pre_submit_capability\":\"ready\",\"protective_exit\":true,\"r_hat\":-0.00022963072115089744,\"reduce_only\":true,\"rounded_notional_usd\": \"[redacted]\",\"side\":\"sell\",\"sigma_diag\":0.017145147547125816,\"trailing_stop_triggered\":false,\"x_curr_frac\":35.57355490967672,\"x_star_frac\":0.0},\"request\":{\"market\":\"33\",\"price\":null,\"reduce_only\":true,\"side\":\"sell\",\"size\":\"599.00000000\"}}],\"objective\":0.0,\"skipped_legs\":[],\"summary\":{\"gross_n_exec_usd\": \"[redacted]\",\"gross_n_target_usd\": \"[redacted]\",\"per_venue_gross_exec\":{\"gains_gtrade\":599.0},\"sum_collateral_clipped_usd\": \"[redacted]\",\"sum_margin_required_usd\": \"[redacted]\",\"tracking_error_hint\":1.0}},\"venue_results\":[{\"capability\":\"ready\",\"instrument\":{\"market_id\":\"33\",\"venue\":\"gains_g_trade\"},\"mode\":\"live\",\"outcome\":{\"kind\":\"skipped\",\"reason\":\"gains_reduce_submit_cooldown\"},\"submit_attempted\":false}]}"
   ],
   "log_source": "chronos-gains-sol-swing.ndjson",
-  "updated_at": "2026-07-16 18:20 UTC"
+  "updated_at": "2026-07-20 15:50 UTC",
+  "decision_replay": {
+    "kind": "deterministic_decision_replay",
+    "disclaimer": "Policy regression replay only. This is not a historical market backtest and does not verify profitability.",
+    "generated_at_utc": "2026-07-18T20:39:12.710979961+00:00",
+    "status": "differences_detected",
+    "status_label": "Policy differences detected",
+    "source": "logs/chronos-gains-sol-swing.ndjson",
+    "config": "config/execution-router.directional-sol-swing.toml",
+    "config_fingerprint": "cb6a4470a5a374b4",
+    "matches": 29,
+    "mismatches": 331,
+    "unsupported": 0,
+    "malformed": 0,
+    "rows_seen": 360,
+    "non_router": []
+  }
 }

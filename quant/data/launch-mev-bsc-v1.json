@@ -14,5 +14,21 @@
   ],
   "logs": [],
   "log_source": "no log file found",
-  "updated_at": "2026-07-16 18:20 UTC"
+  "updated_at": "2026-07-20 15:50 UTC",
+  "decision_replay": {
+    "kind": "deterministic_decision_replay",
+    "disclaimer": "Policy regression replay only. This is not a historical market backtest and does not verify profitability.",
+    "generated_at_utc": "2026-07-18T20:39:12.710979961+00:00",
+    "status": "unsupported_manifest_error: trailing characters at line 24 column 1",
+    "status_label": "Manifest parse error",
+    "source": "strategies/launch-mev-bsc-v1/manifest.json",
+    "config": null,
+    "config_fingerprint": null,
+    "matches": 0,
+    "mismatches": 0,
+    "unsupported": 0,
+    "malformed": 1,
+    "rows_seen": 0,
+    "non_router": []
+  }
 }
